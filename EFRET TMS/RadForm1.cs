@@ -25,11 +25,24 @@ namespace EFRET_TMS
             this.Close();
             Application.Exit();
         }
-
+        //Adminisrtation
         private void accordionControlElement2_Click(object sender, EventArgs e)
         {
             AdminControlPanel ACP = new AdminControlPanel();
             ACP.Show();
+        }
+
+
+        //Statistics
+        private void accordionControlElement5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //Management
+        private void accordionControlElement4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
