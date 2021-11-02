@@ -17,8 +17,9 @@ namespace EFRET_TMS
         private CompanyData_UC CDUC = new CompanyData_UC();
         private Roles_UC RolesUC = new Roles_UC();
         private UserManager UMUC = new UserManager();
-        private ActiveUsersUC AUUC = new ActiveUsersUC();
         */
+        private ActiveUsersUC AUUC = new ActiveUsersUC();
+        
         public AdminControlPanel()
         {
             InitializeComponent();
