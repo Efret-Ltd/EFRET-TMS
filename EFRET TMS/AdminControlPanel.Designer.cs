@@ -72,9 +72,9 @@ namespace EFRET_TMS
             // fluentDesignFormContainer1
             // 
             this.fluentDesignFormContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.fluentDesignFormContainer1.Location = new System.Drawing.Point(260, 40);
+            this.fluentDesignFormContainer1.Location = new System.Drawing.Point(260, 31);
             this.fluentDesignFormContainer1.Name = "fluentDesignFormContainer1";
-            this.fluentDesignFormContainer1.Size = new System.Drawing.Size(629, 576);
+            this.fluentDesignFormContainer1.Size = new System.Drawing.Size(629, 585);
             this.fluentDesignFormContainer1.TabIndex = 0;
             // 
             // accordionControl1
@@ -88,10 +88,10 @@ namespace EFRET_TMS
             this.accordionControlElement5,
             this.accordionControlElement6,
             this.accordionControlElement7});
-            this.accordionControl1.Location = new System.Drawing.Point(0, 40);
+            this.accordionControl1.Location = new System.Drawing.Point(0, 31);
             this.accordionControl1.Name = "accordionControl1";
             this.accordionControl1.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Touch;
-            this.accordionControl1.Size = new System.Drawing.Size(260, 576);
+            this.accordionControl1.Size = new System.Drawing.Size(260, 585);
             this.accordionControl1.TabIndex = 1;
             // 
             // accordionControlElement1
@@ -295,6 +295,7 @@ namespace EFRET_TMS
             this.accordionControlElement22.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.accordionControlElement23,
             this.accordionControlElement24});
+            this.accordionControlElement22.Expanded = true;
             this.accordionControlElement22.Name = "accordionControlElement22";
             this.accordionControlElement22.Text = "Manage Licenses";
             // 
@@ -355,7 +356,7 @@ namespace EFRET_TMS
             this.fluentDesignFormControl1.Location = new System.Drawing.Point(0, 0);
             this.fluentDesignFormControl1.Manager = this.fluentFormDefaultManager1;
             this.fluentDesignFormControl1.Name = "fluentDesignFormControl1";
-            this.fluentDesignFormControl1.Size = new System.Drawing.Size(889, 40);
+            this.fluentDesignFormControl1.Size = new System.Drawing.Size(889, 31);
             this.fluentDesignFormControl1.TabIndex = 2;
             this.fluentDesignFormControl1.TabStop = false;
             this.fluentDesignFormControl1.TitleItemLinks.Add(this.skinDropDownButtonItem1);
