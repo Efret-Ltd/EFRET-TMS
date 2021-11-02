@@ -1,0 +1,930 @@
+﻿
+namespace EFRET_TMS
+{
+    partial class Orders
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Orders));
+            this.fluentDesignFormContainer1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormContainer();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.newCOBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.axsDataSet1 = new EFRET_TMS.axsDataSet();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colIdCO = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNewCO = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDateCreation = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDateUpdate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colIdContractHolder = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colContractHolderReference = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCMR = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSalesPrice = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colConversionRate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSalesPriceCurrency = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSalesPriceInCurrency = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSalesPriceVATCode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSalesPriceVATRate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSalesPriceVATAmount = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colContractHolderPaymentTerm = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colContractHolderPaymentTermOEM = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colComment = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colInvoiceInGBP = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colAllRisksInsurance = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colContractHolderEmail = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colContractHolderTel = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colContractHolderMob = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTrailerNumber = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTrailerTypeAutorised = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colInterModal = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colInvoiced = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colUserCreation = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colUserUpdate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colUserOwner = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colActif = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colXroute = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTripType2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colBaseFreightRate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colFuelSurcharge = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colStopOver1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colStopOver2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colFuelSurchargeRate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colAdhocRate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coldemurrage = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDemurageCode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colInvoiceNumber = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colInvoiceDate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colInvoicePath = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colLine = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colInvoiceEDI = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colShipperAccount = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colReroutingSurcharge = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colWharehousing = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colRedelivery = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCancellation = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colBillingAccount = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colAdHocSurcharge = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDriverDententionAtUnloading = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coleShipCo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCorridor = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCoS = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCustomClearance = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colP44ToUpload = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colP44Uploaded = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colP44ShipmentID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colP44LastUpdate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colP44StatusCode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colP44ReasonCode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colP44ReasonDescription = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colP44TrackTrailer = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colP44TrackingStarted = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colP44TrackingCompleted = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colP44TrackingError = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colP44UploadError = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colP44Latitude = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colP44Longitude = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colP44CurrentStop = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.fluentFormDefaultManager1 = new DevExpress.XtraBars.FluentDesignSystem.FluentFormDefaultManager(this.components);
+            this.skinBarSubItem1 = new DevExpress.XtraBars.SkinBarSubItem();
+            this.skinPaletteDropDownButtonItem1 = new DevExpress.XtraBars.SkinPaletteDropDownButtonItem();
+            this.barHeaderItem1 = new DevExpress.XtraBars.BarHeaderItem();
+            this.accordionControl1 = new DevExpress.XtraBars.Navigation.AccordionControl();
+            this.accordionControlElement1 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement6 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement7 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement8 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.fluentDesignFormControl1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
+            this.newCOTableAdapter1 = new EFRET_TMS.axsDataSetTableAdapters.NewCOTableAdapter();
+            this.accordionControlElement2 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement3 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement4 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement5 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlSeparator1 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
+            this.accordionControlElement9 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement10 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlSeparator2 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
+            this.accordionControlElement11 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.fluentDesignFormContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.newCOBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.axsDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fluentFormDefaultManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // fluentDesignFormContainer1
+            // 
+            this.fluentDesignFormContainer1.Controls.Add(this.gridControl1);
+            this.fluentDesignFormContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.fluentDesignFormContainer1.Location = new System.Drawing.Point(260, 31);
+            this.fluentDesignFormContainer1.Name = "fluentDesignFormContainer1";
+            this.fluentDesignFormContainer1.Size = new System.Drawing.Size(814, 470);
+            this.fluentDesignFormContainer1.TabIndex = 0;
+            // 
+            // gridControl1
+            // 
+            this.gridControl1.DataSource = this.newCOBindingSource;
+            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl1.Location = new System.Drawing.Point(0, 0);
+            this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.MenuManager = this.fluentFormDefaultManager1;
+            this.gridControl1.Name = "gridControl1";
+            this.gridControl1.Size = new System.Drawing.Size(814, 470);
+            this.gridControl1.TabIndex = 0;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // newCOBindingSource
+            // 
+            this.newCOBindingSource.DataMember = "NewCO";
+            this.newCOBindingSource.DataSource = this.axsDataSet1;
+            this.newCOBindingSource.Sort = "DateUpdate DESC";
+            // 
+            // axsDataSet1
+            // 
+            this.axsDataSet1.DataSetName = "axsDataSet";
+            this.axsDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // gridView1
+            // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colIdCO,
+            this.colNewCO,
+            this.colDateCreation,
+            this.colDateUpdate,
+            this.colIdContractHolder,
+            this.colContractHolderReference,
+            this.colCMR,
+            this.colSalesPrice,
+            this.colConversionRate,
+            this.colSalesPriceCurrency,
+            this.colSalesPriceInCurrency,
+            this.colSalesPriceVATCode,
+            this.colSalesPriceVATRate,
+            this.colSalesPriceVATAmount,
+            this.colContractHolderPaymentTerm,
+            this.colContractHolderPaymentTermOEM,
+            this.colComment,
+            this.colInvoiceInGBP,
+            this.colAllRisksInsurance,
+            this.colContractHolderEmail,
+            this.colContractHolderTel,
+            this.colContractHolderMob,
+            this.colTrailerNumber,
+            this.colTrailerTypeAutorised,
+            this.colInterModal,
+            this.colInvoiced,
+            this.colUserCreation,
+            this.colUserUpdate,
+            this.colUserOwner,
+            this.colActif,
+            this.colXroute,
+            this.colTripType2,
+            this.colBaseFreightRate,
+            this.colFuelSurcharge,
+            this.colStopOver1,
+            this.colStopOver2,
+            this.colFuelSurchargeRate,
+            this.colAdhocRate,
+            this.coldemurrage,
+            this.colDemurageCode,
+            this.colInvoiceNumber,
+            this.colInvoiceDate,
+            this.colInvoicePath,
+            this.colLine,
+            this.colInvoiceEDI,
+            this.colShipperAccount,
+            this.colReroutingSurcharge,
+            this.colWharehousing,
+            this.colRedelivery,
+            this.colCancellation,
+            this.colBillingAccount,
+            this.colAdHocSurcharge,
+            this.colDriverDententionAtUnloading,
+            this.coleShipCo,
+            this.colCorridor,
+            this.colCoS,
+            this.colCustomClearance,
+            this.colP44ToUpload,
+            this.colP44Uploaded,
+            this.colP44ShipmentID,
+            this.colP44LastUpdate,
+            this.colP44StatusCode,
+            this.colP44ReasonCode,
+            this.colP44ReasonDescription,
+            this.colP44TrackTrailer,
+            this.colP44TrackingStarted,
+            this.colP44TrackingCompleted,
+            this.colP44TrackingError,
+            this.colP44UploadError,
+            this.colP44Latitude,
+            this.colP44Longitude,
+            this.colP44CurrentStop});
+            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.Name = "gridView1";
+            // 
+            // colIdCO
+            // 
+            this.colIdCO.FieldName = "IdCO";
+            this.colIdCO.Name = "colIdCO";
+            this.colIdCO.Visible = true;
+            this.colIdCO.VisibleIndex = 0;
+            // 
+            // colNewCO
+            // 
+            this.colNewCO.FieldName = "NewCO";
+            this.colNewCO.Name = "colNewCO";
+            this.colNewCO.Visible = true;
+            this.colNewCO.VisibleIndex = 1;
+            // 
+            // colDateCreation
+            // 
+            this.colDateCreation.FieldName = "DateCreation";
+            this.colDateCreation.Name = "colDateCreation";
+            this.colDateCreation.Visible = true;
+            this.colDateCreation.VisibleIndex = 2;
+            // 
+            // colDateUpdate
+            // 
+            this.colDateUpdate.FieldName = "DateUpdate";
+            this.colDateUpdate.Name = "colDateUpdate";
+            this.colDateUpdate.Visible = true;
+            this.colDateUpdate.VisibleIndex = 3;
+            // 
+            // colIdContractHolder
+            // 
+            this.colIdContractHolder.FieldName = "IdContractHolder";
+            this.colIdContractHolder.Name = "colIdContractHolder";
+            this.colIdContractHolder.Visible = true;
+            this.colIdContractHolder.VisibleIndex = 4;
+            // 
+            // colContractHolderReference
+            // 
+            this.colContractHolderReference.FieldName = "ContractHolderReference";
+            this.colContractHolderReference.Name = "colContractHolderReference";
+            this.colContractHolderReference.Visible = true;
+            this.colContractHolderReference.VisibleIndex = 5;
+            // 
+            // colCMR
+            // 
+            this.colCMR.FieldName = "CMR";
+            this.colCMR.Name = "colCMR";
+            // 
+            // colSalesPrice
+            // 
+            this.colSalesPrice.FieldName = "SalesPrice";
+            this.colSalesPrice.Name = "colSalesPrice";
+            // 
+            // colConversionRate
+            // 
+            this.colConversionRate.FieldName = "ConversionRate";
+            this.colConversionRate.Name = "colConversionRate";
+            // 
+            // colSalesPriceCurrency
+            // 
+            this.colSalesPriceCurrency.FieldName = "SalesPriceCurrency";
+            this.colSalesPriceCurrency.Name = "colSalesPriceCurrency";
+            // 
+            // colSalesPriceInCurrency
+            // 
+            this.colSalesPriceInCurrency.FieldName = "SalesPriceInCurrency";
+            this.colSalesPriceInCurrency.Name = "colSalesPriceInCurrency";
+            // 
+            // colSalesPriceVATCode
+            // 
+            this.colSalesPriceVATCode.FieldName = "SalesPriceVATCode";
+            this.colSalesPriceVATCode.Name = "colSalesPriceVATCode";
+            // 
+            // colSalesPriceVATRate
+            // 
+            this.colSalesPriceVATRate.FieldName = "SalesPriceVATRate";
+            this.colSalesPriceVATRate.Name = "colSalesPriceVATRate";
+            // 
+            // colSalesPriceVATAmount
+            // 
+            this.colSalesPriceVATAmount.FieldName = "SalesPriceVATAmount";
+            this.colSalesPriceVATAmount.Name = "colSalesPriceVATAmount";
+            // 
+            // colContractHolderPaymentTerm
+            // 
+            this.colContractHolderPaymentTerm.FieldName = "ContractHolderPaymentTerm";
+            this.colContractHolderPaymentTerm.Name = "colContractHolderPaymentTerm";
+            // 
+            // colContractHolderPaymentTermOEM
+            // 
+            this.colContractHolderPaymentTermOEM.FieldName = "ContractHolderPaymentTermOEM";
+            this.colContractHolderPaymentTermOEM.Name = "colContractHolderPaymentTermOEM";
+            // 
+            // colComment
+            // 
+            this.colComment.FieldName = "Comment";
+            this.colComment.Name = "colComment";
+            this.colComment.Visible = true;
+            this.colComment.VisibleIndex = 6;
+            // 
+            // colInvoiceInGBP
+            // 
+            this.colInvoiceInGBP.FieldName = "InvoiceInGBP";
+            this.colInvoiceInGBP.Name = "colInvoiceInGBP";
+            this.colInvoiceInGBP.Visible = true;
+            this.colInvoiceInGBP.VisibleIndex = 7;
+            // 
+            // colAllRisksInsurance
+            // 
+            this.colAllRisksInsurance.FieldName = "AllRisksInsurance";
+            this.colAllRisksInsurance.Name = "colAllRisksInsurance";
+            // 
+            // colContractHolderEmail
+            // 
+            this.colContractHolderEmail.FieldName = "ContractHolderEmail";
+            this.colContractHolderEmail.Name = "colContractHolderEmail";
+            this.colContractHolderEmail.Visible = true;
+            this.colContractHolderEmail.VisibleIndex = 8;
+            // 
+            // colContractHolderTel
+            // 
+            this.colContractHolderTel.FieldName = "ContractHolderTel";
+            this.colContractHolderTel.Name = "colContractHolderTel";
+            // 
+            // colContractHolderMob
+            // 
+            this.colContractHolderMob.FieldName = "ContractHolderMob";
+            this.colContractHolderMob.Name = "colContractHolderMob";
+            // 
+            // colTrailerNumber
+            // 
+            this.colTrailerNumber.FieldName = "TrailerNumber";
+            this.colTrailerNumber.Name = "colTrailerNumber";
+            // 
+            // colTrailerTypeAutorised
+            // 
+            this.colTrailerTypeAutorised.FieldName = "TrailerTypeAutorised";
+            this.colTrailerTypeAutorised.Name = "colTrailerTypeAutorised";
+            // 
+            // colInterModal
+            // 
+            this.colInterModal.FieldName = "InterModal";
+            this.colInterModal.Name = "colInterModal";
+            // 
+            // colInvoiced
+            // 
+            this.colInvoiced.FieldName = "Invoiced";
+            this.colInvoiced.Name = "colInvoiced";
+            // 
+            // colUserCreation
+            // 
+            this.colUserCreation.FieldName = "UserCreation";
+            this.colUserCreation.Name = "colUserCreation";
+            this.colUserCreation.Visible = true;
+            this.colUserCreation.VisibleIndex = 9;
+            // 
+            // colUserUpdate
+            // 
+            this.colUserUpdate.FieldName = "UserUpdate";
+            this.colUserUpdate.Name = "colUserUpdate";
+            // 
+            // colUserOwner
+            // 
+            this.colUserOwner.FieldName = "UserOwner";
+            this.colUserOwner.Name = "colUserOwner";
+            // 
+            // colActif
+            // 
+            this.colActif.FieldName = "Actif";
+            this.colActif.Name = "colActif";
+            // 
+            // colXroute
+            // 
+            this.colXroute.FieldName = "Xroute";
+            this.colXroute.Name = "colXroute";
+            // 
+            // colTripType2
+            // 
+            this.colTripType2.FieldName = "TripType2";
+            this.colTripType2.Name = "colTripType2";
+            // 
+            // colBaseFreightRate
+            // 
+            this.colBaseFreightRate.FieldName = "BaseFreightRate";
+            this.colBaseFreightRate.Name = "colBaseFreightRate";
+            // 
+            // colFuelSurcharge
+            // 
+            this.colFuelSurcharge.FieldName = "FuelSurcharge";
+            this.colFuelSurcharge.Name = "colFuelSurcharge";
+            // 
+            // colStopOver1
+            // 
+            this.colStopOver1.FieldName = "StopOver1";
+            this.colStopOver1.Name = "colStopOver1";
+            this.colStopOver1.Visible = true;
+            this.colStopOver1.VisibleIndex = 10;
+            // 
+            // colStopOver2
+            // 
+            this.colStopOver2.FieldName = "StopOver2";
+            this.colStopOver2.Name = "colStopOver2";
+            // 
+            // colFuelSurchargeRate
+            // 
+            this.colFuelSurchargeRate.FieldName = "FuelSurchargeRate";
+            this.colFuelSurchargeRate.Name = "colFuelSurchargeRate";
+            // 
+            // colAdhocRate
+            // 
+            this.colAdhocRate.FieldName = "AdhocRate";
+            this.colAdhocRate.Name = "colAdhocRate";
+            // 
+            // coldemurrage
+            // 
+            this.coldemurrage.FieldName = "demurrage";
+            this.coldemurrage.Name = "coldemurrage";
+            // 
+            // colDemurageCode
+            // 
+            this.colDemurageCode.FieldName = "DemurageCode";
+            this.colDemurageCode.Name = "colDemurageCode";
+            // 
+            // colInvoiceNumber
+            // 
+            this.colInvoiceNumber.FieldName = "InvoiceNumber";
+            this.colInvoiceNumber.Name = "colInvoiceNumber";
+            // 
+            // colInvoiceDate
+            // 
+            this.colInvoiceDate.FieldName = "InvoiceDate";
+            this.colInvoiceDate.Name = "colInvoiceDate";
+            // 
+            // colInvoicePath
+            // 
+            this.colInvoicePath.FieldName = "InvoicePath";
+            this.colInvoicePath.Name = "colInvoicePath";
+            // 
+            // colLine
+            // 
+            this.colLine.FieldName = "Line";
+            this.colLine.Name = "colLine";
+            this.colLine.Visible = true;
+            this.colLine.VisibleIndex = 11;
+            // 
+            // colInvoiceEDI
+            // 
+            this.colInvoiceEDI.FieldName = "InvoiceEDI";
+            this.colInvoiceEDI.Name = "colInvoiceEDI";
+            // 
+            // colShipperAccount
+            // 
+            this.colShipperAccount.FieldName = "ShipperAccount";
+            this.colShipperAccount.Name = "colShipperAccount";
+            // 
+            // colReroutingSurcharge
+            // 
+            this.colReroutingSurcharge.FieldName = "ReroutingSurcharge";
+            this.colReroutingSurcharge.Name = "colReroutingSurcharge";
+            // 
+            // colWharehousing
+            // 
+            this.colWharehousing.FieldName = "Wharehousing";
+            this.colWharehousing.Name = "colWharehousing";
+            // 
+            // colRedelivery
+            // 
+            this.colRedelivery.FieldName = "Redelivery";
+            this.colRedelivery.Name = "colRedelivery";
+            // 
+            // colCancellation
+            // 
+            this.colCancellation.FieldName = "Cancellation";
+            this.colCancellation.Name = "colCancellation";
+            // 
+            // colBillingAccount
+            // 
+            this.colBillingAccount.FieldName = "BillingAccount";
+            this.colBillingAccount.Name = "colBillingAccount";
+            // 
+            // colAdHocSurcharge
+            // 
+            this.colAdHocSurcharge.FieldName = "AdHocSurcharge";
+            this.colAdHocSurcharge.Name = "colAdHocSurcharge";
+            // 
+            // colDriverDententionAtUnloading
+            // 
+            this.colDriverDententionAtUnloading.FieldName = "DriverDententionAtUnloading";
+            this.colDriverDententionAtUnloading.Name = "colDriverDententionAtUnloading";
+            // 
+            // coleShipCo
+            // 
+            this.coleShipCo.FieldName = "eShipCo";
+            this.coleShipCo.Name = "coleShipCo";
+            // 
+            // colCorridor
+            // 
+            this.colCorridor.FieldName = "Corridor";
+            this.colCorridor.Name = "colCorridor";
+            this.colCorridor.Visible = true;
+            this.colCorridor.VisibleIndex = 12;
+            // 
+            // colCoS
+            // 
+            this.colCoS.FieldName = "CoS";
+            this.colCoS.Name = "colCoS";
+            // 
+            // colCustomClearance
+            // 
+            this.colCustomClearance.FieldName = "CustomClearance";
+            this.colCustomClearance.Name = "colCustomClearance";
+            // 
+            // colP44ToUpload
+            // 
+            this.colP44ToUpload.FieldName = "P44ToUpload";
+            this.colP44ToUpload.Name = "colP44ToUpload";
+            // 
+            // colP44Uploaded
+            // 
+            this.colP44Uploaded.FieldName = "P44Uploaded";
+            this.colP44Uploaded.Name = "colP44Uploaded";
+            // 
+            // colP44ShipmentID
+            // 
+            this.colP44ShipmentID.FieldName = "P44ShipmentID";
+            this.colP44ShipmentID.Name = "colP44ShipmentID";
+            this.colP44ShipmentID.Visible = true;
+            this.colP44ShipmentID.VisibleIndex = 13;
+            // 
+            // colP44LastUpdate
+            // 
+            this.colP44LastUpdate.FieldName = "P44LastUpdate";
+            this.colP44LastUpdate.Name = "colP44LastUpdate";
+            this.colP44LastUpdate.Visible = true;
+            this.colP44LastUpdate.VisibleIndex = 14;
+            // 
+            // colP44StatusCode
+            // 
+            this.colP44StatusCode.FieldName = "P44StatusCode";
+            this.colP44StatusCode.Name = "colP44StatusCode";
+            // 
+            // colP44ReasonCode
+            // 
+            this.colP44ReasonCode.FieldName = "P44ReasonCode";
+            this.colP44ReasonCode.Name = "colP44ReasonCode";
+            // 
+            // colP44ReasonDescription
+            // 
+            this.colP44ReasonDescription.FieldName = "P44ReasonDescription";
+            this.colP44ReasonDescription.Name = "colP44ReasonDescription";
+            this.colP44ReasonDescription.Visible = true;
+            this.colP44ReasonDescription.VisibleIndex = 15;
+            // 
+            // colP44TrackTrailer
+            // 
+            this.colP44TrackTrailer.FieldName = "P44TrackTrailer";
+            this.colP44TrackTrailer.Name = "colP44TrackTrailer";
+            // 
+            // colP44TrackingStarted
+            // 
+            this.colP44TrackingStarted.FieldName = "P44TrackingStarted";
+            this.colP44TrackingStarted.Name = "colP44TrackingStarted";
+            // 
+            // colP44TrackingCompleted
+            // 
+            this.colP44TrackingCompleted.FieldName = "P44TrackingCompleted";
+            this.colP44TrackingCompleted.Name = "colP44TrackingCompleted";
+            // 
+            // colP44TrackingError
+            // 
+            this.colP44TrackingError.FieldName = "P44TrackingError";
+            this.colP44TrackingError.Name = "colP44TrackingError";
+            // 
+            // colP44UploadError
+            // 
+            this.colP44UploadError.FieldName = "P44UploadError";
+            this.colP44UploadError.Name = "colP44UploadError";
+            // 
+            // colP44Latitude
+            // 
+            this.colP44Latitude.FieldName = "P44Latitude";
+            this.colP44Latitude.Name = "colP44Latitude";
+            this.colP44Latitude.Visible = true;
+            this.colP44Latitude.VisibleIndex = 16;
+            // 
+            // colP44Longitude
+            // 
+            this.colP44Longitude.FieldName = "P44Longitude";
+            this.colP44Longitude.Name = "colP44Longitude";
+            this.colP44Longitude.Visible = true;
+            this.colP44Longitude.VisibleIndex = 17;
+            // 
+            // colP44CurrentStop
+            // 
+            this.colP44CurrentStop.FieldName = "P44CurrentStop";
+            this.colP44CurrentStop.Name = "colP44CurrentStop";
+            // 
+            // fluentFormDefaultManager1
+            // 
+            this.fluentFormDefaultManager1.DockingEnabled = false;
+            this.fluentFormDefaultManager1.Form = this;
+            this.fluentFormDefaultManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.skinBarSubItem1,
+            this.skinPaletteDropDownButtonItem1,
+            this.barHeaderItem1});
+            this.fluentFormDefaultManager1.MaxItemId = 4;
+            // 
+            // skinBarSubItem1
+            // 
+            this.skinBarSubItem1.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.skinBarSubItem1.Id = 1;
+            this.skinBarSubItem1.Name = "skinBarSubItem1";
+            // 
+            // skinPaletteDropDownButtonItem1
+            // 
+            this.skinPaletteDropDownButtonItem1.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.skinPaletteDropDownButtonItem1.Id = 2;
+            this.skinPaletteDropDownButtonItem1.Name = "skinPaletteDropDownButtonItem1";
+            this.skinPaletteDropDownButtonItem1.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionInMenu;
+            // 
+            // barHeaderItem1
+            // 
+            this.barHeaderItem1.Appearance.FontStyleDelta = System.Drawing.FontStyle.Bold;
+            this.barHeaderItem1.Appearance.ForeColor = DevExpress.LookAndFeel.DXSkinColors.ForeColors.Information;
+            this.barHeaderItem1.Appearance.Options.UseFont = true;
+            this.barHeaderItem1.Appearance.Options.UseForeColor = true;
+            this.barHeaderItem1.Appearance.Options.UseTextOptions = true;
+            this.barHeaderItem1.Appearance.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisPath;
+            this.barHeaderItem1.Caption = "Connected";
+            this.barHeaderItem1.Id = 3;
+            this.barHeaderItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barHeaderItem1.ImageOptions.Image")));
+            this.barHeaderItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barHeaderItem1.ImageOptions.LargeImage")));
+            this.barHeaderItem1.Name = "barHeaderItem1";
+            // 
+            // accordionControl1
+            // 
+            this.accordionControl1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.accordionControl1.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.accordionControlElement1});
+            this.accordionControl1.Location = new System.Drawing.Point(0, 31);
+            this.accordionControl1.Name = "accordionControl1";
+            this.accordionControl1.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Touch;
+            this.accordionControl1.Size = new System.Drawing.Size(260, 470);
+            this.accordionControl1.TabIndex = 1;
+            this.accordionControl1.ViewType = DevExpress.XtraBars.Navigation.AccordionControlViewType.HamburgerMenu;
+            // 
+            // accordionControlElement1
+            // 
+            this.accordionControlElement1.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.accordionControlElement6,
+            this.accordionControlElement7,
+            this.accordionControlElement8,
+            this.accordionControlSeparator1,
+            this.accordionControlElement9,
+            this.accordionControlElement10,
+            this.accordionControlSeparator2,
+            this.accordionControlElement11});
+            this.accordionControlElement1.Expanded = true;
+            this.accordionControlElement1.Name = "accordionControlElement1";
+            this.accordionControlElement1.Text = "Charging Orders";
+            // 
+            // accordionControlElement6
+            // 
+            this.accordionControlElement6.Name = "accordionControlElement6";
+            this.accordionControlElement6.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement6.Text = "Create a Charging Order";
+            this.accordionControlElement6.Click += new System.EventHandler(this.accordionControlElement6_Click);
+            // 
+            // accordionControlElement7
+            // 
+            this.accordionControlElement7.Name = "accordionControlElement7";
+            this.accordionControlElement7.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement7.Text = "Duplicate a Charging Order";
+            this.accordionControlElement7.Click += new System.EventHandler(this.accordionControlElement7_Click);
+            // 
+            // accordionControlElement8
+            // 
+            this.accordionControlElement8.Name = "accordionControlElement8";
+            this.accordionControlElement8.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement8.Text = "Modify a Charging Order";
+            // 
+            // fluentDesignFormControl1
+            // 
+            this.fluentDesignFormControl1.FluentDesignForm = this;
+            this.fluentDesignFormControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.skinBarSubItem1,
+            this.skinPaletteDropDownButtonItem1,
+            this.barHeaderItem1});
+            this.fluentDesignFormControl1.Location = new System.Drawing.Point(0, 0);
+            this.fluentDesignFormControl1.Manager = this.fluentFormDefaultManager1;
+            this.fluentDesignFormControl1.Name = "fluentDesignFormControl1";
+            this.fluentDesignFormControl1.Size = new System.Drawing.Size(1074, 31);
+            this.fluentDesignFormControl1.TabIndex = 2;
+            this.fluentDesignFormControl1.TabStop = false;
+            this.fluentDesignFormControl1.TitleItemLinks.Add(this.skinBarSubItem1);
+            this.fluentDesignFormControl1.TitleItemLinks.Add(this.skinPaletteDropDownButtonItem1);
+            this.fluentDesignFormControl1.TitleItemLinks.Add(this.barHeaderItem1);
+            // 
+            // newCOTableAdapter1
+            // 
+            this.newCOTableAdapter1.ClearBeforeFill = true;
+            // 
+            // accordionControlElement2
+            // 
+            this.accordionControlElement2.Name = "accordionControlElement2";
+            this.accordionControlElement2.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement2.Text = "Start from Scratch";
+            // 
+            // accordionControlElement3
+            // 
+            this.accordionControlElement3.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.accordionControlElement2,
+            this.accordionControlElement4});
+            this.accordionControlElement3.Name = "accordionControlElement3";
+            this.accordionControlElement3.Text = "Create a Charging Order";
+            // 
+            // accordionControlElement4
+            // 
+            this.accordionControlElement4.Name = "accordionControlElement4";
+            this.accordionControlElement4.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement4.Text = "Clone a existing CO";
+            // 
+            // accordionControlElement5
+            // 
+            this.accordionControlElement5.Name = "accordionControlElement5";
+            this.accordionControlElement5.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement5.Text = "Modify a CO";
+            // 
+            // accordionControlSeparator1
+            // 
+            this.accordionControlSeparator1.Name = "accordionControlSeparator1";
+            // 
+            // accordionControlElement9
+            // 
+            this.accordionControlElement9.Name = "accordionControlElement9";
+            this.accordionControlElement9.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement9.Text = "Create a Client";
+            // 
+            // accordionControlElement10
+            // 
+            this.accordionControlElement10.Name = "accordionControlElement10";
+            this.accordionControlElement10.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement10.Text = "List Clients";
+            // 
+            // accordionControlSeparator2
+            // 
+            this.accordionControlSeparator2.Name = "accordionControlSeparator2";
+            // 
+            // accordionControlElement11
+            // 
+            this.accordionControlElement11.Name = "accordionControlElement11";
+            this.accordionControlElement11.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement11.Text = "Generate a Report";
+            // 
+            // Orders
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1074, 501);
+            this.ControlContainer = this.fluentDesignFormContainer1;
+            this.Controls.Add(this.fluentDesignFormContainer1);
+            this.Controls.Add(this.accordionControl1);
+            this.Controls.Add(this.fluentDesignFormControl1);
+            this.FluentDesignFormControl = this.fluentDesignFormControl1;
+            this.IconOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("Orders.IconOptions.SvgImage")));
+            this.Name = "Orders";
+            this.NavigationControl = this.accordionControl1;
+            this.Text = "Orders";
+            this.fluentDesignFormContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.newCOBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.axsDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fluentFormDefaultManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).EndInit();
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+        private DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormContainer fluentDesignFormContainer1;
+        private DevExpress.XtraBars.Navigation.AccordionControl accordionControl1;
+        private DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl fluentDesignFormControl1;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement1;
+        private DevExpress.XtraBars.FluentDesignSystem.FluentFormDefaultManager fluentFormDefaultManager1;
+        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private System.Windows.Forms.BindingSource newCOBindingSource;
+        private axsDataSet axsDataSet1;
+        private axsDataSetTableAdapters.NewCOTableAdapter newCOTableAdapter1;
+        private DevExpress.XtraGrid.Columns.GridColumn colIdCO;
+        private DevExpress.XtraGrid.Columns.GridColumn colNewCO;
+        private DevExpress.XtraGrid.Columns.GridColumn colDateCreation;
+        private DevExpress.XtraGrid.Columns.GridColumn colDateUpdate;
+        private DevExpress.XtraGrid.Columns.GridColumn colIdContractHolder;
+        private DevExpress.XtraGrid.Columns.GridColumn colContractHolderReference;
+        private DevExpress.XtraGrid.Columns.GridColumn colCMR;
+        private DevExpress.XtraGrid.Columns.GridColumn colSalesPrice;
+        private DevExpress.XtraGrid.Columns.GridColumn colConversionRate;
+        private DevExpress.XtraGrid.Columns.GridColumn colSalesPriceCurrency;
+        private DevExpress.XtraGrid.Columns.GridColumn colSalesPriceInCurrency;
+        private DevExpress.XtraGrid.Columns.GridColumn colSalesPriceVATCode;
+        private DevExpress.XtraGrid.Columns.GridColumn colSalesPriceVATRate;
+        private DevExpress.XtraGrid.Columns.GridColumn colSalesPriceVATAmount;
+        private DevExpress.XtraGrid.Columns.GridColumn colContractHolderPaymentTerm;
+        private DevExpress.XtraGrid.Columns.GridColumn colContractHolderPaymentTermOEM;
+        private DevExpress.XtraGrid.Columns.GridColumn colComment;
+        private DevExpress.XtraGrid.Columns.GridColumn colInvoiceInGBP;
+        private DevExpress.XtraGrid.Columns.GridColumn colAllRisksInsurance;
+        private DevExpress.XtraGrid.Columns.GridColumn colContractHolderEmail;
+        private DevExpress.XtraGrid.Columns.GridColumn colContractHolderTel;
+        private DevExpress.XtraGrid.Columns.GridColumn colContractHolderMob;
+        private DevExpress.XtraGrid.Columns.GridColumn colTrailerNumber;
+        private DevExpress.XtraGrid.Columns.GridColumn colTrailerTypeAutorised;
+        private DevExpress.XtraGrid.Columns.GridColumn colInterModal;
+        private DevExpress.XtraGrid.Columns.GridColumn colInvoiced;
+        private DevExpress.XtraGrid.Columns.GridColumn colUserCreation;
+        private DevExpress.XtraGrid.Columns.GridColumn colUserUpdate;
+        private DevExpress.XtraGrid.Columns.GridColumn colUserOwner;
+        private DevExpress.XtraGrid.Columns.GridColumn colActif;
+        private DevExpress.XtraGrid.Columns.GridColumn colXroute;
+        private DevExpress.XtraGrid.Columns.GridColumn colTripType2;
+        private DevExpress.XtraGrid.Columns.GridColumn colBaseFreightRate;
+        private DevExpress.XtraGrid.Columns.GridColumn colFuelSurcharge;
+        private DevExpress.XtraGrid.Columns.GridColumn colStopOver1;
+        private DevExpress.XtraGrid.Columns.GridColumn colStopOver2;
+        private DevExpress.XtraGrid.Columns.GridColumn colFuelSurchargeRate;
+        private DevExpress.XtraGrid.Columns.GridColumn colAdhocRate;
+        private DevExpress.XtraGrid.Columns.GridColumn coldemurrage;
+        private DevExpress.XtraGrid.Columns.GridColumn colDemurageCode;
+        private DevExpress.XtraGrid.Columns.GridColumn colInvoiceNumber;
+        private DevExpress.XtraGrid.Columns.GridColumn colInvoiceDate;
+        private DevExpress.XtraGrid.Columns.GridColumn colInvoicePath;
+        private DevExpress.XtraGrid.Columns.GridColumn colLine;
+        private DevExpress.XtraGrid.Columns.GridColumn colInvoiceEDI;
+        private DevExpress.XtraGrid.Columns.GridColumn colShipperAccount;
+        private DevExpress.XtraGrid.Columns.GridColumn colReroutingSurcharge;
+        private DevExpress.XtraGrid.Columns.GridColumn colWharehousing;
+        private DevExpress.XtraGrid.Columns.GridColumn colRedelivery;
+        private DevExpress.XtraGrid.Columns.GridColumn colCancellation;
+        private DevExpress.XtraGrid.Columns.GridColumn colBillingAccount;
+        private DevExpress.XtraGrid.Columns.GridColumn colAdHocSurcharge;
+        private DevExpress.XtraGrid.Columns.GridColumn colDriverDententionAtUnloading;
+        private DevExpress.XtraGrid.Columns.GridColumn coleShipCo;
+        private DevExpress.XtraGrid.Columns.GridColumn colCorridor;
+        private DevExpress.XtraGrid.Columns.GridColumn colCoS;
+        private DevExpress.XtraGrid.Columns.GridColumn colCustomClearance;
+        private DevExpress.XtraGrid.Columns.GridColumn colP44ToUpload;
+        private DevExpress.XtraGrid.Columns.GridColumn colP44Uploaded;
+        private DevExpress.XtraGrid.Columns.GridColumn colP44ShipmentID;
+        private DevExpress.XtraGrid.Columns.GridColumn colP44LastUpdate;
+        private DevExpress.XtraGrid.Columns.GridColumn colP44StatusCode;
+        private DevExpress.XtraGrid.Columns.GridColumn colP44ReasonCode;
+        private DevExpress.XtraGrid.Columns.GridColumn colP44ReasonDescription;
+        private DevExpress.XtraGrid.Columns.GridColumn colP44TrackTrailer;
+        private DevExpress.XtraGrid.Columns.GridColumn colP44TrackingStarted;
+        private DevExpress.XtraGrid.Columns.GridColumn colP44TrackingCompleted;
+        private DevExpress.XtraGrid.Columns.GridColumn colP44TrackingError;
+        private DevExpress.XtraGrid.Columns.GridColumn colP44UploadError;
+        private DevExpress.XtraGrid.Columns.GridColumn colP44Latitude;
+        private DevExpress.XtraGrid.Columns.GridColumn colP44Longitude;
+        private DevExpress.XtraGrid.Columns.GridColumn colP44CurrentStop;
+        private DevExpress.XtraBars.SkinBarSubItem skinBarSubItem1;
+        private DevExpress.XtraBars.SkinPaletteDropDownButtonItem skinPaletteDropDownButtonItem1;
+        private DevExpress.XtraBars.BarHeaderItem barHeaderItem1;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement2;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement3;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement4;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement5;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement6;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement7;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement8;
+        private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator1;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement9;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement10;
+        private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator2;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement11;
+    }
+}

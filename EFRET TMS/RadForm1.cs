@@ -44,5 +44,11 @@ namespace EFRET_TMS
         {
 
         }
+        //Orders
+        private void accordionControlElement1_Click(object sender, EventArgs e)
+        {
+            Orders order = new Orders();
+            order.Show();
+        }
     }
 }

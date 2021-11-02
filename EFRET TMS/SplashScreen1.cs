@@ -36,8 +36,10 @@ namespace EFRET_TMS
                 if (version != AssemblyVersion)
                 {
                     labelStatus.Text = "Outdated TMS... Updating Client";
-                    RadMessageBox.Show(
-                        "You are running a outdated version of the TMS.\nClick OK to run the updater.");
+                    /*
+                     * We hit the update function. Call from the distribution network folder
+                     * EFRET
+                     */
                 }
                 else
                 {

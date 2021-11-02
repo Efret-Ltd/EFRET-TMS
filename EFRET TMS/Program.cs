@@ -80,13 +80,10 @@ namespace EFRET_TMS
                 channel.Subscribe("greeting", (message) =>
                 {
                     SentrySdk.CaptureMessage(message.Data.ToString());
-                });
-
-
-                ///
-                Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new RadForm1());
+                }); 
+                Application.EnableVisualStyles(); 
+                Application.SetCompatibleTextRenderingDefault(false);
+                Application.Run(new RadForm1());
             }
         }
     }
