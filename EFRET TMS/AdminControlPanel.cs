@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Windows.Forms;
-using DevExpress.Utils.Extensions;
 
 namespace EFRET_TMS
 {
@@ -19,7 +17,7 @@ namespace EFRET_TMS
 
         private void accordionControlElement3_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void AdminControlPanel_Load(object sender, EventArgs e)
@@ -34,23 +32,23 @@ namespace EFRET_TMS
            CDUC.Dock = DockStyle.Fill;
            fluentDesignFormContainer1.Controls.Add(CDUC);
             */
-       }
+        }
 
-       private void accordionControlElement16_Click(object sender, EventArgs e)
-       {
+        private void accordionControlElement16_Click(object sender, EventArgs e)
+        {
 
-       }
+        }
 
-       private void accordionControlElement19_Click(object sender, EventArgs e)
-       {
+        private void accordionControlElement19_Click(object sender, EventArgs e)
+        {
 
-       }
+        }
 
 
-       //User Groups
-       private void accordionControlElement9_Click(object sender, EventArgs e)
-       {
-           //TODO: Update user Groups UserControl
+        //User Groups
+        private void accordionControlElement9_Click(object sender, EventArgs e)
+        {
+            //TODO: Update user Groups UserControl
             fluentDesignFormContainer1.Controls.Clear();
 
         }
@@ -58,7 +56,7 @@ namespace EFRET_TMS
 
         //User Roles
         private void accordionControlElement10_Click(object sender, EventArgs e)
-          {
+        {
             //TODO: Update Roles UserControl
             fluentDesignFormContainer1.Controls.Clear();
         }
@@ -71,7 +69,7 @@ namespace EFRET_TMS
         //TODO: Update Active Users UserControl
         private void accordionControlElement14_Click(object sender, EventArgs e)
         {
-           fluentDesignFormContainer1.Controls.Clear();
+            fluentDesignFormContainer1.Controls.Clear();
         }
     }
 }

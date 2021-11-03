@@ -1,10 +1,8 @@
-﻿using System;
-using System.Linq;
-using System.Windows.Forms;
-using IO.Ably;
+﻿using IO.Ably;
 using IO.Ably.Realtime;
 using Sentry;
-
+using System;
+using System.Windows.Forms;
 namespace EFRET_TMS
 {
     static class Program
@@ -15,6 +13,10 @@ namespace EFRET_TMS
         [STAThread]
         static void Main()
         {
+            /*
+             * Before we do anything, we start a ably sentry instance to log all future errors.
+             * We pipe Ably events into sentry to log traffic between clients.
+             */
             var user = Environment.UserName;
             var ably = new AblyRealtime("27XrvA.i-tlMA:o2F5CnEta2QfQbOf");
             using (SentrySdk.Init(o =>
@@ -27,8 +29,7 @@ namespace EFRET_TMS
                 o.TracesSampleRate = 1.0;
             }))
             {
-                ///Networking Stuff
-                /// 
+                // Networking Stuff
                 // We hook an on connected event.
                 ably.Connection.On(ConnectionEvent.Connected, args =>
                 {
@@ -80,8 +81,10 @@ namespace EFRET_TMS
                 channel.Subscribe("greeting", (message) =>
                 {
                     SentrySdk.CaptureMessage(message.Data.ToString());
-                }); 
-                Application.EnableVisualStyles(); 
+                });
+
+                //We now launch the RadForm with a splashscreen manager.
+                Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
                 Application.Run(new RadForm1());
             }

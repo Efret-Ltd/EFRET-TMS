@@ -1,9 +1,9 @@
 ﻿using DevExpress.XtraSplashScreen;
 using System;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Reflection;
-using Telerik.WinControls;
 
 namespace EFRET_TMS
 {
@@ -29,25 +29,39 @@ namespace EFRET_TMS
 
         public void versionCheck()
         {
-            int v = -1;
+            // We do a self check to see if we are running the latest TMS.
             String[] Lversion = File.ReadAllLines(@"\\efret-app-01\Database\efret\dist\version.txt");
             foreach (string version in Lversion)
             {
                 if (version != AssemblyVersion)
                 {
-                    labelStatus.Text = "Outdated TMS... Updating Client";
+                    labelStatus.ForeColor = Color.Red;
+                    labelStatus.Text = "[ERROR 101] Outdated TMS... Updating Client";
                     /*
                      * We hit the update function. Call from the distribution network folder
                      * EFRET
                      */
+                    //  installAXS();
                 }
                 else
                 {
-                    labelStatus.Text = "Loading User Permissions";
+                    labelStatus.BackColor = Color.Green;
+                    labelStatus.Text = "[SUCCESS] Loading User Permissions";
+
                 }
 
             }
 
+        }
+
+        public void installAXS()
+        {
+            labelStatus.Text = "Installing/Updating AXS";
+            Process process = new Process();
+            process.StartInfo.FileName = "msiexec.exe";
+            process.StartInfo.Arguments = @"/i \\VWIN10\Development\Deployment\Testing\Installer\axs\install_AXS.msi";
+            process.Start();
+            labelStatus.Text = "AXS is installed!";
         }
 
 

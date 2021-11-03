@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
+using System.Data.SqlClient;
 using System.Windows.Forms;
-using Telerik.WinControls;
-using Telerik.WinControls.UI;
 
 namespace EFRET_TMS
 {
@@ -16,16 +9,41 @@ namespace EFRET_TMS
         public RadForm1()
         {
             InitializeComponent();
-            this.Text = "Welcome to EFRET "+ Environment.UserName;
+            this.Text = "Welcome to EFRET " + Environment.UserName;
+            getRate();
         }
 
+        public void getRate()
+        {
+            string rate = null;
+            SqlConnection conn =
+                new SqlConnection(
+                    @"Data Source=EFRET-APP-01\EFRET;Database=axs;Integrated Security=sspi;Connection Timeout=5;");
+            conn.Open();
+
+            SqlCommand command =
+                new SqlCommand(
+                    "SELECT TOP 1 [ConversionRate] FROM [axs].[dbo].[ParamConversionRate] ORDER BY [ConversionDate] desc",
+                    conn);
+            using (SqlDataReader reader = command.ExecuteReader())
+            {
+                if (reader.Read())
+                {
+                    rate = string.Format("{0}", reader["ConversionRate"]);
+                }
+            }
+
+            conn.Close();
+            accordionControlElement10.Text = "Current Rate: " + rate;
+        }
 
         private void accordionControlElement8_Click(object sender, EventArgs e)
         {
             this.Close();
             Application.Exit();
         }
-        //Adminisrtation
+
+        //Administration
         private void accordionControlElement2_Click(object sender, EventArgs e)
         {
             AdminControlPanel ACP = new AdminControlPanel();
@@ -44,11 +62,43 @@ namespace EFRET_TMS
         {
 
         }
+
         //Orders
         private void accordionControlElement1_Click(object sender, EventArgs e)
         {
             Orders order = new Orders();
             order.Show();
+        }
+
+        private void accordionControlElement10_Click(object sender, EventArgs e)
+        {
+            ShowRatesPage ratesPage = new ShowRatesPage();
+            ratesPage.Show();
+        }
+        protected override void OnLostFocus(EventArgs e)
+        {
+            base.OnLostFocus(e);
+            this.Focus();
+        }
+
+        private void onRadButtonElementPress()
+        {
+
+            var RadButtonElement1 = radDesktopAlert1.ButtonItems[0];
+
+        }
+
+        //Invoicing
+        private void accordionControlElement11_Click(object sender, EventArgs e)
+        {
+            radDesktopAlert1.CaptionText = "<html><strong>This module is locked while in use.";
+            radDesktopAlert1.Show();
+        }
+        //Transport Planning
+        private void accordionControlElement3_Click(object sender, EventArgs e)
+        {
+            TP tp = new TP();
+            tp.Show();
         }
     }
 }

@@ -30,12 +30,35 @@ namespace EFRET_TMS
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Orders));
             this.fluentDesignFormContainer1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormContainer();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.newCOBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataTable1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.axsDataSet1 = new EFRET_TMS.axsDataSet();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.fluentFormDefaultManager1 = new DevExpress.XtraBars.FluentDesignSystem.FluentFormDefaultManager(this.components);
+            this.skinBarSubItem1 = new DevExpress.XtraBars.SkinBarSubItem();
+            this.skinPaletteDropDownButtonItem1 = new DevExpress.XtraBars.SkinPaletteDropDownButtonItem();
+            this.barHeaderItem1 = new DevExpress.XtraBars.BarHeaderItem();
+            this.newCOBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.accordionControl1 = new DevExpress.XtraBars.Navigation.AccordionControl();
+            this.accordionControlElement1 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement6 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement7 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement8 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlSeparator1 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
+            this.accordionControlElement9 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement10 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlSeparator2 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
+            this.accordionControlElement11 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.fluentDesignFormControl1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
+            this.newCOTableAdapter1 = new EFRET_TMS.axsDataSetTableAdapters.NewCOTableAdapter();
+            this.accordionControlElement2 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement3 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement4 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement5 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.dataTable1TableAdapter = new EFRET_TMS.axsDataSetTableAdapters.DataTable1TableAdapter();
             this.colIdCO = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNewCO = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDateCreation = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -108,32 +131,13 @@ namespace EFRET_TMS
             this.colP44Latitude = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colP44Longitude = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colP44CurrentStop = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.fluentFormDefaultManager1 = new DevExpress.XtraBars.FluentDesignSystem.FluentFormDefaultManager(this.components);
-            this.skinBarSubItem1 = new DevExpress.XtraBars.SkinBarSubItem();
-            this.skinPaletteDropDownButtonItem1 = new DevExpress.XtraBars.SkinPaletteDropDownButtonItem();
-            this.barHeaderItem1 = new DevExpress.XtraBars.BarHeaderItem();
-            this.accordionControl1 = new DevExpress.XtraBars.Navigation.AccordionControl();
-            this.accordionControlElement1 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElement6 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElement7 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElement8 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.fluentDesignFormControl1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
-            this.newCOTableAdapter1 = new EFRET_TMS.axsDataSetTableAdapters.NewCOTableAdapter();
-            this.accordionControlElement2 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElement3 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElement4 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElement5 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlSeparator1 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
-            this.accordionControlElement9 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElement10 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlSeparator2 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
-            this.accordionControlElement11 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.fluentDesignFormContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.newCOBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.axsDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentFormDefaultManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.newCOBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).BeginInit();
             this.SuspendLayout();
@@ -151,6 +155,9 @@ namespace EFRET_TMS
             // 
             this.gridControl1.DataSource = this.newCOBindingSource;
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            gridLevelNode1.RelationName = "In Transit";
+            this.gridControl1.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
+            gridLevelNode1});
             this.gridControl1.Location = new System.Drawing.Point(0, 0);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.MenuManager = this.fluentFormDefaultManager1;
@@ -160,11 +167,10 @@ namespace EFRET_TMS
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
-            // newCOBindingSource
+            // dataTable1BindingSource
             // 
-            this.newCOBindingSource.DataMember = "NewCO";
-            this.newCOBindingSource.DataSource = this.axsDataSet1;
-            this.newCOBindingSource.Sort = "DateUpdate DESC";
+            this.dataTable1BindingSource.DataMember = "DataTable1";
+            this.dataTable1BindingSource.DataSource = this.axsDataSet1;
             // 
             // axsDataSet1
             // 
@@ -248,48 +254,216 @@ namespace EFRET_TMS
             this.colP44CurrentStop});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.AllowIncrementalSearch = true;
+            this.gridView1.OptionsBehavior.Editable = false;
+            this.gridView1.OptionsView.ShowPreviewRowLines = DevExpress.Utils.DefaultBoolean.True;
+            this.gridView1.PreviewFieldName = "P44ShipmentID";
+            // 
+            // fluentFormDefaultManager1
+            // 
+            this.fluentFormDefaultManager1.DockingEnabled = false;
+            this.fluentFormDefaultManager1.Form = this;
+            this.fluentFormDefaultManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.skinBarSubItem1,
+            this.skinPaletteDropDownButtonItem1,
+            this.barHeaderItem1});
+            this.fluentFormDefaultManager1.MaxItemId = 4;
+            // 
+            // skinBarSubItem1
+            // 
+            this.skinBarSubItem1.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.skinBarSubItem1.Id = 1;
+            this.skinBarSubItem1.Name = "skinBarSubItem1";
+            // 
+            // skinPaletteDropDownButtonItem1
+            // 
+            this.skinPaletteDropDownButtonItem1.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.skinPaletteDropDownButtonItem1.Id = 2;
+            this.skinPaletteDropDownButtonItem1.Name = "skinPaletteDropDownButtonItem1";
+            this.skinPaletteDropDownButtonItem1.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionInMenu;
+            // 
+            // barHeaderItem1
+            // 
+            this.barHeaderItem1.Appearance.FontStyleDelta = System.Drawing.FontStyle.Bold;
+            this.barHeaderItem1.Appearance.ForeColor = DevExpress.LookAndFeel.DXSkinColors.ForeColors.Information;
+            this.barHeaderItem1.Appearance.Options.UseFont = true;
+            this.barHeaderItem1.Appearance.Options.UseForeColor = true;
+            this.barHeaderItem1.Appearance.Options.UseTextOptions = true;
+            this.barHeaderItem1.Appearance.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisPath;
+            this.barHeaderItem1.Caption = "Connected";
+            this.barHeaderItem1.Id = 3;
+            this.barHeaderItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barHeaderItem1.ImageOptions.Image")));
+            this.barHeaderItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barHeaderItem1.ImageOptions.LargeImage")));
+            this.barHeaderItem1.Name = "barHeaderItem1";
+            this.barHeaderItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barHeaderItem1_ItemClick);
+            // 
+            // newCOBindingSource
+            // 
+            this.newCOBindingSource.DataMember = "NewCO";
+            this.newCOBindingSource.DataSource = this.axsDataSet1;
+            this.newCOBindingSource.Sort = "DateUpdate DESC";
+            // 
+            // accordionControl1
+            // 
+            this.accordionControl1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.accordionControl1.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.accordionControlElement1});
+            this.accordionControl1.Location = new System.Drawing.Point(0, 31);
+            this.accordionControl1.Name = "accordionControl1";
+            this.accordionControl1.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Touch;
+            this.accordionControl1.Size = new System.Drawing.Size(260, 470);
+            this.accordionControl1.TabIndex = 1;
+            this.accordionControl1.ViewType = DevExpress.XtraBars.Navigation.AccordionControlViewType.HamburgerMenu;
+            // 
+            // accordionControlElement1
+            // 
+            this.accordionControlElement1.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.accordionControlElement6,
+            this.accordionControlElement7,
+            this.accordionControlElement8,
+            this.accordionControlSeparator1,
+            this.accordionControlElement9,
+            this.accordionControlElement10,
+            this.accordionControlSeparator2,
+            this.accordionControlElement11});
+            this.accordionControlElement1.Expanded = true;
+            this.accordionControlElement1.Name = "accordionControlElement1";
+            this.accordionControlElement1.Text = "Charging Orders";
+            // 
+            // accordionControlElement6
+            // 
+            this.accordionControlElement6.Name = "accordionControlElement6";
+            this.accordionControlElement6.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement6.Text = "Create a Charging Order";
+            this.accordionControlElement6.Click += new System.EventHandler(this.accordionControlElement6_Click);
+            // 
+            // accordionControlElement7
+            // 
+            this.accordionControlElement7.Name = "accordionControlElement7";
+            this.accordionControlElement7.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement7.Text = "Duplicate a Charging Order";
+            this.accordionControlElement7.Click += new System.EventHandler(this.accordionControlElement7_Click);
+            // 
+            // accordionControlElement8
+            // 
+            this.accordionControlElement8.Name = "accordionControlElement8";
+            this.accordionControlElement8.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement8.Text = "Modify a Charging Order";
+            // 
+            // accordionControlSeparator1
+            // 
+            this.accordionControlSeparator1.Name = "accordionControlSeparator1";
+            // 
+            // accordionControlElement9
+            // 
+            this.accordionControlElement9.Name = "accordionControlElement9";
+            this.accordionControlElement9.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement9.Text = "Create a Client";
+            // 
+            // accordionControlElement10
+            // 
+            this.accordionControlElement10.Name = "accordionControlElement10";
+            this.accordionControlElement10.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement10.Text = "List Clients";
+            // 
+            // accordionControlSeparator2
+            // 
+            this.accordionControlSeparator2.Name = "accordionControlSeparator2";
+            // 
+            // accordionControlElement11
+            // 
+            this.accordionControlElement11.Name = "accordionControlElement11";
+            this.accordionControlElement11.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement11.Text = "Generate a Report";
+            // 
+            // fluentDesignFormControl1
+            // 
+            this.fluentDesignFormControl1.FluentDesignForm = this;
+            this.fluentDesignFormControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.skinBarSubItem1,
+            this.skinPaletteDropDownButtonItem1,
+            this.barHeaderItem1});
+            this.fluentDesignFormControl1.Location = new System.Drawing.Point(0, 0);
+            this.fluentDesignFormControl1.Manager = this.fluentFormDefaultManager1;
+            this.fluentDesignFormControl1.Name = "fluentDesignFormControl1";
+            this.fluentDesignFormControl1.Size = new System.Drawing.Size(1074, 31);
+            this.fluentDesignFormControl1.TabIndex = 2;
+            this.fluentDesignFormControl1.TabStop = false;
+            this.fluentDesignFormControl1.TitleItemLinks.Add(this.skinBarSubItem1);
+            this.fluentDesignFormControl1.TitleItemLinks.Add(this.skinPaletteDropDownButtonItem1);
+            this.fluentDesignFormControl1.TitleItemLinks.Add(this.barHeaderItem1);
+            // 
+            // newCOTableAdapter1
+            // 
+            this.newCOTableAdapter1.ClearBeforeFill = true;
+            // 
+            // accordionControlElement2
+            // 
+            this.accordionControlElement2.Name = "accordionControlElement2";
+            this.accordionControlElement2.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement2.Text = "Start from Scratch";
+            // 
+            // accordionControlElement3
+            // 
+            this.accordionControlElement3.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.accordionControlElement2,
+            this.accordionControlElement4});
+            this.accordionControlElement3.Name = "accordionControlElement3";
+            this.accordionControlElement3.Text = "Create a Charging Order";
+            // 
+            // accordionControlElement4
+            // 
+            this.accordionControlElement4.Name = "accordionControlElement4";
+            this.accordionControlElement4.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement4.Text = "Clone a existing CO";
+            // 
+            // accordionControlElement5
+            // 
+            this.accordionControlElement5.Name = "accordionControlElement5";
+            this.accordionControlElement5.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement5.Text = "Modify a CO";
+            // 
+            // dataTable1TableAdapter
+            // 
+            this.dataTable1TableAdapter.ClearBeforeFill = true;
             // 
             // colIdCO
             // 
             this.colIdCO.FieldName = "IdCO";
             this.colIdCO.Name = "colIdCO";
             this.colIdCO.Visible = true;
-            this.colIdCO.VisibleIndex = 0;
+            this.colIdCO.VisibleIndex = 13;
             // 
             // colNewCO
             // 
             this.colNewCO.FieldName = "NewCO";
             this.colNewCO.Name = "colNewCO";
             this.colNewCO.Visible = true;
-            this.colNewCO.VisibleIndex = 1;
+            this.colNewCO.VisibleIndex = 12;
             // 
             // colDateCreation
             // 
             this.colDateCreation.FieldName = "DateCreation";
             this.colDateCreation.Name = "colDateCreation";
-            this.colDateCreation.Visible = true;
-            this.colDateCreation.VisibleIndex = 2;
             // 
             // colDateUpdate
             // 
             this.colDateUpdate.FieldName = "DateUpdate";
             this.colDateUpdate.Name = "colDateUpdate";
             this.colDateUpdate.Visible = true;
-            this.colDateUpdate.VisibleIndex = 3;
+            this.colDateUpdate.VisibleIndex = 11;
             // 
             // colIdContractHolder
             // 
             this.colIdContractHolder.FieldName = "IdContractHolder";
             this.colIdContractHolder.Name = "colIdContractHolder";
             this.colIdContractHolder.Visible = true;
-            this.colIdContractHolder.VisibleIndex = 4;
+            this.colIdContractHolder.VisibleIndex = 10;
             // 
             // colContractHolderReference
             // 
             this.colContractHolderReference.FieldName = "ContractHolderReference";
             this.colContractHolderReference.Name = "colContractHolderReference";
-            this.colContractHolderReference.Visible = true;
-            this.colContractHolderReference.VisibleIndex = 5;
             // 
             // colCMR
             // 
@@ -346,14 +520,12 @@ namespace EFRET_TMS
             this.colComment.FieldName = "Comment";
             this.colComment.Name = "colComment";
             this.colComment.Visible = true;
-            this.colComment.VisibleIndex = 6;
+            this.colComment.VisibleIndex = 9;
             // 
             // colInvoiceInGBP
             // 
             this.colInvoiceInGBP.FieldName = "InvoiceInGBP";
             this.colInvoiceInGBP.Name = "colInvoiceInGBP";
-            this.colInvoiceInGBP.Visible = true;
-            this.colInvoiceInGBP.VisibleIndex = 7;
             // 
             // colAllRisksInsurance
             // 
@@ -371,6 +543,8 @@ namespace EFRET_TMS
             // 
             this.colContractHolderTel.FieldName = "ContractHolderTel";
             this.colContractHolderTel.Name = "colContractHolderTel";
+            this.colContractHolderTel.Visible = true;
+            this.colContractHolderTel.VisibleIndex = 7;
             // 
             // colContractHolderMob
             // 
@@ -396,13 +570,15 @@ namespace EFRET_TMS
             // 
             this.colInvoiced.FieldName = "Invoiced";
             this.colInvoiced.Name = "colInvoiced";
+            this.colInvoiced.Visible = true;
+            this.colInvoiced.VisibleIndex = 5;
             // 
             // colUserCreation
             // 
             this.colUserCreation.FieldName = "UserCreation";
             this.colUserCreation.Name = "colUserCreation";
             this.colUserCreation.Visible = true;
-            this.colUserCreation.VisibleIndex = 9;
+            this.colUserCreation.VisibleIndex = 6;
             // 
             // colUserUpdate
             // 
@@ -444,7 +620,7 @@ namespace EFRET_TMS
             this.colStopOver1.FieldName = "StopOver1";
             this.colStopOver1.Name = "colStopOver1";
             this.colStopOver1.Visible = true;
-            this.colStopOver1.VisibleIndex = 10;
+            this.colStopOver1.VisibleIndex = 4;
             // 
             // colStopOver2
             // 
@@ -491,7 +667,7 @@ namespace EFRET_TMS
             this.colLine.FieldName = "Line";
             this.colLine.Name = "colLine";
             this.colLine.Visible = true;
-            this.colLine.VisibleIndex = 11;
+            this.colLine.VisibleIndex = 3;
             // 
             // colInvoiceEDI
             // 
@@ -548,7 +724,7 @@ namespace EFRET_TMS
             this.colCorridor.FieldName = "Corridor";
             this.colCorridor.Name = "colCorridor";
             this.colCorridor.Visible = true;
-            this.colCorridor.VisibleIndex = 12;
+            this.colCorridor.VisibleIndex = 2;
             // 
             // colCoS
             // 
@@ -575,19 +751,19 @@ namespace EFRET_TMS
             this.colP44ShipmentID.FieldName = "P44ShipmentID";
             this.colP44ShipmentID.Name = "colP44ShipmentID";
             this.colP44ShipmentID.Visible = true;
-            this.colP44ShipmentID.VisibleIndex = 13;
+            this.colP44ShipmentID.VisibleIndex = 1;
             // 
             // colP44LastUpdate
             // 
             this.colP44LastUpdate.FieldName = "P44LastUpdate";
             this.colP44LastUpdate.Name = "colP44LastUpdate";
-            this.colP44LastUpdate.Visible = true;
-            this.colP44LastUpdate.VisibleIndex = 14;
             // 
             // colP44StatusCode
             // 
             this.colP44StatusCode.FieldName = "P44StatusCode";
             this.colP44StatusCode.Name = "colP44StatusCode";
+            this.colP44StatusCode.Visible = true;
+            this.colP44StatusCode.VisibleIndex = 0;
             // 
             // colP44ReasonCode
             // 
@@ -598,8 +774,6 @@ namespace EFRET_TMS
             // 
             this.colP44ReasonDescription.FieldName = "P44ReasonDescription";
             this.colP44ReasonDescription.Name = "colP44ReasonDescription";
-            this.colP44ReasonDescription.Visible = true;
-            this.colP44ReasonDescription.VisibleIndex = 15;
             // 
             // colP44TrackTrailer
             // 
@@ -630,177 +804,16 @@ namespace EFRET_TMS
             // 
             this.colP44Latitude.FieldName = "P44Latitude";
             this.colP44Latitude.Name = "colP44Latitude";
-            this.colP44Latitude.Visible = true;
-            this.colP44Latitude.VisibleIndex = 16;
             // 
             // colP44Longitude
             // 
             this.colP44Longitude.FieldName = "P44Longitude";
             this.colP44Longitude.Name = "colP44Longitude";
-            this.colP44Longitude.Visible = true;
-            this.colP44Longitude.VisibleIndex = 17;
             // 
             // colP44CurrentStop
             // 
             this.colP44CurrentStop.FieldName = "P44CurrentStop";
             this.colP44CurrentStop.Name = "colP44CurrentStop";
-            // 
-            // fluentFormDefaultManager1
-            // 
-            this.fluentFormDefaultManager1.DockingEnabled = false;
-            this.fluentFormDefaultManager1.Form = this;
-            this.fluentFormDefaultManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.skinBarSubItem1,
-            this.skinPaletteDropDownButtonItem1,
-            this.barHeaderItem1});
-            this.fluentFormDefaultManager1.MaxItemId = 4;
-            // 
-            // skinBarSubItem1
-            // 
-            this.skinBarSubItem1.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
-            this.skinBarSubItem1.Id = 1;
-            this.skinBarSubItem1.Name = "skinBarSubItem1";
-            // 
-            // skinPaletteDropDownButtonItem1
-            // 
-            this.skinPaletteDropDownButtonItem1.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
-            this.skinPaletteDropDownButtonItem1.Id = 2;
-            this.skinPaletteDropDownButtonItem1.Name = "skinPaletteDropDownButtonItem1";
-            this.skinPaletteDropDownButtonItem1.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionInMenu;
-            // 
-            // barHeaderItem1
-            // 
-            this.barHeaderItem1.Appearance.FontStyleDelta = System.Drawing.FontStyle.Bold;
-            this.barHeaderItem1.Appearance.ForeColor = DevExpress.LookAndFeel.DXSkinColors.ForeColors.Information;
-            this.barHeaderItem1.Appearance.Options.UseFont = true;
-            this.barHeaderItem1.Appearance.Options.UseForeColor = true;
-            this.barHeaderItem1.Appearance.Options.UseTextOptions = true;
-            this.barHeaderItem1.Appearance.TextOptions.Trimming = DevExpress.Utils.Trimming.EllipsisPath;
-            this.barHeaderItem1.Caption = "Connected";
-            this.barHeaderItem1.Id = 3;
-            this.barHeaderItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barHeaderItem1.ImageOptions.Image")));
-            this.barHeaderItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barHeaderItem1.ImageOptions.LargeImage")));
-            this.barHeaderItem1.Name = "barHeaderItem1";
-            // 
-            // accordionControl1
-            // 
-            this.accordionControl1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.accordionControl1.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
-            this.accordionControlElement1});
-            this.accordionControl1.Location = new System.Drawing.Point(0, 31);
-            this.accordionControl1.Name = "accordionControl1";
-            this.accordionControl1.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Touch;
-            this.accordionControl1.Size = new System.Drawing.Size(260, 470);
-            this.accordionControl1.TabIndex = 1;
-            this.accordionControl1.ViewType = DevExpress.XtraBars.Navigation.AccordionControlViewType.HamburgerMenu;
-            // 
-            // accordionControlElement1
-            // 
-            this.accordionControlElement1.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
-            this.accordionControlElement6,
-            this.accordionControlElement7,
-            this.accordionControlElement8,
-            this.accordionControlSeparator1,
-            this.accordionControlElement9,
-            this.accordionControlElement10,
-            this.accordionControlSeparator2,
-            this.accordionControlElement11});
-            this.accordionControlElement1.Expanded = true;
-            this.accordionControlElement1.Name = "accordionControlElement1";
-            this.accordionControlElement1.Text = "Charging Orders";
-            // 
-            // accordionControlElement6
-            // 
-            this.accordionControlElement6.Name = "accordionControlElement6";
-            this.accordionControlElement6.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement6.Text = "Create a Charging Order";
-            this.accordionControlElement6.Click += new System.EventHandler(this.accordionControlElement6_Click);
-            // 
-            // accordionControlElement7
-            // 
-            this.accordionControlElement7.Name = "accordionControlElement7";
-            this.accordionControlElement7.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement7.Text = "Duplicate a Charging Order";
-            this.accordionControlElement7.Click += new System.EventHandler(this.accordionControlElement7_Click);
-            // 
-            // accordionControlElement8
-            // 
-            this.accordionControlElement8.Name = "accordionControlElement8";
-            this.accordionControlElement8.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement8.Text = "Modify a Charging Order";
-            // 
-            // fluentDesignFormControl1
-            // 
-            this.fluentDesignFormControl1.FluentDesignForm = this;
-            this.fluentDesignFormControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.skinBarSubItem1,
-            this.skinPaletteDropDownButtonItem1,
-            this.barHeaderItem1});
-            this.fluentDesignFormControl1.Location = new System.Drawing.Point(0, 0);
-            this.fluentDesignFormControl1.Manager = this.fluentFormDefaultManager1;
-            this.fluentDesignFormControl1.Name = "fluentDesignFormControl1";
-            this.fluentDesignFormControl1.Size = new System.Drawing.Size(1074, 31);
-            this.fluentDesignFormControl1.TabIndex = 2;
-            this.fluentDesignFormControl1.TabStop = false;
-            this.fluentDesignFormControl1.TitleItemLinks.Add(this.skinBarSubItem1);
-            this.fluentDesignFormControl1.TitleItemLinks.Add(this.skinPaletteDropDownButtonItem1);
-            this.fluentDesignFormControl1.TitleItemLinks.Add(this.barHeaderItem1);
-            // 
-            // newCOTableAdapter1
-            // 
-            this.newCOTableAdapter1.ClearBeforeFill = true;
-            // 
-            // accordionControlElement2
-            // 
-            this.accordionControlElement2.Name = "accordionControlElement2";
-            this.accordionControlElement2.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement2.Text = "Start from Scratch";
-            // 
-            // accordionControlElement3
-            // 
-            this.accordionControlElement3.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
-            this.accordionControlElement2,
-            this.accordionControlElement4});
-            this.accordionControlElement3.Name = "accordionControlElement3";
-            this.accordionControlElement3.Text = "Create a Charging Order";
-            // 
-            // accordionControlElement4
-            // 
-            this.accordionControlElement4.Name = "accordionControlElement4";
-            this.accordionControlElement4.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement4.Text = "Clone a existing CO";
-            // 
-            // accordionControlElement5
-            // 
-            this.accordionControlElement5.Name = "accordionControlElement5";
-            this.accordionControlElement5.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement5.Text = "Modify a CO";
-            // 
-            // accordionControlSeparator1
-            // 
-            this.accordionControlSeparator1.Name = "accordionControlSeparator1";
-            // 
-            // accordionControlElement9
-            // 
-            this.accordionControlElement9.Name = "accordionControlElement9";
-            this.accordionControlElement9.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement9.Text = "Create a Client";
-            // 
-            // accordionControlElement10
-            // 
-            this.accordionControlElement10.Name = "accordionControlElement10";
-            this.accordionControlElement10.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement10.Text = "List Clients";
-            // 
-            // accordionControlSeparator2
-            // 
-            this.accordionControlSeparator2.Name = "accordionControlSeparator2";
-            // 
-            // accordionControlElement11
-            // 
-            this.accordionControlElement11.Name = "accordionControlElement11";
-            this.accordionControlElement11.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement11.Text = "Generate a Report";
             // 
             // Orders
             // 
@@ -816,12 +829,14 @@ namespace EFRET_TMS
             this.Name = "Orders";
             this.NavigationControl = this.accordionControl1;
             this.Text = "Orders";
+            this.Load += new System.EventHandler(this.Orders_Load);
             this.fluentDesignFormContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.newCOBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.axsDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentFormDefaultManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.newCOBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).EndInit();
             this.ResumeLayout(false);
@@ -839,6 +854,23 @@ namespace EFRET_TMS
         private System.Windows.Forms.BindingSource newCOBindingSource;
         private axsDataSet axsDataSet1;
         private axsDataSetTableAdapters.NewCOTableAdapter newCOTableAdapter1;
+        private DevExpress.XtraBars.SkinBarSubItem skinBarSubItem1;
+        private DevExpress.XtraBars.SkinPaletteDropDownButtonItem skinPaletteDropDownButtonItem1;
+        private DevExpress.XtraBars.BarHeaderItem barHeaderItem1;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement2;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement3;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement4;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement5;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement6;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement7;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement8;
+        private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator1;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement9;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement10;
+        private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator2;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement11;
+        private System.Windows.Forms.BindingSource dataTable1BindingSource;
+        private axsDataSetTableAdapters.DataTable1TableAdapter dataTable1TableAdapter;
         private DevExpress.XtraGrid.Columns.GridColumn colIdCO;
         private DevExpress.XtraGrid.Columns.GridColumn colNewCO;
         private DevExpress.XtraGrid.Columns.GridColumn colDateCreation;
@@ -911,20 +943,5 @@ namespace EFRET_TMS
         private DevExpress.XtraGrid.Columns.GridColumn colP44Latitude;
         private DevExpress.XtraGrid.Columns.GridColumn colP44Longitude;
         private DevExpress.XtraGrid.Columns.GridColumn colP44CurrentStop;
-        private DevExpress.XtraBars.SkinBarSubItem skinBarSubItem1;
-        private DevExpress.XtraBars.SkinPaletteDropDownButtonItem skinPaletteDropDownButtonItem1;
-        private DevExpress.XtraBars.BarHeaderItem barHeaderItem1;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement2;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement3;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement4;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement5;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement6;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement7;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement8;
-        private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator1;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement9;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement10;
-        private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator2;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement11;
     }
 }
