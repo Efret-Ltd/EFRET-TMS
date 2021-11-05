@@ -11,9 +11,9 @@ namespace EFRET_TMS
             InitializeComponent();
 
             var url =
-                "https://www.netdania.com/Products/FullQuote/FullQuote.aspx?symbol=GBPEUR&provider=netdania_fxa&ext=false&d=netdania_forex_lf";
+                "https://www.xe.com/currencyconverter/convert/?Amount=1&From=GBP&To=EUR";
             this.webBrowser1.Navigate(url);
-            ScrollToElement("chartText");
+            ScrollToElement("faded-digits");
 
         }
 

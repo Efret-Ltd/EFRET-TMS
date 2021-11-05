@@ -119,10 +119,13 @@ namespace EFRET_TMS
             this.accordionControlElement7 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement8 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlSeparator1 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
+            this.accordionControlElement11 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement12 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement9 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement10 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlSeparator2 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
-            this.accordionControlElement11 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement13 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement14 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.fluentDesignFormControl1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
             this.newCOTableAdapter1 = new EFRET_TMS.axsDataSetTableAdapters.NewCOTableAdapter();
             this.accordionControlElement2 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
@@ -130,9 +133,7 @@ namespace EFRET_TMS
             this.accordionControlElement4 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement5 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.dataTable1TableAdapter = new EFRET_TMS.axsDataSetTableAdapters.DataTable1TableAdapter();
-            this.accordionControlElement12 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElement13 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElement14 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.barLargeButtonItem1 = new DevExpress.XtraBars.BarLargeButtonItem();
             this.fluentDesignFormContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.newCOBindingSource)).BeginInit();
@@ -168,6 +169,7 @@ namespace EFRET_TMS
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.gridControl1.Click += new System.EventHandler(this.gridControl1_Click);
             // 
             // newCOBindingSource
             // 
@@ -259,7 +261,6 @@ namespace EFRET_TMS
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.AllowIncrementalSearch = true;
-            this.gridView1.OptionsBehavior.Editable = false;
             this.gridView1.OptionsView.ShowPreviewRowLines = DevExpress.Utils.DefaultBoolean.True;
             this.gridView1.PreviewFieldName = "P44ShipmentID";
             this.gridView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
@@ -269,93 +270,109 @@ namespace EFRET_TMS
             // 
             this.colIdCO.FieldName = "IdCO";
             this.colIdCO.Name = "colIdCO";
+            this.colIdCO.OptionsColumn.AllowEdit = false;
             this.colIdCO.Visible = true;
             this.colIdCO.VisibleIndex = 2;
-            this.colIdCO.Width = 64;
+            this.colIdCO.Width = 46;
             // 
             // colNewCO
             // 
             this.colNewCO.FieldName = "NewCO";
             this.colNewCO.Name = "colNewCO";
+            this.colNewCO.OptionsColumn.AllowEdit = false;
             this.colNewCO.Visible = true;
             this.colNewCO.VisibleIndex = 1;
-            this.colNewCO.Width = 64;
+            this.colNewCO.Width = 130;
             // 
             // colDateCreation
             // 
             this.colDateCreation.FieldName = "DateCreation";
             this.colDateCreation.Name = "colDateCreation";
+            this.colDateCreation.OptionsColumn.AllowEdit = false;
             // 
             // colDateUpdate
             // 
             this.colDateUpdate.FieldName = "DateUpdate";
             this.colDateUpdate.Name = "colDateUpdate";
+            this.colDateUpdate.OptionsColumn.AllowEdit = false;
             this.colDateUpdate.Visible = true;
             this.colDateUpdate.VisibleIndex = 6;
-            this.colDateUpdate.Width = 78;
+            this.colDateUpdate.Width = 92;
             // 
             // colIdContractHolder
             // 
             this.colIdContractHolder.FieldName = "IdContractHolder";
             this.colIdContractHolder.Name = "colIdContractHolder";
+            this.colIdContractHolder.OptionsColumn.AllowEdit = false;
             this.colIdContractHolder.Visible = true;
             this.colIdContractHolder.VisibleIndex = 0;
-            this.colIdContractHolder.Width = 101;
+            this.colIdContractHolder.Width = 98;
             // 
             // colContractHolderReference
             // 
             this.colContractHolderReference.FieldName = "ContractHolderReference";
             this.colContractHolderReference.Name = "colContractHolderReference";
+            this.colContractHolderReference.OptionsColumn.AllowEdit = false;
             // 
             // colCMR
             // 
             this.colCMR.FieldName = "CMR";
             this.colCMR.Name = "colCMR";
+            this.colCMR.OptionsColumn.AllowEdit = false;
             // 
             // colSalesPrice
             // 
             this.colSalesPrice.FieldName = "SalesPrice";
             this.colSalesPrice.Name = "colSalesPrice";
+            this.colSalesPrice.OptionsColumn.AllowEdit = false;
             // 
             // colConversionRate
             // 
             this.colConversionRate.FieldName = "ConversionRate";
             this.colConversionRate.Name = "colConversionRate";
+            this.colConversionRate.OptionsColumn.AllowEdit = false;
             // 
             // colSalesPriceCurrency
             // 
             this.colSalesPriceCurrency.FieldName = "SalesPriceCurrency";
             this.colSalesPriceCurrency.Name = "colSalesPriceCurrency";
+            this.colSalesPriceCurrency.OptionsColumn.AllowEdit = false;
             // 
             // colSalesPriceInCurrency
             // 
             this.colSalesPriceInCurrency.FieldName = "SalesPriceInCurrency";
             this.colSalesPriceInCurrency.Name = "colSalesPriceInCurrency";
+            this.colSalesPriceInCurrency.OptionsColumn.AllowEdit = false;
             // 
             // colSalesPriceVATCode
             // 
             this.colSalesPriceVATCode.FieldName = "SalesPriceVATCode";
             this.colSalesPriceVATCode.Name = "colSalesPriceVATCode";
+            this.colSalesPriceVATCode.OptionsColumn.AllowEdit = false;
             // 
             // colSalesPriceVATRate
             // 
             this.colSalesPriceVATRate.FieldName = "SalesPriceVATRate";
             this.colSalesPriceVATRate.Name = "colSalesPriceVATRate";
+            this.colSalesPriceVATRate.OptionsColumn.AllowEdit = false;
             // 
             // colSalesPriceVATAmount
             // 
             this.colSalesPriceVATAmount.FieldName = "SalesPriceVATAmount";
             this.colSalesPriceVATAmount.Name = "colSalesPriceVATAmount";
+            this.colSalesPriceVATAmount.OptionsColumn.AllowEdit = false;
             // 
             // colContractHolderPaymentTerm
             // 
             this.colContractHolderPaymentTerm.FieldName = "ContractHolderPaymentTerm";
             this.colContractHolderPaymentTerm.Name = "colContractHolderPaymentTerm";
+            this.colContractHolderPaymentTerm.OptionsColumn.AllowEdit = false;
             // 
             // colContractHolderPaymentTermOEM
             // 
             this.colContractHolderPaymentTermOEM.FieldName = "ContractHolderPaymentTermOEM";
             this.colContractHolderPaymentTermOEM.Name = "colContractHolderPaymentTermOEM";
+            this.colContractHolderPaymentTermOEM.OptionsColumn.AllowEdit = false;
             // 
             // colComment
             // 
@@ -363,305 +380,360 @@ namespace EFRET_TMS
             this.colComment.Name = "colComment";
             this.colComment.Visible = true;
             this.colComment.VisibleIndex = 5;
-            this.colComment.Width = 110;
+            this.colComment.Width = 269;
             // 
             // colInvoiceInGBP
             // 
             this.colInvoiceInGBP.FieldName = "InvoiceInGBP";
             this.colInvoiceInGBP.Name = "colInvoiceInGBP";
+            this.colInvoiceInGBP.OptionsColumn.AllowEdit = false;
             // 
             // colAllRisksInsurance
             // 
             this.colAllRisksInsurance.FieldName = "AllRisksInsurance";
             this.colAllRisksInsurance.Name = "colAllRisksInsurance";
+            this.colAllRisksInsurance.OptionsColumn.AllowEdit = false;
             // 
             // colContractHolderEmail
             // 
             this.colContractHolderEmail.FieldName = "ContractHolderEmail";
             this.colContractHolderEmail.Name = "colContractHolderEmail";
+            this.colContractHolderEmail.OptionsColumn.AllowEdit = false;
             this.colContractHolderEmail.Visible = true;
             this.colContractHolderEmail.VisibleIndex = 10;
-            this.colContractHolderEmail.Width = 60;
+            this.colContractHolderEmail.Width = 227;
             // 
             // colContractHolderTel
             // 
             this.colContractHolderTel.FieldName = "ContractHolderTel";
             this.colContractHolderTel.Name = "colContractHolderTel";
+            this.colContractHolderTel.OptionsColumn.AllowEdit = false;
             this.colContractHolderTel.Width = 20;
             // 
             // colContractHolderMob
             // 
             this.colContractHolderMob.FieldName = "ContractHolderMob";
             this.colContractHolderMob.Name = "colContractHolderMob";
+            this.colContractHolderMob.OptionsColumn.AllowEdit = false;
             // 
             // colTrailerNumber
             // 
             this.colTrailerNumber.FieldName = "TrailerNumber";
             this.colTrailerNumber.Name = "colTrailerNumber";
+            this.colTrailerNumber.OptionsColumn.AllowEdit = false;
             // 
             // colTrailerTypeAutorised
             // 
             this.colTrailerTypeAutorised.FieldName = "TrailerTypeAutorised";
             this.colTrailerTypeAutorised.Name = "colTrailerTypeAutorised";
+            this.colTrailerTypeAutorised.OptionsColumn.AllowEdit = false;
             // 
             // colInterModal
             // 
             this.colInterModal.FieldName = "InterModal";
             this.colInterModal.Name = "colInterModal";
+            this.colInterModal.OptionsColumn.AllowEdit = false;
             // 
             // colInvoiced
             // 
             this.colInvoiced.FieldName = "Invoiced";
             this.colInvoiced.Name = "colInvoiced";
+            this.colInvoiced.OptionsColumn.AllowEdit = false;
             this.colInvoiced.Visible = true;
             this.colInvoiced.VisibleIndex = 11;
-            this.colInvoiced.Width = 36;
+            this.colInvoiced.Width = 62;
             // 
             // colUserCreation
             // 
             this.colUserCreation.FieldName = "UserCreation";
             this.colUserCreation.Name = "colUserCreation";
+            this.colUserCreation.OptionsColumn.AllowEdit = false;
             this.colUserCreation.Visible = true;
             this.colUserCreation.VisibleIndex = 7;
-            this.colUserCreation.Width = 94;
+            this.colUserCreation.Width = 113;
             // 
             // colUserUpdate
             // 
             this.colUserUpdate.FieldName = "UserUpdate";
             this.colUserUpdate.Name = "colUserUpdate";
+            this.colUserUpdate.OptionsColumn.AllowEdit = false;
             // 
             // colUserOwner
             // 
             this.colUserOwner.FieldName = "UserOwner";
             this.colUserOwner.Name = "colUserOwner";
+            this.colUserOwner.OptionsColumn.AllowEdit = false;
             // 
             // colActif
             // 
             this.colActif.FieldName = "Actif";
             this.colActif.Name = "colActif";
+            this.colActif.OptionsColumn.AllowEdit = false;
             // 
             // colXroute
             // 
             this.colXroute.FieldName = "Xroute";
             this.colXroute.Name = "colXroute";
+            this.colXroute.OptionsColumn.AllowEdit = false;
             // 
             // colTripType2
             // 
             this.colTripType2.FieldName = "TripType2";
             this.colTripType2.Name = "colTripType2";
+            this.colTripType2.OptionsColumn.AllowEdit = false;
             // 
             // colBaseFreightRate
             // 
             this.colBaseFreightRate.FieldName = "BaseFreightRate";
             this.colBaseFreightRate.Name = "colBaseFreightRate";
+            this.colBaseFreightRate.OptionsColumn.AllowEdit = false;
             // 
             // colFuelSurcharge
             // 
             this.colFuelSurcharge.FieldName = "FuelSurcharge";
             this.colFuelSurcharge.Name = "colFuelSurcharge";
+            this.colFuelSurcharge.OptionsColumn.AllowEdit = false;
             // 
             // colStopOver1
             // 
             this.colStopOver1.FieldName = "StopOver1";
             this.colStopOver1.Name = "colStopOver1";
+            this.colStopOver1.OptionsColumn.AllowEdit = false;
             this.colStopOver1.Width = 78;
             // 
             // colStopOver2
             // 
             this.colStopOver2.FieldName = "StopOver2";
             this.colStopOver2.Name = "colStopOver2";
+            this.colStopOver2.OptionsColumn.AllowEdit = false;
             // 
             // colFuelSurchargeRate
             // 
             this.colFuelSurchargeRate.FieldName = "FuelSurchargeRate";
             this.colFuelSurchargeRate.Name = "colFuelSurchargeRate";
+            this.colFuelSurchargeRate.OptionsColumn.AllowEdit = false;
             // 
             // colAdhocRate
             // 
             this.colAdhocRate.FieldName = "AdhocRate";
             this.colAdhocRate.Name = "colAdhocRate";
+            this.colAdhocRate.OptionsColumn.AllowEdit = false;
             // 
             // coldemurrage
             // 
             this.coldemurrage.FieldName = "demurrage";
             this.coldemurrage.Name = "coldemurrage";
+            this.coldemurrage.OptionsColumn.AllowEdit = false;
             // 
             // colDemurageCode
             // 
             this.colDemurageCode.FieldName = "DemurageCode";
             this.colDemurageCode.Name = "colDemurageCode";
+            this.colDemurageCode.OptionsColumn.AllowEdit = false;
             // 
             // colInvoiceNumber
             // 
             this.colInvoiceNumber.FieldName = "InvoiceNumber";
             this.colInvoiceNumber.Name = "colInvoiceNumber";
+            this.colInvoiceNumber.OptionsColumn.AllowEdit = false;
             // 
             // colInvoiceDate
             // 
             this.colInvoiceDate.FieldName = "InvoiceDate";
             this.colInvoiceDate.Name = "colInvoiceDate";
+            this.colInvoiceDate.OptionsColumn.AllowEdit = false;
             // 
             // colInvoicePath
             // 
             this.colInvoicePath.FieldName = "InvoicePath";
             this.colInvoicePath.Name = "colInvoicePath";
+            this.colInvoicePath.OptionsColumn.AllowEdit = false;
             // 
             // colLine
             // 
             this.colLine.FieldName = "Line";
             this.colLine.Name = "colLine";
+            this.colLine.OptionsColumn.AllowEdit = false;
             this.colLine.Visible = true;
             this.colLine.VisibleIndex = 9;
-            this.colLine.Width = 78;
+            this.colLine.Width = 148;
             // 
             // colInvoiceEDI
             // 
             this.colInvoiceEDI.FieldName = "InvoiceEDI";
             this.colInvoiceEDI.Name = "colInvoiceEDI";
+            this.colInvoiceEDI.OptionsColumn.AllowEdit = false;
             // 
             // colShipperAccount
             // 
             this.colShipperAccount.FieldName = "ShipperAccount";
             this.colShipperAccount.Name = "colShipperAccount";
+            this.colShipperAccount.OptionsColumn.AllowEdit = false;
             // 
             // colReroutingSurcharge
             // 
             this.colReroutingSurcharge.FieldName = "ReroutingSurcharge";
             this.colReroutingSurcharge.Name = "colReroutingSurcharge";
+            this.colReroutingSurcharge.OptionsColumn.AllowEdit = false;
             // 
             // colWharehousing
             // 
             this.colWharehousing.FieldName = "Wharehousing";
             this.colWharehousing.Name = "colWharehousing";
+            this.colWharehousing.OptionsColumn.AllowEdit = false;
             // 
             // colRedelivery
             // 
             this.colRedelivery.FieldName = "Redelivery";
             this.colRedelivery.Name = "colRedelivery";
+            this.colRedelivery.OptionsColumn.AllowEdit = false;
             // 
             // colCancellation
             // 
             this.colCancellation.FieldName = "Cancellation";
             this.colCancellation.Name = "colCancellation";
+            this.colCancellation.OptionsColumn.AllowEdit = false;
             // 
             // colBillingAccount
             // 
             this.colBillingAccount.FieldName = "BillingAccount";
             this.colBillingAccount.Name = "colBillingAccount";
+            this.colBillingAccount.OptionsColumn.AllowEdit = false;
             // 
             // colAdHocSurcharge
             // 
             this.colAdHocSurcharge.FieldName = "AdHocSurcharge";
             this.colAdHocSurcharge.Name = "colAdHocSurcharge";
+            this.colAdHocSurcharge.OptionsColumn.AllowEdit = false;
             // 
             // colDriverDententionAtUnloading
             // 
             this.colDriverDententionAtUnloading.FieldName = "DriverDententionAtUnloading";
             this.colDriverDententionAtUnloading.Name = "colDriverDententionAtUnloading";
+            this.colDriverDententionAtUnloading.OptionsColumn.AllowEdit = false;
             // 
             // coleShipCo
             // 
             this.coleShipCo.FieldName = "eShipCo";
             this.coleShipCo.Name = "coleShipCo";
+            this.coleShipCo.OptionsColumn.AllowEdit = false;
             // 
             // colCorridor
             // 
             this.colCorridor.FieldName = "Corridor";
             this.colCorridor.Name = "colCorridor";
+            this.colCorridor.OptionsColumn.AllowEdit = false;
             this.colCorridor.Visible = true;
             this.colCorridor.VisibleIndex = 8;
-            this.colCorridor.Width = 46;
+            this.colCorridor.Width = 84;
             // 
             // colCoS
             // 
             this.colCoS.FieldName = "CoS";
             this.colCoS.Name = "colCoS";
+            this.colCoS.OptionsColumn.AllowEdit = false;
             // 
             // colCustomClearance
             // 
             this.colCustomClearance.FieldName = "CustomClearance";
             this.colCustomClearance.Name = "colCustomClearance";
+            this.colCustomClearance.OptionsColumn.AllowEdit = false;
             // 
             // colP44ToUpload
             // 
             this.colP44ToUpload.FieldName = "P44ToUpload";
             this.colP44ToUpload.Name = "colP44ToUpload";
+            this.colP44ToUpload.OptionsColumn.AllowEdit = false;
             // 
             // colP44Uploaded
             // 
             this.colP44Uploaded.FieldName = "P44Uploaded";
             this.colP44Uploaded.Name = "colP44Uploaded";
+            this.colP44Uploaded.OptionsColumn.AllowEdit = false;
             // 
             // colP44ShipmentID
             // 
             this.colP44ShipmentID.FieldName = "P44ShipmentID";
             this.colP44ShipmentID.Name = "colP44ShipmentID";
+            this.colP44ShipmentID.OptionsColumn.AllowEdit = false;
             this.colP44ShipmentID.Visible = true;
             this.colP44ShipmentID.VisibleIndex = 3;
-            this.colP44ShipmentID.Width = 88;
+            this.colP44ShipmentID.Width = 84;
             // 
             // colP44LastUpdate
             // 
             this.colP44LastUpdate.FieldName = "P44LastUpdate";
             this.colP44LastUpdate.Name = "colP44LastUpdate";
+            this.colP44LastUpdate.OptionsColumn.AllowEdit = false;
             // 
             // colP44StatusCode
             // 
             this.colP44StatusCode.FieldName = "P44StatusCode";
             this.colP44StatusCode.Name = "colP44StatusCode";
+            this.colP44StatusCode.OptionsColumn.AllowEdit = false;
             this.colP44StatusCode.Visible = true;
             this.colP44StatusCode.VisibleIndex = 4;
-            this.colP44StatusCode.Width = 89;
+            this.colP44StatusCode.Width = 86;
             // 
             // colP44ReasonCode
             // 
             this.colP44ReasonCode.FieldName = "P44ReasonCode";
             this.colP44ReasonCode.Name = "colP44ReasonCode";
+            this.colP44ReasonCode.OptionsColumn.AllowEdit = false;
             // 
             // colP44ReasonDescription
             // 
             this.colP44ReasonDescription.FieldName = "P44ReasonDescription";
             this.colP44ReasonDescription.Name = "colP44ReasonDescription";
+            this.colP44ReasonDescription.OptionsColumn.AllowEdit = false;
             // 
             // colP44TrackTrailer
             // 
             this.colP44TrackTrailer.FieldName = "P44TrackTrailer";
             this.colP44TrackTrailer.Name = "colP44TrackTrailer";
+            this.colP44TrackTrailer.OptionsColumn.AllowEdit = false;
             // 
             // colP44TrackingStarted
             // 
             this.colP44TrackingStarted.FieldName = "P44TrackingStarted";
             this.colP44TrackingStarted.Name = "colP44TrackingStarted";
+            this.colP44TrackingStarted.OptionsColumn.AllowEdit = false;
             // 
             // colP44TrackingCompleted
             // 
             this.colP44TrackingCompleted.FieldName = "P44TrackingCompleted";
             this.colP44TrackingCompleted.Name = "colP44TrackingCompleted";
+            this.colP44TrackingCompleted.OptionsColumn.AllowEdit = false;
             // 
             // colP44TrackingError
             // 
             this.colP44TrackingError.FieldName = "P44TrackingError";
             this.colP44TrackingError.Name = "colP44TrackingError";
+            this.colP44TrackingError.OptionsColumn.AllowEdit = false;
             // 
             // colP44UploadError
             // 
             this.colP44UploadError.FieldName = "P44UploadError";
             this.colP44UploadError.Name = "colP44UploadError";
+            this.colP44UploadError.OptionsColumn.AllowEdit = false;
             // 
             // colP44Latitude
             // 
             this.colP44Latitude.FieldName = "P44Latitude";
             this.colP44Latitude.Name = "colP44Latitude";
+            this.colP44Latitude.OptionsColumn.AllowEdit = false;
             // 
             // colP44Longitude
             // 
             this.colP44Longitude.FieldName = "P44Longitude";
             this.colP44Longitude.Name = "colP44Longitude";
+            this.colP44Longitude.OptionsColumn.AllowEdit = false;
             // 
             // colP44CurrentStop
             // 
             this.colP44CurrentStop.FieldName = "P44CurrentStop";
             this.colP44CurrentStop.Name = "colP44CurrentStop";
+            this.colP44CurrentStop.OptionsColumn.AllowEdit = false;
             // 
             // fluentFormDefaultManager1
             // 
@@ -669,8 +741,9 @@ namespace EFRET_TMS
             this.fluentFormDefaultManager1.Form = this;
             this.fluentFormDefaultManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.skinBarSubItem1,
-            this.barHeaderItem1});
-            this.fluentFormDefaultManager1.MaxItemId = 4;
+            this.barHeaderItem1,
+            this.barLargeButtonItem1});
+            this.fluentFormDefaultManager1.MaxItemId = 5;
             // 
             // skinBarSubItem1
             // 
@@ -753,6 +826,22 @@ namespace EFRET_TMS
             // 
             this.accordionControlSeparator1.Name = "accordionControlSeparator1";
             // 
+            // accordionControlElement11
+            // 
+            this.accordionControlElement11.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElement11.ImageOptions.SvgImage")));
+            this.accordionControlElement11.Name = "accordionControlElement11";
+            this.accordionControlElement11.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement11.Text = "Generate a Report";
+            // 
+            // accordionControlElement12
+            // 
+            this.accordionControlElement12.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.accordionControlElement9,
+            this.accordionControlElement10});
+            this.accordionControlElement12.Expanded = true;
+            this.accordionControlElement12.Name = "accordionControlElement12";
+            this.accordionControlElement12.Text = "Clients";
+            // 
             // accordionControlElement9
             // 
             this.accordionControlElement9.ImageOptions.ImageUri.Uri = "outlook%20inspired/newcustomer";
@@ -771,19 +860,23 @@ namespace EFRET_TMS
             // 
             this.accordionControlSeparator2.Name = "accordionControlSeparator2";
             // 
-            // accordionControlElement11
+            // accordionControlElement13
             // 
-            this.accordionControlElement11.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElement11.ImageOptions.SvgImage")));
-            this.accordionControlElement11.Name = "accordionControlElement11";
-            this.accordionControlElement11.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement11.Text = "Generate a Report";
+            this.accordionControlElement13.Name = "accordionControlElement13";
+            this.accordionControlElement13.Text = "Suppliers";
+            // 
+            // accordionControlElement14
+            // 
+            this.accordionControlElement14.Name = "accordionControlElement14";
+            this.accordionControlElement14.Text = "Company";
             // 
             // fluentDesignFormControl1
             // 
             this.fluentDesignFormControl1.FluentDesignForm = this;
             this.fluentDesignFormControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.skinBarSubItem1,
-            this.barHeaderItem1});
+            this.barHeaderItem1,
+            this.barLargeButtonItem1});
             this.fluentDesignFormControl1.Location = new System.Drawing.Point(0, 0);
             this.fluentDesignFormControl1.Manager = this.fluentFormDefaultManager1;
             this.fluentDesignFormControl1.Name = "fluentDesignFormControl1";
@@ -792,6 +885,7 @@ namespace EFRET_TMS
             this.fluentDesignFormControl1.TabStop = false;
             this.fluentDesignFormControl1.TitleItemLinks.Add(this.skinBarSubItem1);
             this.fluentDesignFormControl1.TitleItemLinks.Add(this.barHeaderItem1);
+            this.fluentDesignFormControl1.TitleItemLinks.Add(this.barLargeButtonItem1);
             // 
             // newCOTableAdapter1
             // 
@@ -827,24 +921,12 @@ namespace EFRET_TMS
             // 
             this.dataTable1TableAdapter.ClearBeforeFill = true;
             // 
-            // accordionControlElement12
+            // barLargeButtonItem1
             // 
-            this.accordionControlElement12.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
-            this.accordionControlElement9,
-            this.accordionControlElement10});
-            this.accordionControlElement12.Expanded = true;
-            this.accordionControlElement12.Name = "accordionControlElement12";
-            this.accordionControlElement12.Text = "Clients";
-            // 
-            // accordionControlElement13
-            // 
-            this.accordionControlElement13.Name = "accordionControlElement13";
-            this.accordionControlElement13.Text = "Suppliers";
-            // 
-            // accordionControlElement14
-            // 
-            this.accordionControlElement14.Name = "accordionControlElement14";
-            this.accordionControlElement14.Text = "Company";
+            this.barLargeButtonItem1.Caption = "Export to Excel";
+            this.barLargeButtonItem1.Id = 4;
+            this.barLargeButtonItem1.Name = "barLargeButtonItem1";
+            this.barLargeButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barLargeButtonItem1_ItemClick);
             // 
             // Orders
             // 
@@ -976,5 +1058,6 @@ namespace EFRET_TMS
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement12;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement13;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement14;
+        private DevExpress.XtraBars.BarLargeButtonItem barLargeButtonItem1;
     }
 }
