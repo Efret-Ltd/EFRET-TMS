@@ -35,7 +35,7 @@ namespace EFRET_TMS
             this.fluentDesignFormContainer1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormContainer();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.dataTable1BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.axsDataSet1 = new EFRET_TMS.axsDataSet();
+            this.axsDataSet1 = new EFRET_TMS.AxsDataSet();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.fluentFormDefaultManager1 = new DevExpress.XtraBars.FluentDesignSystem.FluentFormDefaultManager(this.components);
             this.skinBarSubItem1 = new DevExpress.XtraBars.SkinBarSubItem();
@@ -852,7 +852,7 @@ namespace EFRET_TMS
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private System.Windows.Forms.BindingSource newCOBindingSource;
-        private axsDataSet axsDataSet1;
+        private AxsDataSet axsDataSet1;
         private axsDataSetTableAdapters.NewCOTableAdapter newCOTableAdapter1;
         private DevExpress.XtraBars.SkinBarSubItem skinBarSubItem1;
         private DevExpress.XtraBars.SkinPaletteDropDownButtonItem skinPaletteDropDownButtonItem1;

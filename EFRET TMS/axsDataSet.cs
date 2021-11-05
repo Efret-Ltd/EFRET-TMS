@@ -2,7 +2,7 @@
 {
 
 
-    partial class axsDataSet
+    partial class AxsDataSet
     {
     }
 }

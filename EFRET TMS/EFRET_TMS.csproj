@@ -203,6 +203,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>axsDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="axsDevDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>axsDevDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ChargingOrderCode\ConnectionHelper.cs" />
     <Compile Include="ChargingOrderCode\Movement.cs" />
     <Compile Include="ChargingOrderCode\Movement.Designer.cs">
@@ -211,6 +216,12 @@
     <Compile Include="ChargingOrderCode\NewCO.cs" />
     <Compile Include="ChargingOrderCode\NewCO.Designer.cs">
       <DependentUpon>NewCO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="COCreation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="COCreation.Designer.cs">
+      <DependentUpon>COCreation.cs</DependentUpon>
     </Compile>
     <Compile Include="Orders.cs">
       <SubType>Form</SubType>
@@ -250,6 +261,9 @@
     </Compile>
     <EmbeddedResource Include="AdminControlPanel.resx">
       <DependentUpon>AdminControlPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="COCreation.resx">
+      <DependentUpon>COCreation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Orders.resx">
       <DependentUpon>Orders.cs</DependentUpon>
@@ -292,6 +306,17 @@
     </None>
     <None Include="axsDataSet.xss">
       <DependentUpon>axsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="axsDevDataSet.xsc">
+      <DependentUpon>axsDevDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="axsDevDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>axsDevDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="axsDevDataSet.xss">
+      <DependentUpon>axsDevDataSet.xsd</DependentUpon>
     </None>
     <None Include="ChargingOrder.xpo" />
     <None Include="ChargingOrder.xpo.diagram">

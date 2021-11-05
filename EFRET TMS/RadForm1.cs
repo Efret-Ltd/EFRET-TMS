@@ -10,10 +10,10 @@ namespace EFRET_TMS
         {
             InitializeComponent();
             this.Text = "Welcome to EFRET " + Environment.UserName;
-            getRate();
+            GetRate();
         }
 
-        public void getRate()
+        public void GetRate()
         {
             string rate = null;
             SqlConnection conn =
@@ -46,8 +46,8 @@ namespace EFRET_TMS
         //Administration
         private void accordionControlElement2_Click(object sender, EventArgs e)
         {
-            AdminControlPanel ACP = new AdminControlPanel();
-            ACP.Show();
+            AdminControlPanel acp = new AdminControlPanel();
+            acp.Show();
         }
 
 
@@ -81,10 +81,10 @@ namespace EFRET_TMS
             this.Focus();
         }
 
-        private void onRadButtonElementPress()
+        private void OnRadButtonElementPress()
         {
 
-            var RadButtonElement1 = radDesktopAlert1.ButtonItems[0];
+            var radButtonElement1 = radDesktopAlert1.ButtonItems[0];
 
         }
 
@@ -97,7 +97,7 @@ namespace EFRET_TMS
         //Transport Planning
         private void accordionControlElement3_Click(object sender, EventArgs e)
         {
-            TP tp = new TP();
+            Tp tp = new Tp();
             tp.Show();
         }
     }

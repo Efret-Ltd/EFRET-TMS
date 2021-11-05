@@ -1,7 +1,7 @@
 ﻿
 namespace EFRET_TMS
 {
-    partial class TP
+    partial class Tp
     {
         /// <summary>
         /// Required designer variable.
@@ -82,13 +82,13 @@ namespace EFRET_TMS
             this.schedulerControl1 = new DevExpress.XtraScheduler.SchedulerControl();
             this.schedulerDataStorage1 = new DevExpress.XtraScheduler.SchedulerDataStorage(this.components);
             this.newCOBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.axsDataSet = new EFRET_TMS.axsDataSet();
+            this.axsDataSet = new EFRET_TMS.AxsDataSet();
+            this.scheduleBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.axsDevDataSet = new EFRET_TMS.axsDevDataSet();
             this.movementBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.appointmentRibbonPage1 = new DevExpress.XtraScheduler.UI.AppointmentRibbonPage();
             this.actionsRibbonPageGroup1 = new DevExpress.XtraScheduler.UI.ActionsRibbonPageGroup();
             this.optionsRibbonPageGroup1 = new DevExpress.XtraScheduler.UI.OptionsRibbonPageGroup();
-            this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.fileRibbonPage1 = new DevExpress.XtraScheduler.UI.FileRibbonPage();
             this.commonRibbonPageGroup1 = new DevExpress.XtraScheduler.UI.CommonRibbonPageGroup();
             this.printRibbonPageGroup1 = new DevExpress.XtraScheduler.UI.PrintRibbonPageGroup();
@@ -105,6 +105,7 @@ namespace EFRET_TMS
             this.schedulerBarController1 = new DevExpress.XtraScheduler.UI.SchedulerBarController(this.components);
             this.movementTableAdapter = new EFRET_TMS.axsDataSetTableAdapters.MovementTableAdapter();
             this.newCOTableAdapter = new EFRET_TMS.axsDataSetTableAdapters.NewCOTableAdapter();
+            this.scheduleTableAdapter = new EFRET_TMS.axsDevDataSetTableAdapters.ScheduleTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDuration1)).BeginInit();
@@ -112,6 +113,8 @@ namespace EFRET_TMS
             ((System.ComponentModel.ISupportInitialize)(this.schedulerDataStorage1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.newCOBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.axsDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.scheduleBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.axsDevDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.movementBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.schedulerBarController1)).BeginInit();
             this.SuspendLayout();
@@ -170,7 +173,6 @@ namespace EFRET_TMS
             this.ribbon.PageCategories.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageCategory[] {
             this.calendarToolsRibbonPageCategory1});
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
-            this.ribbonPage1,
             this.fileRibbonPage1,
             this.homeRibbonPage1,
             this.viewRibbonPage1});
@@ -467,7 +469,7 @@ namespace EFRET_TMS
             // 
             // 
             // 
-            this.schedulerDataStorage1.Appointments.DataSource = this.newCOBindingSource;
+            this.schedulerDataStorage1.Appointments.DataSource = this.scheduleBindingSource;
             this.schedulerDataStorage1.Appointments.Mappings.AllDay = "InterModal";
             this.schedulerDataStorage1.Appointments.Mappings.Description = "Line";
             this.schedulerDataStorage1.Appointments.Mappings.End = "P44LastUpdate";
@@ -513,6 +515,16 @@ namespace EFRET_TMS
             this.axsDataSet.DataSetName = "axsDataSet";
             this.axsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // scheduleBindingSource
+            // 
+            this.scheduleBindingSource.DataMember = "Schedule";
+            this.scheduleBindingSource.DataSource = this.axsDevDataSet;
+            // 
+            // axsDevDataSet
+            // 
+            this.axsDevDataSet.DataSetName = "axsDevDataSet";
+            this.axsDevDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // movementBindingSource
             // 
             this.movementBindingSource.DataMember = "Movement";
@@ -542,18 +554,6 @@ namespace EFRET_TMS
             this.optionsRibbonPageGroup1.ItemLinks.Add(this.toggleRecurrenceItem1);
             this.optionsRibbonPageGroup1.ItemLinks.Add(this.changeAppointmentReminderItem1);
             this.optionsRibbonPageGroup1.Name = "optionsRibbonPageGroup1";
-            // 
-            // ribbonPage1
-            // 
-            this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup1});
-            this.ribbonPage1.Name = "ribbonPage1";
-            this.ribbonPage1.Text = "ribbonPage1";
-            // 
-            // ribbonPageGroup1
-            // 
-            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
-            this.ribbonPageGroup1.Text = "ribbonPageGroup1";
             // 
             // fileRibbonPage1
             // 
@@ -725,7 +725,11 @@ namespace EFRET_TMS
             // 
             this.newCOTableAdapter.ClearBeforeFill = true;
             // 
-            // TP
+            // scheduleTableAdapter
+            // 
+            this.scheduleTableAdapter.ClearBeforeFill = true;
+            // 
+            // Tp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -733,7 +737,7 @@ namespace EFRET_TMS
             this.Controls.Add(this.schedulerControl1);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
-            this.Name = "TP";
+            this.Name = "Tp";
             this.Ribbon = this.ribbon;
             this.StatusBar = this.ribbonStatusBar;
             this.Text = "Transport Planning";
@@ -745,6 +749,8 @@ namespace EFRET_TMS
             ((System.ComponentModel.ISupportInitialize)(this.schedulerDataStorage1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.newCOBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.axsDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.scheduleBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.axsDevDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.movementBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.schedulerBarController1)).EndInit();
             this.ResumeLayout(false);
@@ -755,8 +761,6 @@ namespace EFRET_TMS
         #endregion
 
         private DevExpress.XtraBars.Ribbon.RibbonControl ribbon;
-        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar;
         private DevExpress.XtraScheduler.SchedulerControl schedulerControl1;
         private DevExpress.XtraScheduler.SchedulerDataStorage schedulerDataStorage1;
@@ -821,10 +825,13 @@ namespace EFRET_TMS
         private DevExpress.XtraScheduler.UI.TimeScaleRibbonPageGroup timeScaleRibbonPageGroup1;
         private DevExpress.XtraScheduler.UI.LayoutRibbonPageGroup layoutRibbonPageGroup1;
         private DevExpress.XtraScheduler.UI.SchedulerBarController schedulerBarController1;
-        private axsDataSet axsDataSet;
+        private AxsDataSet axsDataSet;
         private System.Windows.Forms.BindingSource movementBindingSource;
         private axsDataSetTableAdapters.MovementTableAdapter movementTableAdapter;
         private System.Windows.Forms.BindingSource newCOBindingSource;
         private axsDataSetTableAdapters.NewCOTableAdapter newCOTableAdapter;
+        private axsDevDataSet axsDevDataSet;
+        private System.Windows.Forms.BindingSource scheduleBindingSource;
+        private axsDevDataSetTableAdapters.ScheduleTableAdapter scheduleTableAdapter;
     }
 }

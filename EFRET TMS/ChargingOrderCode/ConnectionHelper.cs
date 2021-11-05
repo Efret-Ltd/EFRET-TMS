@@ -19,7 +19,7 @@ namespace EFRET_TMS.axs
     {
         static Type[] persistentTypes = new Type[] {
             typeof(Movement),
-            typeof(NewCO)
+            typeof(NewCo)
         };
         public static Type[] GetPersistentTypes()
         {

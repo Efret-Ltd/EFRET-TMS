@@ -17,7 +17,7 @@ namespace EFRET_TMS.axs
 {
 
     [Persistent(@"NewCO_xpoView")]
-    public partial class NewCO : XPLiteObject
+    public partial class NewCo : XPLiteObject
     {
         int fCO;
         [Key(true)]

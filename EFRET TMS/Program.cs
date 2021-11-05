@@ -2,7 +2,12 @@
 using IO.Ably.Realtime;
 using Sentry;
 using System;
+using System.Diagnostics;
+using System.Drawing;
 using System.Windows.Forms;
+using Telerik.WinControls;
+using Telerik.WinControls.UI;
+
 namespace EFRET_TMS
 {
     static class Program
@@ -18,7 +23,8 @@ namespace EFRET_TMS
              * We pipe Ably events into sentry to log traffic between clients.
              */
             var user = Environment.UserName;
-            var ably = new AblyRealtime("27XrvA.i-tlMA:o2F5CnEta2QfQbOf");
+            ClientOptions clientOptions = new ClientOptions("27XrvA.i-tlMA:o2F5CnEta2QfQbOf");
+            AblyRealtime ably = new AblyRealtime(clientOptions);
             using (SentrySdk.Init(o =>
             {
                 o.Dsn = "https://9cdd12dd70d24f6a8666e7784722f6f7@o1039968.ingest.sentry.io/6008805";
@@ -31,9 +37,33 @@ namespace EFRET_TMS
             {
                 // Networking Stuff
                 // We hook an on connected event.
+                // We keep form out of connection events because offline mode would be very hard to design otherwise.
                 ably.Connection.On(ConnectionEvent.Connected, args =>
                 {
                     SentrySdk.CaptureMessage(user + " connected to ably.");
+                    // We find the channel and publish a greeting to other clients so everyone is aware who is online.
+                    IRealtimeChannel channel = ably.Channels.Get("main");
+                    channel.Attach((success, error) =>
+                    {
+                        SentrySdk.CaptureMessage(user + " connected to main channel.");
+                    });
+
+                    var greetingMessage = "[" + DateTime.Now + "] " + user + " logged into EFRET TMS.";
+
+                    channel.Publish("LOGIN", greetingMessage, async (success, error) =>
+                    {
+                        PaginatedResult<IO.Ably.Message> resultPage = await channel.HistoryAsync(null);
+                        IO.Ably.Message lastMessage = resultPage.Items[0];
+                        var messageId = lastMessage.Id.ToString();
+                        var messageData = lastMessage.Data.ToString();
+                        
+
+                    });
+                    channel.Subscribe(message => {
+                        RadMessageBox.Show($"Message: {message.Name}\n{message.Data}");
+                    });
+
+
                 });
                 ably.Connection.On(ConnectionEvent.Failed, args =>
                 {
@@ -72,16 +102,7 @@ namespace EFRET_TMS
                 {
                     SentrySdk.CaptureMessage(user + " updated connection to ably.");
                 });
-                // We find the channel and publish a greeting to other clients so everyone is aware who is online.
-                IRealtimeChannel channel = ably.Channels.Get("main");
-                var greetingMessage = user + " logged into EFRET TMS.";
-
-                // Publish a message to the  channel
-                channel.Publish("greeting", greetingMessage);
-                channel.Subscribe("greeting", (message) =>
-                {
-                    SentrySdk.CaptureMessage(message.Data.ToString());
-                });
+              
 
                 //We now launch the RadForm with a splashscreen manager.
                 Application.EnableVisualStyles();

@@ -2,9 +2,9 @@
 namespace EFRET_TMS.axs
 {
 
-    public partial class NewCO
+    public partial class NewCo
     {
-        public NewCO(Session session) : base(session) { }
+        public NewCo(Session session) : base(session) { }
         public override void AfterConstruction() { base.AfterConstruction(); }
     }
 

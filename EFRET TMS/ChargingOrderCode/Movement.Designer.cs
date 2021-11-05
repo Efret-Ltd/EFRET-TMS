@@ -27,13 +27,13 @@ namespace EFRET_TMS.axs
             get { return fidMovement; }
             set { SetPropertyValue<int>("idMovement", ref fidMovement, value); }
         }
-        NewCO fCO;
+        NewCo fCO;
         [Persistent(@"IdCO")]
         [Association(@"MovementReferencesNewCO")]
-        public NewCO CO
+        public NewCo CO
         {
             get { return fCO; }
-            set { SetPropertyValue<NewCO>("CO", ref fCO, value); }
+            set { SetPropertyValue<NewCo>("CO", ref fCO, value); }
         }
         DateTime fContractualdate;
         public DateTime Contractualdate
