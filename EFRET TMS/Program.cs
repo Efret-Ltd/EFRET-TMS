@@ -19,7 +19,7 @@ namespace EFRET_TMS
              * Before we do anything, we start a ably sentry instance to log all future errors.
              * We pipe Ably events into sentry to log traffic between clients.
              */
-            var user = Environment.UserName;
+            string user = Environment.UserName;
             ClientOptions clientOptions = new ClientOptions("27XrvA.i-tlMA:o2F5CnEta2QfQbOf");
             AblyRealtime ably = new AblyRealtime(clientOptions);
             using (SentrySdk.Init(o =>
@@ -45,14 +45,14 @@ namespace EFRET_TMS
                         SentrySdk.CaptureMessage(user + " connected to main channel.");
                     });
 
-                    var greetingMessage = "[" + DateTime.Now + "] " + user + " logged into EFRET TMS.";
+                    string greetingMessage = "[" + DateTime.Now + "] " + user + " logged into EFRET TMS.";
 
                     channel.Publish("LOGIN", greetingMessage, async (success, error) =>
                     {
                         PaginatedResult<IO.Ably.Message> resultPage = await channel.HistoryAsync(null);
                         IO.Ably.Message lastMessage = resultPage.Items[0];
-                        var messageId = lastMessage.Id.ToString();
-                        var messageData = lastMessage.Data.ToString();
+                        string messageId = lastMessage.Id.ToString();
+                        string messageData = lastMessage.Data.ToString();
 
 
                     });

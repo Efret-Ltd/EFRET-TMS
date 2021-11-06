@@ -1,9 +1,15 @@
-﻿namespace EFRET_TMS
+﻿using System.Runtime.Serialization;
+
+namespace EFRET_TMS
 {
 
 
     partial class AxsDataSet
     {
+        public override void GetObjectData(SerializationInfo info, StreamingContext context)
+        {
+            base.GetObjectData(info, context);
+        }
     }
 }
 

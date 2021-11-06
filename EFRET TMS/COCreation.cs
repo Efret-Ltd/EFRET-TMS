@@ -4,7 +4,7 @@ namespace EFRET_TMS
 {
     public partial class CoCreation : DevExpress.XtraEditors.XtraForm
     {
-        ProcessCreateCo _createCouc;
+        readonly ProcessCreateCo _createCouc;
         public CoCreation()
         {
             InitializeComponent();

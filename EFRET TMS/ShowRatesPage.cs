@@ -1,5 +1,4 @@
 ﻿using DevExpress.XtraEditors;
-using System;
 using System.Windows.Forms;
 
 namespace EFRET_TMS
@@ -10,14 +9,14 @@ namespace EFRET_TMS
         {
             InitializeComponent();
 
-            var url =
+            string url =
                 "https://www.xe.com/currencyconverter/convert/?Amount=1&From=GBP&To=EUR";
             this.webBrowser1.Navigate(url);
             ScrollToElement("faded-digits");
 
         }
 
-        private void ScrollToElement(String elemName)
+        private void ScrollToElement(string elemName)
         {
             if (webBrowser1.Document != null)
             {

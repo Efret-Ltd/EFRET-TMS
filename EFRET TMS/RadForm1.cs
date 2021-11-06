@@ -84,7 +84,7 @@ namespace EFRET_TMS
         private void OnRadButtonElementPress()
         {
 
-            var radButtonElement1 = radDesktopAlert1.ButtonItems[0];
+            Telerik.WinControls.RadItem radButtonElement1 = radDesktopAlert1.ButtonItems[0];
 
         }
 

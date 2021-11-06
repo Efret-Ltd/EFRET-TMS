@@ -113,12 +113,10 @@
             this.radRibbonBar1.CommandTabs.AddRange(new Telerik.WinControls.RadItem[] {
             this.ribbonTab1});
             this.radRibbonBar1.Location = new System.Drawing.Point(0, 0);
-            this.radRibbonBar1.MaximizeButton = false;
             this.radRibbonBar1.MinimizeButton = false;
             this.radRibbonBar1.Name = "radRibbonBar1";
             this.radRibbonBar1.QuickAccessToolBarItems.AddRange(new Telerik.WinControls.RadItem[] {
             this.radButtonElement1});
-            this.radRibbonBar1.ShowExpandButton = false;
             this.radRibbonBar1.SimplifiedHeight = 70;
             this.radRibbonBar1.Size = new System.Drawing.Size(797, 155);
             this.radRibbonBar1.StartMenuItems.AddRange(new Telerik.WinControls.RadItem[] {

@@ -112,6 +112,7 @@ namespace EFRET_TMS
             this.fluentFormDefaultManager1 = new DevExpress.XtraBars.FluentDesignSystem.FluentFormDefaultManager(this.components);
             this.skinBarSubItem1 = new DevExpress.XtraBars.SkinBarSubItem();
             this.barHeaderItem1 = new DevExpress.XtraBars.BarHeaderItem();
+            this.barLargeButtonItem1 = new DevExpress.XtraBars.BarLargeButtonItem();
             this.dataTable1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.accordionControl1 = new DevExpress.XtraBars.Navigation.AccordionControl();
             this.accordionControlElement1 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
@@ -133,7 +134,6 @@ namespace EFRET_TMS
             this.accordionControlElement4 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement5 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.dataTable1TableAdapter = new EFRET_TMS.axsDataSetTableAdapters.DataTable1TableAdapter();
-            this.barLargeButtonItem1 = new DevExpress.XtraBars.BarLargeButtonItem();
             this.fluentDesignFormContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.newCOBindingSource)).BeginInit();
@@ -169,7 +169,7 @@ namespace EFRET_TMS
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
-            this.gridControl1.Click += new System.EventHandler(this.gridControl1_Click);
+            this.gridControl1.DoubleClick += new System.EventHandler(this.gridControl1_Click);
             // 
             // newCOBindingSource
             // 
@@ -766,6 +766,13 @@ namespace EFRET_TMS
             this.barHeaderItem1.Name = "barHeaderItem1";
             this.barHeaderItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barHeaderItem1_ItemClick);
             // 
+            // barLargeButtonItem1
+            // 
+            this.barLargeButtonItem1.Caption = "Export to Excel";
+            this.barLargeButtonItem1.Id = 4;
+            this.barLargeButtonItem1.Name = "barLargeButtonItem1";
+            this.barLargeButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barLargeButtonItem1_ItemClick);
+            // 
             // dataTable1BindingSource
             // 
             this.dataTable1BindingSource.DataMember = "DataTable1";
@@ -920,13 +927,6 @@ namespace EFRET_TMS
             // dataTable1TableAdapter
             // 
             this.dataTable1TableAdapter.ClearBeforeFill = true;
-            // 
-            // barLargeButtonItem1
-            // 
-            this.barLargeButtonItem1.Caption = "Export to Excel";
-            this.barLargeButtonItem1.Id = 4;
-            this.barLargeButtonItem1.Name = "barLargeButtonItem1";
-            this.barLargeButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barLargeButtonItem1_ItemClick);
             // 
             // Orders
             // 
