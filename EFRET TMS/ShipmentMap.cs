@@ -6,16 +6,25 @@ using System.Drawing;
 using System.IO;
 using System.Net;
 using System.Text.Json;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using Telerik.WinControls;
 
 namespace EFRET_TMS
 {
     public partial class ShipmentMap : Telerik.WinControls.UI.RadRibbonForm
     {
-        public ShipmentMap(string latitude, string longitude)
+        public ShipmentMap(int coid, string latitude, string longitude)
         {
             var coords = latitude + "," + longitude;
+            int pictureWidth = 512;
+            int pictureHeight = 512;
+            int zoom = 15;
             InitializeComponent();
-            HttpWebRequest mapRequest = (HttpWebRequest)WebRequest.Create("https://image.maps.ls.hereapi.com/mia/1.6/mapview?c=" + coords + "&z=15&apiKey=JdeLHTyZLIIKCjldtL0VTEMuXvaGIzkVdIFvLx8yD84&i&w=1024&h=1024");
+            this.Text = "Shipment tracking for: "+coid;
+            HttpWebRequest mapRequest = (HttpWebRequest)WebRequest.Create(
+                "https://image.maps.ls.hereapi.com/mia/1.6/mapview?c=" + coords +
+                "&z="+zoom+"&apiKey=JdeLHTyZLIIKCjldtL0VTEMuXvaGIzkVdIFvLx8yD84&i&w="+pictureWidth+"&h="+pictureHeight+"");
 
             // returned values are returned as a stream, then read into a string
             using (HttpWebResponse mapResponse = (HttpWebResponse)mapRequest.GetResponse())
@@ -30,6 +39,7 @@ namespace EFRET_TMS
                         lxFs.Close();
                         lxFs.Dispose();
                     }
+
                     reader.Close();
                     reader.Dispose();
                 }
@@ -42,6 +52,7 @@ namespace EFRET_TMS
             radPictureBox1.Image = Image.FromStream(stream);
             stream.Close();
             StreetInfo(latitude, longitude);
+            GetStreetName(latitude, longitude);
         }
 
         public void StreetInfo(string latitude, string longitude)
@@ -90,7 +101,7 @@ namespace EFRET_TMS
             public int TotalScore { get; set; }
         }
 
-        public class Location
+        public new class Location
         {
             public ReferencePosition ReferencePosition { get; set; }
             public Address Address { get; set; }
@@ -105,8 +116,9 @@ namespace EFRET_TMS
         }
 
 
-        public void GetStreetName(string coords)
+        public void GetStreetName(string latitude, string longitude)
         {
+            var coords = latitude + "," + longitude;
             //Now we do another request for the location data payload to gather road details.
             string uri = "https://revgeocode.search.hereapi.com/v1/revgeocode";
             string myParameters = "?apiKey=JdeLHTyZLIIKCjldtL0VTEMuXvaGIzkVdIFvLx8yD84&at=" + coords + "&lang=en-US";
@@ -127,8 +139,10 @@ namespace EFRET_TMS
                     reader.Close();
                     dataStream.Close();
                     //var jsonresult = JsonConvert.DeserializeObject<RoadInfo>(serializedResponse);
-
-
+                    RadMessageBox.Show(serializedResponse);
+                    JObject json = JObject.Parse(serializedResponse);
+                    dynamic results = JsonConvert.DeserializeObject<dynamic>(serializedResponse);
+                    RadMessageBox.Show(results.items.label);
                 }
             }
             catch (Exception ex)

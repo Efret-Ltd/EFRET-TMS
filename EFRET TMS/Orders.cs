@@ -74,10 +74,11 @@ namespace EFRET_TMS
                 for (int i = 0; i < rows.Count; i++)
                 {
                     DataRow row = rows[i] as DataRow;
+                    int coid = Int32.Parse(row["IdCO"].ToString()); 
                     var p44Long = row["P44Longitude"];
                     var p44Lat = row["P44Latitude"];
                     //var coords = P44_Lat.ToString() + "," + P44_Long.ToString();
-                    ShipmentMap sMap = new ShipmentMap(p44Lat.ToString(), p44Long.ToString());
+                    ShipmentMap sMap = new ShipmentMap(coid,p44Lat.ToString(), p44Long.ToString());
                     sMap.ShowDialog();
                 }
             }
