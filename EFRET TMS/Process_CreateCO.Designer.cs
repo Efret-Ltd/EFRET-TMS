@@ -31,6 +31,7 @@ namespace EFRET_TMS
         {
             this.wizardControl1 = new DevExpress.XtraWizard.WizardControl();
             this.welcomeWizardPage1 = new DevExpress.XtraWizard.WelcomeWizardPage();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.stepProgressBar1 = new DevExpress.XtraEditors.StepProgressBar();
             this.stepProgressBarItem1 = new DevExpress.XtraEditors.StepProgressBarItem();
             this.stepProgressBarItem2 = new DevExpress.XtraEditors.StepProgressBarItem();
@@ -38,10 +39,9 @@ namespace EFRET_TMS
             this.gradientLabel1 = new Syncfusion.Windows.Forms.Tools.GradientLabel();
             this.radTextBoxControl1 = new Telerik.WinControls.UI.RadTextBoxControl();
             this.wizardPage1 = new DevExpress.XtraWizard.WizardPage();
+            this.stepProgressBar2 = new DevExpress.XtraEditors.StepProgressBar();
             this.completionWizardPage1 = new DevExpress.XtraWizard.CompletionWizardPage();
             this.process1 = new System.Diagnostics.Process();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.stepProgressBar2 = new DevExpress.XtraEditors.StepProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.wizardControl1)).BeginInit();
             this.wizardControl1.SuspendLayout();
             this.welcomeWizardPage1.SuspendLayout();
@@ -79,6 +79,14 @@ namespace EFRET_TMS
             this.welcomeWizardPage1.Size = new System.Drawing.Size(476, 264);
             this.welcomeWizardPage1.Text = "Create a charging order";
             // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Location = new System.Drawing.Point(403, 47);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(70, 23);
+            this.simpleButton1.TabIndex = 5;
+            this.simpleButton1.Text = "Validate";
+            // 
             // stepProgressBar1
             // 
             this.stepProgressBar1.Appearance.BackColor = System.Drawing.Color.White;
@@ -106,7 +114,6 @@ namespace EFRET_TMS
             this.stepProgressBarItem2.ContentBlock2.Appearance.Caption.Options.UseForeColor = true;
             this.stepProgressBarItem2.ContentBlock2.Caption = "Route Planning";
             this.stepProgressBarItem2.Name = "stepProgressBarItem2";
-            this.stepProgressBarItem2.State = DevExpress.XtraEditors.StepProgressBarItemState.Active;
             // 
             // stepProgressBarItem3
             // 
@@ -146,6 +153,20 @@ namespace EFRET_TMS
             this.wizardPage1.Size = new System.Drawing.Size(476, 264);
             this.wizardPage1.Text = "Enter Company Name or Number ";
             // 
+            // stepProgressBar2
+            // 
+            this.stepProgressBar2.Appearance.BackColor = System.Drawing.Color.White;
+            this.stepProgressBar2.Appearance.Options.UseBackColor = true;
+            this.stepProgressBar2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.stepProgressBar2.Items.Add(this.stepProgressBarItem1);
+            this.stepProgressBar2.Items.Add(this.stepProgressBarItem2);
+            this.stepProgressBar2.Items.Add(this.stepProgressBarItem3);
+            this.stepProgressBar2.Location = new System.Drawing.Point(0, 174);
+            this.stepProgressBar2.Name = "stepProgressBar2";
+            this.stepProgressBar2.Size = new System.Drawing.Size(476, 90);
+            this.stepProgressBar2.TabIndex = 5;
+            this.stepProgressBar2.Click += new System.EventHandler(this.stepProgressBar2_Click);
+            // 
             // completionWizardPage1
             // 
             this.completionWizardPage1.Name = "completionWizardPage1";
@@ -160,28 +181,6 @@ namespace EFRET_TMS
             this.process1.StartInfo.StandardOutputEncoding = null;
             this.process1.StartInfo.UserName = "";
             this.process1.SynchronizingObject = this;
-            // 
-            // simpleButton1
-            // 
-            this.simpleButton1.Location = new System.Drawing.Point(403, 47);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(70, 23);
-            this.simpleButton1.TabIndex = 5;
-            this.simpleButton1.Text = "Validate";
-            // 
-            // stepProgressBar2
-            // 
-            this.stepProgressBar2.Appearance.BackColor = System.Drawing.Color.White;
-            this.stepProgressBar2.Appearance.Options.UseBackColor = true;
-            this.stepProgressBar2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.stepProgressBar2.Items.Add(this.stepProgressBarItem1);
-            this.stepProgressBar2.Items.Add(this.stepProgressBarItem2);
-            this.stepProgressBar2.Items.Add(this.stepProgressBarItem3);
-            this.stepProgressBar2.Location = new System.Drawing.Point(0, 174);
-            this.stepProgressBar2.Name = "stepProgressBar2";
-            this.stepProgressBar2.Size = new System.Drawing.Size(476, 90);
-            this.stepProgressBar2.TabIndex = 5;
-            this.stepProgressBar2.Click += new System.EventHandler(this.stepProgressBar2_Click);
             // 
             // ProcessCreateCo
             // 
