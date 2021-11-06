@@ -1,24 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
-using Telerik.WinControls;
 
 namespace EFRET_TMS
 {
-    public partial class COCreation : DevExpress.XtraEditors.XtraForm
+    public partial class CoCreation : DevExpress.XtraEditors.XtraForm
     {
-        ProcessCreateCo createCOUC;
-        public COCreation()
+        ProcessCreateCo _createCouc;
+        public CoCreation()
         {
             InitializeComponent();
-            createCOUC = new ProcessCreateCo();
-            Controls.Add(createCOUC);
-            createCOUC.BringToFront();
-            createCOUC.Visible = true;
+            _createCouc = new ProcessCreateCo();
+            Controls.Add(_createCouc);
+            _createCouc.BringToFront();
+            _createCouc.Visible = true;
         }
 
         private void COCreation_Load(object sender, EventArgs e)

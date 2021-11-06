@@ -1,13 +1,9 @@
 ﻿using DevExpress.XtraBars;
-using DevExpress.XtraGrid;
-using EFRET_TMS.axsDataSetTableAdapters;
+using DevExpress.XtraEditors;
 using System;
 using System.Collections;
 using System.Data;
-using DevExpress.XtraEditors;
-using DevExpress.XtraGrid.Views.Base;
 using System.Diagnostics;
-using Telerik.WinControls;
 
 namespace EFRET_TMS
 {
@@ -33,8 +29,8 @@ namespace EFRET_TMS
         private void accordionControlElement6_Click(object sender, EventArgs e)
         {
 
-            COCreation COCreate = new COCreation();
-            COCreate.ShowDialog();
+            CoCreation coCreate = new CoCreation();
+            coCreate.ShowDialog();
         }
 
         private void accordionControlElement7_Click(object sender, EventArgs e)
@@ -50,13 +46,14 @@ namespace EFRET_TMS
         private void Orders_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'axsDataSet1.DataTable1' table. You can move, or remove it, as needed.
-          //  this.dataTable1TableAdapter.Fill(axsDataSet1.DataTable1);
+            //  this.dataTable1TableAdapter.Fill(axsDataSet1.DataTable1);
 
         }
 
         private void gridControl1_Click(object sender, EventArgs e)
         {
             ArrayList rows = new ArrayList();
+            object mapcoords = null;
             // Add the selected rows to the list.
             Int32[] selectedRowHandles = gridView1.GetSelectedRows();
             for (int i = 0; i < selectedRowHandles.Length; i++)
@@ -68,22 +65,21 @@ namespace EFRET_TMS
             try
             {
                 gridView1.BeginUpdate();
-                for (int i = 0; i < rows.Count; i++)
-                {
-                    DataRow row = rows[i] as DataRow;
-                    // Change the field value.
-                    var p44id = row["P44ShipmentID"];
-                    var P44_Long = row["P44Longitude"];
-                    var P44_Lat = row["P44Latitude"];
-                    var coords = P44_Long.ToString() + P44_Lat.ToString();
-                    RadMessageBox.Show(coords.ToString());
-                }
+
 
             }
             finally
             {
                 gridView1.EndUpdate();
-                
+                for (int i = 0; i < rows.Count; i++)
+                {
+                    DataRow row = rows[i] as DataRow;
+                    var p44Long = row["P44Longitude"];
+                    var p44Lat = row["P44Latitude"];
+                    //var coords = P44_Lat.ToString() + "," + P44_Long.ToString();
+                    ShipmentMap sMap = new ShipmentMap(p44Lat.ToString(), p44Long.ToString());
+                    sMap.ShowDialog();
+                }
             }
 
         }

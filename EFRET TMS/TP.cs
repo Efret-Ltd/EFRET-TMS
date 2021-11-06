@@ -1,7 +1,5 @@
 ﻿using DevExpress.XtraScheduler;
 using System;
-using System.Data;
-using System.Data.SqlClient;
 
 namespace EFRET_TMS
 {
@@ -33,7 +31,7 @@ namespace EFRET_TMS
             this.schedulerDataStorage1.Appointments.Mappings.ResourceId = "ResourceIDs";
         }
 
-    private void MapResourceData()
+        private void MapResourceData()
         {
             this.schedulerDataStorage1.Resources.Mappings.Id = "ResourceID";
             this.schedulerDataStorage1.Resources.Mappings.Caption = "ResourceName";
@@ -54,7 +52,7 @@ namespace EFRET_TMS
 
 
         }
-     
+
         // Store modified data in the database
         private void OnApptChangedInsertedDeleted(object sender, PersistentObjectsEventArgs e)
         {

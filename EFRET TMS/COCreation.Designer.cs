@@ -1,6 +1,6 @@
 ﻿namespace EFRET_TMS
 {
-    partial class COCreation
+    partial class CoCreation
     {
         /// <summary>
         /// Required designer variable.
@@ -38,7 +38,7 @@
             this.HelpButton = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "COCreation";
+            this.Name = "CoCreation";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Load += new System.EventHandler(this.COCreation_Load);
             this.ResumeLayout(false);

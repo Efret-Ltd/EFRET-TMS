@@ -2,11 +2,8 @@
 using IO.Ably.Realtime;
 using Sentry;
 using System;
-using System.Diagnostics;
-using System.Drawing;
 using System.Windows.Forms;
 using Telerik.WinControls;
-using Telerik.WinControls.UI;
 
 namespace EFRET_TMS
 {
@@ -56,10 +53,11 @@ namespace EFRET_TMS
                         IO.Ably.Message lastMessage = resultPage.Items[0];
                         var messageId = lastMessage.Id.ToString();
                         var messageData = lastMessage.Data.ToString();
-                        
+
 
                     });
-                    channel.Subscribe(message => {
+                    channel.Subscribe(message =>
+                    {
                         RadMessageBox.Show($"Message: {message.Name}\n{message.Data}");
                     });
 
@@ -102,7 +100,7 @@ namespace EFRET_TMS
                 {
                     SentrySdk.CaptureMessage(user + " updated connection to ably.");
                 });
-              
+
 
                 //We now launch the RadForm with a splashscreen manager.
                 Application.EnableVisualStyles();
