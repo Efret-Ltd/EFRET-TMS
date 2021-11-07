@@ -43,25 +43,19 @@ namespace EFRET_TMS
                 using (BinaryReader reader = new BinaryReader(mapResponse.GetResponseStream()))
                 {
                     byte[] lnByte = reader.ReadBytes(1 * 2048 * 2048 * 10);
-                    using (FileStream lxFs = new FileStream(@"map.jpg", FileMode.Create))
+                    Image image;
+                    using (MemoryStream ms = new MemoryStream(lnByte))
                     {
-                        lxFs.Write(lnByte, 0, lnByte.Length);
-
-                        lxFs.Close();
-                        lxFs.Dispose();
+                        radPictureBox1.Image = Image.FromStream(ms); 
+                        ms.Close();
                     }
-
                     reader.Close();
                     reader.Dispose();
                 }
 
             }
-            //Can we load the map with modular design in mind so we can just put the map output on a tile on the dashboard.
-            FileStream stream = new FileStream(@"map.jpg", FileMode.Open, FileAccess.Read);
-            radPictureBox1.Image = Image.FromStream(stream);
-            stream.Close();
         }
-
+  
         public void StreetInfo(string latitude, string longitude)
         {
             try
