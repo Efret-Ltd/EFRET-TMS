@@ -1,5 +1,10 @@
-﻿using DevExpress.XtraEditors;
+﻿using System;
+using System.IO;
+using System.Net;
+using DevExpress.XtraEditors;
 using System.Windows.Forms;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace EFRET_TMS
 {
@@ -8,28 +13,25 @@ namespace EFRET_TMS
         public ShowRatesPage()
         {
             InitializeComponent();
-
-            string url =
-                "https://www.xe.com/currencyconverter/convert/?Amount=1&From=GBP&To=EUR";
-            this.webBrowser1.Navigate(url);
-            ScrollToElement("faded-digits");
-
-        }
-
-        private void ScrollToElement(string elemName)
-        {
-            if (webBrowser1.Document != null)
+            var url = "https://api.exchangerate.host/convert?from=GBP&to=EUR";
+            HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(url);
+            request.Method = "GET";
+            String result = String.Empty;
+            using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
             {
-                HtmlDocument doc = webBrowser1.Document;
-                HtmlElementCollection elems = doc.All.GetElementsByName(elemName);
-                if (elems != null && elems.Count > 0)
-                {
-                    HtmlElement elem = elems[0];
-
-                    elem.ScrollIntoView(true);
-                }
+                Stream dataStream = response.GetResponseStream();
+                StreamReader reader = new StreamReader(dataStream);
+                result = reader.ReadToEnd();
+                reader.Close();
+                dataStream.Close();
             }
+
+            var objects = JsonConvert.SerializeObject(new { result });
+            this.simpleLabelItem1.Text = objects;
+
+
         }
+
 
     }
 }

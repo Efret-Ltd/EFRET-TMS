@@ -41,38 +41,39 @@ namespace EFRET_TMS
         public void VersionCheck()
         {
             labelStatus.Text = "Checking Version...";
-          var latestVersion = "";
-          try
-          {
-              SqlConnection conn =
-                  new SqlConnection(@"Server=EFRET-APP-01\EFRET;Database=tms;Trusted_Connection=True;");
-              conn.Open();
-
-              SqlCommand command = new SqlCommand("SELECT TOP (1) [Revisions] FROM [tms].[dbo].[Revisions]", conn);
-              using (SqlDataReader reader = command.ExecuteReader())
-              {
-                  if (reader.Read())
-                  {
-                      latestVersion = reader["Revisions"].ToString();
-                  }
-              }
-
-              conn.Close();
-          }
-          catch (Exception ex)
-          {
-              SentrySdk.CaptureException(ex);
-          }
-
-          if (latestVersion != AssemblyVersion)
+            var latestVersion = "";
+            try
             {
+                SqlConnection conn =
+                    new SqlConnection(@"Server=EFRET-APP-01\EFRET;Database=tms;Trusted_Connection=True;");
+                conn.Open();
+
+                SqlCommand command = new SqlCommand("SELECT TOP (1) [Revisions] FROM [tms].[dbo].[Revisions]", conn);
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        latestVersion = reader["Revisions"].ToString();
+                    }
+                }
+
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                SentrySdk.CaptureException(ex);
+            }
+
+            if (latestVersion != AssemblyVersion)
+            {
+                SentrySdk.CaptureMessage(Environment.UserName + " Running out of date TMS client");
                 labelStatus.ForeColor = Color.Orange;
                 labelStatus.Text = "Downloading Update...";
-                try 
-                { 
+                try
+                {
                     using (WebClient webClient = new WebClient())
                     {
-                    webClient.DownloadFile("https://efret.sharepoint.com/sites/EfretLimited/Shared%20Documents/AxS/deployment/live/EFRET-TMS.exe", "Update.exe");
+                        webClient.DownloadFile("https://efret.sharepoint.com/sites/EfretLimited/Shared%20Documents/AxS/deployment/live/EFRET-TMS.exe", "Update.exe");
                     }
 
                 }
@@ -83,26 +84,26 @@ namespace EFRET_TMS
                 try
                 {
                     Process update = new Process();
-                // Configure the process using the StartInfo properties.
-                update.StartInfo.FileName = "Update.exe";
-                update.StartInfo.WindowStyle = ProcessWindowStyle.Maximized;
-                update.Start();
-                update.WaitForExit();// Waits here for the process to exit.
-
-            }
-          catch (Exception ex)
-          {
-              SentrySdk.CaptureException(ex);
-          }
-
-
-        }
-                else
-                {
-                    labelStatus.ForeColor = Color.Green;
-                    labelStatus.Text = "[SUCCESS] Loading User Permissions";
+                    // Configure the process using the StartInfo properties.
+                    update.StartInfo.FileName = "Update.exe";
+                    update.StartInfo.WindowStyle = ProcessWindowStyle.Maximized;
+                    update.Start();
+                    update.WaitForExit();// Waits here for the process to exit.
 
                 }
+                catch (Exception ex)
+                {
+                    SentrySdk.CaptureException(ex);
+                }
+
+
+            }
+            else
+            {
+                labelStatus.ForeColor = Color.Green;
+                labelStatus.Text = "[SUCCESS] Loading User Permissions";
+
+            }
 
         }
 

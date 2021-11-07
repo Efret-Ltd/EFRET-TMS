@@ -58,7 +58,10 @@ namespace EFRET_TMS
                     });
                     channel.Subscribe(message =>
                     {
-                        RadMessageBox.Show($"Message: {message.Name}\n{message.Data}");
+                       // RadMessageBox.Show($"Message: {message.Name}\n{message.Data}");
+
+                        //We now launch the RadForm with a splashscreen manager.
+                    
                     });
 
 
@@ -100,12 +103,10 @@ namespace EFRET_TMS
                 {
                     SentrySdk.CaptureMessage(user + " updated connection to ably.");
                 });
-
-
-                //We now launch the RadForm with a splashscreen manager.
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
                 Application.Run(new RadForm1());
+
             }
         }
     }
