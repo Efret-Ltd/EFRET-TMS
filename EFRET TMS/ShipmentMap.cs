@@ -16,13 +16,23 @@ namespace EFRET_TMS
     {
         public ShipmentMap(int coid, string latitude, string longitude)
         {
+        InitializeComponent();
+         radRibbonBar1.Expanded = false;
+          this.Text = "Shipment tracking for: " + coid;
+          GetMapFromCoords(latitude, longitude);
+          StreetInfo(latitude, longitude);
+            GetStreetName(latitude, longitude);
+        }
+
+        public void GetMapFromCoords(string latitude, string longitude)
+        {
+
             string coords = latitude + "," + longitude;
             int pictureWidth = 512;
             int pictureHeight = 512;
             int zoom = 15;
-            InitializeComponent();
-            radRibbonBar1.Expanded = false;
-            this.Text = "Shipment tracking for: " + coid;
+
+
             HttpWebRequest mapRequest = (HttpWebRequest)WebRequest.Create(
                 "https://image.maps.ls.hereapi.com/mia/1.6/mapview?c=" + coords +
                 "&z=" + zoom + "&apiKey=JdeLHTyZLIIKCjldtL0VTEMuXvaGIzkVdIFvLx8yD84&i&w=" + pictureWidth + "&h=" + pictureHeight + "");
@@ -46,14 +56,10 @@ namespace EFRET_TMS
                 }
 
             }
-
-
             //Can we load the map with modular design in mind so we can just put the map output on a tile on the dashboard.
             FileStream stream = new FileStream(@"map.jpg", FileMode.Open, FileAccess.Read);
             radPictureBox1.Image = Image.FromStream(stream);
             stream.Close();
-            StreetInfo(latitude, longitude);
-            GetStreetName(latitude, longitude);
         }
 
         public void StreetInfo(string latitude, string longitude)
@@ -138,6 +144,7 @@ namespace EFRET_TMS
                     StreamReader reader = new StreamReader(dataStream);
                     serializedResponse = reader.ReadToEnd();
                     reader.Close();
+                    reader.Dispose();
                     dataStream.Close();
                     dataStream.Dispose();
                     JObject json = JObject.Parse(serializedResponse);
