@@ -51,7 +51,7 @@ namespace EFRET_TMS
                     {
                         PaginatedResult<IO.Ably.Message> resultPage = await channel.HistoryAsync(null);
                         IO.Ably.Message lastMessage = resultPage.Items[0];
-                        string messageId = lastMessage.Id.ToString();
+                        string messageId = lastMessage.Id;
                         string messageData = lastMessage.Data.ToString();
 
 

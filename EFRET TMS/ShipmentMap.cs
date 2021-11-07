@@ -8,7 +8,6 @@ using System.Drawing;
 using System.IO;
 using System.Net;
 using System.Text.Json;
-using Telerik.WinControls;
 
 namespace EFRET_TMS
 {
@@ -125,7 +124,7 @@ namespace EFRET_TMS
             string myParameters = "?apiKey=JdeLHTyZLIIKCjldtL0VTEMuXvaGIzkVdIFvLx8yD84&at=" + coords + "&lang=en-US";
 
             string url = uri + myParameters;
-            string serializedResponse = string.Empty;
+            string serializedResponse;
 
             HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(url);
             request.Method = "GET";

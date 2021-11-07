@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using DevExpress.XtraReports.Serialization;
 
 namespace EFRET_TMS
 {
@@ -29,7 +30,7 @@ namespace EFRET_TMS
             {
                 if (reader.Read())
                 {
-                    rate = string.Format("{0}", reader["ConversionRate"]);
+                    rate = $"{reader["ConversionRate"]}";
                 }
             }
 

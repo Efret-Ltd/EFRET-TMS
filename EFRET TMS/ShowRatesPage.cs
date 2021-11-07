@@ -30,13 +30,6 @@ namespace EFRET_TMS
                 }
             }
         }
-        void windowsUIButtonPanel_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
-        {
-            if (e.Button.Properties.Caption == "Print")
-            {
-            }
-        }
-
 
     }
 }

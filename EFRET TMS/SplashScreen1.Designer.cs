@@ -34,10 +34,9 @@ namespace EFRET_TMS
             this.labelCopyright = new DevExpress.XtraEditors.LabelControl();
             this.labelStatus = new DevExpress.XtraEditors.LabelControl();
             this.peImage = new DevExpress.XtraEditors.PictureEdit();
-            this.peLogo = new DevExpress.XtraEditors.PictureEdit();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.progressBarControl.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.peImage.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.peLogo.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // progressBarControl
@@ -84,28 +83,21 @@ namespace EFRET_TMS
             this.peImage.Size = new System.Drawing.Size(448, 200);
             this.peImage.TabIndex = 9;
             // 
-            // peLogo
+            // labelControl1
             // 
-            this.peLogo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.peLogo.Location = new System.Drawing.Point(279, 267);
-            this.peLogo.Name = "peLogo";
-            this.peLogo.Properties.AllowFocused = false;
-            this.peLogo.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.peLogo.Properties.Appearance.Options.UseBackColor = true;
-            this.peLogo.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.peLogo.Properties.ShowMenu = false;
-            this.peLogo.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
-            this.peLogo.Size = new System.Drawing.Size(158, 42);
-            this.peLogo.TabIndex = 8;
+            this.labelControl1.Location = new System.Drawing.Point(364, 287);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(35, 13);
+            this.labelControl1.TabIndex = 10;
+            this.labelControl1.Text = "Version";
             // 
             // SplashScreen1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(450, 320);
+            this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.peImage);
-            this.Controls.Add(this.peLogo);
             this.Controls.Add(this.labelStatus);
             this.Controls.Add(this.labelCopyright);
             this.Controls.Add(this.progressBarControl);
@@ -115,7 +107,6 @@ namespace EFRET_TMS
             this.Text = "SplashScreen1";
             ((System.ComponentModel.ISupportInitialize)(this.progressBarControl.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.peImage.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.peLogo.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -126,7 +117,7 @@ namespace EFRET_TMS
         private DevExpress.XtraEditors.MarqueeProgressBarControl progressBarControl;
         private DevExpress.XtraEditors.LabelControl labelCopyright;
         private DevExpress.XtraEditors.LabelControl labelStatus;
-        private DevExpress.XtraEditors.PictureEdit peLogo;
         private DevExpress.XtraEditors.PictureEdit peImage;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
     }
 }

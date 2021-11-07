@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Data;
 using System.Diagnostics;
+using Sentry;
 
 namespace EFRET_TMS
 {
@@ -47,9 +48,8 @@ namespace EFRET_TMS
             ArrayList rows = new ArrayList();
             // Add the selected rows to the list.
             int[] selectedRowHandles = gridView1.GetSelectedRows();
-            for (int i = 0; i < selectedRowHandles.Length; i++)
+            foreach (var selectedRowHandle in selectedRowHandles)
             {
-                int selectedRowHandle = selectedRowHandles[i];
                 if (selectedRowHandle >= 0)
                     rows.Add(gridView1.GetDataRow(selectedRowHandle));
             }
@@ -62,21 +62,28 @@ namespace EFRET_TMS
             finally
             {
                 gridView1.EndUpdate();
-                for (int i = 0; i < rows.Count; i++)
+                foreach (var t in rows)
                 {
-                    DataRow row = rows[i] as DataRow;
-                    int coid = int.Parse(row["IdCO"].ToString());
-                    object p44Long = row["P44Longitude"];
-                    object p44Lat = row["P44Latitude"];
-                    //We currently do not want the map to show when tracking is provided.
-                    if (row["P44Longitude"].ToString() != "0" || row["P44Longitude"].ToString() != "0")
+                    try
                     {
-                    ShipmentMap sMap = new ShipmentMap(coid, p44Lat.ToString(), p44Long.ToString());
-                    /*
-                     * TODO: Add more user controls on shipment map. Allow the user to control the zoom level. Refresh data.
-                     */
-                    sMap.ShowDialog();
+                        DataRow row = t as DataRow;
+                        int coid = int.Parse(row["IdCO"].ToString());
+                        object p44Long = row["P44Longitude"];
+                        object p44Lat = row["P44Latitude"];
+                        //We currently do not want the map to show when tracking is provided.
+                        if (row["P44Longitude"].ToString() != "0" || row["P44Longitude"].ToString() != "0")
+                        {
+                            ShipmentMap sMap = new ShipmentMap(coid, p44Lat.ToString(), p44Long.ToString());
+                            /*
+                         * TODO: Add more user controls on shipment map. Allow the user to control the zoom level. Refresh data.
+                         */
+                            sMap.ShowDialog();
 
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        SentrySdk.CaptureException(ex);
                     }
                 }
             }

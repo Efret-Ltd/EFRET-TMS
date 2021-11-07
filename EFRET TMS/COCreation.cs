@@ -4,14 +4,13 @@ namespace EFRET_TMS
 {
     public partial class CoCreation : DevExpress.XtraEditors.XtraForm
     {
-        readonly ProcessCreateCo _createCouc;
         public CoCreation()
         {
             InitializeComponent();
-            _createCouc = new ProcessCreateCo();
-            Controls.Add(_createCouc);
-            _createCouc.BringToFront();
-            _createCouc.Visible = true;
+            var createCouc = new ProcessCreateCo();
+            Controls.Add(createCouc);
+            createCouc.BringToFront();
+            createCouc.Visible = true;
         }
 
         private void COCreation_Load(object sender, EventArgs e)

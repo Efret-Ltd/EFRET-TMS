@@ -4,11 +4,6 @@ namespace EFRET_TMS
 {
     public partial class AdminControlPanel : DevExpress.XtraBars.FluentDesignSystem.FluentDesignForm
     {
-        /*
-        private CompanyData_UC CDUC = new CompanyData_UC();
-        
-        private UserManager UMUC = new UserManager();
-        */
 
         public AdminControlPanel()
         {
