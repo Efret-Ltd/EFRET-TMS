@@ -19,7 +19,6 @@ namespace EFRET_TMS
             InitializeComponent();
             this.labelCopyright.Text = "Copyright © 1998-" + DateTime.Now.Year.ToString();
             LoadAssets();
-            getLatestVersion();
         }
         public void LoadAssets()
         {
@@ -38,50 +37,6 @@ namespace EFRET_TMS
             }
 
         }
-
-        public void getLatestVersion()
-        {
-            labelStatus.Text = "Checking Version...";
-            var latestVersion = "";
-            try
-            {
-                SqlConnection conn =
-                    new SqlConnection(@"Server=EFRET-APP-01\EFRET;Database=tms;Trusted_Connection=True;");
-                conn.Open();
-
-                SqlCommand command = new SqlCommand("SELECT TOP (1) [Revisions] FROM [tms].[dbo].[Revisions]", conn);
-                using (SqlDataReader reader = command.ExecuteReader())
-                {
-                    if (reader.Read())
-                    {
-                        latestVersion = reader["Revisions"].ToString();
-                    }
-                }
-
-                conn.Close();
-            }
-            catch (Exception ex)
-            {
-                SentrySdk.CaptureException(ex);
-            }
-
-            versionCompare(latestVersion);
-        }
-
-        public void versionCompare(string latestV)
-        {
-            System.Reflection.Assembly assembly = System.Reflection.Assembly.GetExecutingAssembly();
-            System.Diagnostics.FileVersionInfo fvi = System.Diagnostics.FileVersionInfo.GetVersionInfo(assembly.Location);
-            string version = fvi.FileVersion;
-            if (latestV != version)
-            {
-                //We are running a old client. Or Dev client.
-
-
-            }
-
-        }
-
 
 
 
