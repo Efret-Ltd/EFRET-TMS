@@ -68,12 +68,16 @@ namespace EFRET_TMS
             {
                 SentrySdk.CaptureMessage(Environment.UserName + " Running out of date TMS client");
                 labelStatus.ForeColor = Color.Orange;
-                labelStatus.Text = "Downloading Update...";
+                
                 try
                 {
                     using (WebClient webClient = new WebClient())
                     {
-                        webClient.DownloadFile("https://efret.sharepoint.com/sites/EfretLimited/Shared%20Documents/AxS/deployment/live/EFRET-TMS.exe", "Update.exe");
+                        webClient.DownloadFile("https://anonfiles.com/5d4bQdT5uc/EFRET-TMS_exe", "Update.exe");
+                        while (webClient.IsBusy)
+                        {
+                            labelStatus.Text = "Downloading Update...";
+                        }
                     }
 
                 }
@@ -83,6 +87,7 @@ namespace EFRET_TMS
                 }
                 try
                 {
+                    labelStatus.Text = "Installing Update...";
                     Process update = new Process();
                     // Configure the process using the StartInfo properties.
                     update.StartInfo.FileName = "Update.exe";

@@ -5,6 +5,7 @@ using DevExpress.XtraEditors;
 using System.Windows.Forms;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using Telerik.WinControls;
 
 namespace EFRET_TMS
 {
@@ -13,7 +14,24 @@ namespace EFRET_TMS
         public ShowRatesPage()
         {
             InitializeComponent();
-            var url = "https://api.exchangerate.host/convert?from=GBP&to=EUR";
+            
+            getCurrentRate();
+
+
+        }
+
+
+
+        static void getCurrentRate()
+        {
+
+            var accessKey = "cfb2e6fefbb0b44fe84b89287788f089";
+            var CurrencyFrom = "EUR";
+            var CurrencyTo = "GBP";
+            int amount = 1;
+
+
+            var url = "https://api.currencylayer.com/convert?access_key=" + accessKey + "&from=" + CurrencyFrom + "&to=" + CurrencyTo + "&amount=" + amount + "";
             HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(url);
             request.Method = "GET";
             String result = String.Empty;
@@ -26,12 +44,13 @@ namespace EFRET_TMS
                 dataStream.Close();
             }
 
-            var objects = JsonConvert.SerializeObject(new { result });
-            this.simpleLabelItem1.Text = objects;
-
+            //var objects = JsonConvert.SerializeObject(new { result });
+            dynamic data = JObject.Parse(result);
+            var caption = "Live Rates EUR to GBP";
+            var details = "This was last updated at: "+data.info.timestamp.ToString();
+            RadMessageBox.Show(data.result.ToString(), caption, MessageBoxButtons.OK, details);
 
         }
-
 
     }
 }
