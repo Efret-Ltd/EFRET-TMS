@@ -132,8 +132,11 @@ namespace EFRET_TMS
 
             //var objects = JsonConvert.SerializeObject(new { result });
             dynamic data = JObject.Parse(result);
+            DateTimeOffset dateTimeOffset = DateTimeOffset.FromUnixTimeSeconds(data.info.timestamp.ToString());
+            DateTime dateTime = dateTimeOffset.UtcDateTime;
+
             var caption = "Live Rates EUR to GBP";
-            var details = "This was last updated at: " + data.info.timestamp.ToString();
+            var details = "This was last updated at: " + dateTime;
             RadMessageBox.Show(data.result.ToString(), caption, MessageBoxButtons.OK, details);
 
         }
