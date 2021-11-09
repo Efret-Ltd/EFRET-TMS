@@ -88,8 +88,7 @@ namespace EFRET_TMS
 
         private void OnRadButtonElementPress()
         {
-
-            Telerik.WinControls.RadItem radButtonElement1 = radDesktopAlert1.ButtonItems[0];
+            RadItem radButtonElement1 = radDesktopAlert1.ButtonItems[0];
 
         }
 
@@ -112,8 +111,8 @@ namespace EFRET_TMS
         {
 
             var accessKey = "cfb2e6fefbb0b44fe84b89287788f089";
-            var CurrencyFrom = "EUR";
-            var CurrencyTo = "GBP";
+            var CurrencyFrom = "GBP";
+            var CurrencyTo = "EUR";
             int amount = 1;
 
 
@@ -130,12 +129,11 @@ namespace EFRET_TMS
                 dataStream.Close();
             }
 
-            //var objects = JsonConvert.SerializeObject(new { result });
             dynamic data = JObject.Parse(result);
-            DateTimeOffset dateTimeOffset = DateTimeOffset.FromUnixTimeSeconds(data.info.timestamp.ToString());
-            DateTime dateTime = dateTimeOffset.UtcDateTime;
-
-            var caption = "Live Rates EUR to GBP";
+            int time = data.info.timestamp;
+            DateTimeOffset dateTimeOffSet = DateTimeOffset.FromUnixTimeSeconds(time);
+            DateTime dateTime = dateTimeOffSet.DateTime;
+            var caption = "Live Rates GBP to EUR";
             var details = "This was last updated at: " + dateTime;
             RadMessageBox.Show(data.result.ToString(), caption, MessageBoxButtons.OK, details);
 

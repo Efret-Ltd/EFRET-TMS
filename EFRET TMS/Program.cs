@@ -104,10 +104,20 @@ namespace EFRET_TMS
                     SentrySdk.CaptureMessage(user + " updated connection to ably.");
                 });
 
-        
+                try
+                {
+
                     Application.EnableVisualStyles();
                     Application.SetCompatibleTextRenderingDefault(false);
                     Application.Run(new RadForm1());
+
+                }
+                catch (Exception ex)
+                {
+
+                    SentrySdk.CaptureException(ex);
+                }
+                    
                 
 
 
