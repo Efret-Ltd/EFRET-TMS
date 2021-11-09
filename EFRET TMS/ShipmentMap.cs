@@ -42,7 +42,6 @@ namespace EFRET_TMS
                 using (BinaryReader reader = new BinaryReader(mapResponse.GetResponseStream()))
                 {
                     byte[] lnByte = reader.ReadBytes(1 * 2048 * 2048 * 10);
-                    Image image;
                     using (MemoryStream ms = new MemoryStream(lnByte))
                     {
                         radPictureBox1.Image = Image.FromStream(ms); 

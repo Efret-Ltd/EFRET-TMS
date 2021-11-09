@@ -54,7 +54,8 @@ namespace EFRET_TMS
         //Statistics
         private void accordionControlElement5_Click(object sender, EventArgs e)
         {
-
+            Statistics stats = new Statistics();
+            stats.Show();
         }
 
         //Management

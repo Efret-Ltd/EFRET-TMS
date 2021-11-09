@@ -336,6 +336,12 @@
     <Compile Include="COCreation.Designer.cs">
       <DependentUpon>COCreation.cs</DependentUpon>
     </Compile>
+    <Compile Include="DateRange.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DateRange.Designer.cs">
+      <DependentUpon>DateRange.cs</DependentUpon>
+    </Compile>
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Invoicing.cs">
       <SubType>Form</SubType>
@@ -379,6 +385,12 @@
     <Compile Include="ShowRatesPage.Designer.cs">
       <DependentUpon>ShowRatesPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Statistics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Statistics.Designer.cs">
+      <DependentUpon>Statistics.cs</DependentUpon>
+    </Compile>
     <Compile Include="TP.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -396,6 +408,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="COCreation.resx">
       <DependentUpon>COCreation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DateRange.resx">
+      <DependentUpon>DateRange.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Invoicing.resx">
       <DependentUpon>Invoicing.cs</DependentUpon>
@@ -429,6 +444,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SplashScreen1.resx">
       <DependentUpon>SplashScreen1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Statistics.resx">
+      <DependentUpon>Statistics.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TP.resx">
       <DependentUpon>TP.cs</DependentUpon>
