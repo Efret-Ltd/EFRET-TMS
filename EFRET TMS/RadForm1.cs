@@ -3,6 +3,7 @@ using System.Data.SqlClient;
 using System.IO;
 using System.Net;
 using System.Windows.Forms;
+using DevExpress.XtraSplashScreen;
 using Newtonsoft.Json.Linq;
 using Telerik.WinControls;
 
@@ -16,7 +17,10 @@ namespace EFRET_TMS
             this.Text = "Welcome to EFRET " + Environment.UserName;
             GetRate();
         }
-
+        void Form1_Load(object sender, EventArgs e)
+        {
+            SplashScreenManager.CloseForm(false); // false means that an exception will not be thrown
+        }
         public void GetRate()
         {
             string rate = null;
