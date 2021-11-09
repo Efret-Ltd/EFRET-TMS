@@ -20,13 +20,34 @@ namespace EFRET_TMS
         {
         }
 
+        private void CompanyCreation()
+        {
+        }
+
+
+        //We use this to generate new folders on the network location.
+        private void FolderGen(string CompanyCode)
+        {
+            var networkLocation = @"\\EFRET-APP-01\Database\efret\2021\CustomerCO\";
+            bool exists = System.IO.Directory.Exists(networkLocation+CompanyCode);
+            if (!exists)
+                System.IO.Directory.CreateDirectory(networkLocation+CompanyCode);
+
+        }
+
+        //Company/Client Selection or Creation
+        private void CompanySelection()
+        {
+        }
+
         private void ProcessEnd(object sender, CancelEventArgs e)
         {
             //Future reference. All user input to be shown in the details section.
             RadMessageBox.SetThemeName("Desert");
-            RadMessageBox.Show("Message", "Are you sure ? All your progress will be removed", MessageBoxButtons.YesNo, "Details Text");
-            DialogResult ds = RadMessageBox.Show(this, "Are you sure? All your progress will be removed.", "Title", MessageBoxButtons.YesNo, RadMessageIcon.Question);
-            this.Text = ds.ToString();
+            var time = DateTime.Now+" ";
+            var details = time + Environment.UserName + " Has started the CO creation process";
+            RadMessageBox.Show("Quit Process", "Are you sure ? All your progress will be removed", MessageBoxButtons.YesNo,
+                details);
         }
 
         private void stepProgressBar2_Click(object sender, EventArgs e)

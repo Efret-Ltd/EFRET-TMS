@@ -93,6 +93,8 @@ namespace EFRET_TMS
         {
             radDesktopAlert1.CaptionText = "<html><strong>This module is locked while in use.";
             radDesktopAlert1.Show();
+            Invoicing invoicing = new Invoicing();
+            invoicing.Show();
         }
         //Transport Planning
         private void accordionControlElement3_Click(object sender, EventArgs e)

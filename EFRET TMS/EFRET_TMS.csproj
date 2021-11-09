@@ -289,6 +289,7 @@
       <HintPath>..\lib\RCWF\2021.3.914.40\Telerik.WinControls.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Telerik.WinControls.GridView, Version=2021.3.914.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
     <Reference Include="Telerik.WinControls.Themes.Office2019, Version=2021.3.914.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
     <Reference Include="Telerik.WinControls.UI, Version=2021.3.914.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
       <HintPath>..\lib\RCWF\2021.3.914.40\Telerik.WinControls.UI.dll</HintPath>
@@ -336,6 +337,12 @@
       <DependentUpon>COCreation.cs</DependentUpon>
     </Compile>
     <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Invoicing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Invoicing.Designer.cs">
+      <DependentUpon>Invoicing.cs</DependentUpon>
+    </Compile>
     <Compile Include="Orders.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -378,11 +385,20 @@
     <Compile Include="TP.Designer.cs">
       <DependentUpon>TP.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewCO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewCO.Designer.cs">
+      <DependentUpon>ViewCO.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AdminControlPanel.resx">
       <DependentUpon>AdminControlPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="COCreation.resx">
       <DependentUpon>COCreation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Invoicing.resx">
+      <DependentUpon>Invoicing.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Orders.resx">
       <DependentUpon>Orders.cs</DependentUpon>
@@ -416,6 +432,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TP.resx">
       <DependentUpon>TP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewCO.resx">
+      <DependentUpon>ViewCO.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.manifest" />
     <None Include="axsDataSet.xsc">

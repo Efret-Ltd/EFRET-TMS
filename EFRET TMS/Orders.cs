@@ -4,6 +4,7 @@ using System.Collections;
 using System.Data;
 using System.Diagnostics;
 using Sentry;
+using Telerik.WinControls;
 
 namespace EFRET_TMS
 {
@@ -42,9 +43,7 @@ namespace EFRET_TMS
 
         private void gridControl1_Click(object sender, EventArgs e)
         {
-            DevExpress.XtraGrid.Views.Base.GridCell[] selectedCellHandles = gridView1.GetSelectedCells();
-
-
+            
             ArrayList rows = new ArrayList();
             // Add the selected rows to the list.
             int[] selectedRowHandles = gridView1.GetSelectedRows();
@@ -53,38 +52,54 @@ namespace EFRET_TMS
                 if (selectedRowHandle >= 0)
                     rows.Add(gridView1.GetDataRow(selectedRowHandle));
             }
-            try
-            {
-                gridView1.BeginUpdate();
 
-
-            }
-            finally
+            foreach (var t in rows)
             {
-                gridView1.EndUpdate();
-                foreach (var t in rows)
+                try
                 {
+                    DataRow row = t as DataRow;
+                    int coid = int.Parse(row["IdCO"].ToString());
+                    //We want to make a ViewCO screen of the IDCO selected.
+                    object p44Long = row["P44Longitude"];
+                    object p44Lat = row["P44Latitude"];
                     try
                     {
-                        DataRow row = t as DataRow;
-                        int coid = int.Parse(row["IdCO"].ToString());
-                        object p44Long = row["P44Longitude"];
-                        object p44Lat = row["P44Latitude"];
-                        //We currently do not want the map to show when tracking is provided.
-                        if (row["P44Longitude"].ToString() != "0" || row["P44Longitude"].ToString() != "0")
+                        // Here we do a bunch of conditioning depending on the column cell clicked.
+                        if (gridView1.FocusedColumn.FieldName == "IdCO" ||
+                            gridView1.FocusedColumn.FieldName == "New CO")
                         {
-                            ShipmentMap sMap = new ShipmentMap(coid, p44Lat.ToString(), p44Long.ToString());
-                            /*
-                         * TODO: Add more user controls on shipment map. Allow the user to control the zoom level. Refresh data.
-                         */
-                            sMap.ShowDialog();
 
+                            ViewCO ViewCO = new ViewCO();
+                            ViewCO.Show();
                         }
+
+                        if (gridView1.FocusedColumn.FieldName == "P44ShipmentID")
+                        {
+
+                            //We currently do not want the map to show when tracking is provided.
+                            if (row["P44Longitude"].ToString() != "0" || row["P44Longitude"].ToString() != "0")
+                            {
+                                ShipmentMap sMap = new ShipmentMap(coid, p44Lat.ToString(), p44Long.ToString());
+                                /*
+                             * TODO: Add more user controls on shipment map. Allow the user to control the zoom level. Refresh data.
+                             */
+                                sMap.ShowDialog();
+
+                            }
+                        }
+
+                        gridView1.BeginUpdate();
+
                     }
-                    catch (Exception ex)
+                    finally
                     {
-                        SentrySdk.CaptureException(ex);
+                        gridView1.EndUpdate();
+
                     }
+                }
+                catch (Exception ex)
+                {
+                    SentrySdk.CaptureException(ex);
                 }
             }
 
@@ -96,6 +111,16 @@ namespace EFRET_TMS
             gridControl1.ExportToXlsx(path);
             // Open the created XLSX file with the default application.
             Process.Start(path);
+        }
+
+        private void accordionControlElement13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void accordionControlElement14_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
