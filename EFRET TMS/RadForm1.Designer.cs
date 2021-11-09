@@ -32,10 +32,9 @@ namespace EFRET_TMS
             this.components = new System.ComponentModel.Container();
             DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::EFRET_TMS.SplashScreen2), true, true, true);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RadForm1));
-            DevExpress.Utils.SuperToolTip superToolTip2 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem2 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem1 = new DevExpress.Utils.ToolTipTitleItem();
             this.radThemeManager1 = new Telerik.WinControls.RadThemeManager();
-            this.office2019DarkTheme1 = new Telerik.WinControls.Themes.Office2019DarkTheme();
             this.accordionControlElement1 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement2 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement3 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
@@ -44,6 +43,7 @@ namespace EFRET_TMS
             this.accordionControlElement6 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement7 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement11 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement12 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement8 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement9 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlSeparator1 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
@@ -118,7 +118,8 @@ namespace EFRET_TMS
             this.accordionControlElement11,
             this.accordionControlElement4,
             this.accordionControlElement5,
-            this.accordionControlElement6});
+            this.accordionControlElement6,
+            this.accordionControlElement12});
             this.accordionControlElement7.Expanded = true;
             this.accordionControlElement7.Name = "accordionControlElement7";
             this.accordionControlElement7.Text = "Dashboard";
@@ -131,14 +132,22 @@ namespace EFRET_TMS
             this.accordionControlElement11.Text = "Invoicing";
             this.accordionControlElement11.Click += new System.EventHandler(this.accordionControlElement11_Click);
             // 
+            // accordionControlElement12
+            // 
+            this.accordionControlElement12.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElement12.ImageOptions.SvgImage")));
+            this.accordionControlElement12.Name = "accordionControlElement12";
+            this.accordionControlElement12.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement12.Text = "Tools & Utilities";
+            this.accordionControlElement12.Click += new System.EventHandler(this.accordionControlElement12_Click);
+            // 
             // accordionControlElement8
             // 
             this.accordionControlElement8.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElement8.ImageOptions.SvgImage")));
             this.accordionControlElement8.Name = "accordionControlElement8";
             this.accordionControlElement8.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            toolTipTitleItem2.Text = "Close EFRET TMS.";
-            superToolTip2.Items.Add(toolTipTitleItem2);
-            this.accordionControlElement8.SuperTip = superToolTip2;
+            toolTipTitleItem1.Text = "Close EFRET TMS.";
+            superToolTip1.Items.Add(toolTipTitleItem1);
+            this.accordionControlElement8.SuperTip = superToolTip1;
             this.accordionControlElement8.Text = "Exit TMS System";
             this.accordionControlElement8.Click += new System.EventHandler(this.accordionControlElement8_Click);
             // 
@@ -178,7 +187,7 @@ namespace EFRET_TMS
             this.accordionControl1.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Hidden;
             this.accordionControl1.ShowGroupExpandButtons = false;
             this.accordionControl1.ShowItemExpandButtons = false;
-            this.accordionControl1.Size = new System.Drawing.Size(249, 279);
+            this.accordionControl1.Size = new System.Drawing.Size(249, 306);
             this.accordionControl1.TabIndex = 2;
             // 
             // radDesktopAlert1
@@ -216,7 +225,7 @@ namespace EFRET_TMS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(249, 279);
+            this.ClientSize = new System.Drawing.Size(249, 306);
             this.Controls.Add(this.accordionControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -228,7 +237,6 @@ namespace EFRET_TMS
             // 
             this.RootElement.ApplyShapeToControl = true;
             this.Text = "Dashboard";
-            this.ThemeName = "Office2019Dark";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radWaitingBar1)).EndInit();
@@ -240,7 +248,6 @@ namespace EFRET_TMS
         #endregion
 
         private Telerik.WinControls.RadThemeManager radThemeManager1;
-        private Telerik.WinControls.Themes.Office2019DarkTheme office2019DarkTheme1;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement1;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement2;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement3;
@@ -258,5 +265,6 @@ namespace EFRET_TMS
         private Telerik.WinControls.UI.RadButtonElement radButtonElement1;
         private Telerik.WinControls.UI.RadWaitingBar radWaitingBar1;
         private Telerik.WinControls.UI.FadingRingWaitingBarIndicatorElement fadingRingWaitingBarIndicatorElement1;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement12;
     }
 }

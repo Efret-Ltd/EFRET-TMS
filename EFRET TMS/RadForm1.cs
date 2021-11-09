@@ -14,7 +14,6 @@ namespace EFRET_TMS
         public RadForm1()
         {
             InitializeComponent();
-            SplashScreenManager.CloseForm(false);
             this.Text = "Welcome to EFRET " + Environment.UserName;
             GetRate();
         }
@@ -127,10 +126,16 @@ namespace EFRET_TMS
             int time = data.info.timestamp;
             DateTimeOffset dateTimeOffSet = DateTimeOffset.FromUnixTimeSeconds(time);
             DateTime dateTime = dateTimeOffSet.DateTime;
-            var caption = "Live Rates GBP to EUR";
+            var caption = "Hourly Rates GBP to EUR";
             var details = "This was last updated at: " + dateTime;
             RadMessageBox.Show(data.result.ToString(), caption, MessageBoxButtons.OK, details);
 
+        }
+
+        private void accordionControlElement12_Click(object sender, EventArgs e)
+        {
+            ToolsUtiltiesMenu TUMenu = new ToolsUtiltiesMenu();
+            TUMenu.Show();
         }
     }
 }

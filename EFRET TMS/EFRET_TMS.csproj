@@ -330,6 +330,12 @@
     <Compile Include="ChargingOrderCode\NewCO.Designer.cs">
       <DependentUpon>NewCO.cs</DependentUpon>
     </Compile>
+    <Compile Include="Check_VAT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Check_VAT.Designer.cs">
+      <DependentUpon>Check_VAT.cs</DependentUpon>
+    </Compile>
     <Compile Include="COCreation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -391,6 +397,12 @@
     <Compile Include="Statistics.Designer.cs">
       <DependentUpon>Statistics.cs</DependentUpon>
     </Compile>
+    <Compile Include="ToolsUtiltiesMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolsUtiltiesMenu.Designer.cs">
+      <DependentUpon>ToolsUtiltiesMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="TP.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -405,6 +417,9 @@
     </Compile>
     <EmbeddedResource Include="AdminControlPanel.resx">
       <DependentUpon>AdminControlPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Check_VAT.resx">
+      <DependentUpon>Check_VAT.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="COCreation.resx">
       <DependentUpon>COCreation.cs</DependentUpon>
@@ -447,6 +462,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Statistics.resx">
       <DependentUpon>Statistics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolsUtiltiesMenu.resx">
+      <DependentUpon>ToolsUtiltiesMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TP.resx">
       <DependentUpon>TP.cs</DependentUpon>
