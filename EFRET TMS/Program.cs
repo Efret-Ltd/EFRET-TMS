@@ -2,6 +2,7 @@
 using IO.Ably.Realtime;
 using Sentry;
 using System;
+using System.Linq;
 using System.Windows.Forms;
 using Telerik.WinControls;
 
@@ -15,6 +16,14 @@ namespace EFRET_TMS
         [STAThread]
         static void Main()
         {
+            var DoIexist = System.Diagnostics.Process.GetProcessesByName(System.IO.Path.GetFileNameWithoutExtension(System.Reflection.Assembly.GetEntryAssembly().Location)).Count() > 1;
+            if (DoIexist)
+            {
+                // We do not want that.
+                RadMessageBox.Show(
+                    "Another instance is running. Please close that before attempting to launch the TMS.","Multiple Instances Detected");
+                Application.Exit();
+            }
             /*
              * Before we do anything, we start a ably sentry instance to log all future errors.
              * We pipe Ably events into sentry to log traffic between clients.
