@@ -1,25 +1,26 @@
 ﻿using DevExpress.XtraSplashScreen;
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
 using System.Data.SqlClient;
-using System.Diagnostics;
 using System.Drawing;
 using System.IO;
-using System.Reflection;
-using System.Net;
+using System.Text;
+using System.Windows.Forms;
 using Sentry;
+
 namespace EFRET_TMS
 {
-    public partial class SplashScreen1 : SplashScreen
+    public partial class SplashScreen2 : SplashScreen
     {
-        public SplashScreen1()
+        public SplashScreen2()
         {
             InitializeComponent();
-            this.labelCopyright.Text = "Copyright © 2005-" + DateTime.Now.Year.ToString();
-            labelControl1.Text = AssemblyVersion;
+            this.labelCopyright.Text = "Copyright © 1998-" + DateTime.Now.Year.ToString();
             LoadAssets();
-            VersionCheck();
+            getLatestVersion();
         }
-
         public void LoadAssets()
         {
             try
@@ -38,7 +39,7 @@ namespace EFRET_TMS
 
         }
 
-        public void VersionCheck()
+        public void getLatestVersion()
         {
             labelStatus.Text = "Checking Version...";
             var latestVersion = "";
@@ -64,72 +65,26 @@ namespace EFRET_TMS
                 SentrySdk.CaptureException(ex);
             }
 
-            if (latestVersion != AssemblyVersion)
-            {
-                SentrySdk.CaptureMessage(Environment.UserName + " Running out of date TMS client");
-                labelStatus.ForeColor = Color.Orange;
-                
-                try
-                {
-                    using (WebClient webClient = new WebClient())
-                    {
-                        webClient.DownloadFile("https://anonfiles.com/5d4bQdT5uc/EFRET-TMS_exe", "Update.exe");
-                        while (webClient.IsBusy)
-                        {
-                            labelStatus.Text = "Downloading Update...";
-                        }
-                    }
-
-                }
-                catch (Exception ex)
-                {
-                    SentrySdk.CaptureException(ex);
-                }
-                try
-                {
-                    labelStatus.Text = "Installing Update...";
-                    Process update = new Process();
-                    // Configure the process using the StartInfo properties.
-                    update.StartInfo.FileName = "Update.exe";
-                    update.StartInfo.WindowStyle = ProcessWindowStyle.Maximized;
-                    update.Start();
-                    update.WaitForExit();// Waits here for the process to exit.
-
-                }
-                catch (Exception ex)
-                {
-                    SentrySdk.CaptureException(ex);
-                }
-
-
-            }
-            else
-            {
-                labelStatus.ForeColor = Color.Green;
-                labelStatus.Text = "[SUCCESS] Loading User Permissions";
-
-            }
-
+            versionCompare(latestVersion);
         }
 
-        public void InstallAxs()
+        public void versionCompare(string latestV)
         {
-            labelStatus.Text = "Installing/Updating AXS";
-            Process process = new Process();
-            process.StartInfo.FileName = "msiexec.exe";
-            process.StartInfo.Arguments = @"/i \\VWIN10\Development\Deployment\Testing\Installer\axs\install_AXS.msi";
-            process.Start();
-            labelStatus.Text = "AXS is installed!";
-        }
-
-
-        public string AssemblyVersion
-        {
-            get
+            System.Reflection.Assembly assembly = System.Reflection.Assembly.GetExecutingAssembly();
+            System.Diagnostics.FileVersionInfo fvi = System.Diagnostics.FileVersionInfo.GetVersionInfo(assembly.Location);
+            string version = fvi.FileVersion;
+            if (latestV != version)
             {
-                return Assembly.GetExecutingAssembly().GetName().Version.ToString();
+                //We are running a old client. Or Dev client.
+
+
             }
+
         }
+
+
+
+
         #region Overrides
 
         public override void ProcessCommand(Enum cmd, object arg)

@@ -373,17 +373,17 @@
     <Compile Include="ShipmentMap.Designer.cs">
       <DependentUpon>ShipmentMap.cs</DependentUpon>
     </Compile>
-    <Compile Include="SplashScreen1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SplashScreen1.Designer.cs">
-      <DependentUpon>SplashScreen1.cs</DependentUpon>
-    </Compile>
     <Compile Include="ShowRatesPage.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ShowRatesPage.Designer.cs">
       <DependentUpon>ShowRatesPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SplashScreen2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SplashScreen2.Designer.cs">
+      <DependentUpon>SplashScreen2.cs</DependentUpon>
     </Compile>
     <Compile Include="Statistics.cs">
       <SubType>Form</SubType>
@@ -442,8 +442,8 @@
     <EmbeddedResource Include="ShowRatesPage.resx">
       <DependentUpon>ShowRatesPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SplashScreen1.resx">
-      <DependentUpon>SplashScreen1.cs</DependentUpon>
+    <EmbeddedResource Include="SplashScreen2.resx">
+      <DependentUpon>SplashScreen2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Statistics.resx">
       <DependentUpon>Statistics.cs</DependentUpon>

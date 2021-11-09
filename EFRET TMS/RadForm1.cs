@@ -14,6 +14,7 @@ namespace EFRET_TMS
         public RadForm1()
         {
             InitializeComponent();
+            SplashScreenManager.CloseForm(false);
             this.Text = "Welcome to EFRET " + Environment.UserName;
             GetRate();
         }
@@ -83,17 +84,6 @@ namespace EFRET_TMS
         {
 
             getCurrentRate();
-        }
-        protected override void OnLostFocus(EventArgs e)
-        {
-            base.OnLostFocus(e);
-            this.Focus();
-        }
-
-        private void OnRadButtonElementPress()
-        {
-            RadItem radButtonElement1 = radDesktopAlert1.ButtonItems[0];
-
         }
 
         //Invoicing
