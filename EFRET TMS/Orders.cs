@@ -59,6 +59,8 @@ namespace EFRET_TMS
                 {
                     DataRow row = t as DataRow;
                     int coid = int.Parse(row["IdCO"].ToString());
+                    object ContractID = row["IdContractHolder"];
+                    object NewCO = row["NewCO"];
                     //We want to make a ViewCO screen of the IDCO selected.
                     object p44Long = row["P44Longitude"];
                     object p44Lat = row["P44Latitude"];
@@ -69,7 +71,7 @@ namespace EFRET_TMS
                             gridView1.FocusedColumn.FieldName == "New CO")
                         {
 
-                            ViewCO ViewCO = new ViewCO();
+                            ViewCO ViewCO = new ViewCO(coid, NewCO, ContractID);
                             ViewCO.Show();
                         }
 

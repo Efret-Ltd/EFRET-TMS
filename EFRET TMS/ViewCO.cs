@@ -1,31 +1,30 @@
 ﻿using DevExpress.XtraBars;
 using System;
-
-using System.Windows.Forms;
-
 namespace EFRET_TMS
 {
     public partial class ViewCO : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        public ViewCO()
+        private object CID;
+        private string path;
+        private object newChargingOrder;
+        public ViewCO(int COID, object newCO,object ContractID)
         {
-            InitializeComponent();
+            InitializeComponent(); 
+            CID = ContractID+@"\";
+            newChargingOrder = newCO;
+            path = @"\\efret-app-01\Database\efret\2021\CustomerCO\" + CID + newChargingOrder;
         }
 
         private void ViewCO_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'cOInstance.Goods' table. You can move, or remove it, as needed.
-            this.goodsTableAdapter.Fill(this.cOInstance.Goods);
-
         }
 
         private void barButtonItem6_ItemClick(object sender, ItemClickEventArgs e)
         {
-            DialogResult dr = radOpenFolderDialog1.ShowDialog();
-            if (dr == System.Windows.Forms.DialogResult.OK)
-            {
-                string folderName = radOpenFolderDialog1.FileName;
-            }
+            xtraOpenFileDialog1.InitialDirectory = path;
+            xtraOpenFileDialog1.Title = "View Charging Order Browser";
+            xtraOpenFileDialog1.FileName = "";
+            xtraOpenFileDialog1.ShowDialog();
         }
     }
 }
