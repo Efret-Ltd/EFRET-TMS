@@ -28,40 +28,40 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition2 = new Telerik.WinControls.UI.TableViewDefinition();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Invoicing));
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition2 = new Telerik.WinControls.UI.TableViewDefinition();
             this.dropDownButton1 = new DevExpress.XtraEditors.DropDownButton();
             this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
-            this.radGridView1 = new Telerik.WinControls.UI.RadGridView();
-            this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
-            this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.radGridView2 = new Telerik.WinControls.UI.RadGridView();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             this.navigationPane1 = new DevExpress.XtraBars.Navigation.NavigationPane();
             this.navigationPage1 = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.navigationPage2 = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.navigationPage3 = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
+            this.radGridView2 = new Telerik.WinControls.UI.RadGridView();
+            this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.radGridView1 = new Telerik.WinControls.UI.RadGridView();
+            this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
             this.tablePanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radGridView1.MasterTemplate)).BeginInit();
-            this.radGridView1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.navigationPane1)).BeginInit();
+            this.navigationPane1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radGridView2.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel1)).BeginInit();
             this.splitContainerControl1.Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel2)).BeginInit();
             this.splitContainerControl1.Panel2.SuspendLayout();
             this.splitContainerControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radGridView2.MasterTemplate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.navigationPane1)).BeginInit();
-            this.navigationPane1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radGridView1.MasterTemplate)).BeginInit();
+            this.radGridView1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -102,28 +102,97 @@
             this.tablePanel1.Size = new System.Drawing.Size(980, 551);
             this.tablePanel1.TabIndex = 1;
             // 
-            // radGridView1
+            // simpleButton5
             // 
-            this.tablePanel1.SetColumn(this.radGridView1, 1);
-            this.radGridView1.Controls.Add(this.radLabel1);
-            this.radGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radGridView1.Location = new System.Drawing.Point(114, 65);
+            this.tablePanel1.SetColumn(this.simpleButton5, 0);
+            this.simpleButton5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.simpleButton5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton5.ImageOptions.Image")));
+            this.simpleButton5.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
+            this.simpleButton5.Location = new System.Drawing.Point(3, 65);
+            this.simpleButton5.Name = "simpleButton5";
+            this.tablePanel1.SetRow(this.simpleButton5, 1);
+            this.simpleButton5.Size = new System.Drawing.Size(105, 97);
+            this.simpleButton5.TabIndex = 7;
+            this.simpleButton5.Text = "Modify Company";
+            // 
+            // simpleButton4
+            // 
+            this.tablePanel1.SetColumn(this.simpleButton4, 0);
+            this.simpleButton4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.simpleButton4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
+            this.simpleButton4.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
+            this.simpleButton4.Location = new System.Drawing.Point(3, 3);
+            this.simpleButton4.Name = "simpleButton4";
+            this.tablePanel1.SetRow(this.simpleButton4, 0);
+            this.simpleButton4.Size = new System.Drawing.Size(105, 56);
+            this.simpleButton4.TabIndex = 6;
+            this.simpleButton4.Text = "Copy of Existing PDF";
+            // 
+            // navigationPane1
+            // 
+            this.navigationPane1.AllowHtmlDraw = true;
+            this.tablePanel1.SetColumn(this.navigationPane1, 1);
+            this.navigationPane1.Controls.Add(this.navigationPage1);
+            this.navigationPane1.Controls.Add(this.navigationPage2);
+            this.navigationPane1.Controls.Add(this.navigationPage3);
+            this.navigationPane1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.navigationPane1.Location = new System.Drawing.Point(114, 298);
+            this.navigationPane1.Name = "navigationPane1";
+            this.navigationPane1.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
+            this.navigationPage1,
+            this.navigationPage2,
+            this.navigationPage3});
+            this.navigationPane1.RegularSize = new System.Drawing.Size(863, 250);
+            this.tablePanel1.SetRow(this.navigationPane1, 4);
+            this.navigationPane1.SelectedPage = this.navigationPage1;
+            this.navigationPane1.Size = new System.Drawing.Size(863, 250);
+            this.navigationPane1.TabIndex = 5;
+            this.navigationPane1.Text = "SI Validation before Exportation";
+            // 
+            // navigationPage1
+            // 
+            this.navigationPage1.Caption = "First Step";
+            this.navigationPage1.Name = "navigationPage1";
+            this.navigationPage1.Size = new System.Drawing.Size(748, 177);
+            // 
+            // navigationPage2
+            // 
+            this.navigationPage2.Caption = "Second Step";
+            this.navigationPage2.Name = "navigationPage2";
+            this.navigationPage2.Size = new System.Drawing.Size(688, 236);
+            // 
+            // navigationPage3
+            // 
+            this.navigationPage3.Caption = "Third Step";
+            this.navigationPage3.Name = "navigationPage3";
+            this.navigationPage3.Size = new System.Drawing.Size(688, 236);
+            // 
+            // simpleButton3
+            // 
+            this.tablePanel1.SetColumn(this.simpleButton3, 0);
+            this.simpleButton3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.simpleButton3.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
+            this.simpleButton3.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton3.ImageOptions.SvgImage")));
+            this.simpleButton3.Location = new System.Drawing.Point(3, 213);
+            this.simpleButton3.Name = "simpleButton3";
+            this.tablePanel1.SetRow(this.simpleButton3, 3);
+            this.simpleButton3.Size = new System.Drawing.Size(105, 79);
+            this.simpleButton3.TabIndex = 4;
+            this.simpleButton3.Text = "Pro Forma";
+            // 
+            // radGridView2
+            // 
+            this.tablePanel1.SetColumn(this.radGridView2, 1);
+            this.radGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.radGridView2.Location = new System.Drawing.Point(114, 213);
             // 
             // 
             // 
-            this.radGridView1.MasterTemplate.ViewDefinition = tableViewDefinition2;
-            this.radGridView1.Name = "radGridView1";
-            this.tablePanel1.SetRow(this.radGridView1, 1);
-            this.radGridView1.Size = new System.Drawing.Size(863, 97);
-            this.radGridView1.TabIndex = 1;
-            // 
-            // radLabel1
-            // 
-            this.radLabel1.Location = new System.Drawing.Point(247, 3);
-            this.radLabel1.Name = "radLabel1";
-            this.radLabel1.Size = new System.Drawing.Size(287, 18);
-            this.radLabel1.TabIndex = 2;
-            this.radLabel1.Text = "CO listing with NO date of invoice and NO sage number";
+            this.radGridView2.MasterTemplate.ViewDefinition = tableViewDefinition1;
+            this.radGridView2.Name = "radGridView2";
+            this.tablePanel1.SetRow(this.radGridView2, 3);
+            this.radGridView2.Size = new System.Drawing.Size(863, 79);
+            this.radGridView2.TabIndex = 3;
             // 
             // splitContainerControl1
             // 
@@ -165,97 +234,28 @@
             this.simpleButton2.TabIndex = 0;
             this.simpleButton2.Text = "Subtract";
             // 
-            // radGridView2
+            // radGridView1
             // 
-            this.tablePanel1.SetColumn(this.radGridView2, 1);
-            this.radGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radGridView2.Location = new System.Drawing.Point(114, 213);
+            this.tablePanel1.SetColumn(this.radGridView1, 1);
+            this.radGridView1.Controls.Add(this.radLabel1);
+            this.radGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.radGridView1.Location = new System.Drawing.Point(114, 65);
             // 
             // 
             // 
-            this.radGridView2.MasterTemplate.ViewDefinition = tableViewDefinition1;
-            this.radGridView2.Name = "radGridView2";
-            this.tablePanel1.SetRow(this.radGridView2, 3);
-            this.radGridView2.Size = new System.Drawing.Size(863, 79);
-            this.radGridView2.TabIndex = 3;
+            this.radGridView1.MasterTemplate.ViewDefinition = tableViewDefinition2;
+            this.radGridView1.Name = "radGridView1";
+            this.tablePanel1.SetRow(this.radGridView1, 1);
+            this.radGridView1.Size = new System.Drawing.Size(863, 97);
+            this.radGridView1.TabIndex = 1;
             // 
-            // simpleButton3
+            // radLabel1
             // 
-            this.tablePanel1.SetColumn(this.simpleButton3, 0);
-            this.simpleButton3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.simpleButton3.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
-            this.simpleButton3.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton3.ImageOptions.SvgImage")));
-            this.simpleButton3.Location = new System.Drawing.Point(3, 213);
-            this.simpleButton3.Name = "simpleButton3";
-            this.tablePanel1.SetRow(this.simpleButton3, 3);
-            this.simpleButton3.Size = new System.Drawing.Size(105, 79);
-            this.simpleButton3.TabIndex = 4;
-            this.simpleButton3.Text = "Pro Forma";
-            // 
-            // navigationPane1
-            // 
-            this.navigationPane1.AllowHtmlDraw = true;
-            this.tablePanel1.SetColumn(this.navigationPane1, 1);
-            this.navigationPane1.Controls.Add(this.navigationPage1);
-            this.navigationPane1.Controls.Add(this.navigationPage2);
-            this.navigationPane1.Controls.Add(this.navigationPage3);
-            this.navigationPane1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.navigationPane1.Location = new System.Drawing.Point(114, 298);
-            this.navigationPane1.Name = "navigationPane1";
-            this.navigationPane1.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
-            this.navigationPage1,
-            this.navigationPage2,
-            this.navigationPage3});
-            this.navigationPane1.RegularSize = new System.Drawing.Size(863, 250);
-            this.tablePanel1.SetRow(this.navigationPane1, 4);
-            this.navigationPane1.SelectedPage = this.navigationPage1;
-            this.navigationPane1.Size = new System.Drawing.Size(863, 250);
-            this.navigationPane1.TabIndex = 5;
-            this.navigationPane1.Text = "SI Validation before Exportation";
-            // 
-            // navigationPage1
-            // 
-            this.navigationPage1.Caption = "First Step";
-            this.navigationPage1.Name = "navigationPage1";
-            this.navigationPage1.Size = new System.Drawing.Size(748, 177);
-            // 
-            // navigationPage2
-            // 
-            this.navigationPage2.Caption = "Second Step";
-            this.navigationPage2.Name = "navigationPage2";
-            this.navigationPage2.Size = new System.Drawing.Size(688, 236);
-            // 
-            // navigationPage3
-            // 
-            this.navigationPage3.Caption = "Third Step";
-            this.navigationPage3.Name = "navigationPage3";
-            this.navigationPage3.Size = new System.Drawing.Size(688, 236);
-            // 
-            // simpleButton4
-            // 
-            this.tablePanel1.SetColumn(this.simpleButton4, 0);
-            this.simpleButton4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.simpleButton4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
-            this.simpleButton4.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
-            this.simpleButton4.Location = new System.Drawing.Point(3, 3);
-            this.simpleButton4.Name = "simpleButton4";
-            this.tablePanel1.SetRow(this.simpleButton4, 0);
-            this.simpleButton4.Size = new System.Drawing.Size(105, 56);
-            this.simpleButton4.TabIndex = 6;
-            this.simpleButton4.Text = "Copy of Existing PDF";
-            // 
-            // simpleButton5
-            // 
-            this.tablePanel1.SetColumn(this.simpleButton5, 0);
-            this.simpleButton5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.simpleButton5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton5.ImageOptions.Image")));
-            this.simpleButton5.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
-            this.simpleButton5.Location = new System.Drawing.Point(3, 65);
-            this.simpleButton5.Name = "simpleButton5";
-            this.tablePanel1.SetRow(this.simpleButton5, 1);
-            this.simpleButton5.Size = new System.Drawing.Size(105, 97);
-            this.simpleButton5.TabIndex = 7;
-            this.simpleButton5.Text = "Modify Company";
+            this.radLabel1.Location = new System.Drawing.Point(247, 3);
+            this.radLabel1.Name = "radLabel1";
+            this.radLabel1.Size = new System.Drawing.Size(287, 18);
+            this.radLabel1.TabIndex = 2;
+            this.radLabel1.Text = "CO listing with NO date of invoice and NO sage number";
             // 
             // Invoicing
             // 
@@ -272,21 +272,21 @@
             this.Text = "Invoicing";
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).EndInit();
             this.tablePanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.radGridView1.MasterTemplate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).EndInit();
-            this.radGridView1.ResumeLayout(false);
-            this.radGridView1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.navigationPane1)).EndInit();
+            this.navigationPane1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.radGridView2.MasterTemplate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel1)).EndInit();
             this.splitContainerControl1.Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel2)).EndInit();
             this.splitContainerControl1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
             this.splitContainerControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.radGridView2.MasterTemplate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.navigationPane1)).EndInit();
-            this.navigationPane1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.radGridView1.MasterTemplate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).EndInit();
+            this.radGridView1.ResumeLayout(false);
+            this.radGridView1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
