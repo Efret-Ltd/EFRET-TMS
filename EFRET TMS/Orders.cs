@@ -83,7 +83,7 @@ namespace EFRET_TMS
                                 /*
                              * TODO: Add more user controls on shipment map. Allow the user to control the zoom level. Refresh data.
                              */
-                                sMap.ShowDialog();
+                                sMap.Show();
 
                             }
                         }

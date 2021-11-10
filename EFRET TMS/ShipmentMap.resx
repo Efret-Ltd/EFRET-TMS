@@ -123,20 +123,6 @@
   <metadata name="ribbonMiniToolbar1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>470, 17</value>
   </metadata>
-  <data name="radPictureBox1.DefaultSvgImageXml" xml:space="preserve">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;svg width="30" height="26" viewBox="0, 0, 30, 26" id="Layer_1" data-name="Layer 1" xml="http://www.w3.org/XML/1998/namespace" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xml="http://www.w3.org/XML/1998/namespace" version="1.1"&gt;
-  &lt;defs&gt;
-    &lt;style&gt;.cls-1{fill:#d3d1d0;}.cls-2,.cls-3{fill:none;stroke:#a0a09f;stroke-miterlimit:1;}.cls-3{stroke-width:1.1px;}.cls-4{fill:#a0a09f;}&lt;/style&gt;
-  &lt;/defs&gt;
-  &lt;g id="icon"&gt;
-    &lt;rect x="0.5" y="0.5" width="29" height="25" class="cls-1" style="fill:#D3D1D0;" /&gt;
-    &lt;circle cx="23" cy="6" r="2.5" stroke-miterlimit="1" class="cls-2" style="fill:none;stroke:#A0A09F;" /&gt;
-    &lt;path d="M0.5 15.6 L6.5 9.6 L22.5 25.6 M29.6 22.4 L19.6 12.4 L14.6 17.4" stroke-width="1.1px" stroke-miterlimit="1" class="cls-3" style="fill:none;stroke:#A0A09F;" /&gt;
-    &lt;path d="M30 26 L0 26 L0 0 L30 0 z M1 25 L29 25 L29 1 L1 1 z" class="cls-4" style="fill:#A0A09F;" /&gt;
-  &lt;/g&gt;
-&lt;/svg&gt;</value>
-  </data>
   <metadata name="barManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>776, 17</value>
   </metadata>
@@ -164,6 +150,20 @@
         NmMwLjQsMC40LDAuNCwxLDAsMS40TDE4LDE2TDIzLjcsMjEuN3oiIGNsYXNzPSJSZWQiIC8+DQogIDwv
         Zz4NCjwvc3ZnPgs=
 </value>
+  </data>
+  <data name="radPictureBox1.DefaultSvgImageXml" xml:space="preserve">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;svg width="30" height="26" viewBox="0, 0, 30, 26" id="Layer_1" data-name="Layer 1" xml="http://www.w3.org/XML/1998/namespace" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xml="http://www.w3.org/XML/1998/namespace" version="1.1"&gt;
+  &lt;defs&gt;
+    &lt;style&gt;.cls-1{fill:#d3d1d0;}.cls-2,.cls-3{fill:none;stroke:#a0a09f;stroke-miterlimit:1;}.cls-3{stroke-width:1.1px;}.cls-4{fill:#a0a09f;}&lt;/style&gt;
+  &lt;/defs&gt;
+  &lt;g id="icon"&gt;
+    &lt;rect x="0.5" y="0.5" width="29" height="25" class="cls-1" style="fill:#D3D1D0;" /&gt;
+    &lt;circle cx="23" cy="6" r="2.5" stroke-miterlimit="1" class="cls-2" style="fill:none;stroke:#A0A09F;" /&gt;
+    &lt;path d="M0.5 15.6 L6.5 9.6 L22.5 25.6 M29.6 22.4 L19.6 12.4 L14.6 17.4" stroke-width="1.1px" stroke-miterlimit="1" class="cls-3" style="fill:none;stroke:#A0A09F;" /&gt;
+    &lt;path d="M30 26 L0 26 L0 0 L30 0 z M1 25 L29 25 L29 1 L1 1 z" class="cls-4" style="fill:#A0A09F;" /&gt;
+  &lt;/g&gt;
+&lt;/svg&gt;</value>
   </data>
   <metadata name="office2019GrayTheme1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>

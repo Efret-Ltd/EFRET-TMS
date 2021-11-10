@@ -8,6 +8,9 @@ using System.Drawing;
 using System.IO;
 using System.Net;
 using System.Text.Json;
+using System.Web.Script.Serialization;
+using System.Windows.Forms;
+using Telerik.WinControls;
 
 namespace EFRET_TMS
 {
@@ -16,151 +19,134 @@ namespace EFRET_TMS
         public ShipmentMap(int coid, string latitude, string longitude)
         {
         InitializeComponent();
-         radRibbonBar1.Expanded = false;
+         radRibbonBar2.Expanded = false;
           this.Text = "Shipment tracking for: " + coid;
           GetMapFromCoords(latitude, longitude);
-          StreetInfo(latitude, longitude);
-            GetStreetName(latitude, longitude);
+          GetStreetName(latitude, longitude);
         }
 
         public void GetMapFromCoords(string latitude, string longitude)
         {
 
             string coords = latitude + "," + longitude;
-            int pictureWidth = 512;
-            int pictureHeight = 512;
-            int zoom = 15;
+            int pictureWidth = 1024;
+            int pictureHeight = 1024;
+            int zoom = 17;
 
 
             HttpWebRequest mapRequest = (HttpWebRequest)WebRequest.Create(
                 "https://image.maps.ls.hereapi.com/mia/1.6/mapview?c=" + coords +
-                "&z=" + zoom + "&apiKey=JdeLHTyZLIIKCjldtL0VTEMuXvaGIzkVdIFvLx8yD84&i&w=" + pictureWidth + "&h=" + pictureHeight + "");
-
-            // returned values are returned as a stream, then read into a string
-            using (HttpWebResponse mapResponse = (HttpWebResponse)mapRequest.GetResponse())
-            {
-                using (BinaryReader reader = new BinaryReader(mapResponse.GetResponseStream()))
-                {
-                    byte[] lnByte = reader.ReadBytes(1 * 2048 * 2048 * 10);
-                    using (MemoryStream ms = new MemoryStream(lnByte))
-                    {
-                        radPictureBox1.Image = Image.FromStream(ms); 
-                        ms.Close();
-                    }
-                    reader.Close();
-                    reader.Dispose();
-                }
-
-            }
-        }
-  
-        public void StreetInfo(string latitude, string longitude)
-        {
+                "&z=" + zoom + "&apiKey=JdeLHTyZLIIKCjldtL0VTEMuXvaGIzkVdIFvLx8yD84&w=" + pictureWidth + "&h=" + pictureHeight + "");
             try
             {
-                RestClient client = new RestClient("https://api.myptv.com/geocoding/v1/locations/by-position/" + latitude +
+                // returned values are returned as a stream, then read into a string
+                using (HttpWebResponse mapResponse = (HttpWebResponse)mapRequest.GetResponse())
+                {
+                    using (BinaryReader reader = new BinaryReader(mapResponse.GetResponseStream()))
+                    {
+                        byte[] lnByte = reader.ReadBytes(1 * 2048 * 2048 * 10);
+                        using (MemoryStream ms = new MemoryStream(lnByte))
+                        {
+                            radPictureBox1.Image = Image.FromStream(ms);
+                            ms.Close();
+                        }
+
+                        reader.Close();
+                        reader.Dispose();
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+                SentrySdk.CaptureException(ex);
+            }
+        }
+        
+        public void GetStreetName(string latitude, string longitude)
+        {
+
+            try
+            {
+                var client = new RestClient("https://api.myptv.com/geocoding/v1/locations/by-position/" + latitude +
                                             "/" + longitude + "?language=en");
-                RestRequest request = new RestRequest(Method.GET);
+                var request = new RestRequest(Method.GET);
                 request.AddHeader("apiKey",
                     "MjBhYTg3MjRlMWZlNDk2OTk0NzZhMWIzMTU3Zjg1ZWY6ZTMxZTVjMGMtM2I0My00ODAwLThmOWYtNjY5ODk4OWRlMWJm");
 
                 //Response is a JSON object string.
                 IRestResponse<Location> response = client.Execute<Location>(request);
-                JsonDocument doc = JsonDocument.Parse(response.Content);
-                JsonElement root = doc.RootElement;
-                barStaticItem1.Name = root[0].ToString();
+                JObject json = JObject.Parse(response.Content);
+                var address = json["locations"][0];
+                var formattedAddress = address["formattedAddress"];
+                barStaticItem1.Caption = formattedAddress.ToString();
+
+                /*
+                 * dynamic data = JObject.Parse(result);
+                    dynamic address = data.items;
+                 */
             }
             catch (Exception ex)
             {
                 SentrySdk.CaptureException(ex);
 
             }
+
         }
         public class ReferencePosition
         {
-            public double Latitude { get; set; }
-            public double Longitude { get; set; }
+            public double latitude { get; set; }
+            public double longitude { get; set; }
         }
 
         public class Address
         {
-            public string CountryName { get; set; }
-            public string State { get; set; }
-            public string Province { get; set; }
-            public string PostalCode { get; set; }
-            public string City { get; set; }
-            public string District { get; set; }
-            public string Subdistrict { get; set; }
-            public string Street { get; set; }
-            public string HouseNumber { get; set; }
+            public string countryName { get; set; }
+            public string state { get; set; }
+            public string province { get; set; }
+            public string postalCode { get; set; }
+            public string city { get; set; }
+            public string district { get; set; }
+            public string subdistrict { get; set; }
+            public string street { get; set; }
+            public string houseNumber { get; set; }
         }
 
         public class Quality
         {
-            public int TotalScore { get; set; }
+            public int totalScore { get; set; }
         }
-
-        public new class Location
+  
+        public class Location
         {
-            public ReferencePosition ReferencePosition { get; set; }
-            public Address Address { get; set; }
-            public string FormattedAddress { get; set; }
-            public string LocationType { get; set; }
-            public Quality Quality { get; set; }
+            public ReferencePosition referencePosition { get; set; }
+            public Address address { get; set; }
+            public string formattedAddress { get; set; }
+            public string locationType { get; set; }
+            public Quality quality { get; set; }
         }
 
         public class Root
         {
-            public List<Location> Locations { get; set; }
+            public List<Location> locations { get; set; }
         }
 
-
-        public void GetStreetName(string latitude, string longitude)
-        {
-            string coords = latitude + "," + longitude;
-            //Now we do another request for the location data payload to gather road details.
-            string uri = "https://revgeocode.search.hereapi.com/v1/revgeocode";
-            string myParameters = "?apiKey=JdeLHTyZLIIKCjldtL0VTEMuXvaGIzkVdIFvLx8yD84&at=" + coords + "&lang=en-US";
-
-            string url = uri + myParameters;
-            string serializedResponse;
-
-            HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(url);
-            request.Method = "GET";
-
-            try
-            {
-                using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
-                {
-                    Stream dataStream = response.GetResponseStream();
-                    StreamReader reader = new StreamReader(dataStream);
-                    serializedResponse = reader.ReadToEnd();
-                    reader.Close();
-                    reader.Dispose();
-                    dataStream.Close();
-                    dataStream.Dispose();
-                    JObject json = JObject.Parse(serializedResponse);
-                    radMenuItem1.Text = json.ToString();
-                    dynamic results = JsonConvert.DeserializeObject<dynamic>(serializedResponse);
-                    radRibbonBar1.Text = results;
-                }
-            }
-            catch (Exception ex)
-            {
-                SentrySdk.CaptureMessage(ex.ToString());
-
-            }
-        }
-
-        private void radRibbonBar1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             this.Hide();
             this.Dispose();
+        }
+
+        private void ribbonTab1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radRibbonBar2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
