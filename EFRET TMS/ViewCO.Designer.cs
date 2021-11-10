@@ -51,9 +51,16 @@ namespace EFRET_TMS
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
+            this.barCheckItem1 = new DevExpress.XtraBars.BarCheckItem();
+            this.barCheckItem2 = new DevExpress.XtraBars.BarCheckItem();
+            this.barCheckItem3 = new DevExpress.XtraBars.BarCheckItem();
+            this.barCheckItem4 = new DevExpress.XtraBars.BarCheckItem();
+            this.barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
+            this.barCheckItem5 = new DevExpress.XtraBars.BarCheckItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -141,6 +148,7 @@ namespace EFRET_TMS
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.radTextBox2 = new Telerik.WinControls.UI.RadTextBox();
             this.xtraOpenFileDialog1 = new DevExpress.XtraEditors.XtraOpenFileDialog(this.components);
+            this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSearchControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -186,9 +194,16 @@ namespace EFRET_TMS
             this.barButtonItem7,
             this.barButtonItem8,
             this.barButtonItem9,
-            this.barLinkContainerItem2});
+            this.barLinkContainerItem2,
+            this.barCheckItem1,
+            this.barCheckItem2,
+            this.barCheckItem3,
+            this.barCheckItem4,
+            this.barButtonItem10,
+            this.barCheckItem5,
+            this.barStaticItem1});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 18;
+            this.ribbon.MaxItemId = 25;
             this.ribbon.Name = "ribbon";
             this.ribbon.PageHeaderItemLinks.Add(this.barLinkContainerItem1);
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -316,11 +331,60 @@ namespace EFRET_TMS
             this.barButtonItem9.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem9.ImageOptions.SvgImage")));
             this.barButtonItem9.Name = "barButtonItem9";
             // 
+            // barCheckItem1
+            // 
+            this.barCheckItem1.Caption = "Trailer Number Assigned";
+            this.barCheckItem1.CheckBoxVisibility = DevExpress.XtraBars.CheckBoxVisibility.BeforeText;
+            this.barCheckItem1.Id = 18;
+            this.barCheckItem1.Name = "barCheckItem1";
+            this.barCheckItem1.CheckedChanged += new DevExpress.XtraBars.ItemClickEventHandler(this.barCheckItem1_CheckedChanged);
+            // 
+            // barCheckItem2
+            // 
+            this.barCheckItem2.Caption = "Contractual Date Set";
+            this.barCheckItem2.CheckBoxVisibility = DevExpress.XtraBars.CheckBoxVisibility.BeforeText;
+            this.barCheckItem2.Id = 19;
+            this.barCheckItem2.Name = "barCheckItem2";
+            this.barCheckItem2.CheckedChanged += new DevExpress.XtraBars.ItemClickEventHandler(this.barCheckItem2_CheckedChanged);
+            // 
+            // barCheckItem3
+            // 
+            this.barCheckItem3.Caption = "Cost Provider Set";
+            this.barCheckItem3.CheckBoxVisibility = DevExpress.XtraBars.CheckBoxVisibility.BeforeText;
+            this.barCheckItem3.Id = 20;
+            this.barCheckItem3.Name = "barCheckItem3";
+            this.barCheckItem3.CheckedChanged += new DevExpress.XtraBars.ItemClickEventHandler(this.barCheckItem3_CheckedChanged);
+            // 
+            // barCheckItem4
+            // 
+            this.barCheckItem4.Caption = "Trailer Type Set";
+            this.barCheckItem4.CheckBoxVisibility = DevExpress.XtraBars.CheckBoxVisibility.BeforeText;
+            this.barCheckItem4.Id = 21;
+            this.barCheckItem4.Name = "barCheckItem4";
+            this.barCheckItem4.CheckedChanged += new DevExpress.XtraBars.ItemClickEventHandler(this.barCheckItem4_CheckedChanged);
+            // 
+            // barButtonItem10
+            // 
+            this.barButtonItem10.Caption = "View CMR";
+            this.barButtonItem10.Enabled = false;
+            this.barButtonItem10.Id = 22;
+            this.barButtonItem10.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem10.ImageOptions.SvgImage")));
+            this.barButtonItem10.Name = "barButtonItem10";
+            // 
+            // barCheckItem5
+            // 
+            this.barCheckItem5.Caption = "Tractor Number Set";
+            this.barCheckItem5.CheckBoxVisibility = DevExpress.XtraBars.CheckBoxVisibility.BeforeText;
+            this.barCheckItem5.Id = 23;
+            this.barCheckItem5.Name = "barCheckItem5";
+            this.barCheckItem5.CheckedChanged += new DevExpress.XtraBars.ItemClickEventHandler(this.barCheckItem5_CheckedChanged);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup1,
-            this.ribbonPageGroup2});
+            this.ribbonPageGroup2,
+            this.ribbonPageGroup7});
             this.ribbonPage1.Name = "ribbonPage1";
             this.ribbonPage1.Text = "Charging Order";
             // 
@@ -337,8 +401,20 @@ namespace EFRET_TMS
             // 
             this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem3);
             this.ribbonPageGroup2.ItemLinks.Add(this.barButtonGroup1);
+            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem10);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.Text = "CO Administration";
+            // 
+            // ribbonPageGroup7
+            // 
+            this.ribbonPageGroup7.ItemLinks.Add(this.barCheckItem1);
+            this.ribbonPageGroup7.ItemLinks.Add(this.barCheckItem2);
+            this.ribbonPageGroup7.ItemLinks.Add(this.barCheckItem3);
+            this.ribbonPageGroup7.ItemLinks.Add(this.barCheckItem4);
+            this.ribbonPageGroup7.ItemLinks.Add(this.barCheckItem5);
+            this.ribbonPageGroup7.ItemLinks.Add(this.barStaticItem1);
+            this.ribbonPageGroup7.Name = "ribbonPageGroup7";
+            this.ribbonPageGroup7.Text = "Project44 Checklist";
             // 
             // ribbonPage2
             // 
@@ -962,6 +1038,12 @@ namespace EFRET_TMS
             // 
             this.xtraOpenFileDialog1.FileName = "xtraOpenFileDialog1";
             // 
+            // barStaticItem1
+            // 
+            this.barStaticItem1.Caption = "barStaticItem1";
+            this.barStaticItem1.Id = 24;
+            this.barStaticItem1.Name = "barStaticItem1";
+            // 
             // ViewCO
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1111,5 +1193,13 @@ namespace EFRET_TMS
         private DevExpress.XtraBars.BarLinkContainerItem barLinkContainerItem2;
         private DevExpress.XtraEditors.CheckEdit checkEdit2;
         private DevExpress.XtraEditors.XtraOpenFileDialog xtraOpenFileDialog1;
+        private DevExpress.XtraBars.BarCheckItem barCheckItem1;
+        private DevExpress.XtraBars.BarCheckItem barCheckItem2;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup7;
+        private DevExpress.XtraBars.BarCheckItem barCheckItem3;
+        private DevExpress.XtraBars.BarCheckItem barCheckItem4;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem10;
+        private DevExpress.XtraBars.BarCheckItem barCheckItem5;
+        private DevExpress.XtraBars.BarStaticItem barStaticItem1;
     }
 }

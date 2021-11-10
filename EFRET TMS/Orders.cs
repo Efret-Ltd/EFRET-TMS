@@ -72,7 +72,8 @@ namespace EFRET_TMS
                         if (gridView1.FocusedColumn.FieldName == "IdCO" ||
                             gridView1.FocusedColumn.FieldName == "New CO")
                         {
-
+                            SentrySdk.CaptureMessage(Environment.UserName + " accessed " + NewCO + " at: " +
+                                                     DateTime.Now);
                             ViewCO ViewCO = new ViewCO(coid, NewCO, ContractID);
                             ViewCO.Show();
                         }

@@ -20,5 +20,11 @@ namespace EFRET_TMS
             Check_VAT checkVat = new Check_VAT();
             checkVat.Show();
         }
+
+        private void sfButton1_Click(object sender, EventArgs e)
+        {
+            Whois whois = new Whois();
+            whois.Show();
+        }
     }
 }

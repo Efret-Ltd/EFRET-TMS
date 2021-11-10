@@ -34,6 +34,7 @@
             this.roundRectShapeForm = new Telerik.WinControls.RoundRectShape(this.components);
             this.vatCheckButton = new Syncfusion.WinForms.Controls.SfButton();
             this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
+            this.sfButton1 = new Syncfusion.WinForms.Controls.SfButton();
             ((System.ComponentModel.ISupportInitialize)(this.radTitleBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
             this.tablePanel1.SuspendLayout();
@@ -79,6 +80,7 @@
             this.tablePanel1.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 27.08F),
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 28.88F)});
+            this.tablePanel1.Controls.Add(this.sfButton1);
             this.tablePanel1.Controls.Add(this.vatCheckButton);
             this.tablePanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tablePanel1.Location = new System.Drawing.Point(0, 30);
@@ -89,6 +91,20 @@
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F)});
             this.tablePanel1.Size = new System.Drawing.Size(400, 349);
             this.tablePanel1.TabIndex = 3;
+            // 
+            // sfButton1
+            // 
+            this.sfButton1.AccessibleName = "Button";
+            this.tablePanel1.SetColumn(this.sfButton1, 1);
+            this.sfButton1.FocusRectangleVisible = true;
+            this.sfButton1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
+            this.sfButton1.Location = new System.Drawing.Point(197, 3);
+            this.sfButton1.Name = "sfButton1";
+            this.tablePanel1.SetRow(this.sfButton1, 0);
+            this.sfButton1.Size = new System.Drawing.Size(200, 20);
+            this.sfButton1.TabIndex = 3;
+            this.sfButton1.Text = "Domain Whois";
+            this.sfButton1.Click += new System.EventHandler(this.sfButton1_Click);
             // 
             // ToolsUtiltiesMenu
             // 
@@ -114,5 +130,6 @@
         private Telerik.WinControls.RoundRectShape roundRectShapeTitle;
         private Syncfusion.WinForms.Controls.SfButton vatCheckButton;
         private DevExpress.Utils.Layout.TablePanel tablePanel1;
+        private Syncfusion.WinForms.Controls.SfButton sfButton1;
     }
 }

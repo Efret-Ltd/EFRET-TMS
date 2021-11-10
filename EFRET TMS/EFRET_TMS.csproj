@@ -304,8 +304,11 @@
       <HintPath>..\lib\RCWF\2021.3.914.40\TelerikCommon.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="WhoisClient, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\WhoisClient.NET.3.0.1\lib\net45\WhoisClient.dll</HintPath>
+    <Reference Include="Tokenizer, Version=2.2.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Tokenizer.2.2.2\lib\net452\Tokenizer.dll</HintPath>
+    </Reference>
+    <Reference Include="Whois, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Whois.3.0.1\lib\net452\Whois.dll</HintPath>
     </Reference>
     <Reference Include="WindowsBase" />
   </ItemGroup>
@@ -428,6 +431,12 @@
     <Compile Include="ViewCO.Designer.cs">
       <DependentUpon>ViewCO.cs</DependentUpon>
     </Compile>
+    <Compile Include="Whois.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Whois.Designer.cs">
+      <DependentUpon>Whois.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AdminControlPanel.resx">
       <DependentUpon>AdminControlPanel.cs</DependentUpon>
     </EmbeddedResource>
@@ -484,6 +493,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ViewCO.resx">
       <DependentUpon>ViewCO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Whois.resx">
+      <DependentUpon>Whois.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.manifest" />
     <None Include="axsDataSet.xsc">

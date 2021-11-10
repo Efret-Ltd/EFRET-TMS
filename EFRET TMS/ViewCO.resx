@@ -606,6 +606,26 @@
         c3ZnPgs=
 </value>
   </data>
+  <data name="barButtonItem10.ImageOptions.SvgImage" type="DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.2" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFlEZXZFeHByZXNzLkRhdGEudjIwLjIsIFZlcnNpb249MjAuMi4z
+        LjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjg4ZDE3NTRkNzAwZTQ5YQUBAAAAHURl
+        dkV4cHJlc3MuVXRpbHMuU3ZnLlN2Z0ltYWdlAQAAAAREYXRhBwICAAAACQMAAAAPAwAAANoCAAAC77u/
+        PD94bWwgdmVyc2lvbj0nMS4wJyBlbmNvZGluZz0nVVRGLTgnPz4NCjxzdmcgeD0iMHB4IiB5PSIwcHgi
+        IHZpZXdCb3g9IjAgMCAzMiAzMiIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcv
+        MjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4bWw6c3Bh
+        Y2U9InByZXNlcnZlIiBpZD0iTG9va3VwX194MjZfX1JlZmVyZW5jZSIgc3R5bGU9ImVuYWJsZS1iYWNr
+        Z3JvdW5kOm5ldyAwIDAgMzIgMzIiPg0KICA8c3R5bGUgdHlwZT0idGV4dC9jc3MiPgoJLkJsdWV7Zmls
+        bDojMTE3N0Q3O30KPC9zdHlsZT4NCiAgPHBhdGggZD0iTTEwLDE2YzAtMi4yLDEuOC00LDQtNHM0LDEu
+        OCw0LDRzLTEuOCw0LTQsNFMxMCwxOC4yLDEwLDE2eiBNNCw1YzAsMC42LDAuNCwxLDEsMWgyM3YyM2Mw
+        LDAuNi0wLjQsMS0xLDFINSAgYy0xLjcsMC0zLTEuMy0zLTNWNWMwLTEuNywxLjMtMywzLTNoMjJjMC42
+        LDAsMSwwLjQsMSwxdjFINUM0LjQsNCw0LDQuNCw0LDV6IE04LjIsMTcuNGMwLjUsMi4yLDIuMiw0LDQu
+        NCw0LjUgIGMxLjgsMC40LDMuNCwwLDQuNy0wLjhsNC42LDQuNmMwLjUsMC41LDEuMywwLjUsMS43LDBj
+        MC41LTAuNSwwLjUtMS4zLDAtMS43TDE5LDE5LjNjMC45LTEuMywxLjItMywwLjgtNC43ICBjLTAuNS0y
+        LjItMi4zLTMuOS00LjUtNC40QzExLDkuMiw3LjIsMTMsOC4yLDE3LjR6IiBjbGFzcz0iQmx1ZSIgLz4N
+        Cjwvc3ZnPgs=
+</value>
+  </data>
   <metadata name="workspaceManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
