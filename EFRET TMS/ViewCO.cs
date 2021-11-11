@@ -102,5 +102,11 @@ namespace EFRET_TMS
             P44Check(P44ChecklistCounter, e);
            
         }
+
+        //View Costs
+        private void barButtonItem11_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
     }
 }

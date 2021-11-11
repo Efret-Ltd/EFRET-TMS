@@ -15,7 +15,7 @@ namespace EFRET_TMS
 
         private void COCreation_Load(object sender, EventArgs e)
         {
-
+            RadForm1.LogMessage(Environment.UserName + " Started CO Creation ");
         }
     }
 }

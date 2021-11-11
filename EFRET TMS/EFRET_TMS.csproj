@@ -332,15 +332,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>axsDevDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="ChargingOrderCode\ConnectionHelper.cs" />
-    <Compile Include="ChargingOrderCode\Movement.cs" />
-    <Compile Include="ChargingOrderCode\Movement.Designer.cs">
-      <DependentUpon>Movement.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ChargingOrderCode\NewCO.cs" />
-    <Compile Include="ChargingOrderCode\NewCO.Designer.cs">
-      <DependentUpon>NewCO.cs</DependentUpon>
-    </Compile>
     <Compile Include="Check_VAT.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -364,6 +355,12 @@
     <Compile Include="DateRange.Designer.cs">
       <DependentUpon>DateRange.cs</DependentUpon>
     </Compile>
+    <Compile Include="FleetManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FleetManagement.Designer.cs">
+      <DependentUpon>FleetManagement.cs</DependentUpon>
+    </Compile>
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Invoicing.cs">
       <SubType>Form</SubType>
@@ -377,6 +374,7 @@
     <Compile Include="Orders.Designer.cs">
       <DependentUpon>Orders.cs</DependentUpon>
     </Compile>
+    <Compile Include="PostTeams.cs" />
     <Compile Include="Process_CreateCO.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -425,11 +423,22 @@
     <Compile Include="TP.Designer.cs">
       <DependentUpon>TP.cs</DependentUpon>
     </Compile>
+    <Compile Include="Trailers.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Trailers.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ViewCO.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ViewCO.Designer.cs">
       <DependentUpon>ViewCO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewCOCost.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewCOCost.Designer.cs">
+      <DependentUpon>ViewCOCost.cs</DependentUpon>
     </Compile>
     <Compile Include="Whois.cs">
       <SubType>Form</SubType>
@@ -448,6 +457,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DateRange.resx">
       <DependentUpon>DateRange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FleetManagement.resx">
+      <DependentUpon>FleetManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Invoicing.resx">
       <DependentUpon>Invoicing.cs</DependentUpon>
@@ -493,6 +505,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ViewCO.resx">
       <DependentUpon>ViewCO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewCOCost.resx">
+      <DependentUpon>ViewCOCost.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Whois.resx">
       <DependentUpon>Whois.cs</DependentUpon>
@@ -546,14 +561,23 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="wix\$(ProjectName).g.wxs" />
+    <None Include="Trailers.xsc">
+      <DependentUpon>Trailers.xsd</DependentUpon>
+    </None>
+    <None Include="Trailers.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Trailers.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Trailers.xss">
+      <DependentUpon>Trailers.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <!--sirinie -->
-    <Content Include="ChargingOrderCode\StoredProcAndView.sql" />
     <Content Include="efret.ico" />
   </ItemGroup>
   <ItemGroup>

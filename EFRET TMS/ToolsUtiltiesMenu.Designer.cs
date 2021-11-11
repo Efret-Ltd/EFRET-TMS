@@ -35,6 +35,7 @@
             this.vatCheckButton = new Syncfusion.WinForms.Controls.SfButton();
             this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
             this.sfButton1 = new Syncfusion.WinForms.Controls.SfButton();
+            this.sfButton2 = new Syncfusion.WinForms.Controls.SfButton();
             ((System.ComponentModel.ISupportInitialize)(this.radTitleBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
             this.tablePanel1.SuspendLayout();
@@ -80,6 +81,7 @@
             this.tablePanel1.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 27.08F),
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 28.88F)});
+            this.tablePanel1.Controls.Add(this.sfButton2);
             this.tablePanel1.Controls.Add(this.sfButton1);
             this.tablePanel1.Controls.Add(this.vatCheckButton);
             this.tablePanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -106,6 +108,20 @@
             this.sfButton1.Text = "Domain Whois";
             this.sfButton1.Click += new System.EventHandler(this.sfButton1_Click);
             // 
+            // sfButton2
+            // 
+            this.sfButton2.AccessibleName = "Button";
+            this.tablePanel1.SetColumn(this.sfButton2, 0);
+            this.sfButton2.FocusRectangleVisible = true;
+            this.sfButton2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
+            this.sfButton2.Location = new System.Drawing.Point(3, 29);
+            this.sfButton2.Name = "sfButton2";
+            this.tablePanel1.SetRow(this.sfButton2, 1);
+            this.sfButton2.Size = new System.Drawing.Size(188, 20);
+            this.sfButton2.TabIndex = 4;
+            this.sfButton2.Text = "Force P44 Upload";
+            this.sfButton2.Click += new System.EventHandler(this.sfButton2_Click);
+            // 
             // ToolsUtiltiesMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -131,5 +147,6 @@
         private Syncfusion.WinForms.Controls.SfButton vatCheckButton;
         private DevExpress.Utils.Layout.TablePanel tablePanel1;
         private Syncfusion.WinForms.Controls.SfButton sfButton1;
+        private Syncfusion.WinForms.Controls.SfButton sfButton2;
     }
 }

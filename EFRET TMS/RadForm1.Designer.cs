@@ -32,8 +32,8 @@ namespace EFRET_TMS
             this.components = new System.ComponentModel.Container();
             DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::EFRET_TMS.SplashScreen2), true, true, true);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RadForm1));
-            DevExpress.Utils.SuperToolTip superToolTip2 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem2 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem1 = new DevExpress.Utils.ToolTipTitleItem();
             this.radThemeManager1 = new Telerik.WinControls.RadThemeManager();
             this.accordionControlElement1 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement2 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
@@ -44,6 +44,7 @@ namespace EFRET_TMS
             this.accordionControlElement7 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement11 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement12 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement13 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement8 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement9 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlSeparator1 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
@@ -53,6 +54,8 @@ namespace EFRET_TMS
             this.radButtonElement1 = new Telerik.WinControls.UI.RadButtonElement();
             this.radWaitingBar1 = new Telerik.WinControls.UI.RadWaitingBar();
             this.fadingRingWaitingBarIndicatorElement1 = new Telerik.WinControls.UI.FadingRingWaitingBarIndicatorElement();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radWaitingBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
@@ -108,6 +111,7 @@ namespace EFRET_TMS
             this.accordionControlElement6.Name = "accordionControlElement6";
             this.accordionControlElement6.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElement6.Text = "Fleet";
+            this.accordionControlElement6.Click += new System.EventHandler(this.accordionControlElement6_Click);
             // 
             // accordionControlElement7
             // 
@@ -119,7 +123,8 @@ namespace EFRET_TMS
             this.accordionControlElement4,
             this.accordionControlElement5,
             this.accordionControlElement6,
-            this.accordionControlElement12});
+            this.accordionControlElement12,
+            this.accordionControlElement13});
             this.accordionControlElement7.Expanded = true;
             this.accordionControlElement7.Name = "accordionControlElement7";
             this.accordionControlElement7.Text = "Dashboard";
@@ -140,14 +145,21 @@ namespace EFRET_TMS
             this.accordionControlElement12.Text = "Tools & Utilities";
             this.accordionControlElement12.Click += new System.EventHandler(this.accordionControlElement12_Click);
             // 
+            // accordionControlElement13
+            // 
+            this.accordionControlElement13.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElement13.ImageOptions.SvgImage")));
+            this.accordionControlElement13.Name = "accordionControlElement13";
+            this.accordionControlElement13.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement13.Text = "Mail Merge";
+            // 
             // accordionControlElement8
             // 
             this.accordionControlElement8.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElement8.ImageOptions.SvgImage")));
             this.accordionControlElement8.Name = "accordionControlElement8";
             this.accordionControlElement8.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            toolTipTitleItem2.Text = "Close EFRET TMS.";
-            superToolTip2.Items.Add(toolTipTitleItem2);
-            this.accordionControlElement8.SuperTip = superToolTip2;
+            toolTipTitleItem1.Text = "Close EFRET TMS.";
+            superToolTip1.Items.Add(toolTipTitleItem1);
+            this.accordionControlElement8.SuperTip = superToolTip1;
             this.accordionControlElement8.Text = "Exit TMS System";
             this.accordionControlElement8.Click += new System.EventHandler(this.accordionControlElement8_Click);
             // 
@@ -187,7 +199,7 @@ namespace EFRET_TMS
             this.accordionControl1.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Hidden;
             this.accordionControl1.ShowGroupExpandButtons = false;
             this.accordionControl1.ShowItemExpandButtons = false;
-            this.accordionControl1.Size = new System.Drawing.Size(249, 306);
+            this.accordionControl1.Size = new System.Drawing.Size(249, 333);
             this.accordionControl1.TabIndex = 2;
             // 
             // radDesktopAlert1
@@ -221,11 +233,19 @@ namespace EFRET_TMS
             // 
             this.fadingRingWaitingBarIndicatorElement1.Name = "fadingRingWaitingBarIndicatorElement1";
             // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.notifyIcon1.BalloonTipTitle = "EFRET Limited";
+            this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
+            this.notifyIcon1.Text = "EFRET TMS";
+            this.notifyIcon1.Visible = true;
+            // 
             // RadForm1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(249, 306);
+            this.ClientSize = new System.Drawing.Size(249, 333);
             this.Controls.Add(this.accordionControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -266,5 +286,8 @@ namespace EFRET_TMS
         private Telerik.WinControls.UI.RadWaitingBar radWaitingBar1;
         private Telerik.WinControls.UI.FadingRingWaitingBarIndicatorElement fadingRingWaitingBarIndicatorElement1;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement12;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement13;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }
