@@ -40,18 +40,27 @@ namespace EFRET_TMS
         }
         public static async void LogMessage(string message)
         {
-            using (var httpClient = new HttpClient())
+            try
             {
-                using (var request = new HttpRequestMessage(new HttpMethod("POST"), "https://efret.webhook.office.com/webhookb2/35489fe2-948e-4379-8e68-87d79974aee6@ec714a2e-c5d4-46ae-b1ba-36a361a2e00b/IncomingWebhook/780e1042788b4503b968583fad62f00c/a55b8555-1a18-4fcd-9e1a-6382eeb92c5e"))
+                using (var httpClient = new HttpClient())
                 {
+                    using (var request = new HttpRequestMessage(new HttpMethod("POST"),
+                        "https://efret.webhook.office.com/webhookb2/35489fe2-948e-4379-8e68-87d79974aee6@ec714a2e-c5d4-46ae-b1ba-36a361a2e00b/IncomingWebhook/780e1042788b4503b968583fad62f00c/a55b8555-1a18-4fcd-9e1a-6382eeb92c5e"))
+                    {
 
-                    string postContent = "{'text':'" + message + "'}";
-                    request.Content = new StringContent(postContent);
-                    request.Content.Headers.ContentType = MediaTypeHeaderValue.Parse("application/json");
+                        string postContent = "{'text':'" + message + "'}";
+                        request.Content = new StringContent(postContent);
+                        request.Content.Headers.ContentType = MediaTypeHeaderValue.Parse("application/json");
 
-                    var response = await httpClient.SendAsync(request);
+                        var response = await httpClient.SendAsync(request);
+                    }
                 }
             }
+            catch (Exception ex)
+            {
+                SentrySdk.CaptureException(ex);
+            }
+
             SentrySdk.CaptureMessage(message);
         }
 
@@ -195,6 +204,14 @@ namespace EFRET_TMS
             FleetManagement FMngt = new FleetManagement();
             FMngt.Show();
             var eventMessage = Environment.UserName + " Opened Fleet Management Panel";
+            LogMessage(eventMessage);
+        }
+        //Mail Merge
+        private void accordionControlElement13_Click(object sender, EventArgs e)
+        {
+            MailMerge MM = new MailMerge();
+            MM.Show();
+            var eventMessage = Environment.UserName + " Opened MailMerge Panel";
             LogMessage(eventMessage);
         }
     }

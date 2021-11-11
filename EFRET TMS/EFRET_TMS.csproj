@@ -368,6 +368,12 @@
     <Compile Include="Invoicing.Designer.cs">
       <DependentUpon>Invoicing.cs</DependentUpon>
     </Compile>
+    <Compile Include="MailMerge.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MailMerge.Designer.cs">
+      <DependentUpon>MailMerge.cs</DependentUpon>
+    </Compile>
     <Compile Include="Orders.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -463,6 +469,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Invoicing.resx">
       <DependentUpon>Invoicing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MailMerge.resx">
+      <DependentUpon>MailMerge.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Orders.resx">
       <DependentUpon>Orders.cs</DependentUpon>

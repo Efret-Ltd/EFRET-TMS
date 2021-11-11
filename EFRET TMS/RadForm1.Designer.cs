@@ -151,6 +151,7 @@ namespace EFRET_TMS
             this.accordionControlElement13.Name = "accordionControlElement13";
             this.accordionControlElement13.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElement13.Text = "Mail Merge";
+            this.accordionControlElement13.Click += new System.EventHandler(this.accordionControlElement13_Click);
             // 
             // accordionControlElement8
             // 
