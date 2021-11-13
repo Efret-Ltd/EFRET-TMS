@@ -19,9 +19,12 @@ namespace EFRET_TMS
             InitializeComponent();
             CID = ContractID + @"\";
             newChargingOrder = newCO;
-            path = @"\\efret-app-01\Database\efret\2021\CustomerCO\" + CID + newChargingOrder;
+            DateTime moment = new DateTime();
+            path = @"\\efret-app-01\Database\efret\"+moment.Year+@"\CustomerCO\" + CID + newChargingOrder;
             getCODetails(newChargingOrder.ToString());
             getCOMovements(newChargingOrder.ToString());
+
+            
         }
 
         private void getCODetails(string NewCO)
@@ -61,7 +64,7 @@ namespace EFRET_TMS
 
         private void ViewCO_Load(object sender, EventArgs e)
         {
-            ribbonPageGroup7.Text = "Project44 Checklist";
+            ribbonPageGroup7.Text = @"Project44 Checklist";
             barStaticItem1.Caption = P44ChecklistCounter + "/5 Completed";
            
         }
@@ -97,6 +100,7 @@ namespace EFRET_TMS
 
         private void P44Check(int P44ChecklistCounter, ItemClickEventArgs e)
         {
+            //This is highly redundant. We are going to do simple checks against the table and tally up the ones that have valid data.
             if (barCheckItem1.Checked)
             {
                 P44ChecklistCounter++;
