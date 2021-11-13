@@ -374,6 +374,11 @@
     <Compile Include="MailMerge.Designer.cs">
       <DependentUpon>MailMerge.cs</DependentUpon>
     </Compile>
+    <Compile Include="MovementCO.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MovementCO.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Orders.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -560,6 +565,17 @@
       <DependentUpon>COInstance.xsd</DependentUpon>
     </None>
     <None Include="EFRET.snk" />
+    <None Include="MovementCO.xsc">
+      <DependentUpon>MovementCO.xsd</DependentUpon>
+    </None>
+    <None Include="MovementCO.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MovementCO.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MovementCO.xss">
+      <DependentUpon>MovementCO.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

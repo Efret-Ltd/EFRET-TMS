@@ -36,15 +36,15 @@ namespace EFRET_TMS
             this.stepProgressBar1 = new DevExpress.XtraEditors.StepProgressBar();
             this.stepProgressBarItem1 = new DevExpress.XtraEditors.StepProgressBarItem();
             this.stepProgressBarItem2 = new DevExpress.XtraEditors.StepProgressBarItem();
+            this.stepProgressBarItem4 = new DevExpress.XtraEditors.StepProgressBarItem();
+            this.stepProgressBarItem5 = new DevExpress.XtraEditors.StepProgressBarItem();
+            this.stepProgressBarItem6 = new DevExpress.XtraEditors.StepProgressBarItem();
             this.stepProgressBarItem3 = new DevExpress.XtraEditors.StepProgressBarItem();
             this.radTextBoxControl1 = new Telerik.WinControls.UI.RadTextBoxControl();
             this.wizardPage1 = new DevExpress.XtraWizard.WizardPage();
             this.stepProgressBar2 = new DevExpress.XtraEditors.StepProgressBar();
             this.completionWizardPage1 = new DevExpress.XtraWizard.CompletionWizardPage();
             this.process1 = new System.Diagnostics.Process();
-            this.stepProgressBarItem4 = new DevExpress.XtraEditors.StepProgressBarItem();
-            this.stepProgressBarItem5 = new DevExpress.XtraEditors.StepProgressBarItem();
-            this.stepProgressBarItem6 = new DevExpress.XtraEditors.StepProgressBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.wizardControl1)).BeginInit();
             this.wizardControl1.SuspendLayout();
             this.welcomeWizardPage1.SuspendLayout();
@@ -120,6 +120,21 @@ namespace EFRET_TMS
             this.stepProgressBarItem2.ContentBlock2.Caption = "Route Planning";
             this.stepProgressBarItem2.Name = "stepProgressBarItem2";
             // 
+            // stepProgressBarItem4
+            // 
+            this.stepProgressBarItem4.ContentBlock2.Caption = "Cost Agreement";
+            this.stepProgressBarItem4.Name = "stepProgressBarItem4";
+            // 
+            // stepProgressBarItem5
+            // 
+            this.stepProgressBarItem5.ContentBlock2.Caption = "Fleet Selection";
+            this.stepProgressBarItem5.Name = "stepProgressBarItem5";
+            // 
+            // stepProgressBarItem6
+            // 
+            this.stepProgressBarItem6.ContentBlock2.Caption = "Time Scheduling";
+            this.stepProgressBarItem6.Name = "stepProgressBarItem6";
+            // 
             // stepProgressBarItem3
             // 
             this.stepProgressBarItem3.ContentBlock2.Appearance.Caption.ForeColor = DevExpress.LookAndFeel.DXSkinColors.ForeColors.Information;
@@ -174,21 +189,6 @@ namespace EFRET_TMS
             this.process1.StartInfo.StandardOutputEncoding = null;
             this.process1.StartInfo.UserName = "";
             this.process1.SynchronizingObject = this;
-            // 
-            // stepProgressBarItem4
-            // 
-            this.stepProgressBarItem4.ContentBlock2.Caption = "Cost Agreement";
-            this.stepProgressBarItem4.Name = "stepProgressBarItem4";
-            // 
-            // stepProgressBarItem5
-            // 
-            this.stepProgressBarItem5.ContentBlock2.Caption = "Fleet Selection";
-            this.stepProgressBarItem5.Name = "stepProgressBarItem5";
-            // 
-            // stepProgressBarItem6
-            // 
-            this.stepProgressBarItem6.ContentBlock2.Caption = "Time Scheduling";
-            this.stepProgressBarItem6.Name = "stepProgressBarItem6";
             // 
             // ProcessCreateCo
             // 

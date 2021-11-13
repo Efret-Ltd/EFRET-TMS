@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Whois));
             this.radTitleBar1 = new Telerik.WinControls.UI.RadTitleBar();
             this.roundRectShapeTitle = new Telerik.WinControls.RoundRectShape(this.components);
             this.roundRectShapeForm = new Telerik.WinControls.RoundRectShape(this.components);
@@ -80,10 +81,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(320, 310);
+            this.ClientSize = new System.Drawing.Size(320, 319);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.textEdit1);
             this.Controls.Add(this.radTitleBar1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Whois";
             this.Shape = this.roundRectShapeForm;
             this.Text = "Whois";
