@@ -77,8 +77,8 @@ namespace EFRET_TMS
             this.workspaceManager1 = new DevExpress.Utils.WorkspaceManager(this.components);
             this.ribbonPage7 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.cOInstanceBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.cOInstance = new EFRET_TMS.COInstance();
+            this.movementBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.movementCO = new EFRET_TMS.MovementCO();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colidMovement = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colIdCO = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -135,6 +135,8 @@ namespace EFRET_TMS
             this.colP44ETAEnd = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colP44Override = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colP44ETAUpdate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.cOInstanceBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cOInstance = new EFRET_TMS.COInstance();
             this.axsDataSet = new EFRET_TMS.AxsDataSet();
             this.movementBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.goodsBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -166,15 +168,15 @@ namespace EFRET_TMS
             this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.xtraOpenFileDialog1 = new DevExpress.XtraEditors.XtraOpenFileDialog(this.components);
-            this.movementCO = new EFRET_TMS.MovementCO();
-            this.movementBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.movementTableAdapter = new EFRET_TMS.MovementCOTableAdapters.MovementTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSearchControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.movementBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.movementCO)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cOInstanceBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cOInstance)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.axsDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.movementBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.goodsBindingSource)).BeginInit();
@@ -191,8 +193,6 @@ namespace EFRET_TMS
             ((System.ComponentModel.ISupportInitialize)(this.radDropDownList1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.movementCO)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.movementBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbon
@@ -556,15 +556,15 @@ namespace EFRET_TMS
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
-            // cOInstanceBindingSource
+            // movementBindingSource1
             // 
-            this.cOInstanceBindingSource.DataSource = this.cOInstance;
-            this.cOInstanceBindingSource.Position = 0;
+            this.movementBindingSource1.DataMember = "Movement";
+            this.movementBindingSource1.DataSource = this.movementCO;
             // 
-            // cOInstance
+            // movementCO
             // 
-            this.cOInstance.DataSetName = "COInstance";
-            this.cOInstance.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.movementCO.DataSetName = "MovementCO";
+            this.movementCO.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // gridView1
             // 
@@ -631,6 +631,8 @@ namespace EFRET_TMS
             // 
             this.colidMovement.FieldName = "idMovement";
             this.colidMovement.Name = "colidMovement";
+            this.colidMovement.Visible = true;
+            this.colidMovement.VisibleIndex = 6;
             // 
             // colIdCO
             // 
@@ -644,56 +646,50 @@ namespace EFRET_TMS
             this.colContractualdate.FieldName = "Contractualdate";
             this.colContractualdate.Name = "colContractualdate";
             this.colContractualdate.Visible = true;
-            this.colContractualdate.VisibleIndex = 7;
+            this.colContractualdate.VisibleIndex = 4;
             // 
             // colContractualTime
             // 
             this.colContractualTime.FieldName = "ContractualTime";
             this.colContractualTime.Name = "colContractualTime";
-            this.colContractualTime.Visible = true;
-            this.colContractualTime.VisibleIndex = 1;
             // 
             // colEffectiveDate
             // 
             this.colEffectiveDate.FieldName = "EffectiveDate";
             this.colEffectiveDate.Name = "colEffectiveDate";
             this.colEffectiveDate.Visible = true;
-            this.colEffectiveDate.VisibleIndex = 6;
+            this.colEffectiveDate.VisibleIndex = 3;
             // 
             // colEffectiveTime
             // 
             this.colEffectiveTime.FieldName = "EffectiveTime";
             this.colEffectiveTime.Name = "colEffectiveTime";
-            this.colEffectiveTime.Visible = true;
-            this.colEffectiveTime.VisibleIndex = 5;
             // 
             // colCompletedDate
             // 
             this.colCompletedDate.FieldName = "CompletedDate";
             this.colCompletedDate.Name = "colCompletedDate";
             this.colCompletedDate.Visible = true;
-            this.colCompletedDate.VisibleIndex = 4;
+            this.colCompletedDate.VisibleIndex = 2;
             // 
             // colCompletedTime
             // 
             this.colCompletedTime.FieldName = "CompletedTime";
             this.colCompletedTime.Name = "colCompletedTime";
-            this.colCompletedTime.Visible = true;
-            this.colCompletedTime.VisibleIndex = 3;
             // 
             // colOperation
             // 
             this.colOperation.FieldName = "Operation";
             this.colOperation.Name = "colOperation";
             this.colOperation.Visible = true;
-            this.colOperation.VisibleIndex = 8;
+            this.colOperation.VisibleIndex = 5;
             // 
             // colcompanyCode
             // 
             this.colcompanyCode.FieldName = "companyCode";
             this.colcompanyCode.Name = "colcompanyCode";
             this.colcompanyCode.Visible = true;
-            this.colcompanyCode.VisibleIndex = 2;
+            this.colcompanyCode.VisibleIndex = 1;
             // 
             // colKM
             // 
@@ -704,21 +700,29 @@ namespace EFRET_TMS
             // 
             this.colCost.FieldName = "Cost";
             this.colCost.Name = "colCost";
+            this.colCost.Visible = true;
+            this.colCost.VisibleIndex = 7;
             // 
             // colCurrency
             // 
             this.colCurrency.FieldName = "Currency";
             this.colCurrency.Name = "colCurrency";
+            this.colCurrency.Visible = true;
+            this.colCurrency.VisibleIndex = 8;
             // 
             // colCostVATCode
             // 
             this.colCostVATCode.FieldName = "CostVATCode";
             this.colCostVATCode.Name = "colCostVATCode";
+            this.colCostVATCode.Visible = true;
+            this.colCostVATCode.VisibleIndex = 9;
             // 
             // colDateCreation
             // 
             this.colDateCreation.FieldName = "DateCreation";
             this.colDateCreation.Name = "colDateCreation";
+            this.colDateCreation.Visible = true;
+            this.colDateCreation.VisibleIndex = 10;
             // 
             // colUserCreation
             // 
@@ -729,11 +733,15 @@ namespace EFRET_TMS
             // 
             this.colCostProvider.FieldName = "CostProvider";
             this.colCostProvider.Name = "colCostProvider";
+            this.colCostProvider.Visible = true;
+            this.colCostProvider.VisibleIndex = 11;
             // 
             // colCostProviderFerry
             // 
             this.colCostProviderFerry.FieldName = "CostProviderFerry";
             this.colCostProviderFerry.Name = "colCostProviderFerry";
+            this.colCostProviderFerry.Visible = true;
+            this.colCostProviderFerry.VisibleIndex = 12;
             // 
             // colDone
             // 
@@ -754,6 +762,8 @@ namespace EFRET_TMS
             // 
             this.colMvtReference.FieldName = "MvtReference";
             this.colMvtReference.Name = "colMvtReference";
+            this.colMvtReference.Visible = true;
+            this.colMvtReference.VisibleIndex = 14;
             // 
             // colMvtComment
             // 
@@ -764,6 +774,8 @@ namespace EFRET_TMS
             // 
             this.colVehicleDetails.FieldName = "VehicleDetails";
             this.colVehicleDetails.Name = "colVehicleDetails";
+            this.colVehicleDetails.Visible = true;
+            this.colVehicleDetails.VisibleIndex = 13;
             // 
             // colDriverName
             // 
@@ -919,6 +931,16 @@ namespace EFRET_TMS
             // 
             this.colP44ETAUpdate.FieldName = "P44ETAUpdate";
             this.colP44ETAUpdate.Name = "colP44ETAUpdate";
+            // 
+            // cOInstanceBindingSource
+            // 
+            this.cOInstanceBindingSource.DataSource = this.cOInstance;
+            this.cOInstanceBindingSource.Position = 0;
+            // 
+            // cOInstance
+            // 
+            this.cOInstance.DataSetName = "COInstance";
+            this.cOInstance.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // axsDataSet
             // 
@@ -1207,16 +1229,6 @@ namespace EFRET_TMS
             // 
             this.xtraOpenFileDialog1.FileName = "xtraOpenFileDialog1";
             // 
-            // movementCO
-            // 
-            this.movementCO.DataSetName = "MovementCO";
-            this.movementCO.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // movementBindingSource1
-            // 
-            this.movementBindingSource1.DataMember = "Movement";
-            this.movementBindingSource1.DataSource = this.movementCO;
-            // 
             // movementTableAdapter
             // 
             this.movementTableAdapter.ClearBeforeFill = true;
@@ -1239,9 +1251,11 @@ namespace EFRET_TMS
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSearchControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.movementBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.movementCO)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cOInstanceBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cOInstance)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.axsDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.movementBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.goodsBindingSource)).EndInit();
@@ -1259,8 +1273,6 @@ namespace EFRET_TMS
             ((System.ComponentModel.ISupportInitialize)(this.radDropDownList1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.movementCO)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.movementBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -53,7 +53,7 @@ namespace EFRET_TMS
                         }
 
                         if (reader["cStatus"].ToString() == "ACCEPTED")
-                        {
+                        {//TODO: Link to CMR PDF for viewing.
                             RadMessageBox.Show("CMR ACCEPTED for: " + reader["IdCO"]);
                             barButtonItem10.Enabled = true;
 

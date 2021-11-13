@@ -90,6 +90,18 @@ namespace EFRET_TMS
                                 sMap.Show();
 
                             }
+                            else
+                            {
+
+                                if (row["P44ShipmentID"] != null & row["P44ReasonDescription"] == null)
+                                {
+                                    RadMessageBox.Show("No Tracking Available: Investigation Needed");
+                                }
+
+                                RadMessageBox.Show("No Tracking Available: " + row["P44ReasonDescription"]);
+
+                            }
+
                         }
 
                         gridView1.BeginUpdate();
