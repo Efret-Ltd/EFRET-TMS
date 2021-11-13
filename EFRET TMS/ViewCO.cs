@@ -1,7 +1,9 @@
 ﻿using DevExpress.XtraBars;
 using System;
 using System.Data;
+using System.Data.CData.MariaDB;
 using System.Data.SqlClient;
+using DevExpress.CodeParser;
 using Sentry;
 using Telerik.WinControls;
 
@@ -9,6 +11,7 @@ namespace EFRET_TMS
 {
     public partial class ViewCO : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+        private int chargingOrderID; 
         private object CID;
         private string path;
         private object newChargingOrder;
@@ -18,48 +21,100 @@ namespace EFRET_TMS
         {
             InitializeComponent();
             CID = ContractID + @"\";
+            chargingOrderID = COID;
             newChargingOrder = newCO;
             DateTime moment = new DateTime();
             path = @"\\efret-app-01\Database\efret\"+moment.Year+@"\CustomerCO\" + CID + newChargingOrder;
             getCODetails(newChargingOrder.ToString());
             getCOMovements(newChargingOrder.ToString());
+            getCOCMR(chargingOrderID);
 
-            
         }
+
+        private void getCOCMR(int chargingOrderID)
+        {
+            string queryString = "Select * FROM CMRStatus WHERE IdCO ='" + chargingOrderID + "'";
+
+            using (MariaDBConnection connection =
+                new MariaDBConnection(
+                    "User=efretdb;Password=^eA7yQfqqpaO;Database=EFRETCMR;Server=192.168.10.70;Port=3306;"))
+            {
+                MariaDBCommand command = new MariaDBCommand(queryString, connection);
+                connection.Open();
+                MariaDBDataReader reader = command.ExecuteReader();
+                try
+                {
+                    while (reader.Read())
+                    {
+                        //We do a hit check then enable button
+                        if (reader["cStatus"].ToString() == "WAITING")
+                        {
+                            RadMessageBox.Show("CMR WAITING FOR: " + reader["IdCO"]);
+                        }
+
+                        if (reader["cStatus"].ToString() == "ACCEPTED")
+                        {
+                            RadMessageBox.Show("CMR ACCEPTED for: " + reader["IdCO"]);
+                            barButtonItem10.Enabled = true;
+
+                        }
+
+                        if (reader["cStatus"].ToString() == "REVIEW")
+                        {
+                            RadMessageBox.Show("CMR IN REVIEW FOR: " + reader["IdCO"]);
+                        }
+
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    SentrySdk.CaptureException(ex);
+
+                }
+            }
+        }
+
 
         private void getCODetails(string NewCO)
         {
             string queryString = "Select * FROM NewCO INNER JOIN Movement ON NewCO.IdCo = Movement.IdCO INNER JOIN Goods ON NewCO.IdCo = Goods.IDco WHERE NewCO ='"+ NewCO+"'";
             string connectionString = @"Server=EFRET-APP-01\EFRET;Database=axs;Trusted_Connection=True;";
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            try
             {
-                SqlCommand command = new SqlCommand(queryString, connection);
-                connection.Open();
-                SqlDataReader reader = command.ExecuteReader();
-                try
+                using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    while (reader.Read())
-                    { 
-                        textEdit1.Text = "Confirmation Order: "+reader["NewCO"]; 
-                        textEdit2.Text = "Created By: " + reader["UserCreation"].ToString(); 
-                        textEdit4.Text = "Line: " + reader["Line"].ToString();
-                        textEdit3.Text = "IDCO: " + reader["IdCO"].ToString();
-                        radDropDownList1.Text = "Manager: " + reader["UserOwner"].ToString();
-                        radMenuHeaderItem1.Text = reader["ContractHolderEmail"].ToString();
-                        radMenuHeaderItem2.Text = reader["ContractHolderTel"].ToString();
-                        radMenuHeaderItem3.Text = reader["ContractHolderMob"].ToString();
-                        radMenuHeaderItem4.Text =  reader["CostVATCode"].ToString();
-                        labelControl1.Text = "Type: "+ reader["TrailerTypeAutorised"].ToString();
+                    SqlCommand command = new SqlCommand(queryString, connection);
+                    connection.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+                    try
+                    {
+                        while (reader.Read())
+                        {
+                            textEdit1.Text = "Confirmation Order: " + reader["NewCO"];
+                            textEdit2.Text = "Created By: " + reader["UserCreation"].ToString();
+                            textEdit4.Text = "Line: " + reader["Line"].ToString();
+                            textEdit3.Text = "IDCO: " + reader["IdCO"].ToString();
+                            radDropDownList1.Text = "Manager: " + reader["UserOwner"].ToString();
+                            radMenuHeaderItem1.Text = reader["ContractHolderEmail"].ToString();
+                            radMenuHeaderItem2.Text = reader["ContractHolderTel"].ToString();
+                            radMenuHeaderItem3.Text = reader["ContractHolderMob"].ToString();
+                            radMenuHeaderItem4.Text = reader["CostVATCode"].ToString();
+                            labelControl1.Text = "Type: " + reader["TrailerTypeAutorised"].ToString();
+                        }
+                    }
+                    finally
+                    {
+                        // Always call Close when done reading.
+                        reader.Close();
                     }
                 }
-                finally
-                {
-                    // Always call Close when done reading.
-                    reader.Close();
-                }
             }
+            catch (Exception ex)
+            {
+                SentrySdk.CaptureException(ex);
 
+            }
         }
 
         private void ViewCO_Load(object sender, EventArgs e)
@@ -147,6 +202,7 @@ namespace EFRET_TMS
 
         private void barButtonItem6_ItemClick(object sender, ItemClickEventArgs e)
         {
+            //TODO: We may want to use devexpress PDF utilities on selection.
             xtraOpenFileDialog1.InitialDirectory = path;
             xtraOpenFileDialog1.Title = "View Charging Order Browser";
             xtraOpenFileDialog1.FileName = "";

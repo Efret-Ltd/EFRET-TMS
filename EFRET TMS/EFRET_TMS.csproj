@@ -188,6 +188,12 @@
       <HintPath>..\packages\System.Configuration.ConfigurationManager.4.7.0\lib\net461\System.Configuration.ConfigurationManager.dll</HintPath>
     </Reference>
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.CData.MariaDB, Version=21.0.0.40, Culture=neutral, PublicKeyToken=f57f3fbecba6b076, processorArchitecture=MSIL">
+      <HintPath>..\packages\CData.MariaDB.21.0.7930\lib\net40\System.Data.CData.MariaDB.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.CData.MariaDB.Designer, Version=21.0.0.40, Culture=neutral, PublicKeyToken=f57f3fbecba6b076, processorArchitecture=MSIL">
+      <HintPath>..\packages\CData.MariaDB.21.0.7930\lib\net40\System.Data.CData.MariaDB.Designer.dll</HintPath>
+    </Reference>
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Data.OracleClient" />
     <Reference Include="System.Design" />
