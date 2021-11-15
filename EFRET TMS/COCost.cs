@@ -1,23 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using Sentry;
 
 namespace EFRET_TMS
 {
-    public partial class ViewCOCost : UserControl
+    public partial class COCost : DevExpress.XtraEditors.XtraForm
     {
-        public ViewCOCost(string NewCO)
+        public COCost(string NewCO)
         {
             InitializeComponent();
             getCosts(NewCO);
+            this.Text = "Costs For CO: " + NewCO;
+        }
+
+        private void COCost_Load(object sender, EventArgs e)
+        {
+
         }
 
         private void getCosts(string NewCO)
@@ -37,7 +35,14 @@ namespace EFRET_TMS
                         {
                             textEdit1.Text = reader["BaseFreightRate"].ToString();
                             textEdit2.Text = reader["Cancellation"].ToString();
-
+                            textEdit3.Text = reader["Wharehousing"].ToString();
+                            textEdit4.Text = reader["ReroutingSurcharge"].ToString();
+                            textEdit5.Text = reader["demurrage"].ToString();
+                            textEdit6.Text = reader["DriverDententionAtUnloading"].ToString();
+                            textEdit7.Text = reader["Corridor"].ToString();
+                            textEdit8.Text = reader["Line"].ToString();
+                            textEdit9.Text = reader["Redelivery"].ToString();
+                            textEdit10.Text= reader["AdhocRate"].ToString();
                         }
                     }
                     finally

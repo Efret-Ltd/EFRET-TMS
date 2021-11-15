@@ -23,14 +23,14 @@ namespace EFRET_TMS
         int CostProvider = 0;
         private int TrailerNumber = 0;
         private int isTrailerTypeAutorised = 0;
+        private string COComment;
         public ViewCO(int COID, object newCO, object ContractID)
         {
             InitializeComponent();
             CID = ContractID + @"\";
             chargingOrderID = COID;
             newChargingOrder = newCO;
-            DateTime moment = new DateTime();
-            path = @"\\efret-app-01\Database\efret\"+moment.Year+@"\CustomerCO\" + CID + newChargingOrder;
+            path = @"\\efret-app-01\Database\efret\2021\CustomerCO\" + CID + newChargingOrder;
             getCODetails(newChargingOrder.ToString());
             getCOMovements(newChargingOrder.ToString());
             getCOCMR(chargingOrderID);
@@ -98,18 +98,17 @@ namespace EFRET_TMS
                         while (reader.Read())
                         {
                             textEdit1.Text = "Confirmation Order: " + reader["NewCO"];
-                            textEdit2.Text = "Created By: " + reader["UserCreation"];
-                            textEdit4.Text = "Line: " + reader["Line"];
-                            textEdit5.Text = "Last Updated: "+ reader["UserUpdate"];
+                            radLabel5.Text = "Created By: " + reader["UserCreation"];
+                            radLabel3.Text = "Line: " + reader["Line"];
                             radLabel1.Text = "Rate € to £: "+ reader["ConversionRate"];
-                            labelControl2.Text = "IDCO: " + reader["IdCO"];
+                            radLabel2.Text = "Last Change By: "+ reader["UserUpdate"];
+                            radLabel4.Text = "IDCO: " + reader["IdCO"];
                             radDropDownList1.Text = "Manager: " + reader["UserOwner"];
                             radMenuHeaderItem1.Text = reader["ContractHolderEmail"].ToString();
                             radMenuHeaderItem2.Text = reader["ContractHolderTel"].ToString();
                             radMenuHeaderItem3.Text = reader["ContractHolderMob"].ToString();
                             radMenuHeaderItem4.Text = reader["CostVATCode"].ToString();
                             labelControl1.Text = "Type: " + reader["TrailerTypeAutorised"];
-                            radButtonTextBox1.Text = reader["BaseFreightRate"].ToString();
                             if (reader["P44ShipmentID"].ToString() != "")
                             {
                                 ShipmentID = reader["P44ShipmentID"].ToString();
@@ -124,6 +123,11 @@ namespace EFRET_TMS
                             {
                                 barCheckItem4.Checked = true;
                                 isTrailerTypeAutorised = 1;
+                            }
+                            if (reader["Comment"].ToString() != "")
+                            {
+                                COComment = reader["Comment"].ToString();
+                                simpleButton1.Visible = true;
                             }
                         }
                     }
@@ -257,7 +261,7 @@ namespace EFRET_TMS
         //View Costs
         private void barButtonItem11_ItemClick(object sender, ItemClickEventArgs e)
         {
-            ViewCOCost viewCoCost = new ViewCOCost(newChargingOrder.ToString());
+            COCost viewCoCost = new COCost(newChargingOrder.ToString());
             viewCoCost.Show();
             RadForm1.LogMessage(Environment.UserName+" has opened view costs panel for CO: "+ chargingOrderID);
         }
@@ -298,7 +302,7 @@ namespace EFRET_TMS
                 using (var httpClient = new HttpClient())
                 {
                     using (var request = new HttpRequestMessage(new HttpMethod("POST"),
-                        "cloud-v2.p-44.com/api/v4/tl/shipments"))
+                        "http://cloud-v2.p-44.com/api/v4/tl/shipments"))
                     {
                         request.Headers.Authorization =
                             new AuthenticationHeaderValue(
@@ -314,6 +318,7 @@ namespace EFRET_TMS
                         request.Content.Headers.ContentType = MediaTypeHeaderValue.Parse("application/json");
 
                         var response = await httpClient.SendAsync(request);
+                        RadMessageBox.Show(response.ToString());
                     }
                 }
             }
@@ -322,6 +327,11 @@ namespace EFRET_TMS
                 SentrySdk.CaptureException(ex);
             }
             //Now we do a bunch of checks before posting to P44.
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            RadMessageBox.Show(COComment);
         }
     }
 }

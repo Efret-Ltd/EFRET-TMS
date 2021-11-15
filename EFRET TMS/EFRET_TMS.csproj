@@ -346,6 +346,12 @@
     <Compile Include="Check_VAT.Designer.cs">
       <DependentUpon>Check_VAT.cs</DependentUpon>
     </Compile>
+    <Compile Include="COCost.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="COCost.Designer.cs">
+      <DependentUpon>COCost.cs</DependentUpon>
+    </Compile>
     <Compile Include="COCreation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -453,12 +459,6 @@
     <Compile Include="ViewCO.Designer.cs">
       <DependentUpon>ViewCO.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewCOCost.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ViewCOCost.Designer.cs">
-      <DependentUpon>ViewCOCost.cs</DependentUpon>
-    </Compile>
     <Compile Include="Whois.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -470,6 +470,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Check_VAT.resx">
       <DependentUpon>Check_VAT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="COCost.resx">
+      <DependentUpon>COCost.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="COCreation.resx">
       <DependentUpon>COCreation.cs</DependentUpon>
@@ -527,9 +530,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ViewCO.resx">
       <DependentUpon>ViewCO.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ViewCOCost.resx">
-      <DependentUpon>ViewCOCost.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Whois.resx">
       <DependentUpon>Whois.cs</DependentUpon>

@@ -143,9 +143,7 @@ namespace EFRET_TMS
             this.goodsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.goodsTableAdapter = new EFRET_TMS.COInstanceTableAdapters.GoodsTableAdapter();
             this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.radButtonTextBox1 = new Telerik.WinControls.UI.RadButtonTextBox();
-            this.radButtonElement1 = new Telerik.WinControls.UI.RadButtonElement();
+            this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.toggleSwitch1 = new DevExpress.XtraEditors.ToggleSwitch();
@@ -157,7 +155,6 @@ namespace EFRET_TMS
             this.radMenuHeaderItem4 = new Telerik.WinControls.UI.RadMenuHeaderItem();
             this.radMenuItem5 = new Telerik.WinControls.UI.RadMenuItem();
             this.radMenuItem6 = new Telerik.WinControls.UI.RadMenuItem();
-            this.textEdit4 = new DevExpress.XtraEditors.TextEdit();
             this.radSplitButton1 = new Telerik.WinControls.UI.RadSplitButton();
             this.radMenuItem1 = new Telerik.WinControls.UI.RadMenuItem();
             this.radMenuHeaderItem1 = new Telerik.WinControls.UI.RadMenuHeaderItem();
@@ -165,13 +162,14 @@ namespace EFRET_TMS
             this.radMenuHeaderItem2 = new Telerik.WinControls.UI.RadMenuHeaderItem();
             this.radMenuItem3 = new Telerik.WinControls.UI.RadMenuItem();
             this.radMenuHeaderItem3 = new Telerik.WinControls.UI.RadMenuHeaderItem();
-            this.textEdit5 = new DevExpress.XtraEditors.TextEdit();
             this.radDropDownList1 = new Telerik.WinControls.UI.RadDropDownList();
-            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.xtraOpenFileDialog1 = new DevExpress.XtraEditors.XtraOpenFileDialog(this.components);
             this.movementTableAdapter = new EFRET_TMS.MovementCOTableAdapters.MovementTableAdapter();
-            this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
+            this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
+            this.radLabel3 = new Telerik.WinControls.UI.RadLabel();
+            this.radLabel4 = new Telerik.WinControls.UI.RadLabel();
+            this.radLabel5 = new Telerik.WinControls.UI.RadLabel();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSearchControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -185,17 +183,17 @@ namespace EFRET_TMS
             ((System.ComponentModel.ISupportInitialize)(this.goodsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
             this.tablePanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radButtonTextBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radDropDownButton2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radDropDownButton1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radSplitButton1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radDropDownList1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbon
@@ -988,19 +986,18 @@ namespace EFRET_TMS
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 44.18F),
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 56.76F),
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 35.96F)});
+            this.tablePanel1.Controls.Add(this.radLabel5);
+            this.tablePanel1.Controls.Add(this.radLabel4);
+            this.tablePanel1.Controls.Add(this.radLabel3);
+            this.tablePanel1.Controls.Add(this.radLabel2);
             this.tablePanel1.Controls.Add(this.radLabel1);
-            this.tablePanel1.Controls.Add(this.labelControl2);
-            this.tablePanel1.Controls.Add(this.radButtonTextBox1);
             this.tablePanel1.Controls.Add(this.labelControl1);
             this.tablePanel1.Controls.Add(this.simpleButton1);
             this.tablePanel1.Controls.Add(this.toggleSwitch1);
             this.tablePanel1.Controls.Add(this.radDropDownButton2);
             this.tablePanel1.Controls.Add(this.radDropDownButton1);
-            this.tablePanel1.Controls.Add(this.textEdit4);
             this.tablePanel1.Controls.Add(this.radSplitButton1);
-            this.tablePanel1.Controls.Add(this.textEdit5);
             this.tablePanel1.Controls.Add(this.radDropDownList1);
-            this.tablePanel1.Controls.Add(this.textEdit2);
             this.tablePanel1.Controls.Add(this.textEdit1);
             this.tablePanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tablePanel1.Location = new System.Drawing.Point(0, 158);
@@ -1013,61 +1010,38 @@ namespace EFRET_TMS
             this.tablePanel1.Size = new System.Drawing.Size(914, 113);
             this.tablePanel1.TabIndex = 5;
             // 
-            // labelControl2
+            // radLabel1
             // 
-            this.tablePanel1.SetColumn(this.labelControl2, 0);
-            this.labelControl2.Location = new System.Drawing.Point(3, 32);
-            this.labelControl2.Name = "labelControl2";
-            this.tablePanel1.SetRow(this.labelControl2, 1);
-            this.labelControl2.Size = new System.Drawing.Size(29, 13);
-            this.labelControl2.TabIndex = 18;
-            this.labelControl2.Text = "ID CO";
-            // 
-            // radButtonTextBox1
-            // 
-            this.tablePanel1.SetColumn(this.radButtonTextBox1, 4);
-            this.radButtonTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radButtonTextBox1.LeftButtonItems.AddRange(new Telerik.WinControls.RadItem[] {
-            this.radButtonElement1});
-            this.radButtonTextBox1.Location = new System.Drawing.Point(760, 3);
-            this.radButtonTextBox1.Name = "radButtonTextBox1";
-            this.tablePanel1.SetRow(this.radButtonTextBox1, 0);
-            this.radButtonTextBox1.Size = new System.Drawing.Size(151, 20);
-            this.radButtonTextBox1.TabIndex = 17;
-            this.radButtonTextBox1.Text = "BasicFreightRate";
-            // 
-            // radButtonElement1
-            // 
-            this.radButtonElement1.Margin = new System.Windows.Forms.Padding(2, 0, 0, 0);
-            this.radButtonElement1.Name = "radButtonElement1";
-            this.radButtonElement1.ShowBorder = false;
-            this.radButtonElement1.Text = "Edit";
+            this.radLabel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.radLabel1.Location = new System.Drawing.Point(513, 30);
+            this.radLabel1.Name = "radLabel1";
+            this.radLabel1.Size = new System.Drawing.Size(60, 18);
+            this.radLabel1.TabIndex = 19;
+            this.radLabel1.Text = "Rate € to £";
             // 
             // labelControl1
             // 
-            this.tablePanel1.SetColumn(this.labelControl1, 1);
+            this.labelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelControl1.Location = new System.Drawing.Point(167, 32);
             this.labelControl1.Name = "labelControl1";
-            this.tablePanel1.SetRow(this.labelControl1, 1);
             this.labelControl1.Size = new System.Drawing.Size(79, 13);
             this.labelControl1.TabIndex = 16;
             this.labelControl1.Text = "Type Authorized";
             // 
             // simpleButton1
             // 
-            this.tablePanel1.SetColumn(this.simpleButton1, 4);
             this.simpleButton1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.simpleButton1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
             this.simpleButton1.Location = new System.Drawing.Point(760, 55);
             this.simpleButton1.Name = "simpleButton1";
-            this.tablePanel1.SetRow(this.simpleButton1, 2);
             this.simpleButton1.Size = new System.Drawing.Size(151, 32);
             this.simpleButton1.TabIndex = 15;
             this.simpleButton1.Text = "View Comment";
+            this.simpleButton1.Visible = false;
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // toggleSwitch1
             // 
-            this.tablePanel1.SetColumn(this.toggleSwitch1, 2);
             this.toggleSwitch1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toggleSwitch1.EditValue = true;
             this.toggleSwitch1.Location = new System.Drawing.Point(321, 55);
@@ -1075,20 +1049,17 @@ namespace EFRET_TMS
             this.toggleSwitch1.Name = "toggleSwitch1";
             this.toggleSwitch1.Properties.OffText = "";
             this.toggleSwitch1.Properties.OnText = "IS EFRET Trailer";
-            this.tablePanel1.SetRow(this.toggleSwitch1, 2);
             this.toggleSwitch1.Size = new System.Drawing.Size(186, 32);
             this.toggleSwitch1.TabIndex = 14;
             // 
             // radDropDownButton2
             // 
-            this.tablePanel1.SetColumn(this.radDropDownButton2, 1);
             this.radDropDownButton2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radDropDownButton2.Items.AddRange(new Telerik.WinControls.RadItem[] {
             this.radMenuItem7,
             this.radMenuItem8});
             this.radDropDownButton2.Location = new System.Drawing.Point(167, 55);
             this.radDropDownButton2.Name = "radDropDownButton2";
-            this.tablePanel1.SetRow(this.radDropDownButton2, 2);
             this.radDropDownButton2.Size = new System.Drawing.Size(148, 32);
             this.radDropDownButton2.TabIndex = 13;
             this.radDropDownButton2.Text = "Sales";
@@ -1105,7 +1076,6 @@ namespace EFRET_TMS
             // 
             // radDropDownButton1
             // 
-            this.tablePanel1.SetColumn(this.radDropDownButton1, 0);
             this.radDropDownButton1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radDropDownButton1.Items.AddRange(new Telerik.WinControls.RadItem[] {
             this.radMenuItem4,
@@ -1113,7 +1083,6 @@ namespace EFRET_TMS
             this.radMenuItem6});
             this.radDropDownButton1.Location = new System.Drawing.Point(3, 55);
             this.radDropDownButton1.Name = "radDropDownButton1";
-            this.tablePanel1.SetRow(this.radDropDownButton1, 2);
             this.radDropDownButton1.Size = new System.Drawing.Size(158, 32);
             this.radDropDownButton1.TabIndex = 12;
             this.radDropDownButton1.Text = "VAT";
@@ -1140,20 +1109,8 @@ namespace EFRET_TMS
             this.radMenuItem6.Name = "radMenuItem6";
             this.radMenuItem6.Text = "VAT Amount";
             // 
-            // textEdit4
-            // 
-            this.tablePanel1.SetColumn(this.textEdit4, 1);
-            this.textEdit4.EditValue = "Lane";
-            this.textEdit4.Location = new System.Drawing.Point(167, 3);
-            this.textEdit4.MenuManager = this.ribbon;
-            this.textEdit4.Name = "textEdit4";
-            this.tablePanel1.SetRow(this.textEdit4, 0);
-            this.textEdit4.Size = new System.Drawing.Size(148, 20);
-            this.textEdit4.TabIndex = 11;
-            // 
             // radSplitButton1
             // 
-            this.tablePanel1.SetColumn(this.radSplitButton1, 3);
             this.radSplitButton1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radSplitButton1.Items.AddRange(new Telerik.WinControls.RadItem[] {
             this.radMenuItem1,
@@ -1161,7 +1118,6 @@ namespace EFRET_TMS
             this.radMenuItem3});
             this.radSplitButton1.Location = new System.Drawing.Point(513, 55);
             this.radSplitButton1.Name = "radSplitButton1";
-            this.tablePanel1.SetRow(this.radSplitButton1, 2);
             this.radSplitButton1.Size = new System.Drawing.Size(241, 32);
             this.radSplitButton1.TabIndex = 10;
             this.radSplitButton1.Text = "Contracter Holder Contacts";
@@ -1202,20 +1158,8 @@ namespace EFRET_TMS
             this.radMenuHeaderItem3.Name = "radMenuHeaderItem3";
             this.radMenuHeaderItem3.Text = "radMenuHeaderItem3";
             // 
-            // textEdit5
-            // 
-            this.tablePanel1.SetColumn(this.textEdit5, 2);
-            this.textEdit5.EditValue = "User Update";
-            this.textEdit5.Location = new System.Drawing.Point(321, 29);
-            this.textEdit5.MenuManager = this.ribbon;
-            this.textEdit5.Name = "textEdit5";
-            this.tablePanel1.SetRow(this.textEdit5, 1);
-            this.textEdit5.Size = new System.Drawing.Size(186, 20);
-            this.textEdit5.TabIndex = 8;
-            // 
             // radDropDownList1
             // 
-            this.tablePanel1.SetColumn(this.radDropDownList1, 3);
             this.radDropDownList1.Dock = System.Windows.Forms.DockStyle.Fill;
             radListDataItem1.Text = "Dan Khosa";
             radListDataItem2.Text = "Craig Horobin";
@@ -1225,31 +1169,16 @@ namespace EFRET_TMS
             this.radDropDownList1.Items.Add(radListDataItem3);
             this.radDropDownList1.Location = new System.Drawing.Point(513, 3);
             this.radDropDownList1.Name = "radDropDownList1";
-            this.tablePanel1.SetRow(this.radDropDownList1, 0);
             this.radDropDownList1.Size = new System.Drawing.Size(241, 20);
             this.radDropDownList1.TabIndex = 4;
             // 
-            // textEdit2
-            // 
-            this.tablePanel1.SetColumn(this.textEdit2, 2);
-            this.textEdit2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textEdit2.EditValue = "Creation By";
-            this.textEdit2.Location = new System.Drawing.Point(321, 3);
-            this.textEdit2.MenuManager = this.ribbon;
-            this.textEdit2.Name = "textEdit2";
-            this.tablePanel1.SetRow(this.textEdit2, 0);
-            this.textEdit2.Size = new System.Drawing.Size(186, 20);
-            this.textEdit2.TabIndex = 3;
-            // 
             // textEdit1
             // 
-            this.tablePanel1.SetColumn(this.textEdit1, 0);
             this.textEdit1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textEdit1.EditValue = "Confirmation Order";
             this.textEdit1.Location = new System.Drawing.Point(3, 3);
             this.textEdit1.MenuManager = this.ribbon;
             this.textEdit1.Name = "textEdit1";
-            this.tablePanel1.SetRow(this.textEdit1, 0);
             this.textEdit1.Size = new System.Drawing.Size(158, 20);
             this.textEdit1.TabIndex = 2;
             // 
@@ -1261,15 +1190,49 @@ namespace EFRET_TMS
             // 
             this.movementTableAdapter.ClearBeforeFill = true;
             // 
-            // radLabel1
+            // radLabel2
             // 
-            this.tablePanel1.SetColumn(this.radLabel1, 3);
-            this.radLabel1.Location = new System.Drawing.Point(513, 30);
-            this.radLabel1.Name = "radLabel1";
-            this.tablePanel1.SetRow(this.radLabel1, 1);
-            this.radLabel1.Size = new System.Drawing.Size(60, 18);
-            this.radLabel1.TabIndex = 19;
-            this.radLabel1.Text = "Rate € to £";
+            this.tablePanel1.SetColumn(this.radLabel2, 2);
+            this.radLabel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.radLabel2.Location = new System.Drawing.Point(321, 29);
+            this.radLabel2.Name = "radLabel2";
+            this.tablePanel1.SetRow(this.radLabel2, 1);
+            this.radLabel2.Size = new System.Drawing.Size(85, 18);
+            this.radLabel2.TabIndex = 20;
+            this.radLabel2.Text = "Last Change By:";
+            // 
+            // radLabel3
+            // 
+            this.tablePanel1.SetColumn(this.radLabel3, 1);
+            this.radLabel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.radLabel3.Location = new System.Drawing.Point(167, 3);
+            this.radLabel3.Name = "radLabel3";
+            this.tablePanel1.SetRow(this.radLabel3, 0);
+            this.radLabel3.Size = new System.Drawing.Size(27, 18);
+            this.radLabel3.TabIndex = 21;
+            this.radLabel3.Text = "Line";
+            // 
+            // radLabel4
+            // 
+            this.tablePanel1.SetColumn(this.radLabel4, 0);
+            this.radLabel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.radLabel4.Location = new System.Drawing.Point(3, 29);
+            this.radLabel4.Name = "radLabel4";
+            this.tablePanel1.SetRow(this.radLabel4, 1);
+            this.radLabel4.Size = new System.Drawing.Size(33, 18);
+            this.radLabel4.TabIndex = 22;
+            this.radLabel4.Text = "IDCO";
+            // 
+            // radLabel5
+            // 
+            this.tablePanel1.SetColumn(this.radLabel5, 2);
+            this.radLabel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.radLabel5.Location = new System.Drawing.Point(321, 3);
+            this.radLabel5.Name = "radLabel5";
+            this.tablePanel1.SetRow(this.radLabel5, 0);
+            this.radLabel5.Size = new System.Drawing.Size(60, 18);
+            this.radLabel5.TabIndex = 23;
+            this.radLabel5.Text = "Created By";
             // 
             // ViewCO
             // 
@@ -1300,17 +1263,17 @@ namespace EFRET_TMS
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).EndInit();
             this.tablePanel1.ResumeLayout(false);
             this.tablePanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radButtonTextBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radDropDownButton2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radDropDownButton1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radSplitButton1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radDropDownList1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1410,9 +1373,7 @@ namespace EFRET_TMS
         private COInstanceTableAdapters.GoodsTableAdapter goodsTableAdapter;
         private System.Windows.Forms.BindingSource cOInstanceBindingSource;
         private DevExpress.Utils.Layout.TablePanel tablePanel1;
-        private DevExpress.XtraEditors.TextEdit textEdit5;
         private Telerik.WinControls.UI.RadDropDownList radDropDownList1;
-        private DevExpress.XtraEditors.TextEdit textEdit2;
         private DevExpress.XtraEditors.TextEdit textEdit1;
         private DevExpress.XtraBars.BarLinkContainerItem barLinkContainerItem2;
         private DevExpress.XtraEditors.XtraOpenFileDialog xtraOpenFileDialog1;
@@ -1441,7 +1402,6 @@ namespace EFRET_TMS
         private Telerik.WinControls.UI.RadMenuItem radMenuItem4;
         private Telerik.WinControls.UI.RadMenuItem radMenuItem5;
         private Telerik.WinControls.UI.RadMenuItem radMenuItem6;
-        private DevExpress.XtraEditors.TextEdit textEdit4;
         private DevExpress.XtraBars.BarButtonGroup barButtonGroup2;
         private DevExpress.XtraBars.BarButtonItem barButtonItem12;
         private Telerik.WinControls.UI.RadMenuHeaderItem radMenuHeaderItem4;
@@ -1450,9 +1410,10 @@ namespace EFRET_TMS
         private System.Windows.Forms.BindingSource movementBindingSource1;
         private MovementCOTableAdapters.MovementTableAdapter movementTableAdapter;
         private DevExpress.XtraBars.BarButtonItem barButtonItem13;
-        private Telerik.WinControls.UI.RadButtonTextBox radButtonTextBox1;
-        private Telerik.WinControls.UI.RadButtonElement radButtonElement1;
-        private DevExpress.XtraEditors.LabelControl labelControl2;
         private Telerik.WinControls.UI.RadLabel radLabel1;
+        private Telerik.WinControls.UI.RadLabel radLabel3;
+        private Telerik.WinControls.UI.RadLabel radLabel2;
+        private Telerik.WinControls.UI.RadLabel radLabel4;
+        private Telerik.WinControls.UI.RadLabel radLabel5;
     }
 }
