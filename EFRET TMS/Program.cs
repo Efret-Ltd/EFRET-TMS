@@ -16,8 +16,8 @@ namespace EFRET_TMS
         [STAThread]
         static void Main()
         {
-            var DoIexist = System.Diagnostics.Process.GetProcessesByName(System.IO.Path.GetFileNameWithoutExtension(System.Reflection.Assembly.GetEntryAssembly().Location)).Count() > 1;
-            if (DoIexist)
+            var doIexist = System.Diagnostics.Process.GetProcessesByName(System.IO.Path.GetFileNameWithoutExtension(System.Reflection.Assembly.GetEntryAssembly()?.Location)).Count() > 1;
+            if (doIexist)
             {
                 // We do not want that.
                 RadMessageBox.Show(
@@ -56,24 +56,20 @@ namespace EFRET_TMS
 
                     string greetingMessage = "[" + DateTime.Now + "] " + user + " logged into EFRET TMS.";
 
-                    channel.Publish("LOGIN", greetingMessage, async (success, error) =>
+                    // ReSharper disable once AsyncVoidLambda
+                    channel.Publish(name: "LOGIN", data: greetingMessage, callback: (success, error) =>
                     {
+                        /*
                         PaginatedResult<IO.Ably.Message> resultPage = await channel.HistoryAsync(null);
                         IO.Ably.Message lastMessage = resultPage.Items[0];
-                        string messageId = lastMessage.Id;
                         string messageData = lastMessage.Data.ToString();
-
-
+                        */
                     });
                     channel.Subscribe(message =>
                     {
                        // RadMessageBox.Show($"Message: {message.Name}\n{message.Data}");
 
-                        //We now launch the RadForm with a splashscreen manager.
-                    
                     });
-
-
                 });
                 ably.Connection.On(ConnectionEvent.Failed, args =>
                 {
@@ -126,10 +122,6 @@ namespace EFRET_TMS
 
                     SentrySdk.CaptureException(ex);
                 }
-                    
-                
-
-
             }
         }
     }
