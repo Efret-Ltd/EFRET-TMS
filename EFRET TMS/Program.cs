@@ -3,13 +3,9 @@ using IO.Ably.Realtime;
 using Sentry;
 using System;
 using System.IO;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
 using System.Windows.Forms;
-using ServiceStack;
 using Telerik.WinControls;
-using System.Security.Cryptography.X509Certificates;
-using ServiceStack;
+
 namespace EFRET_TMS
 {
     internal static class Program
@@ -20,7 +16,7 @@ namespace EFRET_TMS
         [STAThread]
         private static void Main()
         {
-            var doIexist = System.Diagnostics.Process.GetProcessesByName(System.IO.Path.GetFileNameWithoutExtension(System.Reflection.Assembly.GetEntryAssembly()?.Location)).Count() > 1;
+            var doIexist = System.Diagnostics.Process.GetProcessesByName(Path.GetFileNameWithoutExtension(System.Reflection.Assembly.GetEntryAssembly()?.Location)).Length > 1;
             if (doIexist)
             {
                 // We do not want that.

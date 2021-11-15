@@ -1,13 +1,7 @@
 ﻿using DevExpress.XtraSplashScreen;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
-using System.Text;
-using System.Windows.Forms;
 using Sentry;
 
 namespace EFRET_TMS
@@ -17,7 +11,7 @@ namespace EFRET_TMS
         public SplashScreen2()
         {
             InitializeComponent();
-            this.labelCopyright.Text = "Copyright © 1998-" + DateTime.Now.Year.ToString();
+            labelCopyright.Text = @"Copyright © 1998-" + DateTime.Now.Year.ToString();
             LoadAssets();
         }
         public void LoadAssets()
@@ -36,21 +30,6 @@ namespace EFRET_TMS
                 SentrySdk.CaptureException(ex);
             }
 
-        }
-
-
-
-        #region Overrides
-
-        public override void ProcessCommand(Enum cmd, object arg)
-        {
-            base.ProcessCommand(cmd, arg);
-        }
-
-        #endregion
-
-        public enum SplashScreenCommand
-        {
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace EFRET_TMS
 {
-    partial class ShipmentMap
+    sealed partial class ShipmentMap
     {
         /// <summary>
         /// Required designer variable.

@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
 using Telerik.WinControls;
 using Whois;
 namespace EFRET_TMS
@@ -22,18 +16,13 @@ namespace EFRET_TMS
         } 
         private  void QueryByDomain()
     {
-
         // Create a WhoisLookup instance
         var whois = new WhoisLookup();
-
-        // Query github.com
         var response = whois.Lookup(textEdit1.Text);
-
         // Output the response
         RadMessageBox.Show(response.Content);
 
-
     }
-    }
+  }
    
 }

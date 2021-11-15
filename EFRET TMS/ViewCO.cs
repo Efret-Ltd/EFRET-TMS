@@ -13,8 +13,7 @@ namespace EFRET_TMS
 {
     public partial class ViewCo : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        private int _chargingOrderId; 
-        private readonly object _cid;
+        private readonly int _chargingOrderId;
         private readonly string _path;
         private readonly object _newChargingOrder;
         private  string _shipmentId;
@@ -27,10 +26,10 @@ namespace EFRET_TMS
         public ViewCo(int coid, object newCo, object contractId)
         {
             InitializeComponent();
-            _cid = contractId + @"\";
+            object cid = contractId + @"\";
             _chargingOrderId = coid;
             _newChargingOrder = newCo;
-            _path = @"\\efret-app-01\Database\efret\2021\CustomerCO\" + _cid + _newChargingOrder;
+            _path = @"\\efret-app-01\Database\efret\2021\CustomerCO\" + cid + _newChargingOrder;
             GetCoDetails(_newChargingOrder.ToString());
             GetCoMovements(_newChargingOrder.ToString());
             GetCocmr(_chargingOrderId);
@@ -168,11 +167,11 @@ namespace EFRET_TMS
 
             //We tally up and show outstanding.
             int done =  _contractualdateSet + _tractorNumber + _costProvider + _trailerNumber+ _isTrailerTypeAutorised;
-            barStaticItem1.Caption = done + "/5 Completed";
+            barStaticItem1.Caption = done + @"/5 Completed";
 
             if (done == 5 & _shipmentId ==null)
             {
-                barStaticItem1.Caption = "Checklist Complete";
+                barStaticItem1.Caption = @"Checklist Complete";
                 barButtonItem13.Visibility = BarItemVisibility.Always;
 
             }

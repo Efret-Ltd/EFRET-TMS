@@ -10,7 +10,8 @@ namespace EFRET_TMS
         {
             InitializeComponent();
             GetCosts(newCo);
-            this.Text = "Costs For CO: " + newCo;
+            // ReSharper disable once VirtualMemberCallInConstructor
+            Text = @"Costs For CO: " + newCo;
         }
 
         private void COCost_Load(object sender, EventArgs e)

@@ -16,7 +16,7 @@ namespace EFRET_TMS
             InitializeComponent();
             // We will the adapter with NewCO dataset. 
             newCOTableAdapter1.Fill(axsDataSet1.NewCO);
-            this.WindowState = FormWindowState.Maximized;
+            WindowState = FormWindowState.Maximized;
         }
         //Create a Charging Order.
         private void accordionControlElement6_Click(object sender, EventArgs e)

@@ -1,14 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Net;
-using System.Text;
-using System.Windows.Forms;
 using Newtonsoft.Json.Linq;
-using Telerik.WinControls;
 
 namespace EFRET_TMS
 {
@@ -29,36 +23,40 @@ namespace EFRET_TMS
                 var accessKey = "ca14f90ed6ad8d71fa92689bc6d0acb6";
                 var vatNumber = textEdit1.Text;
                 var url = "http://apilayer.net/api/validate?access_key=" + accessKey + "&vat_number=" + vatNumber;
-                HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(url);
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
                 request.Method = "GET";
                 String result = String.Empty;
                 using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
                 {
                     Stream dataStream = response.GetResponseStream();
-                    StreamReader reader = new StreamReader(dataStream);
-                    result = reader.ReadToEnd();
-                    reader.Close();
-                    dataStream.Close();
+                    if (dataStream != null)
+                    {
+                        StreamReader reader = new StreamReader(dataStream);
+                        result = reader.ReadToEnd();
+                        reader.Close();
+                    }
+
+                    if (dataStream != null) dataStream.Close();
                 }
 
                 dynamic data = JObject.Parse(result);
 
                 bool isValid = data.valid;
-                var countryCode = data.country_code;
-                var vatNumber = data.vat_number;
+                var vatNum = data.vat_number;
                 var companyName = data.company_name;
                 var companyAddress = data.company_address;
 
                 if (isValid)
                 {
                     radLabel1.ForeColor = Color.DodgerBlue; 
-                    radLabel1.Text = companyName.ToString()+"\n"+companyAddress.ToString();
+                    radLabel1.Text = companyName.ToString()+@"
+"+companyAddress.ToString()+ vatNum.ToString();
 
                 }
                 else
                 {
                     radLabel1.ForeColor = Color.DarkRed;
-                    radLabel1.Text = "Not a valid VAT";
+                    radLabel1.Text = @"Not a valid VAT";
                 }
 
 

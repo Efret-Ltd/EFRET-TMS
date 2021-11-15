@@ -1,11 +1,4 @@
-﻿using System;
-using System.IO;
-using System.Net;
-using DevExpress.XtraEditors;
-using System.Windows.Forms;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using Telerik.WinControls;
+﻿using DevExpress.XtraEditors;
 
 namespace EFRET_TMS
 {

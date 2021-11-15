@@ -1,5 +1,4 @@
-﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
+﻿using Newtonsoft.Json.Linq;
 using RestSharp;
 using Sentry;
 using System;
@@ -7,20 +6,17 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Net;
-using System.Text.Json;
-using System.Web.Script.Serialization;
-using System.Windows.Forms;
-using Telerik.WinControls;
+
 
 namespace EFRET_TMS
 {
-    public partial class ShipmentMap : Telerik.WinControls.UI.RadRibbonForm
+    public sealed partial class ShipmentMap : Telerik.WinControls.UI.RadRibbonForm
     {
         public ShipmentMap(int coid, string latitude, string longitude)
         {
         InitializeComponent();
          radRibbonBar2.Expanded = false;
-          this.Text = "Shipment tracking for: " + coid;
+          Text = @"Shipment tracking for: " + coid;
           GetMapFromCoords(latitude, longitude);
           GetStreetName(latitude, longitude);
         }
@@ -42,19 +38,19 @@ namespace EFRET_TMS
                 // returned values are returned as a stream, then read into a string
                 using (HttpWebResponse mapResponse = (HttpWebResponse)mapRequest.GetResponse())
                 {
-                    using (BinaryReader reader = new BinaryReader(mapResponse.GetResponseStream()))
-                    {
-                        byte[] lnByte = reader.ReadBytes(1 * 2048 * 2048 * 10);
-                        using (MemoryStream ms = new MemoryStream(lnByte))
+                    if (mapResponse != null)
+                        using (BinaryReader reader = new BinaryReader(mapResponse.GetResponseStream()))
                         {
-                            radPictureBox1.Image = Image.FromStream(ms);
-                            ms.Close();
+                            byte[] lnByte = reader.ReadBytes(1 * 2048 * 2048 * 10);
+                            using (MemoryStream ms = new MemoryStream(lnByte))
+                            {
+                                radPictureBox1.Image = Image.FromStream(ms);
+                                ms.Close();
+                            }
+
+                            reader.Close();
+                            reader.Dispose();
                         }
-
-                        reader.Close();
-                        reader.Dispose();
-                    }
-
                 }
             }
             catch (Exception ex)
@@ -76,7 +72,7 @@ namespace EFRET_TMS
                     "MjBhYTg3MjRlMWZlNDk2OTk0NzZhMWIzMTU3Zjg1ZWY6ZTMxZTVjMGMtM2I0My00ODAwLThmOWYtNjY5ODk4OWRlMWJm");
 
                 //Response is a JSON object string.
-                IRestResponse<Location> response = client.Execute<Location>(request);
+                IRestResponse<Loc> response = client.Execute<Loc>(request);
                 JObject json = JObject.Parse(response.Content);
                 var address = json["locations"][0];
                 var formattedAddress = address["formattedAddress"];
@@ -113,30 +109,28 @@ namespace EFRET_TMS
             public string HouseNumber { get; set; }
         }
 
-        public class Quality
-        {
-            public int TotalScore { get; set; }
-        }
-  
-        public class Location
+        public class Loc
         {
             public ReferencePosition ReferencePosition { get; set; }
             public Address Address { get; set; }
             public string FormattedAddress { get; set; }
-            public string LocationType { get; set; }
+            /*
             public Quality Quality { get; set; }
+*/
         }
 
         public class Root
         {
-            public List<Location> Locations { get; set; }
+/*
+            public List<Loc> Locations { get; set; }
+*/
         }
 
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            this.Hide();
-            this.Dispose();
+            Hide();
+            Dispose();
         }
 
         private void ribbonTab1_Click(object sender, EventArgs e)

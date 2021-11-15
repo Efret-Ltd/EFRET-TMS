@@ -17,7 +17,8 @@ namespace EFRET_TMS
         public RadForm1()
         {
             InitializeComponent();
-            this.Text = "Welcome to EFRET " + Environment.UserName;
+            // ReSharper disable once VirtualMemberCallInConstructor
+            Text = @"Welcome to EFRET " + Environment.UserName;
             GetRate();
             PostTeamsLogin();
             
@@ -89,14 +90,14 @@ namespace EFRET_TMS
             }
 
             conn.Close();
-            accordionControlElement10.Text = "Current Rate: " + rate;
+            accordionControlElement10.Text = @"Current Rate: " + rate;
         }
 
         private void accordionControlElement8_Click(object sender, EventArgs e)
         {
             var eventMessage = Environment.UserName + " Shutdown the TMS";
             LogMessage(eventMessage);
-            this.Close();
+            Close();
             Application.Exit();
         }
 
@@ -169,16 +170,20 @@ namespace EFRET_TMS
 
 
             var url = "https://api.currencylayer.com/convert?access_key=" + accessKey + "&from=" + currencyFrom + "&to=" + currencyTo + "&amount=" + amount + "";
-            HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(url);
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
             request.Method = "GET";
             String result = String.Empty;
             using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
             {
                 Stream dataStream = response.GetResponseStream();
-                StreamReader reader = new StreamReader(dataStream);
-                result = reader.ReadToEnd();
-                reader.Close();
-                dataStream.Close();
+                if (dataStream != null)
+                {
+                    StreamReader reader = new StreamReader(dataStream);
+                    result = reader.ReadToEnd();
+                    reader.Close();
+                }
+
+                if (dataStream != null) dataStream.Close();
             }
 
             dynamic data = JObject.Parse(result);
