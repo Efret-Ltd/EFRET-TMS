@@ -10,7 +10,7 @@ using Sentry;
 
 namespace EFRET_TMS
 {
-    class PostTeams
+    internal class PostTeams
     {
         public PostTeams(string message) {
             try

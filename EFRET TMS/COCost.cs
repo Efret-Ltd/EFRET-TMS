@@ -4,13 +4,13 @@ using Sentry;
 
 namespace EFRET_TMS
 {
-    public partial class COCost : DevExpress.XtraEditors.XtraForm
+    public partial class CoCost : DevExpress.XtraEditors.XtraForm
     {
-        public COCost(string NewCO)
+        public CoCost(string newCo)
         {
             InitializeComponent();
-            getCosts(NewCO);
-            this.Text = "Costs For CO: " + NewCO;
+            GetCosts(newCo);
+            this.Text = "Costs For CO: " + newCo;
         }
 
         private void COCost_Load(object sender, EventArgs e)
@@ -18,9 +18,9 @@ namespace EFRET_TMS
 
         }
 
-        private void getCosts(string NewCO)
+        private void GetCosts(string newCo)
         {
-            string queryString = "Select * FROM NewCO WHERE NewCO ='" + NewCO + "'";
+            string queryString = "Select * FROM NewCO WHERE NewCO ='" + newCo + "'";
             string connectionString = @"Server=EFRET-APP-01\EFRET;Database=axs;Trusted_Connection=True;";
             try
             {

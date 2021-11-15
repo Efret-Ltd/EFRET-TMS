@@ -5,51 +5,59 @@ using System.Data.CData.MariaDB;
 using System.Data.SqlClient;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using DevExpress.CodeParser;
 using Sentry;
 using Telerik.WinControls;
 
+
 namespace EFRET_TMS
 {
-    public partial class ViewCO : DevExpress.XtraBars.Ribbon.RibbonForm
+    public partial class ViewCo : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        private int chargingOrderID; 
-        private object CID;
-        private string path;
-        private object newChargingOrder;
-        private string ShipmentID;
-        int ContractualdateSet = 0;
-        int TractorNumber = 0;
-        int CostProvider = 0;
-        private int TrailerNumber = 0;
-        private int isTrailerTypeAutorised = 0;
-        private string COComment;
-        public ViewCO(int COID, object newCO, object ContractID)
+        private int _chargingOrderId; 
+        private readonly object _cid;
+        private readonly string _path;
+        private readonly object _newChargingOrder;
+        private  string _shipmentId;
+        private int _contractualdateSet;
+        private int _tractorNumber;
+        private int _costProvider;
+        private int _trailerNumber;
+        private int _isTrailerTypeAutorised;
+        private string _coComment;
+        public ViewCo(int coid, object newCo, object contractId)
         {
             InitializeComponent();
-            CID = ContractID + @"\";
-            chargingOrderID = COID;
-            newChargingOrder = newCO;
-            path = @"\\efret-app-01\Database\efret\2021\CustomerCO\" + CID + newChargingOrder;
-            getCODetails(newChargingOrder.ToString());
-            getCOMovements(newChargingOrder.ToString());
-            getCOCMR(chargingOrderID);
+            _cid = contractId + @"\";
+            _chargingOrderId = coid;
+            _newChargingOrder = newCo;
+            _path = @"\\efret-app-01\Database\efret\2021\CustomerCO\" + _cid + _newChargingOrder;
+            GetCoDetails(_newChargingOrder.ToString());
+            GetCoMovements(_newChargingOrder.ToString());
+            GetCocmr(_chargingOrderId);
 
         }
-
-        private void getCOCMR(int chargingOrderID)
+        /*
+         * We select the record from CMR database then do comparisons on the status of the CMR.
+         * IF the CMR is accepted we provide a button and a link to the PDF.
+         *
+         */
+        private void GetCocmr(int chargingOrderId)
         {
-            string queryString = "Select * FROM CMRStatus WHERE IdCO ='" + chargingOrderID + "'";
-
-            using (MariaDBConnection connection =
-                new MariaDBConnection(
-                    "User=efretdb;Password=^eA7yQfqqpaO;Database=EFRETCMR;Server=192.168.10.70;Port=3306;"))
+            // We use the query for the CMR.
+            string queryString = "Select * FROM CMRStatus WHERE IdCO ='" + chargingOrderId + "'";
+            try
             {
-                MariaDBCommand command = new MariaDBCommand(queryString, connection);
-                connection.Open();
-                MariaDBDataReader reader = command.ExecuteReader();
-                try
+                using (MariaDBConnection connection =
+                    new MariaDBConnection(
+                        "User=efretdb;Password=^eA7yQfqqpaO;Database=EFRETCMR;Server=192.168.10.70;Port=3306;"))
                 {
+                    MariaDBCommand command = new MariaDBCommand(queryString, connection);
+                    connection.Open();
+                    MariaDBDataReader reader = command.ExecuteReader();
+                    /*
+                     * A CMR has four states: Waiting, resend, Review and Accepted.
+                     * Show button to view CMR on accepted.
+                     */
                     while (reader.Read())
                     {
                         //We do a hit check then enable button
@@ -58,11 +66,9 @@ namespace EFRET_TMS
                             RadMessageBox.Show("CMR WAITING FOR: " + reader["IdCO"]);
                         }
 
-                        if (reader["cStatus"].ToString() == "ACCEPTED")
-                        {//TODO: Link to CMR PDF for viewing.
-                            RadMessageBox.Show("CMR ACCEPTED for: " + reader["IdCO"]);
-                            barButtonItem10.Enabled = true;
-
+                        if (reader["cStatus"].ToString() == "RESEND")
+                        {
+                            RadMessageBox.Show("CMR RESEND FOR: " + reader["IdCO"]);
                         }
 
                         if (reader["cStatus"].ToString() == "REVIEW")
@@ -70,21 +76,27 @@ namespace EFRET_TMS
                             RadMessageBox.Show("CMR IN REVIEW FOR: " + reader["IdCO"]);
                         }
 
+                        if (reader["cStatus"].ToString() == "ACCEPTED")
+                        {
+                            //TODO: Link to CMR PDF for viewing.
+                            RadMessageBox.Show("CMR ACCEPTED for: " + reader["IdCO"]);
+                            barButtonItem10.Enabled = true;
+                        }
                     }
-
                 }
-                catch (Exception ex)
-                {
-                    SentrySdk.CaptureException(ex);
+            }
 
-                }
+            catch (Exception ex)
+            {
+                SentrySdk.CaptureException(ex);
+
             }
         }
 
 
-        private void getCODetails(string NewCO)
+        private void GetCoDetails(string newCo)
         {
-            string queryString = "Select * FROM NewCO INNER JOIN Movement ON NewCO.IdCo = Movement.IdCO INNER JOIN Goods ON NewCO.IdCo = Goods.IDco WHERE NewCO ='"+ NewCO+"'";
+            string queryString = "Select * FROM NewCO INNER JOIN Movement ON NewCO.IdCo = Movement.IdCO INNER JOIN Goods ON NewCO.IdCo = Goods.IDco WHERE NewCO ='"+ newCo+"'";
             string connectionString = @"Server=EFRET-APP-01\EFRET;Database=axs;Trusted_Connection=True;";
             try
             {
@@ -97,36 +109,41 @@ namespace EFRET_TMS
                     {
                         while (reader.Read())
                         {
-                            textEdit1.Text = "Confirmation Order: " + reader["NewCO"];
-                            radLabel5.Text = "Created By: " + reader["UserCreation"];
-                            radLabel3.Text = "Line: " + reader["Line"];
-                            radLabel1.Text = "Rate € to £: "+ reader["ConversionRate"];
-                            radLabel2.Text = "Last Change By: "+ reader["UserUpdate"];
-                            radLabel4.Text = "IDCO: " + reader["IdCO"];
-                            radDropDownList1.Text = "Manager: " + reader["UserOwner"];
+
+                            //TODO: ServiceStack DTO make a charging Order and initalize instance.
+                            textEdit1.Text = @"Confirmation Order: " + reader["NewCO"];
+                            radLabel5.Text = @"Created By: " + reader["UserCreation"];
+                            radLabel3.Text = @"Line: " + reader["Line"];
+                            radLabel1.Text = @"Rate € to £: "+ reader["ConversionRate"];
+                            radLabel2.Text = @"Last Change By: "+ reader["UserUpdate"];
+                            radLabel4.Text = @"IDCO: " + reader["IdCO"];
+                            radDropDownList1.Text = @"Manager: " + reader["UserOwner"];
                             radMenuHeaderItem1.Text = reader["ContractHolderEmail"].ToString();
                             radMenuHeaderItem2.Text = reader["ContractHolderTel"].ToString();
                             radMenuHeaderItem3.Text = reader["ContractHolderMob"].ToString();
                             radMenuHeaderItem4.Text = reader["CostVATCode"].ToString();
-                            labelControl1.Text = "Type: " + reader["TrailerTypeAutorised"];
+                            labelControl1.Text = @"Type: " + reader["TrailerTypeAutorised"];
                             if (reader["P44ShipmentID"].ToString() != "")
                             {
-                                ShipmentID = reader["P44ShipmentID"].ToString();
+                                _shipmentId = reader["P44ShipmentID"].ToString();
                             }
 
                             if (reader["TrailerNumber"].ToString() != "")
                             {
                                 barCheckItem1.Checked = true;
-                                TrailerNumber = 1;
+
+                                //We add value so P44 Checklist tallies
+                                _trailerNumber = 1;
                             }
                             if (reader["TrailerTypeAutorised"].ToString() != "")
                             {
                                 barCheckItem4.Checked = true;
-                                isTrailerTypeAutorised = 1;
+                                //We add value so P44 Checklist tallies
+                                _isTrailerTypeAutorised = 1;
                             }
                             if (reader["Comment"].ToString() != "")
                             {
-                                COComment = reader["Comment"].ToString();
+                                _coComment = reader["Comment"].ToString();
                                 simpleButton1.Visible = true;
                             }
                         }
@@ -148,27 +165,28 @@ namespace EFRET_TMS
         private void ViewCO_Load(object sender, EventArgs e)
         {
             ribbonPageGroup7.Text = @"Project44 Checklist";
-            
 
-            int done =  ContractualdateSet + TractorNumber + CostProvider + TrailerNumber+ isTrailerTypeAutorised;
+            //We tally up and show outstanding.
+            int done =  _contractualdateSet + _tractorNumber + _costProvider + _trailerNumber+ _isTrailerTypeAutorised;
             barStaticItem1.Caption = done + "/5 Completed";
-            if (done == 5 & ShipmentID ==null)
+
+            if (done == 5 & _shipmentId ==null)
             {
                 barStaticItem1.Caption = "Checklist Complete";
                 barButtonItem13.Visibility = BarItemVisibility.Always;
 
             }
-            if (ShipmentID != null)
+            if (_shipmentId != null)
             {
-                barStaticItem1.Caption = ShipmentID;
+                barStaticItem1.Caption = _shipmentId;
             }
 
         }
 
-        private void getCOMovements(string newCO)
+        private void GetCoMovements(string newCo)
         {
 
-            string queryStringAllMovements = "Select * FROM NewCO INNER JOIN Movement ON NewCO.IdCo = Movement.IdCO WHERE NewCO ='" + newCO + "'";
+            string queryStringAllMovements = "Select * FROM NewCO INNER JOIN Movement ON NewCO.IdCo = Movement.IdCO WHERE NewCO ='" + newCo + "'";
             string connectionString = @"Server=EFRET-APP-01\EFRET;Database=axs;Trusted_Connection=True;";
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -190,17 +208,17 @@ namespace EFRET_TMS
                             if (reader["Contractualdate"] != null)
                             {
                                 barCheckItem2.Checked = true;
-                                ContractualdateSet = 1;
+                                _contractualdateSet = 1;
                             }
                             if (reader["TractorNumber"] != null)
                             {
                                 barCheckItem5.Checked = true;
-                                TractorNumber = 1;
+                                _tractorNumber = 1;
                             }
                             if (reader["CostProvider"] != null)
                             {
                                 barCheckItem3.Checked = true;
-                                CostProvider = 1;
+                                _costProvider = 1;
                             }
                         }
                     }
@@ -226,8 +244,8 @@ namespace EFRET_TMS
         private void barButtonItem6_ItemClick(object sender, ItemClickEventArgs e)
         {
             //TODO: We may want to use devexpress PDF utilities on selection.
-            xtraOpenFileDialog1.InitialDirectory = path;
-            xtraOpenFileDialog1.Title = "View Charging Order Browser";
+            xtraOpenFileDialog1.InitialDirectory = _path;
+            xtraOpenFileDialog1.Title = @"View Charging Order Browser";
             xtraOpenFileDialog1.FileName = "";
             xtraOpenFileDialog1.ShowDialog();
         }
@@ -261,19 +279,15 @@ namespace EFRET_TMS
         //View Costs
         private void barButtonItem11_ItemClick(object sender, ItemClickEventArgs e)
         {
-            COCost viewCoCost = new COCost(newChargingOrder.ToString());
+            CoCost viewCoCost = new CoCost(_newChargingOrder.ToString());
             viewCoCost.Show();
-            RadForm1.LogMessage(Environment.UserName+" has opened view costs panel for CO: "+ chargingOrderID);
+            RadForm1.LogMessage(Environment.UserName+" has opened view costs panel for CO: "+ _chargingOrderId);
         }
 
-        private void labelControl1_Click(object sender, EventArgs e)
-        {
-
-        }
         //Button to Upload to P44
         private async void barButtonItem13_ItemClick(object sender, ItemClickEventArgs e)
         {
-            RadForm1.LogMessage(Environment.UserName + " has attempted to upload CO: " + chargingOrderID+" to Project44");
+            RadForm1.LogMessage(Environment.UserName + " has attempted to upload CO: " + _chargingOrderId+" to Project44");
             var username = "integrationuser@efret.net";
             var password = "project442019!";
 
@@ -307,7 +321,7 @@ namespace EFRET_TMS
                         request.Headers.Authorization =
                             new AuthenticationHeaderValue(
                                 "Basic", Convert.ToBase64String(
-                                    System.Text.ASCIIEncoding.ASCII.GetBytes(
+                                    System.Text.Encoding.ASCII.GetBytes(
                                         $"{username}:{password}")));
 
 
@@ -331,7 +345,7 @@ namespace EFRET_TMS
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            RadMessageBox.Show(COComment);
+            RadMessageBox.Show(_coComment);
         }
     }
 }

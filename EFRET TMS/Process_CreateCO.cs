@@ -26,12 +26,12 @@ namespace EFRET_TMS
 
 
         //We use this to generate new folders on the network location.
-        private void FolderGen(string CompanyCode)
+        private void FolderGen(string companyCode)
         {
             var networkLocation = @"\\EFRET-APP-01\Database\efret\2021\CustomerCO\";
-            bool exists = System.IO.Directory.Exists(networkLocation+CompanyCode);
+            bool exists = System.IO.Directory.Exists(networkLocation+companyCode);
             if (!exists)
-                System.IO.Directory.CreateDirectory(networkLocation+CompanyCode);
+                System.IO.Directory.CreateDirectory(networkLocation+companyCode);
 
         }
 

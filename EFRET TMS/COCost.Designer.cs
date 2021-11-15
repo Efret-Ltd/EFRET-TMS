@@ -1,7 +1,7 @@
 ﻿
 namespace EFRET_TMS
 {
-    partial class COCost
+    partial class CoCost
     {
         /// <summary>
         /// Required designer variable.
@@ -279,7 +279,7 @@ namespace EFRET_TMS
             this.Controls.Add(this.radLabel2);
             this.Controls.Add(this.radLabel1);
             this.MaximizeBox = false;
-            this.Name = "COCost";
+            this.Name = "CoCost";
             this.Text = "COCost";
             this.Load += new System.EventHandler(this.COCost_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radLabel10)).EndInit();

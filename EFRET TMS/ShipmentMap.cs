@@ -96,40 +96,40 @@ namespace EFRET_TMS
         }
         public class ReferencePosition
         {
-            public double latitude { get; set; }
-            public double longitude { get; set; }
+            public double Latitude { get; set; }
+            public double Longitude { get; set; }
         }
 
         public class Address
         {
-            public string countryName { get; set; }
-            public string state { get; set; }
-            public string province { get; set; }
-            public string postalCode { get; set; }
-            public string city { get; set; }
-            public string district { get; set; }
-            public string subdistrict { get; set; }
-            public string street { get; set; }
-            public string houseNumber { get; set; }
+            public string CountryName { get; set; }
+            public string State { get; set; }
+            public string Province { get; set; }
+            public string PostalCode { get; set; }
+            public string City { get; set; }
+            public string District { get; set; }
+            public string Subdistrict { get; set; }
+            public string Street { get; set; }
+            public string HouseNumber { get; set; }
         }
 
         public class Quality
         {
-            public int totalScore { get; set; }
+            public int TotalScore { get; set; }
         }
   
         public class Location
         {
-            public ReferencePosition referencePosition { get; set; }
-            public Address address { get; set; }
-            public string formattedAddress { get; set; }
-            public string locationType { get; set; }
-            public Quality quality { get; set; }
+            public ReferencePosition ReferencePosition { get; set; }
+            public Address Address { get; set; }
+            public string FormattedAddress { get; set; }
+            public string LocationType { get; set; }
+            public Quality Quality { get; set; }
         }
 
         public class Root
         {
-            public List<Location> locations { get; set; }
+            public List<Location> Locations { get; set; }
         }
 
 

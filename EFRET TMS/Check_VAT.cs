@@ -12,9 +12,9 @@ using Telerik.WinControls;
 
 namespace EFRET_TMS
 {
-    public partial class Check_VAT : Telerik.WinControls.UI.RadForm
+    public partial class CheckVat : Telerik.WinControls.UI.RadForm
     {
-        public Check_VAT()
+        public CheckVat()
         {
             InitializeComponent();
         }
@@ -27,8 +27,8 @@ namespace EFRET_TMS
             if (textEdit1.Text != null)
             {
                 var accessKey = "ca14f90ed6ad8d71fa92689bc6d0acb6";
-                var vat_number = textEdit1.Text;
-                var url = "http://apilayer.net/api/validate?access_key=" + accessKey + "&vat_number=" + vat_number;
+                var vatNumber = textEdit1.Text;
+                var url = "http://apilayer.net/api/validate?access_key=" + accessKey + "&vat_number=" + vatNumber;
                 HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(url);
                 request.Method = "GET";
                 String result = String.Empty;
@@ -45,7 +45,7 @@ namespace EFRET_TMS
 
                 bool isValid = data.valid;
                 var countryCode = data.country_code;
-                var VATNumber = data.vat_number;
+                var vatNumber = data.vat_number;
                 var companyName = data.company_name;
                 var companyAddress = data.company_address;
 

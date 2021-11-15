@@ -1,6 +1,6 @@
 ﻿namespace EFRET_TMS
 {
-    partial class Check_VAT
+    partial class CheckVat
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Check_VAT));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CheckVat));
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
@@ -70,7 +70,7 @@
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.textEdit1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Check_VAT";
+            this.Name = "CheckVat";
             // 
             // 
             // 

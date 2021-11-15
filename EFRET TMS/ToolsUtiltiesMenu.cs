@@ -19,7 +19,7 @@ namespace EFRET_TMS
 
         private void vatCheckButton_Click(object sender, EventArgs e)
         {
-            Check_VAT checkVat = new Check_VAT();
+            CheckVat checkVat = new CheckVat();
             checkVat.Show();
             SentrySdk.CaptureMessage(Environment.UserName + " opened checkVAT form");
         }

@@ -64,7 +64,7 @@ namespace EFRET_TMS
             SentrySdk.CaptureMessage(message);
         }
 
-        void Form1_Load(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
         {
             SplashScreenManager.CloseForm(false); // false means that an exception will not be thrown
         }
@@ -137,7 +137,7 @@ namespace EFRET_TMS
         private void accordionControlElement10_Click(object sender, EventArgs e)
         {
 
-            getCurrentRate();
+            GetCurrentRate();
         }
 
         //Invoicing
@@ -159,16 +159,16 @@ namespace EFRET_TMS
             LogMessage(eventMessage);
         }
 
-        static void getCurrentRate()
+        private static void GetCurrentRate()
         {
 
             var accessKey = "cfb2e6fefbb0b44fe84b89287788f089";
-            var CurrencyFrom = "GBP";
-            var CurrencyTo = "EUR";
+            var currencyFrom = "GBP";
+            var currencyTo = "EUR";
             int amount = 1;
 
 
-            var url = "https://api.currencylayer.com/convert?access_key=" + accessKey + "&from=" + CurrencyFrom + "&to=" + CurrencyTo + "&amount=" + amount + "";
+            var url = "https://api.currencylayer.com/convert?access_key=" + accessKey + "&from=" + currencyFrom + "&to=" + currencyTo + "&amount=" + amount + "";
             HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(url);
             request.Method = "GET";
             String result = String.Empty;
@@ -193,24 +193,24 @@ namespace EFRET_TMS
 
         private void accordionControlElement12_Click(object sender, EventArgs e)
         {
-            ToolsUtiltiesMenu TUMenu = new ToolsUtiltiesMenu();
-            TUMenu.Show();
+            ToolsUtiltiesMenu tuMenu = new ToolsUtiltiesMenu();
+            tuMenu.Show();
             var eventMessage = Environment.UserName + " Opened Tools and Utilities Panel";
             LogMessage(eventMessage);
         }
         //Fleet Management
         private void accordionControlElement6_Click(object sender, EventArgs e)
         {
-            FleetManagement FMngt = new FleetManagement();
-            FMngt.Show();
+            FleetManagement fMngt = new FleetManagement();
+            fMngt.Show();
             var eventMessage = Environment.UserName + " Opened Fleet Management Panel";
             LogMessage(eventMessage);
         }
         //Mail Merge
         private void accordionControlElement13_Click(object sender, EventArgs e)
         {
-            MailMerge MM = new MailMerge();
-            MM.Show();
+            MailMerge mm = new MailMerge();
+            mm.Show();
             var eventMessage = Environment.UserName + " Opened MailMerge Panel";
             LogMessage(eventMessage);
         }

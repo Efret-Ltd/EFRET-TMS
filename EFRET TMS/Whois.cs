@@ -20,7 +20,7 @@ namespace EFRET_TMS
         {
             QueryByDomain();
         } 
-        private async void QueryByDomain()
+        private  void QueryByDomain()
     {
 
         // Create a WhoisLookup instance
