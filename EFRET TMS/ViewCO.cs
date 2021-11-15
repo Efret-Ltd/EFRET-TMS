@@ -3,6 +3,8 @@ using System;
 using System.Data;
 using System.Data.CData.MariaDB;
 using System.Data.SqlClient;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using DevExpress.CodeParser;
 using Sentry;
 using Telerik.WinControls;
@@ -15,8 +17,12 @@ namespace EFRET_TMS
         private object CID;
         private string path;
         private object newChargingOrder;
-        private int P44ChecklistCounter;
-
+        private string ShipmentID;
+        int ContractualdateSet = 0;
+        int TractorNumber = 0;
+        int CostProvider = 0;
+        private int TrailerNumber = 0;
+        private int isTrailerTypeAutorised = 0;
         public ViewCO(int COID, object newCO, object ContractID)
         {
             InitializeComponent();
@@ -92,15 +98,33 @@ namespace EFRET_TMS
                         while (reader.Read())
                         {
                             textEdit1.Text = "Confirmation Order: " + reader["NewCO"];
-                            textEdit2.Text = "Created By: " + reader["UserCreation"].ToString();
-                            textEdit4.Text = "Line: " + reader["Line"].ToString();
-                            textEdit3.Text = "IDCO: " + reader["IdCO"].ToString();
-                            radDropDownList1.Text = "Manager: " + reader["UserOwner"].ToString();
+                            textEdit2.Text = "Created By: " + reader["UserCreation"];
+                            textEdit4.Text = "Line: " + reader["Line"];
+                            textEdit5.Text = "Last Updated: "+ reader["UserUpdate"];
+                            radLabel1.Text = "Rate € to £: "+ reader["ConversionRate"];
+                            labelControl2.Text = "IDCO: " + reader["IdCO"];
+                            radDropDownList1.Text = "Manager: " + reader["UserOwner"];
                             radMenuHeaderItem1.Text = reader["ContractHolderEmail"].ToString();
                             radMenuHeaderItem2.Text = reader["ContractHolderTel"].ToString();
                             radMenuHeaderItem3.Text = reader["ContractHolderMob"].ToString();
                             radMenuHeaderItem4.Text = reader["CostVATCode"].ToString();
-                            labelControl1.Text = "Type: " + reader["TrailerTypeAutorised"].ToString();
+                            labelControl1.Text = "Type: " + reader["TrailerTypeAutorised"];
+                            radButtonTextBox1.Text = reader["BaseFreightRate"].ToString();
+                            if (reader["P44ShipmentID"].ToString() != "")
+                            {
+                                ShipmentID = reader["P44ShipmentID"].ToString();
+                            }
+
+                            if (reader["TrailerNumber"].ToString() != "")
+                            {
+                                barCheckItem1.Checked = true;
+                                TrailerNumber = 1;
+                            }
+                            if (reader["TrailerTypeAutorised"].ToString() != "")
+                            {
+                                barCheckItem4.Checked = true;
+                                isTrailerTypeAutorised = 1;
+                            }
                         }
                     }
                     finally
@@ -120,26 +144,68 @@ namespace EFRET_TMS
         private void ViewCO_Load(object sender, EventArgs e)
         {
             ribbonPageGroup7.Text = @"Project44 Checklist";
-            barStaticItem1.Caption = P44ChecklistCounter + "/5 Completed";
-           
+            
+
+            int done =  ContractualdateSet + TractorNumber + CostProvider + TrailerNumber+ isTrailerTypeAutorised;
+            barStaticItem1.Caption = done + "/5 Completed";
+            if (done == 5 & ShipmentID ==null)
+            {
+                barStaticItem1.Caption = "Checklist Complete";
+                barButtonItem13.Visibility = BarItemVisibility.Always;
+
+            }
+            if (ShipmentID != null)
+            {
+                barStaticItem1.Caption = ShipmentID;
+            }
+
         }
 
         private void getCOMovements(string newCO)
         {
-            string queryString = "Select * FROM NewCO INNER JOIN Movement ON NewCO.IdCo = Movement.IdCO WHERE NewCO ='" + newCO + "'";
-            string connectionString = @"Server=EFRET-APP-01\EFRET;Database=axs;Trusted_Connection=True;";
 
+            string queryStringAllMovements = "Select * FROM NewCO INNER JOIN Movement ON NewCO.IdCo = Movement.IdCO WHERE NewCO ='" + newCO + "'";
+            string connectionString = @"Server=EFRET-APP-01\EFRET;Database=axs;Trusted_Connection=True;";
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                SqlCommand command = new SqlCommand(queryString, connection);
+                SqlCommand command = new SqlCommand(queryStringAllMovements, connection);
                 connection.Open();
                 DataSet sourceDataSet = new DataSet();
                 try
                 {
-                    using (var da = new SqlDataAdapter(queryString, connectionString))
+                    using (var da = new SqlDataAdapter(queryStringAllMovements, connectionString))
                     {
                         da.Fill(sourceDataSet);
                     }
+
+                    SqlDataReader reader = command.ExecuteReader();
+                    try
+                    {
+                        while (reader.Read())
+                        {
+                            if (reader["Contractualdate"] != null)
+                            {
+                                barCheckItem2.Checked = true;
+                                ContractualdateSet = 1;
+                            }
+                            if (reader["TractorNumber"] != null)
+                            {
+                                barCheckItem5.Checked = true;
+                                TractorNumber = 1;
+                            }
+                            if (reader["CostProvider"] != null)
+                            {
+                                barCheckItem3.Checked = true;
+                                CostProvider = 1;
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        SentrySdk.CaptureException(ex);
+
+                    }
+                
 
                     gridControl1.DataSource = sourceDataSet.Tables[0]; 
                     connection.Close();
@@ -149,56 +215,9 @@ namespace EFRET_TMS
                     SentrySdk.CaptureException(ex);
 
                 }
-
             }
         }
 
-        private void P44Check(int P44ChecklistCounter, ItemClickEventArgs e)
-        {
-            //This is highly redundant. We are going to do simple checks against the table and tally up the ones that have valid data.
-            if (barCheckItem1.Checked)
-            {
-                P44ChecklistCounter++;
-            }
-            else
-            {
-                P44ChecklistCounter--;
-            }
-            if (barCheckItem2.Checked)
-            {
-                P44ChecklistCounter++;
-            }
-            else
-            {
-                P44ChecklistCounter--;
-            }
-            if (barCheckItem3.Checked)
-            {
-                P44ChecklistCounter++;
-            }
-            else
-            {
-                P44ChecklistCounter--;
-            }
-            if (barCheckItem4.Checked)
-            {
-                P44ChecklistCounter++;
-            }
-            else
-            {
-                P44ChecklistCounter--;
-            }
-            if (barCheckItem5.Checked)
-            {
-                P44ChecklistCounter++;
-            }
-            else
-            {
-                P44ChecklistCounter--;
-            }
-            barStaticItem1.Refresh();
-            this.Refresh();
-        }
 
         private void barButtonItem6_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -211,41 +230,98 @@ namespace EFRET_TMS
 
         private void barCheckItem2_CheckedChanged(object sender, ItemClickEventArgs e)
         {
-            P44Check(P44ChecklistCounter,e);
+          
         }
 
         private void barCheckItem5_CheckedChanged(object sender, ItemClickEventArgs e)
         {
-            P44Check(P44ChecklistCounter, e);
+           
         }
 
         private void barCheckItem1_CheckedChanged(object sender, ItemClickEventArgs e)
         {
-            P44Check(P44ChecklistCounter, e);
+         
         }
 
         private void barCheckItem3_CheckedChanged(object sender, ItemClickEventArgs e)
         {
-            P44Check(P44ChecklistCounter, e);
+         
         }
 
         private void barCheckItem4_CheckedChanged(object sender, ItemClickEventArgs e)
         {
-            P44Check(P44ChecklistCounter, e);
+           
            
         }
 
         //View Costs
         private void barButtonItem11_ItemClick(object sender, ItemClickEventArgs e)
         {
-            ViewCOCost viewCoCost = new ViewCOCost();
+            ViewCOCost viewCoCost = new ViewCOCost(newChargingOrder.ToString());
             viewCoCost.Show();
-            RadForm1.LogMessage(Environment.UserName+" Has opened view costs panel");
+            RadForm1.LogMessage(Environment.UserName+" has opened view costs panel for CO: "+ chargingOrderID);
         }
 
         private void labelControl1_Click(object sender, EventArgs e)
         {
 
+        }
+        //Button to Upload to P44
+        private async void barButtonItem13_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            RadForm1.LogMessage(Environment.UserName + " has attempted to upload CO: " + chargingOrderID+" to Project44");
+            var username = "integrationuser@efret.net";
+            var password = "project442019!";
+
+
+            // do not upload CO's that have an idContractHolder of 'EFRCHR' or 'EF1CHR' - These are internal shipments that dont need to be tracked
+            // remove CO's that have any movement with a CostProvider of '4SALE2' or 'EFRCHR' or 'EF1CHR'
+            var messageP44 = "";
+
+            //While the button isn't shown until all fields are properly filled. We do a final check to ensure the data we post is valid.
+
+            // remove CO's with no trailer number
+
+            // remove CO's with invalid Efret trailer number EFRU
+
+            // Remove CO's with trailerType not currently compatiable with Project 44
+            /*
+             * case 'B737CARGO AIRCRAFT 23 T':
+                            console.log('IdCO:', confirmationOrders[loop].idCo, 'Confirmation Order:', confirmationOrders[loop].confirmationOrder, 'Contract:', confirmationOrders[loop].idContractHolder, 'Trailer Number:', confirmationOrders[loop].trailerNumber, 'Trailer Type:', confirmationOrders[loop].trailerType);    
+                            console.log(' - CO has a Project 44 unsupported trailer type of B737Cargo Aircraft 23 t. Unflagged this CO for upload to Project 44');
+                            updateDatabaseRecord('UPDATE NewCO SET P44ToUpload=0, P44ReasonCode=\'NO_NEED_TO_UPLOAD\', P44ReasonDescription=\'CO has a Project 44 unsupported trailer type of 737Cargo Aircraft 23 t. Unflagged this CO for upload to Project 44\', P44UploadError=-1, P44LastUpdate='+getDateTimeAccess()+' WHERE IdCO='+confirmationOrdersToUpload[loop].idCo, 'CO', confirmationOrdersToUpload[loop].idCo);
+                            confirmationOrdersToUpload.splice(loop, 1);
+                            break;
+             */
+            try
+            {
+                using (var httpClient = new HttpClient())
+                {
+                    using (var request = new HttpRequestMessage(new HttpMethod("POST"),
+                        "cloud-v2.p-44.com/api/v4/tl/shipments"))
+                    {
+                        request.Headers.Authorization =
+                            new AuthenticationHeaderValue(
+                                "Basic", Convert.ToBase64String(
+                                    System.Text.ASCIIEncoding.ASCII.GetBytes(
+                                        $"{username}:{password}")));
+
+
+                        string postContent = "{'text':'" + messageP44 + "'}";
+                        request.Content = new StringContent(postContent);
+
+
+                        request.Content.Headers.ContentType = MediaTypeHeaderValue.Parse("application/json");
+
+                        var response = await httpClient.SendAsync(request);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                SentrySdk.CaptureException(ex);
+            }
+            //Now we do a bunch of checks before posting to P44.
         }
     }
 }

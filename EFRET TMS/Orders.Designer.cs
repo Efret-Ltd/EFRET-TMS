@@ -279,7 +279,7 @@ namespace EFRET_TMS
             this.colIdCO.OptionsColumn.AllowEdit = false;
             this.colIdCO.Visible = true;
             this.colIdCO.VisibleIndex = 2;
-            this.colIdCO.Width = 46;
+            this.colIdCO.Width = 36;
             // 
             // colNewCO
             // 
@@ -288,7 +288,7 @@ namespace EFRET_TMS
             this.colNewCO.OptionsColumn.AllowEdit = false;
             this.colNewCO.Visible = true;
             this.colNewCO.VisibleIndex = 1;
-            this.colNewCO.Width = 130;
+            this.colNewCO.Width = 51;
             // 
             // colDateCreation
             // 
@@ -303,7 +303,7 @@ namespace EFRET_TMS
             this.colDateUpdate.OptionsColumn.AllowEdit = false;
             this.colDateUpdate.Visible = true;
             this.colDateUpdate.VisibleIndex = 6;
-            this.colDateUpdate.Width = 92;
+            this.colDateUpdate.Width = 51;
             // 
             // colIdContractHolder
             // 
@@ -312,7 +312,7 @@ namespace EFRET_TMS
             this.colIdContractHolder.OptionsColumn.AllowEdit = false;
             this.colIdContractHolder.Visible = true;
             this.colIdContractHolder.VisibleIndex = 0;
-            this.colIdContractHolder.Width = 98;
+            this.colIdContractHolder.Width = 78;
             // 
             // colContractHolderReference
             // 
@@ -386,7 +386,7 @@ namespace EFRET_TMS
             this.colComment.Name = "colComment";
             this.colComment.Visible = true;
             this.colComment.VisibleIndex = 5;
-            this.colComment.Width = 269;
+            this.colComment.Width = 59;
             // 
             // colInvoiceInGBP
             // 
@@ -407,7 +407,7 @@ namespace EFRET_TMS
             this.colContractHolderEmail.OptionsColumn.AllowEdit = false;
             this.colContractHolderEmail.Visible = true;
             this.colContractHolderEmail.VisibleIndex = 10;
-            this.colContractHolderEmail.Width = 227;
+            this.colContractHolderEmail.Width = 57;
             // 
             // colContractHolderTel
             // 
@@ -427,12 +427,18 @@ namespace EFRET_TMS
             this.colTrailerNumber.FieldName = "TrailerNumber";
             this.colTrailerNumber.Name = "colTrailerNumber";
             this.colTrailerNumber.OptionsColumn.AllowEdit = false;
+            this.colTrailerNumber.Visible = true;
+            this.colTrailerNumber.VisibleIndex = 12;
+            this.colTrailerNumber.Width = 33;
             // 
             // colTrailerTypeAutorised
             // 
             this.colTrailerTypeAutorised.FieldName = "TrailerTypeAutorised";
             this.colTrailerTypeAutorised.Name = "colTrailerTypeAutorised";
             this.colTrailerTypeAutorised.OptionsColumn.AllowEdit = false;
+            this.colTrailerTypeAutorised.Visible = true;
+            this.colTrailerTypeAutorised.VisibleIndex = 13;
+            this.colTrailerTypeAutorised.Width = 47;
             // 
             // colInterModal
             // 
@@ -447,7 +453,7 @@ namespace EFRET_TMS
             this.colInvoiced.OptionsColumn.AllowEdit = false;
             this.colInvoiced.Visible = true;
             this.colInvoiced.VisibleIndex = 11;
-            this.colInvoiced.Width = 62;
+            this.colInvoiced.Width = 32;
             // 
             // colUserCreation
             // 
@@ -456,7 +462,7 @@ namespace EFRET_TMS
             this.colUserCreation.OptionsColumn.AllowEdit = false;
             this.colUserCreation.Visible = true;
             this.colUserCreation.VisibleIndex = 7;
-            this.colUserCreation.Width = 113;
+            this.colUserCreation.Width = 57;
             // 
             // colUserUpdate
             // 
@@ -505,7 +511,9 @@ namespace EFRET_TMS
             this.colStopOver1.FieldName = "StopOver1";
             this.colStopOver1.Name = "colStopOver1";
             this.colStopOver1.OptionsColumn.AllowEdit = false;
-            this.colStopOver1.Width = 78;
+            this.colStopOver1.Visible = true;
+            this.colStopOver1.VisibleIndex = 14;
+            this.colStopOver1.Width = 89;
             // 
             // colStopOver2
             // 
@@ -562,7 +570,7 @@ namespace EFRET_TMS
             this.colLine.OptionsColumn.AllowEdit = false;
             this.colLine.Visible = true;
             this.colLine.VisibleIndex = 9;
-            this.colLine.Width = 148;
+            this.colLine.Width = 24;
             // 
             // colInvoiceEDI
             // 
@@ -631,7 +639,7 @@ namespace EFRET_TMS
             this.colCorridor.OptionsColumn.AllowEdit = false;
             this.colCorridor.Visible = true;
             this.colCorridor.VisibleIndex = 8;
-            this.colCorridor.Width = 84;
+            this.colCorridor.Width = 43;
             // 
             // colCoS
             // 
@@ -664,7 +672,7 @@ namespace EFRET_TMS
             this.colP44ShipmentID.OptionsColumn.AllowEdit = false;
             this.colP44ShipmentID.Visible = true;
             this.colP44ShipmentID.VisibleIndex = 3;
-            this.colP44ShipmentID.Width = 84;
+            this.colP44ShipmentID.Width = 82;
             // 
             // colP44LastUpdate
             // 
@@ -679,7 +687,7 @@ namespace EFRET_TMS
             this.colP44StatusCode.OptionsColumn.AllowEdit = false;
             this.colP44StatusCode.Visible = true;
             this.colP44StatusCode.VisibleIndex = 4;
-            this.colP44StatusCode.Width = 86;
+            this.colP44StatusCode.Width = 83;
             // 
             // colP44ReasonCode
             // 

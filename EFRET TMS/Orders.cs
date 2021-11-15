@@ -38,8 +38,6 @@ namespace EFRET_TMS
 
         private void Orders_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'axsDataSet1.DataTable1' table. You can move, or remove it, as needed.
-            //  this.dataTable1TableAdapter.Fill(axsDataSet1.DataTable1);
 
         }
 
@@ -97,7 +95,10 @@ namespace EFRET_TMS
                                 {
                                     RadMessageBox.Show("No Tracking Available: Investigation Needed");
                                 }
-
+                                if(row["P44ReasonDescription"] == null)
+                                {
+                                    RadMessageBox.Show("No Tracking Available: Contact IT");
+                                }
                                 RadMessageBox.Show("No Tracking Available: " + row["P44ReasonDescription"]);
 
                             }
