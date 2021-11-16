@@ -34,9 +34,11 @@
             this.roundRectShapeForm = new Telerik.WinControls.RoundRectShape(this.components);
             this.vatCheckButton = new Syncfusion.WinForms.Controls.SfButton();
             this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
+            this.sfButton3 = new Syncfusion.WinForms.Controls.SfButton();
             this.sfButton2 = new Syncfusion.WinForms.Controls.SfButton();
             this.sfButton1 = new Syncfusion.WinForms.Controls.SfButton();
-            this.sfButton3 = new Syncfusion.WinForms.Controls.SfButton();
+            this.sfButton4 = new Syncfusion.WinForms.Controls.SfButton();
+            this.sfButton5 = new Syncfusion.WinForms.Controls.SfButton();
             ((System.ComponentModel.ISupportInitialize)(this.radTitleBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
             this.tablePanel1.SuspendLayout();
@@ -82,6 +84,8 @@
             this.tablePanel1.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 27.08F),
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 28.88F)});
+            this.tablePanel1.Controls.Add(this.sfButton5);
+            this.tablePanel1.Controls.Add(this.sfButton4);
             this.tablePanel1.Controls.Add(this.sfButton3);
             this.tablePanel1.Controls.Add(this.sfButton2);
             this.tablePanel1.Controls.Add(this.sfButton1);
@@ -92,9 +96,23 @@
             this.tablePanel1.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F)});
             this.tablePanel1.Size = new System.Drawing.Size(400, 349);
             this.tablePanel1.TabIndex = 3;
+            // 
+            // sfButton3
+            // 
+            this.sfButton3.AccessibleName = "Button";
+            this.tablePanel1.SetColumn(this.sfButton3, 1);
+            this.sfButton3.FocusRectangleVisible = true;
+            this.sfButton3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
+            this.sfButton3.Location = new System.Drawing.Point(197, 29);
+            this.sfButton3.Name = "sfButton3";
+            this.tablePanel1.SetRow(this.sfButton3, 1);
+            this.sfButton3.Size = new System.Drawing.Size(200, 20);
+            this.sfButton3.TabIndex = 5;
+            this.sfButton3.Text = "EDI";
             // 
             // sfButton2
             // 
@@ -124,18 +142,33 @@
             this.sfButton1.Text = "Domain Whois";
             this.sfButton1.Click += new System.EventHandler(this.sfButton1_Click);
             // 
-            // sfButton3
+            // sfButton4
             // 
-            this.sfButton3.AccessibleName = "Button";
-            this.tablePanel1.SetColumn(this.sfButton3, 1);
-            this.sfButton3.FocusRectangleVisible = true;
-            this.sfButton3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-            this.sfButton3.Location = new System.Drawing.Point(197, 29);
-            this.sfButton3.Name = "sfButton3";
-            this.tablePanel1.SetRow(this.sfButton3, 1);
-            this.sfButton3.Size = new System.Drawing.Size(200, 20);
-            this.sfButton3.TabIndex = 5;
-            this.sfButton3.Text = "EDI";
+            this.sfButton4.AccessibleName = "Button";
+            this.tablePanel1.SetColumn(this.sfButton4, 1);
+            this.sfButton4.FocusRectangleVisible = true;
+            this.sfButton4.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
+            this.sfButton4.Location = new System.Drawing.Point(197, 55);
+            this.sfButton4.Name = "sfButton4";
+            this.tablePanel1.SetRow(this.sfButton4, 2);
+            this.sfButton4.Size = new System.Drawing.Size(200, 20);
+            this.sfButton4.TabIndex = 6;
+            this.sfButton4.Text = "Reset CO for P44";
+            this.sfButton4.Click += new System.EventHandler(this.sfButton4_Click);
+            // 
+            // sfButton5
+            // 
+            this.sfButton5.AccessibleName = "Button";
+            this.tablePanel1.SetColumn(this.sfButton5, 0);
+            this.sfButton5.FocusRectangleVisible = true;
+            this.sfButton5.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
+            this.sfButton5.Location = new System.Drawing.Point(3, 55);
+            this.sfButton5.Name = "sfButton5";
+            this.tablePanel1.SetRow(this.sfButton5, 2);
+            this.sfButton5.Size = new System.Drawing.Size(188, 20);
+            this.sfButton5.TabIndex = 7;
+            this.sfButton5.Text = "Onboard to P44";
+            this.sfButton5.Click += new System.EventHandler(this.sfButton5_Click);
             // 
             // ToolsUtiltiesMenu
             // 
@@ -164,5 +197,7 @@
         private Syncfusion.WinForms.Controls.SfButton sfButton1;
         private Syncfusion.WinForms.Controls.SfButton sfButton2;
         private Syncfusion.WinForms.Controls.SfButton sfButton3;
+        private Syncfusion.WinForms.Controls.SfButton sfButton4;
+        private Syncfusion.WinForms.Controls.SfButton sfButton5;
     }
 }

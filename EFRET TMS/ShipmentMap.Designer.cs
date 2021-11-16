@@ -47,15 +47,21 @@
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.taskbarAssistant1 = new DevExpress.Utils.Taskbar.TaskbarAssistant();
-            this.radRibbonBar2 = new Telerik.WinControls.UI.RadRibbonBar();
-            this.ribbonTab1 = new Telerik.WinControls.UI.RibbonTab();
+            this.navigationBarItem1 = new DevExpress.XtraBars.Navigation.NavigationBarItem();
+            this.navigationBarItem2 = new DevExpress.XtraBars.Navigation.NavigationBarItem();
+            this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.radTitleBar1 = new Telerik.WinControls.UI.RadTitleBar();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
             this.panel1.SuspendLayout();
             this.sidePanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radRibbonBar2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
+            this.tablePanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radTitleBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -79,18 +85,20 @@
             // 
             this.panel1.Controls.Add(this.sidePanel1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 159);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(797, 372);
+            this.panel1.Size = new System.Drawing.Size(824, 531);
             this.panel1.TabIndex = 2;
             // 
             // sidePanel1
             // 
+            this.sidePanel1.Controls.Add(this.radTitleBar1);
+            this.sidePanel1.Controls.Add(this.tablePanel1);
             this.sidePanel1.Controls.Add(this.radPictureBox1);
             this.sidePanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.sidePanel1.Location = new System.Drawing.Point(0, 0);
             this.sidePanel1.Name = "sidePanel1";
-            this.sidePanel1.Size = new System.Drawing.Size(797, 372);
+            this.sidePanel1.Size = new System.Drawing.Size(824, 531);
             this.sidePanel1.TabIndex = 2;
             this.sidePanel1.Text = "sidePanel1";
             // 
@@ -101,7 +109,7 @@
             this.radPictureBox1.ImageLayout = Telerik.WinControls.UI.RadImageLayout.Stretch;
             this.radPictureBox1.Location = new System.Drawing.Point(0, 0);
             this.radPictureBox1.Name = "radPictureBox1";
-            this.radPictureBox1.Size = new System.Drawing.Size(797, 372);
+            this.radPictureBox1.Size = new System.Drawing.Size(824, 531);
             this.radPictureBox1.TabIndex = 0;
             this.radPictureBox1.ThemeName = "Office2019Gray";
             // 
@@ -152,7 +160,7 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(797, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(824, 0);
             // 
             // barDockControlBottom
             // 
@@ -160,7 +168,7 @@
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 531);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(797, 21);
+            this.barDockControlBottom.Size = new System.Drawing.Size(824, 21);
             // 
             // barDockControlLeft
             // 
@@ -174,7 +182,7 @@
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(797, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(824, 0);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 531);
             // 
@@ -190,32 +198,75 @@
             // 
             this.taskbarAssistant1.ParentControl = this;
             // 
-            // radRibbonBar2
+            // navigationBarItem1
             // 
-            this.radRibbonBar2.CommandTabs.AddRange(new Telerik.WinControls.RadItem[] {
-            this.ribbonTab1});
-            this.radRibbonBar2.Location = new System.Drawing.Point(0, 0);
-            this.radRibbonBar2.Name = "radRibbonBar2";
-            this.radRibbonBar2.Size = new System.Drawing.Size(797, 159);
-            this.radRibbonBar2.TabIndex = 7;
-            this.radRibbonBar2.Text = "ShipmentMap";
-            this.radRibbonBar2.Click += new System.EventHandler(this.radRibbonBar2_Click);
+            this.navigationBarItem1.Name = "navigationBarItem1";
+            this.navigationBarItem1.Text = "";
             // 
-            // ribbonTab1
+            // navigationBarItem2
             // 
-            this.ribbonTab1.IsSelected = true;
-            this.ribbonTab1.Name = "ribbonTab1";
-            this.ribbonTab1.Text = "ETA";
-            this.ribbonTab1.UseMnemonic = false;
-            this.ribbonTab1.Click += new System.EventHandler(this.ribbonTab1_Click);
+            this.navigationBarItem2.Name = "navigationBarItem2";
+            this.navigationBarItem2.Text = "";
+            // 
+            // tablePanel1
+            // 
+            this.tablePanel1.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 29.99F),
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 30.01F)});
+            this.tablePanel1.Controls.Add(this.simpleButton2);
+            this.tablePanel1.Controls.Add(this.simpleButton1);
+            this.tablePanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tablePanel1.Location = new System.Drawing.Point(0, 490);
+            this.tablePanel1.Name = "tablePanel1";
+            this.tablePanel1.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 39F)});
+            this.tablePanel1.Size = new System.Drawing.Size(824, 41);
+            this.tablePanel1.TabIndex = 1;
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.AutoWidthInLayoutControl = true;
+            this.tablePanel1.SetColumn(this.simpleButton1, 0);
+            this.simpleButton1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.simpleButton1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
+            this.simpleButton1.Location = new System.Drawing.Point(3, 3);
+            this.simpleButton1.Name = "simpleButton1";
+            this.tablePanel1.SetRow(this.simpleButton1, 0);
+            this.simpleButton1.Size = new System.Drawing.Size(406, 35);
+            this.simpleButton1.TabIndex = 0;
+            this.simpleButton1.Text = "Zoom In";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            // 
+            // simpleButton2
+            // 
+            this.simpleButton2.AutoWidthInLayoutControl = true;
+            this.tablePanel1.SetColumn(this.simpleButton2, 1);
+            this.simpleButton2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.simpleButton2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton2.ImageOptions.SvgImage")));
+            this.simpleButton2.Location = new System.Drawing.Point(415, 3);
+            this.simpleButton2.Name = "simpleButton2";
+            this.tablePanel1.SetRow(this.simpleButton2, 0);
+            this.simpleButton2.Size = new System.Drawing.Size(406, 35);
+            this.simpleButton2.TabIndex = 1;
+            this.simpleButton2.Text = "Zoom Out";
+            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
+            // 
+            // radTitleBar1
+            // 
+            this.radTitleBar1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.radTitleBar1.Location = new System.Drawing.Point(0, 0);
+            this.radTitleBar1.Name = "radTitleBar1";
+            this.radTitleBar1.Size = new System.Drawing.Size(824, 28);
+            this.radTitleBar1.TabIndex = 2;
+            this.radTitleBar1.TabStop = false;
+            this.radTitleBar1.Text = "Shipment Location";
             // 
             // ShipmentMap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(797, 552);
+            this.ClientSize = new System.Drawing.Size(824, 552);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.radRibbonBar2);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
@@ -233,7 +284,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.radPictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radRibbonBar2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).EndInit();
+            this.tablePanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.radTitleBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -258,7 +311,11 @@
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
         private DevExpress.Utils.Taskbar.TaskbarAssistant taskbarAssistant1;
         private DevExpress.XtraEditors.SidePanel sidePanel1;
-        private Telerik.WinControls.UI.RadRibbonBar radRibbonBar2;
-        private Telerik.WinControls.UI.RibbonTab ribbonTab1;
+        private DevExpress.XtraBars.Navigation.NavigationBarItem navigationBarItem1;
+        private DevExpress.XtraBars.Navigation.NavigationBarItem navigationBarItem2;
+        private DevExpress.Utils.Layout.TablePanel tablePanel1;
+        private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private Telerik.WinControls.UI.RadTitleBar radTitleBar1;
     }
 }

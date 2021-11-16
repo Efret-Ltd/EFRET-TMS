@@ -39,5 +39,18 @@ namespace EFRET_TMS
                 SentrySdk.CaptureMessage(Environment.UserName + " accessed the ForceP44Upload function");
             }
         }
+
+        private void sfButton4_Click(object sender, EventArgs e)
+        {
+            RadForm1.LogMessage(Environment.UserName + " Accessed Reset P44 Upload form");
+            ResetP44Upload resetP44Upload = new ResetP44Upload();
+            resetP44Upload.Show();
+        }
+
+        private void sfButton5_Click(object sender, EventArgs e)
+        {
+            OnboardP44 OP44 = new OnboardP44("TESTCM");
+            OP44.Show();
+        }
     }
 }

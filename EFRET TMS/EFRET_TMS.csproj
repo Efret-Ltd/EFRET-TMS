@@ -421,6 +421,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MovementCO.xsd</DependentUpon>
     </Compile>
+    <Compile Include="OnboardP44.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OnboardP44.Designer.cs">
+      <DependentUpon>OnboardP44.cs</DependentUpon>
+    </Compile>
     <Compile Include="Orders.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -439,6 +445,12 @@
     </Compile>
     <Compile Include="RadForm1.Designer.cs">
       <DependentUpon>RadForm1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ResetP44Upload.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResetP44Upload.Designer.cs">
+      <DependentUpon>ResetP44Upload.cs</DependentUpon>
     </Compile>
     <Compile Include="ShipmentMap.cs">
       <SubType>Form</SubType>
@@ -517,6 +529,9 @@
     <EmbeddedResource Include="MailMerge.resx">
       <DependentUpon>MailMerge.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="OnboardP44.resx">
+      <DependentUpon>OnboardP44.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Orders.resx">
       <DependentUpon>Orders.cs</DependentUpon>
     </EmbeddedResource>
@@ -538,6 +553,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ResetP44Upload.resx">
+      <DependentUpon>ResetP44Upload.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ShipmentMap.resx">
       <DependentUpon>ShipmentMap.cs</DependentUpon>
     </EmbeddedResource>

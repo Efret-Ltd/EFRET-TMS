@@ -20,10 +20,6 @@ namespace EFRET_TMS
         {
         }
 
-        private void CompanyCreation()
-        {
-        }
-
 
         //We use this to generate new folders on the network location.
         private void FolderGen(string companyCode)
@@ -33,11 +29,6 @@ namespace EFRET_TMS
             if (!exists)
                 System.IO.Directory.CreateDirectory(networkLocation+companyCode);
 
-        }
-
-        //Company/Client Selection or Creation
-        private void CompanySelection()
-        {
         }
 
         private void ProcessEnd(object sender, CancelEventArgs e)

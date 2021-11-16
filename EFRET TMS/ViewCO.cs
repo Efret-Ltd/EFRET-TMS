@@ -3,11 +3,12 @@ using System;
 using System.Data;
 using System.Data.CData.MariaDB;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using Sentry;
 using Telerik.WinControls;
-
+using System.Windows.Forms;
 
 namespace EFRET_TMS
 {
@@ -23,6 +24,9 @@ namespace EFRET_TMS
         private int _trailerNumber;
         private int _isTrailerTypeAutorised;
         private string _coComment;
+        private string _cmrPath;
+        private string _p44long;
+        private string _p44lat;
         public ViewCo(int coid, object newCo, object contractId)
         {
             InitializeComponent();
@@ -30,6 +34,7 @@ namespace EFRET_TMS
             _chargingOrderId = coid;
             _newChargingOrder = newCo;
             _path = @"\\efret-app-01\Database\efret\2021\CustomerCO\" + cid + _newChargingOrder;
+            _cmrPath = @"https://cmr.efret.net/retrieve/cmr/" + contractId + "-" + newCo + "-CMR.pdf";
             GetCoDetails(_newChargingOrder.ToString());
             GetCoMovements(_newChargingOrder.ToString());
             GetCocmr(_chargingOrderId);
@@ -121,6 +126,8 @@ namespace EFRET_TMS
                             radMenuHeaderItem2.Text = reader["ContractHolderTel"].ToString();
                             radMenuHeaderItem3.Text = reader["ContractHolderMob"].ToString();
                             radMenuHeaderItem4.Text = reader["CostVATCode"].ToString();
+                            _p44lat = reader["P44Latitude"].ToString();
+                            _p44long = reader["P44Longitude"].ToString();
                             labelControl1.Text = @"Type: " + reader["TrailerTypeAutorised"];
                             if (reader["P44ShipmentID"].ToString() != "")
                             {
@@ -130,8 +137,12 @@ namespace EFRET_TMS
                             if (reader["TrailerNumber"].ToString() != "")
                             {
                                 barCheckItem1.Checked = true;
-
+                                bool EfretTrailer = reader["TrailerNumber"].ToString().StartsWith("EFRU");
                                 //We add value so P44 Checklist tallies
+                                if (EfretTrailer)
+                                {
+                                    radCheckBox1.Checked = true;
+                                }
                                 _trailerNumber = 1;
                             }
                             if (reader["TrailerTypeAutorised"].ToString() != "")
@@ -178,6 +189,7 @@ namespace EFRET_TMS
             if (_shipmentId != null)
             {
                 barStaticItem1.Caption = _shipmentId;
+                barButtonItem14.Visibility = BarItemVisibility.Always;
             }
 
         }
@@ -345,6 +357,41 @@ namespace EFRET_TMS
         private void simpleButton1_Click(object sender, EventArgs e)
         {
             RadMessageBox.Show(_coComment);
+        }
+
+        private void barButtonItem10_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            // We View the CMR from the portal.
+            // e.g https://cmr.efret.net/retrieve/cmr/AMALOG-116HK179Y-CMR.pdf
+            //TODO: download PDF locally, use own PDF libs to manipulate the file.
+            Process.Start(_cmrPath);
+        }
+
+        private void barButtonItem14_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (_p44lat != "0" || _p44long != "0")
+            {
+                ShipmentMap sMap = new ShipmentMap(_chargingOrderId, _p44lat.ToString(), _p44long.ToString());
+                /*
+             * TODO: Add more user controls on shipment map. Allow the user to control the zoom level. Refresh data.
+             */
+                sMap.Show();
+
+            }
+        }
+
+        //Email CO
+        private void barButtonItem4_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            DialogResult dialogResult = RadMessageBox.Show("Sure", "Send Confirmation Report to Carrier", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                //do something
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                //do something else
+            }
         }
     }
 }

@@ -2,55 +2,61 @@
 using RestSharp;
 using Sentry;
 using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Net;
+using DevExpress.XtraBars.Navigation;
 
 
 namespace EFRET_TMS
 {
     public sealed partial class ShipmentMap : Telerik.WinControls.UI.RadRibbonForm
     {
+        private string _p44Lat;
+        private string _p44Long;
+        private int _zoom;
         public ShipmentMap(int coid, string latitude, string longitude)
         {
         InitializeComponent();
-         radRibbonBar2.Expanded = false;
-          Text = @"Shipment tracking for: " + coid;
-          GetMapFromCoords(latitude, longitude);
+        _p44Lat = latitude;
+         _p44Long = longitude;
+
+         Text = @"Shipment tracking for: " + coid;
+          GetMapFromCoords(latitude, longitude,20);
           GetStreetName(latitude, longitude);
         }
 
-        public void GetMapFromCoords(string latitude, string longitude)
+        public void GetMapFromCoords(string latitude, string longitude,int zoom)
         {
-
+            _zoom = zoom;
+            _p44Lat = latitude;
+            _p44Long = longitude;
             string coords = latitude + "," + longitude;
             int pictureWidth = 1024;
             int pictureHeight = 1024;
-            int zoom = 17;
 
 
             HttpWebRequest mapRequest = (HttpWebRequest)WebRequest.Create(
                 "https://image.maps.ls.hereapi.com/mia/1.6/mapview?c=" + coords +
-                "&z=" + zoom + "&apiKey=JdeLHTyZLIIKCjldtL0VTEMuXvaGIzkVdIFvLx8yD84&w=" + pictureWidth + "&h=" + pictureHeight + "");
+                "&z=" + _zoom + "&apiKey=JdeLHTyZLIIKCjldtL0VTEMuXvaGIzkVdIFvLx8yD84&w=" + pictureWidth + "&h=" + pictureHeight + "");
             try
             {
                 // returned values are returned as a stream, then read into a string
                 using (HttpWebResponse mapResponse = (HttpWebResponse)mapRequest.GetResponse())
                 {
-                    if (mapResponse != null)
-                        using (BinaryReader reader = new BinaryReader(mapResponse.GetResponseStream()))
+                    using (BinaryReader reader = new BinaryReader(mapResponse.GetResponseStream()))
+                    {
+                        byte[] lnByte = reader.ReadBytes(1 * 2048 * 2048 * 10);
+                        using (MemoryStream ms = new MemoryStream(lnByte))
                         {
-                            byte[] lnByte = reader.ReadBytes(1 * 2048 * 2048 * 10);
-                            using (MemoryStream ms = new MemoryStream(lnByte))
-                            {
-                                radPictureBox1.Image = Image.FromStream(ms);
-                                ms.Close();
-                            }
-
-                            reader.Close();
-                            reader.Dispose();
+                            radPictureBox1.Image = Image.FromStream(ms);
+                            radPictureBox1.Refresh();
+                            ms.Close();
                         }
+
+                        reader.Close();
+                        reader.Dispose();
+                    }
                 }
             }
             catch (Exception ex)
@@ -114,16 +120,11 @@ namespace EFRET_TMS
             public ReferencePosition ReferencePosition { get; set; }
             public Address Address { get; set; }
             public string FormattedAddress { get; set; }
-            /*
-            public Quality Quality { get; set; }
-*/
         }
 
         public class Root
         {
-/*
-            public List<Loc> Locations { get; set; }
-*/
+
         }
 
 
@@ -141,6 +142,31 @@ namespace EFRET_TMS
         private void radRibbonBar2_Click(object sender, EventArgs e)
         {
 
+        }
+        // ZOOOOOOOOOOOOOOOOOOOOOOOM
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            if(_zoom <20)
+            {
+                _zoom = _zoom + 1;
+            GetMapFromCoords(_p44Lat, _p44Long, _zoom);
+            radPictureBox1.Invalidate();
+            }
+        }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            if (_zoom > 0)
+            {
+                _zoom = _zoom - 1;
+                GetMapFromCoords(_p44Lat, _p44Long, _zoom);
+                radPictureBox1.Invalidate();
+            }
+        }
+
+        private void commandBarButton1_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
