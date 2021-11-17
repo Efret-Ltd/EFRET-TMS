@@ -28,23 +28,48 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CoCreation));
+            this.axsDataSet = new EFRET_TMS.AxsDataSet();
+            this.axsDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.newCOBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.axsDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.axsDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.newCOBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // COCreation
+            // axsDataSet
             // 
-            this.AutoSize = true;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(546, 435);
-            this.HelpButton = true;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
+            this.axsDataSet.DataSetName = "axsDataSet";
+            this.axsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // axsDataSetBindingSource
+            // 
+            this.axsDataSetBindingSource.DataSource = this.axsDataSet;
+            this.axsDataSetBindingSource.Position = 0;
+            // 
+            // newCOBindingSource
+            // 
+            this.newCOBindingSource.DataMember = "NewCO";
+            this.newCOBindingSource.DataSource = this.axsDataSetBindingSource;
+            // 
+            // CoCreation
+            // 
+            this.ClientSize = new System.Drawing.Size(917, 490);
+            this.IconOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("CoCreation.IconOptions.SvgImage")));
             this.Name = "CoCreation";
-            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Load += new System.EventHandler(this.COCreation_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.axsDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.axsDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.newCOBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private AxsDataSet axsDataSet;
+        private System.Windows.Forms.BindingSource axsDataSetBindingSource;
+        private System.Windows.Forms.BindingSource newCOBindingSource;
     }
 }

@@ -34,14 +34,17 @@
             this.roundRectShapeForm = new Telerik.WinControls.RoundRectShape(this.components);
             this.vatCheckButton = new Syncfusion.WinForms.Controls.SfButton();
             this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
+            this.ultraButton1 = new Infragistics.Win.Misc.UltraButton();
+            this.sfButton5 = new Syncfusion.WinForms.Controls.SfButton();
+            this.sfButton4 = new Syncfusion.WinForms.Controls.SfButton();
             this.sfButton3 = new Syncfusion.WinForms.Controls.SfButton();
             this.sfButton2 = new Syncfusion.WinForms.Controls.SfButton();
             this.sfButton1 = new Syncfusion.WinForms.Controls.SfButton();
-            this.sfButton4 = new Syncfusion.WinForms.Controls.SfButton();
-            this.sfButton5 = new Syncfusion.WinForms.Controls.SfButton();
+            this.uDesktopAlert1 = new Infragistics.Win.Misc.UltraDesktopAlert(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.radTitleBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
             this.tablePanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.uDesktopAlert1)).BeginInit();
             this.SuspendLayout();
             // 
             // radTitleBar1
@@ -84,6 +87,7 @@
             this.tablePanel1.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 27.08F),
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 28.88F)});
+            this.tablePanel1.Controls.Add(this.ultraButton1);
             this.tablePanel1.Controls.Add(this.sfButton5);
             this.tablePanel1.Controls.Add(this.sfButton4);
             this.tablePanel1.Controls.Add(this.sfButton3);
@@ -97,9 +101,49 @@
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F)});
             this.tablePanel1.Size = new System.Drawing.Size(400, 349);
             this.tablePanel1.TabIndex = 3;
+            // 
+            // ultraButton1
+            // 
+            this.tablePanel1.SetColumn(this.ultraButton1, 1);
+            this.ultraButton1.Location = new System.Drawing.Point(197, 81);
+            this.ultraButton1.Name = "ultraButton1";
+            this.tablePanel1.SetRow(this.ultraButton1, 3);
+            this.ultraButton1.Size = new System.Drawing.Size(200, 20);
+            this.ultraButton1.TabIndex = 8;
+            this.ultraButton1.Text = "Reactivate CO";
+            this.ultraButton1.Click += new System.EventHandler(this.ultraButton1_Click);
+            // 
+            // sfButton5
+            // 
+            this.sfButton5.AccessibleName = "Button";
+            this.tablePanel1.SetColumn(this.sfButton5, 0);
+            this.sfButton5.FocusRectangleVisible = true;
+            this.sfButton5.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
+            this.sfButton5.Location = new System.Drawing.Point(3, 55);
+            this.sfButton5.Name = "sfButton5";
+            this.tablePanel1.SetRow(this.sfButton5, 2);
+            this.sfButton5.Size = new System.Drawing.Size(188, 20);
+            this.sfButton5.TabIndex = 7;
+            this.sfButton5.Text = "Onboard to P44";
+            this.sfButton5.Click += new System.EventHandler(this.sfButton5_Click);
+            // 
+            // sfButton4
+            // 
+            this.sfButton4.AccessibleName = "Button";
+            this.tablePanel1.SetColumn(this.sfButton4, 1);
+            this.sfButton4.FocusRectangleVisible = true;
+            this.sfButton4.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
+            this.sfButton4.Location = new System.Drawing.Point(197, 55);
+            this.sfButton4.Name = "sfButton4";
+            this.tablePanel1.SetRow(this.sfButton4, 2);
+            this.sfButton4.Size = new System.Drawing.Size(200, 20);
+            this.sfButton4.TabIndex = 6;
+            this.sfButton4.Text = "Reset CO for P44";
+            this.sfButton4.Click += new System.EventHandler(this.sfButton4_Click);
             // 
             // sfButton3
             // 
@@ -142,33 +186,10 @@
             this.sfButton1.Text = "Domain Whois";
             this.sfButton1.Click += new System.EventHandler(this.sfButton1_Click);
             // 
-            // sfButton4
+            // uDesktopAlert1
             // 
-            this.sfButton4.AccessibleName = "Button";
-            this.tablePanel1.SetColumn(this.sfButton4, 1);
-            this.sfButton4.FocusRectangleVisible = true;
-            this.sfButton4.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-            this.sfButton4.Location = new System.Drawing.Point(197, 55);
-            this.sfButton4.Name = "sfButton4";
-            this.tablePanel1.SetRow(this.sfButton4, 2);
-            this.sfButton4.Size = new System.Drawing.Size(200, 20);
-            this.sfButton4.TabIndex = 6;
-            this.sfButton4.Text = "Reset CO for P44";
-            this.sfButton4.Click += new System.EventHandler(this.sfButton4_Click);
-            // 
-            // sfButton5
-            // 
-            this.sfButton5.AccessibleName = "Button";
-            this.tablePanel1.SetColumn(this.sfButton5, 0);
-            this.sfButton5.FocusRectangleVisible = true;
-            this.sfButton5.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-            this.sfButton5.Location = new System.Drawing.Point(3, 55);
-            this.sfButton5.Name = "sfButton5";
-            this.tablePanel1.SetRow(this.sfButton5, 2);
-            this.sfButton5.Size = new System.Drawing.Size(188, 20);
-            this.sfButton5.TabIndex = 7;
-            this.sfButton5.Text = "Onboard to P44";
-            this.sfButton5.Click += new System.EventHandler(this.sfButton5_Click);
+            this.uDesktopAlert1.AnimationSpeed = Infragistics.Win.Misc.AnimationSpeed.Medium;
+            this.uDesktopAlert1.AnimationStyleAutoClose = Infragistics.Win.Misc.AnimationStyle.Fade;
             // 
             // ToolsUtiltiesMenu
             // 
@@ -183,6 +204,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radTitleBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).EndInit();
             this.tablePanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.uDesktopAlert1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -199,5 +221,7 @@
         private Syncfusion.WinForms.Controls.SfButton sfButton3;
         private Syncfusion.WinForms.Controls.SfButton sfButton4;
         private Syncfusion.WinForms.Controls.SfButton sfButton5;
+        private Infragistics.Win.Misc.UltraButton ultraButton1;
+        private Infragistics.Win.Misc.UltraDesktopAlert uDesktopAlert1;
     }
 }

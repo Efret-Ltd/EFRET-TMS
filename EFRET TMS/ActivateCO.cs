@@ -1,25 +1,30 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 using Sentry;
-using Telerik.WinControls;
 
 namespace EFRET_TMS
 {
-    public partial class CoCreation : DevExpress.XtraEditors.XtraForm
+    public partial class ActivateCO : UserControl
     {
-        public CoCreation()
+        private string _newCO;
+        public ActivateCO()
         {
             InitializeComponent();
-            InitializeCo();
         }
 
-        private void InitializeCo()
-        {
-            Random rnd = new Random();
-            var user = Environment.UserName;
-            int randomNo = rnd.Next(100);
+        private void ultraButton1_Click(object sender, EventArgs e)
 
-            string queryString = "INSERT INTO [axs].[dbo].[NewCO] (NewCO, UserCreation) VALUES ('" + randomNo + "','" + user + "'"; ;
+        {
+            _newCO = ultraFormattedTextEditor1.Text;
+            string queryString = "UPDATE [axs].[dbo].[NewCO] SET Actif = 0 WHERE NewCO = '" + _newCO + "'";
             string connectionString = @"Server=EFRET-APP-01\EFRET;Database=axs;Trusted_Connection=True;";
 
             try
@@ -35,12 +40,14 @@ namespace EFRET_TMS
                     {
                         if (affectedRows <= 0)
                         {
+                            ultraStatusBar1.Text = _newCO + " was not found. Nothing changed.";
 
                             // Houston, we have a problem.
                         }
                         else
                         {
-                            RadMessageBox.Show("CO: " + randomNo);
+                            RadForm1.LogMessage(Environment.UserName + " reactivated " + _newCO);
+                            ultraStatusBar1.Text = _newCO + " has been activated.";
                         }
 
                     }
@@ -54,18 +61,6 @@ namespace EFRET_TMS
             {
                 SentrySdk.CaptureException(ex);
             }
-        }
-
-    
-
-        private void COCreation_Load(object sender, EventArgs e)
-        {
-            RadForm1.LogMessage(Environment.UserName + " Started CO Creation ");
-        }
-
-        private void ultraNavigationBar1_SelectedLocationChanged(object sender, Infragistics.Win.Misc.UltraWinNavigationBar.SelectedLocationChangedEventArgs e)
-        {
-
         }
     }
 }

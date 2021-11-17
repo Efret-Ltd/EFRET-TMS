@@ -33,9 +33,6 @@ namespace EFRET_TMS
             DevExpress.XtraBars.Ribbon.GalleryItemGroup galleryItemGroup1 = new DevExpress.XtraBars.Ribbon.GalleryItemGroup();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewCo));
             DevExpress.Utils.Animation.PushTransition pushTransition1 = new DevExpress.Utils.Animation.PushTransition();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem1 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem2 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem3 = new Telerik.WinControls.UI.RadListDataItem();
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.ribbonGalleryBarItem1 = new DevExpress.XtraBars.RibbonGalleryBarItem();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
@@ -62,10 +59,16 @@ namespace EFRET_TMS
             this.barButtonItem12 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem13 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem14 = new DevExpress.XtraBars.BarButtonItem();
+            this.barEditItem1 = new DevExpress.XtraBars.BarEditItem();
+            this.repositoryItemTextEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
+            this.barStaticItem2 = new DevExpress.XtraBars.BarStaticItem();
+            this.barEditItem2 = new DevExpress.XtraBars.BarEditItem();
+            this.repositoryItemTextEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -75,6 +78,7 @@ namespace EFRET_TMS
             this.ribbonPage5 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.repositoryItemSearchControl1 = new DevExpress.XtraEditors.Repository.RepositoryItemSearchControl();
+            this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.workspaceManager1 = new DevExpress.Utils.WorkspaceManager(this.components);
             this.ribbonPage7 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -143,36 +147,31 @@ namespace EFRET_TMS
             this.movementBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.goodsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.goodsTableAdapter = new EFRET_TMS.COInstanceTableAdapters.GoodsTableAdapter();
-            this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
-            this.radCheckBox1 = new Telerik.WinControls.UI.RadCheckBox();
-            this.radLabel5 = new Telerik.WinControls.UI.RadLabel();
-            this.radLabel4 = new Telerik.WinControls.UI.RadLabel();
-            this.radLabel3 = new Telerik.WinControls.UI.RadLabel();
-            this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
-            this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.radDropDownButton2 = new Telerik.WinControls.UI.RadDropDownButton();
-            this.radMenuItem7 = new Telerik.WinControls.UI.RadMenuItem();
-            this.radMenuItem8 = new Telerik.WinControls.UI.RadMenuItem();
-            this.radDropDownButton1 = new Telerik.WinControls.UI.RadDropDownButton();
-            this.radMenuItem4 = new Telerik.WinControls.UI.RadMenuItem();
-            this.radMenuHeaderItem4 = new Telerik.WinControls.UI.RadMenuHeaderItem();
-            this.radMenuItem5 = new Telerik.WinControls.UI.RadMenuItem();
-            this.radMenuItem6 = new Telerik.WinControls.UI.RadMenuItem();
-            this.radSplitButton1 = new Telerik.WinControls.UI.RadSplitButton();
-            this.radMenuItem1 = new Telerik.WinControls.UI.RadMenuItem();
-            this.radMenuHeaderItem1 = new Telerik.WinControls.UI.RadMenuHeaderItem();
-            this.radMenuItem2 = new Telerik.WinControls.UI.RadMenuItem();
-            this.radMenuHeaderItem2 = new Telerik.WinControls.UI.RadMenuHeaderItem();
-            this.radMenuItem3 = new Telerik.WinControls.UI.RadMenuItem();
-            this.radMenuHeaderItem3 = new Telerik.WinControls.UI.RadMenuHeaderItem();
-            this.radDropDownList1 = new Telerik.WinControls.UI.RadDropDownList();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.xtraOpenFileDialog1 = new DevExpress.XtraEditors.XtraOpenFileDialog(this.components);
             this.movementTableAdapter = new EFRET_TMS.MovementCOTableAdapters.MovementTableAdapter();
+            this.barEditItem3 = new DevExpress.XtraBars.BarEditItem();
+            this.barEditItem4 = new DevExpress.XtraBars.BarEditItem();
+            this.repositoryItemTextEdit4 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
+            this.barToggleSwitchItem1 = new DevExpress.XtraBars.BarToggleSwitchItem();
+            this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.barButtonGroup3 = new DevExpress.XtraBars.BarButtonGroup();
+            this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
+            this.barSubItem2 = new DevExpress.XtraBars.BarSubItem();
+            this.barButtonItem15 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem16 = new DevExpress.XtraBars.BarButtonItem();
+            this.barSubItem3 = new DevExpress.XtraBars.BarSubItem();
+            this.barStaticItem3 = new DevExpress.XtraBars.BarStaticItem();
+            this.barStaticItem4 = new DevExpress.XtraBars.BarStaticItem();
+            this.barButtonItem17 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem18 = new DevExpress.XtraBars.BarButtonItem();
+            this.barStaticItem5 = new DevExpress.XtraBars.BarStaticItem();
+            this.barEditItem5 = new DevExpress.XtraBars.BarEditItem();
+            this.repositoryItemComboBox1 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSearchControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.movementBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.movementCO)).BeginInit();
@@ -182,19 +181,8 @@ namespace EFRET_TMS
             ((System.ComponentModel.ISupportInitialize)(this.axsDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.movementBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.goodsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
-            this.tablePanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radCheckBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radDropDownButton2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radDropDownButton1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radSplitButton1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radDropDownList1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbon
@@ -230,9 +218,26 @@ namespace EFRET_TMS
             this.barButtonGroup2,
             this.barButtonItem12,
             this.barButtonItem13,
-            this.barButtonItem14});
+            this.barButtonItem14,
+            this.barEditItem1,
+            this.barStaticItem2,
+            this.barEditItem2,
+            this.barEditItem4,
+            this.barToggleSwitchItem1,
+            this.barButtonGroup3,
+            this.barSubItem1,
+            this.barSubItem2,
+            this.barButtonItem15,
+            this.barButtonItem16,
+            this.barSubItem3,
+            this.barStaticItem3,
+            this.barStaticItem4,
+            this.barButtonItem17,
+            this.barButtonItem18,
+            this.barStaticItem5,
+            this.barEditItem5});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 31;
+            this.ribbon.MaxItemId = 51;
             this.ribbon.Name = "ribbon";
             this.ribbon.PageHeaderItemLinks.Add(this.barLinkContainerItem1);
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -242,7 +247,12 @@ namespace EFRET_TMS
             this.ribbonPage4,
             this.ribbonPage5});
             this.ribbon.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemSearchControl1});
+            this.repositoryItemSearchControl1,
+            this.repositoryItemTextEdit1,
+            this.repositoryItemTextEdit2,
+            this.repositoryItemTextEdit3,
+            this.repositoryItemTextEdit4,
+            this.repositoryItemComboBox1});
             this.ribbon.Size = new System.Drawing.Size(914, 158);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             // 
@@ -437,6 +447,7 @@ namespace EFRET_TMS
             this.barButtonItem12.Id = 28;
             this.barButtonItem12.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem12.ImageOptions.SvgImage")));
             this.barButtonItem12.Name = "barButtonItem12";
+            this.barButtonItem12.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem12_ItemClick);
             // 
             // barButtonItem13
             // 
@@ -456,12 +467,44 @@ namespace EFRET_TMS
             this.barButtonItem14.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.barButtonItem14.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem14_ItemClick);
             // 
+            // barEditItem1
+            // 
+            this.barEditItem1.Caption = "Confirmation Order";
+            this.barEditItem1.Edit = this.repositoryItemTextEdit2;
+            this.barEditItem1.Id = 31;
+            this.barEditItem1.Name = "barEditItem1";
+            // 
+            // repositoryItemTextEdit2
+            // 
+            this.repositoryItemTextEdit2.AutoHeight = false;
+            this.repositoryItemTextEdit2.Name = "repositoryItemTextEdit2";
+            // 
+            // barStaticItem2
+            // 
+            this.barStaticItem2.Caption = "IDCO";
+            this.barStaticItem2.Id = 33;
+            this.barStaticItem2.Name = "barStaticItem2";
+            // 
+            // barEditItem2
+            // 
+            this.barEditItem2.Caption = "Line";
+            this.barEditItem2.Edit = this.repositoryItemTextEdit3;
+            this.barEditItem2.Id = 34;
+            this.barEditItem2.Name = "barEditItem2";
+            // 
+            // repositoryItemTextEdit3
+            // 
+            this.repositoryItemTextEdit3.AutoHeight = false;
+            this.repositoryItemTextEdit3.Name = "repositoryItemTextEdit3";
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup1,
             this.ribbonPageGroup2,
-            this.ribbonPageGroup7});
+            this.ribbonPageGroup7,
+            this.ribbonPageGroup8,
+            this.ribbonPageGroup9});
             this.ribbonPage1.Name = "ribbonPage1";
             this.ribbonPage1.Text = "Charging Order";
             // 
@@ -495,6 +538,21 @@ namespace EFRET_TMS
             this.ribbonPageGroup7.ItemLinks.Add(this.barButtonItem14);
             this.ribbonPageGroup7.Name = "ribbonPageGroup7";
             this.ribbonPageGroup7.Text = "Project44 Checklist";
+            // 
+            // ribbonPageGroup8
+            // 
+            this.ribbonPageGroup8.ItemLinks.Add(this.barStaticItem2);
+            this.ribbonPageGroup8.ItemLinks.Add(this.barEditItem1);
+            this.ribbonPageGroup8.ItemLinks.Add(this.barEditItem2);
+            this.ribbonPageGroup8.ItemLinks.Add(this.barEditItem4);
+            this.ribbonPageGroup8.ItemLinks.Add(this.barSubItem1);
+            this.ribbonPageGroup8.ItemLinks.Add(this.barSubItem2);
+            this.ribbonPageGroup8.ItemLinks.Add(this.barToggleSwitchItem1);
+            this.ribbonPageGroup8.ItemLinks.Add(this.barSubItem3);
+            this.ribbonPageGroup8.ItemLinks.Add(this.barEditItem5);
+            this.ribbonPageGroup8.ItemLinks.Add(this.barButtonItem17);
+            this.ribbonPageGroup8.Name = "ribbonPageGroup8";
+            this.ribbonPageGroup8.Text = "CO Details";
             // 
             // ribbonPage2
             // 
@@ -556,6 +614,11 @@ namespace EFRET_TMS
             new DevExpress.XtraEditors.Repository.SearchButton()});
             this.repositoryItemSearchControl1.Name = "repositoryItemSearchControl1";
             // 
+            // repositoryItemTextEdit1
+            // 
+            this.repositoryItemTextEdit1.AutoHeight = false;
+            this.repositoryItemTextEdit1.Name = "repositoryItemTextEdit1";
+            // 
             // ribbonStatusBar
             // 
             this.ribbonStatusBar.ItemLinks.Add(this.barButtonGroup2);
@@ -577,12 +640,12 @@ namespace EFRET_TMS
             // gridControl1
             // 
             this.gridControl1.DataSource = this.movementBindingSource1;
-            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.gridControl1.Location = new System.Drawing.Point(0, 251);
+            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl1.Location = new System.Drawing.Point(0, 158);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.MenuManager = this.ribbon;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(914, 377);
+            this.gridControl1.Size = new System.Drawing.Size(914, 470);
             this.gridControl1.TabIndex = 2;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -992,254 +1055,6 @@ namespace EFRET_TMS
             // 
             this.goodsTableAdapter.ClearBeforeFill = true;
             // 
-            // tablePanel1
-            // 
-            this.tablePanel1.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
-            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 37.68F),
-            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 35.42F),
-            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 44.18F),
-            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 56.76F),
-            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 35.96F)});
-            this.tablePanel1.Controls.Add(this.radCheckBox1);
-            this.tablePanel1.Controls.Add(this.radLabel5);
-            this.tablePanel1.Controls.Add(this.radLabel4);
-            this.tablePanel1.Controls.Add(this.radLabel3);
-            this.tablePanel1.Controls.Add(this.radLabel2);
-            this.tablePanel1.Controls.Add(this.radLabel1);
-            this.tablePanel1.Controls.Add(this.labelControl1);
-            this.tablePanel1.Controls.Add(this.simpleButton1);
-            this.tablePanel1.Controls.Add(this.radDropDownButton2);
-            this.tablePanel1.Controls.Add(this.radDropDownButton1);
-            this.tablePanel1.Controls.Add(this.radSplitButton1);
-            this.tablePanel1.Controls.Add(this.radDropDownList1);
-            this.tablePanel1.Controls.Add(this.textEdit1);
-            this.tablePanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tablePanel1.Location = new System.Drawing.Point(0, 158);
-            this.tablePanel1.Name = "tablePanel1";
-            this.tablePanel1.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
-            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F),
-            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F),
-            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 38F),
-            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F)});
-            this.tablePanel1.Size = new System.Drawing.Size(914, 113);
-            this.tablePanel1.TabIndex = 5;
-            // 
-            // radCheckBox1
-            // 
-            this.tablePanel1.SetColumn(this.radCheckBox1, 2);
-            this.radCheckBox1.Location = new System.Drawing.Point(321, 62);
-            this.radCheckBox1.Name = "radCheckBox1";
-            this.radCheckBox1.ReadOnly = true;
-            this.tablePanel1.SetRow(this.radCheckBox1, 2);
-            this.radCheckBox1.Size = new System.Drawing.Size(87, 18);
-            this.radCheckBox1.TabIndex = 24;
-            this.radCheckBox1.Text = "EFRET Trailer";
-            // 
-            // radLabel5
-            // 
-            this.tablePanel1.SetColumn(this.radLabel5, 2);
-            this.radLabel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radLabel5.Location = new System.Drawing.Point(321, 3);
-            this.radLabel5.Name = "radLabel5";
-            this.tablePanel1.SetRow(this.radLabel5, 0);
-            this.radLabel5.Size = new System.Drawing.Size(186, 20);
-            this.radLabel5.TabIndex = 23;
-            this.radLabel5.Text = "Created By";
-            // 
-            // radLabel4
-            // 
-            this.tablePanel1.SetColumn(this.radLabel4, 0);
-            this.radLabel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radLabel4.Location = new System.Drawing.Point(3, 29);
-            this.radLabel4.Name = "radLabel4";
-            this.tablePanel1.SetRow(this.radLabel4, 1);
-            this.radLabel4.Size = new System.Drawing.Size(158, 20);
-            this.radLabel4.TabIndex = 22;
-            this.radLabel4.Text = "IDCO";
-            // 
-            // radLabel3
-            // 
-            this.tablePanel1.SetColumn(this.radLabel3, 1);
-            this.radLabel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radLabel3.Location = new System.Drawing.Point(167, 3);
-            this.radLabel3.Name = "radLabel3";
-            this.tablePanel1.SetRow(this.radLabel3, 0);
-            this.radLabel3.Size = new System.Drawing.Size(148, 20);
-            this.radLabel3.TabIndex = 21;
-            this.radLabel3.Text = "Line";
-            // 
-            // radLabel2
-            // 
-            this.tablePanel1.SetColumn(this.radLabel2, 2);
-            this.radLabel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radLabel2.Location = new System.Drawing.Point(321, 29);
-            this.radLabel2.Name = "radLabel2";
-            this.tablePanel1.SetRow(this.radLabel2, 1);
-            this.radLabel2.Size = new System.Drawing.Size(186, 20);
-            this.radLabel2.TabIndex = 20;
-            this.radLabel2.Text = "Last Change By:";
-            // 
-            // radLabel1
-            // 
-            this.radLabel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radLabel1.Location = new System.Drawing.Point(513, 30);
-            this.radLabel1.Name = "radLabel1";
-            this.radLabel1.Size = new System.Drawing.Size(60, 18);
-            this.radLabel1.TabIndex = 19;
-            this.radLabel1.Text = "Rate € to £";
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Horizontal;
-            this.labelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelControl1.Location = new System.Drawing.Point(167, 32);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(79, 13);
-            this.labelControl1.TabIndex = 16;
-            this.labelControl1.Text = "Type Authorized";
-            // 
-            // simpleButton1
-            // 
-            this.simpleButton1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.simpleButton1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
-            this.simpleButton1.Location = new System.Drawing.Point(760, 55);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(151, 32);
-            this.simpleButton1.TabIndex = 15;
-            this.simpleButton1.Text = "View Comment";
-            this.simpleButton1.Visible = false;
-            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
-            // 
-            // radDropDownButton2
-            // 
-            this.radDropDownButton2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radDropDownButton2.Items.AddRange(new Telerik.WinControls.RadItem[] {
-            this.radMenuItem7,
-            this.radMenuItem8});
-            this.radDropDownButton2.Location = new System.Drawing.Point(167, 55);
-            this.radDropDownButton2.Name = "radDropDownButton2";
-            this.radDropDownButton2.Size = new System.Drawing.Size(148, 32);
-            this.radDropDownButton2.TabIndex = 13;
-            this.radDropDownButton2.Text = "Sales";
-            // 
-            // radMenuItem7
-            // 
-            this.radMenuItem7.Name = "radMenuItem7";
-            this.radMenuItem7.Text = "Sales Price";
-            // 
-            // radMenuItem8
-            // 
-            this.radMenuItem8.Name = "radMenuItem8";
-            this.radMenuItem8.Text = "Sales in £";
-            // 
-            // radDropDownButton1
-            // 
-            this.radDropDownButton1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radDropDownButton1.Items.AddRange(new Telerik.WinControls.RadItem[] {
-            this.radMenuItem4,
-            this.radMenuItem5,
-            this.radMenuItem6});
-            this.radDropDownButton1.Location = new System.Drawing.Point(3, 55);
-            this.radDropDownButton1.Name = "radDropDownButton1";
-            this.radDropDownButton1.Size = new System.Drawing.Size(158, 32);
-            this.radDropDownButton1.TabIndex = 12;
-            this.radDropDownButton1.Text = "VAT";
-            // 
-            // radMenuItem4
-            // 
-            this.radMenuItem4.Items.AddRange(new Telerik.WinControls.RadItem[] {
-            this.radMenuHeaderItem4});
-            this.radMenuItem4.Name = "radMenuItem4";
-            this.radMenuItem4.Text = "VAT Code";
-            // 
-            // radMenuHeaderItem4
-            // 
-            this.radMenuHeaderItem4.Name = "radMenuHeaderItem4";
-            this.radMenuHeaderItem4.Text = "radMenuHeaderItem4";
-            // 
-            // radMenuItem5
-            // 
-            this.radMenuItem5.Name = "radMenuItem5";
-            this.radMenuItem5.Text = "VAT Rate";
-            // 
-            // radMenuItem6
-            // 
-            this.radMenuItem6.Name = "radMenuItem6";
-            this.radMenuItem6.Text = "VAT Amount";
-            // 
-            // radSplitButton1
-            // 
-            this.radSplitButton1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radSplitButton1.Items.AddRange(new Telerik.WinControls.RadItem[] {
-            this.radMenuItem1,
-            this.radMenuItem2,
-            this.radMenuItem3});
-            this.radSplitButton1.Location = new System.Drawing.Point(513, 55);
-            this.radSplitButton1.Name = "radSplitButton1";
-            this.radSplitButton1.Size = new System.Drawing.Size(241, 32);
-            this.radSplitButton1.TabIndex = 10;
-            this.radSplitButton1.Text = "Contracter Holder Contacts";
-            // 
-            // radMenuItem1
-            // 
-            this.radMenuItem1.Items.AddRange(new Telerik.WinControls.RadItem[] {
-            this.radMenuHeaderItem1});
-            this.radMenuItem1.Name = "radMenuItem1";
-            this.radMenuItem1.Text = "Email";
-            // 
-            // radMenuHeaderItem1
-            // 
-            this.radMenuHeaderItem1.Name = "radMenuHeaderItem1";
-            this.radMenuHeaderItem1.Text = "radMenuHeaderItem1";
-            // 
-            // radMenuItem2
-            // 
-            this.radMenuItem2.Items.AddRange(new Telerik.WinControls.RadItem[] {
-            this.radMenuHeaderItem2});
-            this.radMenuItem2.Name = "radMenuItem2";
-            this.radMenuItem2.Text = "Telephone";
-            // 
-            // radMenuHeaderItem2
-            // 
-            this.radMenuHeaderItem2.Name = "radMenuHeaderItem2";
-            this.radMenuHeaderItem2.Text = "radMenuHeaderItem2";
-            // 
-            // radMenuItem3
-            // 
-            this.radMenuItem3.Items.AddRange(new Telerik.WinControls.RadItem[] {
-            this.radMenuHeaderItem3});
-            this.radMenuItem3.Name = "radMenuItem3";
-            this.radMenuItem3.Text = "Mobile";
-            // 
-            // radMenuHeaderItem3
-            // 
-            this.radMenuHeaderItem3.Name = "radMenuHeaderItem3";
-            this.radMenuHeaderItem3.Text = "radMenuHeaderItem3";
-            // 
-            // radDropDownList1
-            // 
-            this.radDropDownList1.Dock = System.Windows.Forms.DockStyle.Fill;
-            radListDataItem1.Text = "Dan Khosa";
-            radListDataItem2.Text = "Craig Horobin";
-            radListDataItem3.Text = "Charles Duval";
-            this.radDropDownList1.Items.Add(radListDataItem1);
-            this.radDropDownList1.Items.Add(radListDataItem2);
-            this.radDropDownList1.Items.Add(radListDataItem3);
-            this.radDropDownList1.Location = new System.Drawing.Point(513, 3);
-            this.radDropDownList1.Name = "radDropDownList1";
-            this.radDropDownList1.Size = new System.Drawing.Size(241, 20);
-            this.radDropDownList1.TabIndex = 4;
-            // 
-            // textEdit1
-            // 
-            this.textEdit1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textEdit1.EditValue = "Confirmation Order";
-            this.textEdit1.Location = new System.Drawing.Point(3, 3);
-            this.textEdit1.MenuManager = this.ribbon;
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(158, 20);
-            this.textEdit1.TabIndex = 2;
-            // 
             // xtraOpenFileDialog1
             // 
             this.xtraOpenFileDialog1.FileName = "xtraOpenFileDialog1";
@@ -1248,13 +1063,136 @@ namespace EFRET_TMS
             // 
             this.movementTableAdapter.ClearBeforeFill = true;
             // 
+            // barEditItem3
+            // 
+            this.barEditItem3.Caption = "barEditItem2";
+            this.barEditItem3.Edit = this.repositoryItemTextEdit2;
+            this.barEditItem3.Id = 32;
+            this.barEditItem3.Name = "barEditItem3";
+            // 
+            // barEditItem4
+            // 
+            this.barEditItem4.Caption = "Rate € to £";
+            this.barEditItem4.Edit = this.repositoryItemTextEdit4;
+            this.barEditItem4.Id = 35;
+            this.barEditItem4.Name = "barEditItem4";
+            // 
+            // repositoryItemTextEdit4
+            // 
+            this.repositoryItemTextEdit4.AutoHeight = false;
+            this.repositoryItemTextEdit4.Name = "repositoryItemTextEdit4";
+            // 
+            // barToggleSwitchItem1
+            // 
+            this.barToggleSwitchItem1.Caption = "EFRET Trailer";
+            this.barToggleSwitchItem1.Id = 37;
+            this.barToggleSwitchItem1.Name = "barToggleSwitchItem1";
+            // 
+            // ribbonPageGroup9
+            // 
+            this.ribbonPageGroup9.ItemLinks.Add(this.barButtonGroup3);
+            this.ribbonPageGroup9.ItemLinks.Add(this.barStaticItem3);
+            this.ribbonPageGroup9.ItemLinks.Add(this.barStaticItem4);
+            this.ribbonPageGroup9.ItemLinks.Add(this.barStaticItem5);
+            this.ribbonPageGroup9.Name = "ribbonPageGroup9";
+            this.ribbonPageGroup9.Text = "Extra Information";
+            // 
+            // barButtonGroup3
+            // 
+            this.barButtonGroup3.Caption = "barButtonGroup3";
+            this.barButtonGroup3.Id = 38;
+            this.barButtonGroup3.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonGroup3.ImageOptions.SvgImage")));
+            this.barButtonGroup3.Name = "barButtonGroup3";
+            // 
+            // barSubItem1
+            // 
+            this.barSubItem1.Caption = "VAT";
+            this.barSubItem1.Id = 39;
+            this.barSubItem1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem15)});
+            this.barSubItem1.Name = "barSubItem1";
+            // 
+            // barSubItem2
+            // 
+            this.barSubItem2.Caption = "Sales";
+            this.barSubItem2.Id = 40;
+            this.barSubItem2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem16)});
+            this.barSubItem2.Name = "barSubItem2";
+            // 
+            // barButtonItem15
+            // 
+            this.barButtonItem15.Caption = "View/Update";
+            this.barButtonItem15.Id = 42;
+            this.barButtonItem15.Name = "barButtonItem15";
+            // 
+            // barButtonItem16
+            // 
+            this.barButtonItem16.Caption = "View/Change";
+            this.barButtonItem16.Id = 43;
+            this.barButtonItem16.Name = "barButtonItem16";
+            // 
+            // barSubItem3
+            // 
+            this.barSubItem3.Caption = "Contract Holder";
+            this.barSubItem3.Id = 44;
+            this.barSubItem3.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem18)});
+            this.barSubItem3.Name = "barSubItem3";
+            // 
+            // barStaticItem3
+            // 
+            this.barStaticItem3.Caption = "Created By";
+            this.barStaticItem3.Id = 45;
+            this.barStaticItem3.Name = "barStaticItem3";
+            // 
+            // barStaticItem4
+            // 
+            this.barStaticItem4.Caption = "Last Updated By";
+            this.barStaticItem4.Id = 46;
+            this.barStaticItem4.Name = "barStaticItem4";
+            // 
+            // barButtonItem17
+            // 
+            this.barButtonItem17.Caption = "View/Update Comment";
+            this.barButtonItem17.Id = 47;
+            this.barButtonItem17.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem17.ImageOptions.SvgImage")));
+            this.barButtonItem17.Name = "barButtonItem17";
+            this.barButtonItem17.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem17_ItemClick);
+            // 
+            // barButtonItem18
+            // 
+            this.barButtonItem18.Caption = "View/Change";
+            this.barButtonItem18.Id = 48;
+            this.barButtonItem18.Name = "barButtonItem18";
+            // 
+            // barStaticItem5
+            // 
+            this.barStaticItem5.Caption = "Traffic Manager";
+            this.barStaticItem5.Id = 49;
+            this.barStaticItem5.Name = "barStaticItem5";
+            // 
+            // barEditItem5
+            // 
+            this.barEditItem5.Caption = "Type Authorized";
+            this.barEditItem5.Edit = this.repositoryItemComboBox1;
+            this.barEditItem5.EditValue = "None Selected";
+            this.barEditItem5.Id = 50;
+            this.barEditItem5.Name = "barEditItem5";
+            // 
+            // repositoryItemComboBox1
+            // 
+            this.repositoryItemComboBox1.AutoHeight = false;
+            this.repositoryItemComboBox1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemComboBox1.Name = "repositoryItemComboBox1";
+            // 
             // ViewCo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(914, 650);
             this.Controls.Add(this.gridControl1);
-            this.Controls.Add(this.tablePanel1);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
             this.IconOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("ViewCo.IconOptions.SvgImage")));
@@ -1264,7 +1202,10 @@ namespace EFRET_TMS
             this.Text = "View Charging Order";
             this.Load += new System.EventHandler(this.ViewCO_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSearchControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.movementBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.movementCO)).EndInit();
@@ -1274,20 +1215,8 @@ namespace EFRET_TMS
             ((System.ComponentModel.ISupportInitialize)(this.axsDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.movementBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.goodsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).EndInit();
-            this.tablePanel1.ResumeLayout(false);
-            this.tablePanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radCheckBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radDropDownButton2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radDropDownButton1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radSplitButton1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radDropDownList1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1386,9 +1315,6 @@ namespace EFRET_TMS
         private System.Windows.Forms.BindingSource goodsBindingSource;
         private COInstanceTableAdapters.GoodsTableAdapter goodsTableAdapter;
         private System.Windows.Forms.BindingSource cOInstanceBindingSource;
-        private DevExpress.Utils.Layout.TablePanel tablePanel1;
-        private Telerik.WinControls.UI.RadDropDownList radDropDownList1;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
         private DevExpress.XtraBars.BarLinkContainerItem barLinkContainerItem2;
         private DevExpress.XtraEditors.XtraOpenFileDialog xtraOpenFileDialog1;
         private DevExpress.XtraBars.BarCheckItem barCheckItem1;
@@ -1400,35 +1326,37 @@ namespace EFRET_TMS
         private DevExpress.XtraBars.BarCheckItem barCheckItem5;
         private DevExpress.XtraBars.BarStaticItem barStaticItem1;
         private DevExpress.XtraBars.BarButtonItem barButtonItem11;
-        private Telerik.WinControls.UI.RadSplitButton radSplitButton1;
-        private Telerik.WinControls.UI.RadMenuItem radMenuItem1;
-        private Telerik.WinControls.UI.RadMenuHeaderItem radMenuHeaderItem1;
-        private Telerik.WinControls.UI.RadMenuItem radMenuItem2;
-        private Telerik.WinControls.UI.RadMenuHeaderItem radMenuHeaderItem2;
-        private Telerik.WinControls.UI.RadMenuItem radMenuItem3;
-        private Telerik.WinControls.UI.RadMenuHeaderItem radMenuHeaderItem3;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private Telerik.WinControls.UI.RadDropDownButton radDropDownButton2;
-        private Telerik.WinControls.UI.RadMenuItem radMenuItem7;
-        private Telerik.WinControls.UI.RadMenuItem radMenuItem8;
-        private Telerik.WinControls.UI.RadDropDownButton radDropDownButton1;
-        private Telerik.WinControls.UI.RadMenuItem radMenuItem4;
-        private Telerik.WinControls.UI.RadMenuItem radMenuItem5;
-        private Telerik.WinControls.UI.RadMenuItem radMenuItem6;
         private DevExpress.XtraBars.BarButtonGroup barButtonGroup2;
         private DevExpress.XtraBars.BarButtonItem barButtonItem12;
-        private Telerik.WinControls.UI.RadMenuHeaderItem radMenuHeaderItem4;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
         private MovementCO movementCO;
         private System.Windows.Forms.BindingSource movementBindingSource1;
         private MovementCOTableAdapters.MovementTableAdapter movementTableAdapter;
         private DevExpress.XtraBars.BarButtonItem barButtonItem13;
-        private Telerik.WinControls.UI.RadLabel radLabel1;
-        private Telerik.WinControls.UI.RadLabel radLabel3;
-        private Telerik.WinControls.UI.RadLabel radLabel2;
-        private Telerik.WinControls.UI.RadLabel radLabel4;
-        private Telerik.WinControls.UI.RadLabel radLabel5;
         private DevExpress.XtraBars.BarButtonItem barButtonItem14;
-        private Telerik.WinControls.UI.RadCheckBox radCheckBox1;
+        private DevExpress.XtraBars.BarEditItem barEditItem1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit2;
+        private DevExpress.XtraBars.BarStaticItem barStaticItem2;
+        private DevExpress.XtraBars.BarEditItem barEditItem2;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit3;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup8;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit1;
+        private DevExpress.XtraBars.BarEditItem barEditItem3;
+        private DevExpress.XtraBars.BarEditItem barEditItem4;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit4;
+        private DevExpress.XtraBars.BarToggleSwitchItem barToggleSwitchItem1;
+        private DevExpress.XtraBars.BarButtonGroup barButtonGroup3;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup9;
+        private DevExpress.XtraBars.BarSubItem barSubItem1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem15;
+        private DevExpress.XtraBars.BarSubItem barSubItem2;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem16;
+        private DevExpress.XtraBars.BarSubItem barSubItem3;
+        private DevExpress.XtraBars.BarStaticItem barStaticItem3;
+        private DevExpress.XtraBars.BarStaticItem barStaticItem4;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem17;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem18;
+        private DevExpress.XtraBars.BarStaticItem barStaticItem5;
+        private DevExpress.XtraBars.BarEditItem barEditItem5;
+        private DevExpress.XtraEditors.Repository.RepositoryItemComboBox repositoryItemComboBox1;
     }
 }

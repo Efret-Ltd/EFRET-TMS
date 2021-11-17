@@ -64,7 +64,7 @@ namespace EFRET_TMS
             string _password = "Tom66409";
 
             string subject = "[" + CompanyCode + "] Project44 Track and Trace Invitation";
-            string welcome = "Good afternoon " + _CompanyContact;
+            string welcome = "Good afternoon, " + _CompanyContact;
             string to = _CompanyEmail;//company email
             string from = _sender;
             MailMessage message = new MailMessage(from, to);
@@ -84,7 +84,7 @@ Link to Track and Trace On-boarding:
 
 Contact details: 
 Email: itsupport@efret.net 
-Phone number: 01202-132-760 
+Phone number: +44(0)1202-132-760 
 
 
 We would greatly appreciate it if you could log in and add your trackable assets as soon as humanly possible. 

@@ -64,6 +64,7 @@ namespace EFRET_TMS
                     //We want to make a ViewCO screen of the IDCO selected.
                     object p44Long = row["P44Longitude"];
                     object p44Lat = row["P44Latitude"];
+                    object comment = row["Comment"];
                     try
                     {
                         // Here we do a bunch of conditioning depending on the column cell clicked.
@@ -71,7 +72,7 @@ namespace EFRET_TMS
                             gridView1.FocusedColumn.FieldName == "New CO")
                         {
                             RadForm1.LogMessage(Environment.UserName+" Opened CO:  " + newCo);
-                            ViewCo viewCo = new ViewCo(coid, newCo, contractId);
+                            ViewCo viewCo = new ViewCo(coid, newCo, contractId, comment);
                             viewCo.Show();
                         }
 

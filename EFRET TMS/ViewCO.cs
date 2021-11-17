@@ -22,29 +22,52 @@ namespace EFRET_TMS
         private int _tractorNumber;
         private int _costProvider;
         private int _trailerNumber;
+        private int _isactive;
         private int _isTrailerTypeAutorised;
-        private string _coComment;
+        private object _coComment;
         private string _cmrPath;
         private string _p44long;
         private string _p44lat;
-        public ViewCo(int coid, object newCo, object contractId)
+        public ViewCo(int coid, object newCo, object contractId, object comment)
         {
             InitializeComponent();
             object cid = contractId + @"\";
             _chargingOrderId = coid;
             _newChargingOrder = newCo;
+            _coComment = comment;
             _path = @"\\efret-app-01\Database\efret\2021\CustomerCO\" + cid + _newChargingOrder;
             _cmrPath = @"https://cmr.efret.net/retrieve/cmr/" + contractId + "-" + newCo + "-CMR.pdf";
             GetCoDetails(_newChargingOrder.ToString());
             GetCoMovements(_newChargingOrder.ToString());
             GetCocmr(_chargingOrderId);
-
+            GetCOTally();
         }
         /*
          * We select the record from CMR database then do comparisons on the status of the CMR.
          * IF the CMR is accepted we provide a button and a link to the PDF.
          *
          */
+        private void GetCOTally()
+        {
+
+            ribbonPageGroup7.Text = @"Project44 Checklist";
+
+            //We tally up and show outstanding.
+            int done = _contractualdateSet + _tractorNumber + _costProvider + _trailerNumber + _isTrailerTypeAutorised;
+            barStaticItem1.Caption = done + @"/5 Completed";
+
+            if (done == 5 & _shipmentId == null)
+            {
+                barStaticItem1.Caption = @"Checklist Complete";
+                barButtonItem13.Visibility = BarItemVisibility.Always;
+
+            }
+            if (_shipmentId != null)
+            {
+                barStaticItem1.Caption = _shipmentId;
+                barButtonItem14.Visibility = BarItemVisibility.Always;
+            }
+        }
         private void GetCocmr(int chargingOrderId)
         {
             // We use the query for the CMR.
@@ -115,47 +138,43 @@ namespace EFRET_TMS
                         {
 
                             //TODO: ServiceStack DTO make a charging Order and initalize instance.
-                            textEdit1.Text = @"Confirmation Order: " + reader["NewCO"];
-                            radLabel5.Text = @"Created By: " + reader["UserCreation"];
-                            radLabel3.Text = @"Line: " + reader["Line"];
-                            radLabel1.Text = @"Rate € to £: "+ reader["ConversionRate"];
-                            radLabel2.Text = @"Last Change By: "+ reader["UserUpdate"];
-                            radLabel4.Text = @"IDCO: " + reader["IdCO"];
-                            radDropDownList1.Text = @"Manager: " + reader["UserOwner"];
-                            radMenuHeaderItem1.Text = reader["ContractHolderEmail"].ToString();
-                            radMenuHeaderItem2.Text = reader["ContractHolderTel"].ToString();
-                            radMenuHeaderItem3.Text = reader["ContractHolderMob"].ToString();
-                            radMenuHeaderItem4.Text = reader["CostVATCode"].ToString();
+                            barEditItem1.EditValue = reader["NewCO"];
+                            barStaticItem2.Caption = reader["IdCO"].ToString();
+                            barEditItem2.EditValue = reader["Line"];
+                            barEditItem4.EditValue = reader["ConversionRate"];
+                            barStaticItem3.Caption = @"Created By: " + reader["UserCreation"];
+                            barStaticItem4.Caption = @"Last Change By: "+ reader["UserUpdate"];
+                            barStaticItem5.Caption = @"Manager: " + reader["UserOwner"];
                             _p44lat = reader["P44Latitude"].ToString();
                             _p44long = reader["P44Longitude"].ToString();
-                            labelControl1.Text = @"Type: " + reader["TrailerTypeAutorised"];
+                            barEditItem5.EditValue = reader["TrailerTypeAutorised"];
+
                             if (reader["P44ShipmentID"].ToString() != "")
                             {
                                 _shipmentId = reader["P44ShipmentID"].ToString();
                             }
 
-                            if (reader["TrailerNumber"].ToString() != "")
+                            if (reader["TrailerNumber"] != null)
                             {
                                 barCheckItem1.Checked = true;
                                 bool EfretTrailer = reader["TrailerNumber"].ToString().StartsWith("EFRU");
                                 //We add value so P44 Checklist tallies
                                 if (EfretTrailer)
                                 {
-                                    radCheckBox1.Checked = true;
+                                    barToggleSwitchItem1.Checked = true;
                                 }
                                 _trailerNumber = 1;
                             }
-                            if (reader["TrailerTypeAutorised"].ToString() != "")
+                            if (reader["TrailerTypeAutorised"] != null)
                             {
                                 barCheckItem4.Checked = true;
                                 //We add value so P44 Checklist tallies
                                 _isTrailerTypeAutorised = 1;
                             }
-                            if (reader["Comment"].ToString() != "")
-                            {
-                                _coComment = reader["Comment"].ToString();
-                                simpleButton1.Visible = true;
-                            }
+ 
+                            _coComment = reader["Comment"].ToString();
+          
+                           
                         }
                     }
                     finally
@@ -174,23 +193,7 @@ namespace EFRET_TMS
 
         private void ViewCO_Load(object sender, EventArgs e)
         {
-            ribbonPageGroup7.Text = @"Project44 Checklist";
-
-            //We tally up and show outstanding.
-            int done =  _contractualdateSet + _tractorNumber + _costProvider + _trailerNumber+ _isTrailerTypeAutorised;
-            barStaticItem1.Caption = done + @"/5 Completed";
-
-            if (done == 5 & _shipmentId ==null)
-            {
-                barStaticItem1.Caption = @"Checklist Complete";
-                barButtonItem13.Visibility = BarItemVisibility.Always;
-
-            }
-            if (_shipmentId != null)
-            {
-                barStaticItem1.Caption = _shipmentId;
-                barButtonItem14.Visibility = BarItemVisibility.Always;
-            }
+            
 
         }
 
@@ -354,10 +357,6 @@ namespace EFRET_TMS
             //Now we do a bunch of checks before posting to P44.
         }
 
-        private void simpleButton1_Click(object sender, EventArgs e)
-        {
-            RadMessageBox.Show(_coComment);
-        }
 
         private void barButtonItem10_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -392,6 +391,16 @@ namespace EFRET_TMS
             {
                 //do something else
             }
+        }
+
+        private void barButtonItem17_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            RadMessageBox.Show(_coComment.ToString());
+        }
+
+        private void barButtonItem12_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            RadMessageBox.Show("This CO is Active");
         }
     }
 }

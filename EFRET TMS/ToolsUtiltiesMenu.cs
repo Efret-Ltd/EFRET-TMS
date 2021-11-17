@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Windows.Forms;
+using EnvDTE;
 using Sentry;
 using Telerik.WinControls;
 
@@ -51,6 +53,24 @@ namespace EFRET_TMS
         {
             OnboardP44 OP44 = new OnboardP44("TESTCM");
             OP44.Show();
+        }
+
+        private void ultraButton1_Click(object sender, EventArgs e)
+        {
+            ActivateCO ACO = new ActivateCO();
+            Form window = new Form
+            {
+                Text = "Activate a Charging Order",
+                TopLevel = true,
+                FormBorderStyle = FormBorderStyle.Fixed3D, //Disables user resizing
+                MaximizeBox = false,
+                MinimizeBox = false,
+                ClientSize = ACO.Size //size the form to fit the content
+            };
+
+            window.Controls.Add(ACO);
+            ACO.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            window.ShowDialog();
         }
     }
 }

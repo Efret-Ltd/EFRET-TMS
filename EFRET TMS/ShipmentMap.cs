@@ -5,8 +5,6 @@ using System;
 using System.Drawing;
 using System.IO;
 using System.Net;
-using DevExpress.XtraBars.Navigation;
-
 
 namespace EFRET_TMS
 {
@@ -22,7 +20,7 @@ namespace EFRET_TMS
          _p44Long = longitude;
 
          Text = @"Shipment tracking for: " + coid;
-          GetMapFromCoords(latitude, longitude,20);
+          GetMapFromCoords(latitude, longitude,15);
           GetStreetName(latitude, longitude);
         }
 
@@ -134,15 +132,7 @@ namespace EFRET_TMS
             Dispose();
         }
 
-        private void ribbonTab1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radRibbonBar2_Click(object sender, EventArgs e)
-        {
-
-        }
+        
         // ZOOOOOOOOOOOOOOOOOOOOOOOM
         private void simpleButton1_Click(object sender, EventArgs e)
         {
@@ -156,17 +146,14 @@ namespace EFRET_TMS
 
         private void simpleButton2_Click(object sender, EventArgs e)
         {
-            if (_zoom > 0)
+            //I think zero and 1 are too far back to provide any constructive information. Will allow the option to zoom out this far though.
+            if (_zoom > 1)
             {
                 _zoom = _zoom - 1;
                 GetMapFromCoords(_p44Lat, _p44Long, _zoom);
                 radPictureBox1.Invalidate();
             }
         }
-
-        private void commandBarButton1_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
+        
     }
 }
