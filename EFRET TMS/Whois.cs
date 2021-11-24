@@ -1,6 +1,7 @@
 ﻿using System;
+using ComponentPro.Excel;
+using ComponentPro.Net;
 using Telerik.WinControls;
-using Whois;
 namespace EFRET_TMS
 {
     public partial class Whois : Telerik.WinControls.UI.ShapedForm
@@ -12,16 +13,15 @@ namespace EFRET_TMS
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            QueryByDomain();
+            QueryByDomain(textEdit1.Text);
         } 
-        private  void QueryByDomain()
+        private  void QueryByDomain(string domain)
     {
-        // Create a WhoisLookup instance
-        var whois = new WhoisLookup();
-        var response = whois.Lookup(textEdit1.Text);
-        // Output the response
-        RadMessageBox.Show(response.Content);
-
+            // Create a WhoisLookup instance
+            // Output the response
+            WhoIsClient whois = new WhoIsClient();
+            whois.Lookup(domain);
+            whois.InvokeFromCurrentThreads = true;
     }
   }
    

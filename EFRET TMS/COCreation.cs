@@ -15,13 +15,15 @@ namespace EFRET_TMS
 
         private void InitializeCo()
         {
-            Random rnd = new Random();
-            var user = Environment.UserName;
-            int randomNo = rnd.Next(100);
-
-            string queryString = "INSERT INTO [axs].[dbo].[NewCO] (NewCO, UserCreation) VALUES ('" + randomNo + "','" + user + "'"; ;
             string connectionString = @"Server=EFRET-APP-01\EFRET;Database=axs;Trusted_Connection=True;";
+            string queryString= @"INSERT INTO [dbo].[NewCO]
+           ([NewCO]
+           ,[UserCreation])
+VALUES
+('ChangeME','"+Environment.UserName+@"')
 
+
+            ";
             try
             {
                 using (SqlConnection connection = new SqlConnection(connectionString))
@@ -40,7 +42,7 @@ namespace EFRET_TMS
                         }
                         else
                         {
-                            RadMessageBox.Show("CO: " + randomNo);
+                         
                         }
 
                     }
@@ -57,15 +59,12 @@ namespace EFRET_TMS
         }
 
     
-
         private void COCreation_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'company._Company' table. You can move, or remove it, as needed.
+            this.companyTableAdapter.Fill(this.company._Company);
             RadForm1.LogMessage(Environment.UserName + " Started CO Creation ");
         }
 
-        private void ultraNavigationBar1_SelectedLocationChanged(object sender, Infragistics.Win.Misc.UltraWinNavigationBar.SelectedLocationChangedEventArgs e)
-        {
-
-        }
     }
 }

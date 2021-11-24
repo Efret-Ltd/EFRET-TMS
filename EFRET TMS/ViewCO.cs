@@ -22,7 +22,6 @@ namespace EFRET_TMS
         private int _tractorNumber;
         private int _costProvider;
         private int _trailerNumber;
-        private int _isactive;
         private int _isTrailerTypeAutorised;
         private object _coComment;
         private string _cmrPath;
@@ -161,6 +160,7 @@ namespace EFRET_TMS
                                 //We add value so P44 Checklist tallies
                                 if (EfretTrailer)
                                 {
+                                    RadMessageBox.Show("Efret trailer assigned. Not eligible for P44 Tracking.");
                                     barToggleSwitchItem1.Checked = true;
                                 }
                                 _trailerNumber = 1;
@@ -345,6 +345,15 @@ namespace EFRET_TMS
 
                         request.Content.Headers.ContentType = MediaTypeHeaderValue.Parse("application/json");
 
+
+                        if (request.Content.Headers.Allow.Contains(""))
+                        {
+
+                            //once the request is recived with a 200 response we then run the utilities and parse the resulting data.
+
+
+                         
+                        }
                         var response = await httpClient.SendAsync(request);
                         RadMessageBox.Show(response.ToString());
                     }

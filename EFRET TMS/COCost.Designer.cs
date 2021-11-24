@@ -250,7 +250,7 @@ namespace EFRET_TMS
             this.radLabel11.TabIndex = 21;
             this.radLabel11.Text = "CustomClearance";
             // 
-            // COCost
+            // CoCost
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;

@@ -21,7 +21,6 @@ namespace EFRET_TMS
             Text = @"Welcome to EFRET " + Environment.UserName;
             GetRate();
             PostTeamsLogin();
-            
         }
 
         public async void PostTeamsLogin()
@@ -218,6 +217,12 @@ namespace EFRET_TMS
             mm.Show();
             var eventMessage = Environment.UserName + " Opened MailMerge Panel";
             LogMessage(eventMessage);
+        }
+
+        private void accordionControlElement14_Click(object sender, EventArgs e)
+        {
+            ABRouting ABRouting = new ABRouting();
+                ABRouting.Show();
         }
     }
 }
