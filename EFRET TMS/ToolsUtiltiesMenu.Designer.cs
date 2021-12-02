@@ -34,6 +34,7 @@
             this.roundRectShapeForm = new Telerik.WinControls.RoundRectShape(this.components);
             this.vatCheckButton = new Syncfusion.WinForms.Controls.SfButton();
             this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
+            this.sfButton6 = new Syncfusion.WinForms.Controls.SfButton();
             this.ultraButton1 = new Infragistics.Win.Misc.UltraButton();
             this.sfButton5 = new Syncfusion.WinForms.Controls.SfButton();
             this.sfButton4 = new Syncfusion.WinForms.Controls.SfButton();
@@ -41,11 +42,12 @@
             this.sfButton2 = new Syncfusion.WinForms.Controls.SfButton();
             this.sfButton1 = new Syncfusion.WinForms.Controls.SfButton();
             this.uDesktopAlert1 = new Infragistics.Win.Misc.UltraDesktopAlert(this.components);
-            this.sfButton6 = new Syncfusion.WinForms.Controls.SfButton();
+            this.radButton1 = new Telerik.WinControls.UI.RadButton();
             ((System.ComponentModel.ISupportInitialize)(this.radTitleBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
             this.tablePanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.uDesktopAlert1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radButton1)).BeginInit();
             this.SuspendLayout();
             // 
             // radTitleBar1
@@ -62,7 +64,7 @@
             this.radTitleBar1.Size = new System.Drawing.Size(398, 23);
             this.radTitleBar1.TabIndex = 0;
             this.radTitleBar1.TabStop = false;
-            this.radTitleBar1.Text = "Tools & Utilties Menu";
+            this.radTitleBar1.Text = "ToolsUtiltiesMenu";
             // 
             // roundRectShapeTitle
             // 
@@ -88,6 +90,7 @@
             this.tablePanel1.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 27.08F),
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 28.88F)});
+            this.tablePanel1.Controls.Add(this.radButton1);
             this.tablePanel1.Controls.Add(this.sfButton6);
             this.tablePanel1.Controls.Add(this.ultraButton1);
             this.tablePanel1.Controls.Add(this.sfButton5);
@@ -104,9 +107,24 @@
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F)});
             this.tablePanel1.Size = new System.Drawing.Size(400, 349);
             this.tablePanel1.TabIndex = 3;
+            // 
+            // sfButton6
+            // 
+            this.sfButton6.AccessibleName = "Button";
+            this.tablePanel1.SetColumn(this.sfButton6, 0);
+            this.sfButton6.FocusRectangleVisible = true;
+            this.sfButton6.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
+            this.sfButton6.Location = new System.Drawing.Point(3, 81);
+            this.sfButton6.Name = "sfButton6";
+            this.tablePanel1.SetRow(this.sfButton6, 3);
+            this.sfButton6.Size = new System.Drawing.Size(188, 20);
+            this.sfButton6.TabIndex = 9;
+            this.sfButton6.Text = "Replace Zeros to Nulls";
+            this.sfButton6.Click += new System.EventHandler(this.sfButton6_Click);
             // 
             // ultraButton1
             // 
@@ -193,19 +211,16 @@
             this.uDesktopAlert1.AnimationSpeed = Infragistics.Win.Misc.AnimationSpeed.Medium;
             this.uDesktopAlert1.AnimationStyleAutoClose = Infragistics.Win.Misc.AnimationStyle.Fade;
             // 
-            // sfButton6
+            // radButton1
             // 
-            this.sfButton6.AccessibleName = "Button";
-            this.tablePanel1.SetColumn(this.sfButton6, 0);
-            this.sfButton6.FocusRectangleVisible = true;
-            this.sfButton6.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-            this.sfButton6.Location = new System.Drawing.Point(3, 81);
-            this.sfButton6.Name = "sfButton6";
-            this.tablePanel1.SetRow(this.sfButton6, 3);
-            this.sfButton6.Size = new System.Drawing.Size(188, 20);
-            this.sfButton6.TabIndex = 9;
-            this.sfButton6.Text = "Replace Zeros to Nulls";
-            this.sfButton6.Click += new System.EventHandler(this.sfButton6_Click);
+            this.tablePanel1.SetColumn(this.radButton1, 0);
+            this.radButton1.Location = new System.Drawing.Point(3, 107);
+            this.radButton1.Name = "radButton1";
+            this.tablePanel1.SetRow(this.radButton1, 4);
+            this.radButton1.Size = new System.Drawing.Size(188, 20);
+            this.radButton1.TabIndex = 10;
+            this.radButton1.Text = "Fix Rate of Exchange";
+            this.radButton1.Click += new System.EventHandler(this.radButton1_Click);
             // 
             // ToolsUtiltiesMenu
             // 
@@ -221,6 +236,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).EndInit();
             this.tablePanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.uDesktopAlert1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radButton1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -240,5 +256,6 @@
         private Infragistics.Win.Misc.UltraButton ultraButton1;
         private Infragistics.Win.Misc.UltraDesktopAlert uDesktopAlert1;
         private Syncfusion.WinForms.Controls.SfButton sfButton6;
+        private Telerik.WinControls.UI.RadButton radButton1;
     }
 }

@@ -95,5 +95,25 @@ namespace EFRET_TMS
             CZONCO.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             window.ShowDialog();
         }
+
+
+        private void radButton1_Click(object sender, EventArgs e)
+        {
+            FixRateOfExchange FROE = new FixRateOfExchange();
+            Form window = new Form
+            {
+                Text = "Fix Rate of Exchange",
+                TopLevel = true,
+                FormBorderStyle = FormBorderStyle.Fixed3D, //Disables user resizing
+                MaximizeBox = false,
+                MinimizeBox = false,
+                ClientSize = FROE.Size //size the form to fit the content
+            };
+
+            window.Controls.Add(FROE);
+            FROE.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            window.ShowDialog();
+
+        }
     }
 }

@@ -156,11 +156,12 @@ namespace EFRET_TMS
                             if (reader["TrailerNumber"] != null)
                             {
                                 barCheckItem1.Checked = true;
+                                //TODO: It seems that this gets called in a loop of each check. This needs to be invoked once so better structure will be needed.
                                 bool EfretTrailer = reader["TrailerNumber"].ToString().StartsWith("EFRU");
                                 //We add value so P44 Checklist tallies
                                 if (EfretTrailer)
                                 {
-                                    RadMessageBox.Show("Efret trailer assigned. Not eligible for P44 Tracking.");
+                                    //RadMessageBox.Show("Efret trailer assigned. Not eligible for P44 Tracking.");
                                     barToggleSwitchItem1.Checked = true;
                                 }
                                 _trailerNumber = 1;
@@ -388,7 +389,7 @@ namespace EFRET_TMS
             }
         }
 
-        //Email CO
+        //Email COz
         private void barButtonItem4_ItemClick(object sender, ItemClickEventArgs e)
         {
             DialogResult dialogResult = RadMessageBox.Show("Sure", "Send Confirmation Report to Carrier", MessageBoxButtons.YesNo);

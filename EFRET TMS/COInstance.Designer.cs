@@ -9742,11 +9742,25 @@ SELECT idGoods, idCo, ADR, ADRDangerousGoods, Pallets, Stackable, Colis, TotalWe
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT IdCO, NewCO, DateCreation, DateUpdate, IdContractHolder, ContractHolderReference, CMR, SalesPrice, ConversionRate, SalesPriceCurrency, SalesPriceInCurrency, SalesPriceVATCode, SalesPriceVATRate, SalesPriceVATAmount, ContractHolderPaymentTerm, ContractHolderPaymentTermOEM, Comment, InvoiceInGBP, AllRisksInsurance, ContractHolderEmail, ContractHolderTel, ContractHolderMob, TrailerNumber, TrailerTypeAutorised, InterModal, Invoiced, UserCreation, UserUpdate, UserOwner, Actif, Xroute, TripType2, BaseFreightRate, FuelSurcharge, StopOver1, StopOver2, FuelSurchargeRate, AdhocRate, demurrage, DemurageCode, InvoiceNumber, InvoiceDate, InvoicePath, Line, InvoiceEDI, ShipperAccount, ReroutingSurcharge, Wharehousing, Redelivery, Cancellation, BillingAccount, AdHocSurcharge, DriverDententionAtUnloading, eShipCo, Corridor, CoS, CustomClearance, P44ToUpload, P44Uploaded, P44ShipmentID, P44LastUpdate, P44StatusCode, P44ReasonCode, P44ReasonDescription, P44TrackTrailer, P44TrackingStarted, P44TrackingCompleted, P44TrackingError, P44UploadError, P44Latitude, P44Longitude, P44CurrentStop, SSMA_TimeStamp FROM dbo.NewCO";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"SELECT        IdCO, NewCO, DateCreation, DateUpdate, IdContractHolder, ContractHolderReference, CMR, SalesPrice, ConversionRate, SalesPriceCurrency, SalesPriceInCurrency, SalesPriceVATCode, SalesPriceVATRate, 
+                         SalesPriceVATAmount, ContractHolderPaymentTerm, ContractHolderPaymentTermOEM, Comment, InvoiceInGBP, AllRisksInsurance, ContractHolderEmail, ContractHolderTel, ContractHolderMob, TrailerNumber, 
+                         TrailerTypeAutorised, InterModal, Invoiced, UserCreation, UserUpdate, UserOwner, Actif, Xroute, TripType2, BaseFreightRate, FuelSurcharge, StopOver1, StopOver2, FuelSurchargeRate, AdhocRate, demurrage, DemurageCode, 
+                         InvoiceNumber, InvoiceDate, InvoicePath, Line, InvoiceEDI, ShipperAccount, ReroutingSurcharge, Wharehousing, Redelivery, Cancellation, BillingAccount, AdHocSurcharge, DriverDententionAtUnloading, eShipCo, Corridor, CoS, 
+                         CustomClearance, P44ToUpload, P44Uploaded, P44ShipmentID, P44LastUpdate, P44StatusCode, P44ReasonCode, P44ReasonDescription, P44TrackTrailer, P44TrackingStarted, P44TrackingCompleted, P44TrackingError, 
+                         P44UploadError, P44Latitude, P44Longitude, P44CurrentStop
+FROM            NewCO
+WHERE        (DateCreation BETWEEN @DateFrom AND @DateTo) AND (ConversionRate NOT IN ('@Rate'))";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateFrom", global::System.Data.SqlDbType.DateTime2, 8, global::System.Data.ParameterDirection.Input, 0, 0, "DateCreation", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateTo", global::System.Data.SqlDbType.DateTime2, 8, global::System.Data.ParameterDirection.Input, 0, 0, "DateCreation", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Rate", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ConversionRate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9771,6 +9785,37 @@ SELECT idGoods, idCo, ADR, ADRDangerousGoods, Pallets, Stackable, Colis, TotalWe
             COInstance.NewCODataTable dataTable = new COInstance.NewCODataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int RangeSelection(COInstance.NewCODataTable dataTable, string DateFrom, string DateTo, string Rate) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((DateFrom == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(DateFrom));
+            }
+            if ((DateTo == null)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(DateTo));
+            }
+            if ((Rate == null)) {
+                throw new global::System.ArgumentNullException("Rate");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(Rate));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

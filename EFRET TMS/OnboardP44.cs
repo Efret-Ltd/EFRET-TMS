@@ -65,9 +65,11 @@ namespace EFRET_TMS
                     "<a href=' https://eu12.voc.project44.com/portal/v2/public/connect/8b601a7d-7ff2-4a55-85e1-ddaa2cddee86'>Invite Link</a>";
                 string subject = "[" + CompanyCode + "] Project44 Track and Trace Invitation";
                 string welcome = "Good afternoon, " + _CompanyContact;
+                MailAddress copy = new MailAddress("charles.duval@efret.net");
                 string to = _CompanyEmail;//company email
                 string from = _sender;
                 MailMessage message = new MailMessage(from, to);
+                message.CC.Add(copy);
                 message.Subject = subject;
                 message.IsBodyHtml = true;
 
@@ -88,7 +90,7 @@ Email: itsupport@efret.net <br>
 Phone number: +44(0)1202-132-760 <br>
  <br>
 
-We would greatly appreciate it if you could log in and add your trackable assets as soon as humanly possible. 
+We would greatly appreciate it if you could log in and add your trackable assets as soon as humanly possible.<br> <strong> Failure to do so will result in late payments </strong>
  <br>
 Kind Regards, ";
 
