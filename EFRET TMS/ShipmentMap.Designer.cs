@@ -87,7 +87,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(824, 531);
+            this.panel1.Size = new System.Drawing.Size(824, 528);
             this.panel1.TabIndex = 2;
             // 
             // sidePanel1
@@ -98,7 +98,7 @@
             this.sidePanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.sidePanel1.Location = new System.Drawing.Point(0, 0);
             this.sidePanel1.Name = "sidePanel1";
-            this.sidePanel1.Size = new System.Drawing.Size(824, 531);
+            this.sidePanel1.Size = new System.Drawing.Size(824, 528);
             this.sidePanel1.TabIndex = 2;
             this.sidePanel1.Text = "sidePanel1";
             // 
@@ -120,7 +120,7 @@
             this.tablePanel1.Controls.Add(this.simpleButton2);
             this.tablePanel1.Controls.Add(this.simpleButton1);
             this.tablePanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tablePanel1.Location = new System.Drawing.Point(0, 490);
+            this.tablePanel1.Location = new System.Drawing.Point(0, 487);
             this.tablePanel1.Name = "tablePanel1";
             this.tablePanel1.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 39F)});
@@ -162,7 +162,7 @@
             this.radPictureBox1.ImageLayout = Telerik.WinControls.UI.RadImageLayout.Stretch;
             this.radPictureBox1.Location = new System.Drawing.Point(0, 0);
             this.radPictureBox1.Name = "radPictureBox1";
-            this.radPictureBox1.Size = new System.Drawing.Size(824, 531);
+            this.radPictureBox1.Size = new System.Drawing.Size(824, 528);
             this.radPictureBox1.TabIndex = 0;
             this.radPictureBox1.ThemeName = "Office2019Gray";
             // 
@@ -219,9 +219,9 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 531);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 528);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(824, 21);
+            this.barDockControlBottom.Size = new System.Drawing.Size(824, 24);
             // 
             // barDockControlLeft
             // 
@@ -229,7 +229,7 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 531);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 528);
             // 
             // barDockControlRight
             // 
@@ -237,7 +237,7 @@
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(824, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 531);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 528);
             // 
             // barButtonItem1
             // 

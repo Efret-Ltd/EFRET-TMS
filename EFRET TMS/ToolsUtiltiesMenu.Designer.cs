@@ -34,6 +34,7 @@
             this.roundRectShapeForm = new Telerik.WinControls.RoundRectShape(this.components);
             this.vatCheckButton = new Syncfusion.WinForms.Controls.SfButton();
             this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
+            this.radButton1 = new Telerik.WinControls.UI.RadButton();
             this.sfButton6 = new Syncfusion.WinForms.Controls.SfButton();
             this.ultraButton1 = new Infragistics.Win.Misc.UltraButton();
             this.sfButton5 = new Syncfusion.WinForms.Controls.SfButton();
@@ -42,12 +43,11 @@
             this.sfButton2 = new Syncfusion.WinForms.Controls.SfButton();
             this.sfButton1 = new Syncfusion.WinForms.Controls.SfButton();
             this.uDesktopAlert1 = new Infragistics.Win.Misc.UltraDesktopAlert(this.components);
-            this.radButton1 = new Telerik.WinControls.UI.RadButton();
             ((System.ComponentModel.ISupportInitialize)(this.radTitleBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
             this.tablePanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.uDesktopAlert1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radButton1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uDesktopAlert1)).BeginInit();
             this.SuspendLayout();
             // 
             // radTitleBar1
@@ -111,6 +111,17 @@
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F)});
             this.tablePanel1.Size = new System.Drawing.Size(400, 349);
             this.tablePanel1.TabIndex = 3;
+            // 
+            // radButton1
+            // 
+            this.tablePanel1.SetColumn(this.radButton1, 0);
+            this.radButton1.Location = new System.Drawing.Point(3, 107);
+            this.radButton1.Name = "radButton1";
+            this.tablePanel1.SetRow(this.radButton1, 4);
+            this.radButton1.Size = new System.Drawing.Size(188, 20);
+            this.radButton1.TabIndex = 10;
+            this.radButton1.Text = "Fix Rate of Exchange";
+            this.radButton1.Click += new System.EventHandler(this.radButton1_Click);
             // 
             // sfButton6
             // 
@@ -211,17 +222,6 @@
             this.uDesktopAlert1.AnimationSpeed = Infragistics.Win.Misc.AnimationSpeed.Medium;
             this.uDesktopAlert1.AnimationStyleAutoClose = Infragistics.Win.Misc.AnimationStyle.Fade;
             // 
-            // radButton1
-            // 
-            this.tablePanel1.SetColumn(this.radButton1, 0);
-            this.radButton1.Location = new System.Drawing.Point(3, 107);
-            this.radButton1.Name = "radButton1";
-            this.tablePanel1.SetRow(this.radButton1, 4);
-            this.radButton1.Size = new System.Drawing.Size(188, 20);
-            this.radButton1.TabIndex = 10;
-            this.radButton1.Text = "Fix Rate of Exchange";
-            this.radButton1.Click += new System.EventHandler(this.radButton1_Click);
-            // 
             // ToolsUtiltiesMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -235,8 +235,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.radTitleBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).EndInit();
             this.tablePanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.uDesktopAlert1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radButton1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uDesktopAlert1)).EndInit();
             this.ResumeLayout(false);
 
         }

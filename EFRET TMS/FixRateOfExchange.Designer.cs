@@ -722,7 +722,7 @@ namespace EFRET_TMS
             // 
             this.labelControl2.Location = new System.Drawing.Point(14, 73);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(52, 13);
+            this.labelControl2.Size = new System.Drawing.Size(54, 13);
             this.labelControl2.TabIndex = 5;
             this.labelControl2.Text = "Date From:";
             // 
@@ -730,7 +730,7 @@ namespace EFRET_TMS
             // 
             this.labelControl1.Location = new System.Drawing.Point(94, 144);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(69, 13);
+            this.labelControl1.Size = new System.Drawing.Size(68, 13);
             this.labelControl1.TabIndex = 4;
             this.labelControl1.Text = "Rate to Check";
             // 

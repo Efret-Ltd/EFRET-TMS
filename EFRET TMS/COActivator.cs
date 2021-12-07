@@ -9,55 +9,48 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Sentry;
+using Telerik.WinControls;
 
 namespace EFRET_TMS
 {
-    public partial class ActivateCO : UserControl
+    public partial class COActivator : UserControl
     {
-        private string _newCO;
-        public ActivateCO()
+        public COActivator()
         {
             InitializeComponent();
         }
 
-        private void ultraButton1_Click(object sender, EventArgs e)
-
+        private void simpleButton1_Click(object sender, EventArgs e)
         {
-            _newCO = ultraFormattedTextEditor1.Text;
-            string queryString = "UPDATE [axs].[dbo].[NewCO] SET Actif = 0 WHERE NewCO = '" + _newCO + "'";
+            string queryString = "UPDATE NewCO SET Actif = 0 WHERE NewCO = '"+textEdit1.Text+"'";
             string connectionString = @"Server=EFRET-APP-01\EFRET;Database=axs;Trusted_Connection=True;";
-
             try
             {
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     SqlCommand command = new SqlCommand(queryString, connection);
                     connection.Open();
-                    int affectedRows = command.ExecuteNonQuery();
-                    
+                    SqlDataReader reader = command.ExecuteReader();
                     try
                     {
-                        if (affectedRows <= 0)
+                        while (reader.Read())
                         {
-                            ultraStatusBar1.Text = _newCO + " was not found. Nothing changed.";
-
-                            // Houston, we have a problem.
+                 
                         }
-                        else
-                        {
-                            RadForm1.LogMessage(Environment.UserName + " reactivated " + _newCO);
-                            ultraStatusBar1.Text = _newCO + " has been activated.";
-                        }
-
                     }
-                    catch (Exception ex)
+                    finally
                     {
-                        SentrySdk.CaptureException(ex);
+                        // Always call Close when done reading.
+                        reader.Close();
+                        RadMessageBox.Show("CO has been activated");
+                      
                     }
+
                 }
             }
             catch (Exception ex)
             {
+
                 SentrySdk.CaptureException(ex);
             }
         }

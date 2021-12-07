@@ -73,6 +73,7 @@ namespace EFRET_TMS
             window.Controls.Add(ACO);
             ACO.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             window.ShowDialog();
+            RadForm1.LogMessage(Environment.UserName + " Accessed 'Reactivate CO' function");
         }
 
         private void sfButton6_Click(object sender, EventArgs e)
@@ -94,6 +95,7 @@ namespace EFRET_TMS
             window.Controls.Add(CZONCO);
             CZONCO.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             window.ShowDialog();
+            RadForm1.LogMessage(Environment.UserName + " Accessed  form");
         }
 
 
@@ -115,5 +117,6 @@ namespace EFRET_TMS
             window.ShowDialog();
 
         }
+
     }
 }
