@@ -34,6 +34,7 @@
             this.roundRectShapeForm = new Telerik.WinControls.RoundRectShape(this.components);
             this.vatCheckButton = new Syncfusion.WinForms.Controls.SfButton();
             this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
+            this.sfButton7 = new Syncfusion.WinForms.Controls.SfButton();
             this.radButton1 = new Telerik.WinControls.UI.RadButton();
             this.sfButton6 = new Syncfusion.WinForms.Controls.SfButton();
             this.ultraButton1 = new Infragistics.Win.Misc.UltraButton();
@@ -43,6 +44,7 @@
             this.sfButton2 = new Syncfusion.WinForms.Controls.SfButton();
             this.sfButton1 = new Syncfusion.WinForms.Controls.SfButton();
             this.uDesktopAlert1 = new Infragistics.Win.Misc.UltraDesktopAlert(this.components);
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.radTitleBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
             this.tablePanel1.SuspendLayout();
@@ -90,6 +92,8 @@
             this.tablePanel1.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 27.08F),
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 28.88F)});
+            this.tablePanel1.Controls.Add(this.simpleButton1);
+            this.tablePanel1.Controls.Add(this.sfButton7);
             this.tablePanel1.Controls.Add(this.radButton1);
             this.tablePanel1.Controls.Add(this.sfButton6);
             this.tablePanel1.Controls.Add(this.ultraButton1);
@@ -108,9 +112,24 @@
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F)});
             this.tablePanel1.Size = new System.Drawing.Size(400, 349);
             this.tablePanel1.TabIndex = 3;
+            // 
+            // sfButton7
+            // 
+            this.sfButton7.AccessibleName = "Button";
+            this.tablePanel1.SetColumn(this.sfButton7, 1);
+            this.sfButton7.FocusRectangleVisible = true;
+            this.sfButton7.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
+            this.sfButton7.Location = new System.Drawing.Point(197, 107);
+            this.sfButton7.Name = "sfButton7";
+            this.tablePanel1.SetRow(this.sfButton7, 4);
+            this.sfButton7.Size = new System.Drawing.Size(200, 20);
+            this.sfButton7.TabIndex = 11;
+            this.sfButton7.Text = "Trailer History";
+            this.sfButton7.Click += new System.EventHandler(this.sfButton7_Click);
             // 
             // radButton1
             // 
@@ -222,6 +241,17 @@
             this.uDesktopAlert1.AnimationSpeed = Infragistics.Win.Misc.AnimationSpeed.Medium;
             this.uDesktopAlert1.AnimationStyleAutoClose = Infragistics.Win.Misc.AnimationStyle.Fade;
             // 
+            // simpleButton1
+            // 
+            this.tablePanel1.SetColumn(this.simpleButton1, 0);
+            this.simpleButton1.Location = new System.Drawing.Point(3, 133);
+            this.simpleButton1.Name = "simpleButton1";
+            this.tablePanel1.SetRow(this.simpleButton1, 5);
+            this.simpleButton1.Size = new System.Drawing.Size(188, 20);
+            this.simpleButton1.TabIndex = 12;
+            this.simpleButton1.Text = "Trailer Blacklist";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            // 
             // ToolsUtiltiesMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -257,5 +287,7 @@
         private Infragistics.Win.Misc.UltraDesktopAlert uDesktopAlert1;
         private Syncfusion.WinForms.Controls.SfButton sfButton6;
         private Telerik.WinControls.UI.RadButton radButton1;
+        private Syncfusion.WinForms.Controls.SfButton sfButton7;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }

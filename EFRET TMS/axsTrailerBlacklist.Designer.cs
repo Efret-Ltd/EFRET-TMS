@@ -20,17 +20,17 @@ namespace EFRET_TMS {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("Trailers")]
+    [global::System.Xml.Serialization.XmlRootAttribute("axsTrailerBlacklist")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class Trailers : global::System.Data.DataSet {
+    public partial class axsTrailerBlacklist : global::System.Data.DataSet {
         
-        private EfretTrailerDataTable tableEfretTrailer;
+        private ParamTrailerNumberBlacklistDataTable tableParamTrailerNumberBlacklist;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public Trailers() {
+        public axsTrailerBlacklist() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace EFRET_TMS {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected Trailers(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected axsTrailerBlacklist(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace EFRET_TMS {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["EfretTrailer"] != null)) {
-                    base.Tables.Add(new EfretTrailerDataTable(ds.Tables["EfretTrailer"]));
+                if ((ds.Tables["ParamTrailerNumberBlacklist"] != null)) {
+                    base.Tables.Add(new ParamTrailerNumberBlacklistDataTable(ds.Tables["ParamTrailerNumberBlacklist"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace EFRET_TMS {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public EfretTrailerDataTable EfretTrailer {
+        public ParamTrailerNumberBlacklistDataTable ParamTrailerNumberBlacklist {
             get {
-                return this.tableEfretTrailer;
+                return this.tableParamTrailerNumberBlacklist;
             }
         }
         
@@ -127,7 +127,7 @@ namespace EFRET_TMS {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            Trailers cln = ((Trailers)(base.Clone()));
+            axsTrailerBlacklist cln = ((axsTrailerBlacklist)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace EFRET_TMS {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["EfretTrailer"] != null)) {
-                    base.Tables.Add(new EfretTrailerDataTable(ds.Tables["EfretTrailer"]));
+                if ((ds.Tables["ParamTrailerNumberBlacklist"] != null)) {
+                    base.Tables.Add(new ParamTrailerNumberBlacklistDataTable(ds.Tables["ParamTrailerNumberBlacklist"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace EFRET_TMS {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableEfretTrailer = ((EfretTrailerDataTable)(base.Tables["EfretTrailer"]));
+            this.tableParamTrailerNumberBlacklist = ((ParamTrailerNumberBlacklistDataTable)(base.Tables["ParamTrailerNumberBlacklist"]));
             if ((initTable == true)) {
-                if ((this.tableEfretTrailer != null)) {
-                    this.tableEfretTrailer.InitVars();
+                if ((this.tableParamTrailerNumberBlacklist != null)) {
+                    this.tableParamTrailerNumberBlacklist.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace EFRET_TMS {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "Trailers";
+            this.DataSetName = "axsTrailerBlacklist";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/Trailers.xsd";
+            this.Namespace = "http://tempuri.org/axsTrailerBlacklist.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableEfretTrailer = new EfretTrailerDataTable();
-            base.Tables.Add(this.tableEfretTrailer);
+            this.tableParamTrailerNumberBlacklist = new ParamTrailerNumberBlacklistDataTable();
+            base.Tables.Add(this.tableParamTrailerNumberBlacklist);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializeEfretTrailer() {
+        private bool ShouldSerializeParamTrailerNumberBlacklist() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace EFRET_TMS {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            Trailers ds = new Trailers();
+            axsTrailerBlacklist ds = new axsTrailerBlacklist();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,47 +270,39 @@ namespace EFRET_TMS {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void EfretTrailerRowChangeEventHandler(object sender, EfretTrailerRowChangeEvent e);
+        public delegate void ParamTrailerNumberBlacklistRowChangeEventHandler(object sender, ParamTrailerNumberBlacklistRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class EfretTrailerDataTable : global::System.Data.TypedTableBase<EfretTrailerRow> {
+        public partial class ParamTrailerNumberBlacklistDataTable : global::System.Data.TypedTableBase<ParamTrailerNumberBlacklistRow> {
             
-            private global::System.Data.DataColumn columnIdEfretTrailer;
+            private global::System.Data.DataColumn columnUTNumber;
+            
+            private global::System.Data.DataColumn columnCarrier;
+            
+            private global::System.Data.DataColumn columnTraileHeight;
             
             private global::System.Data.DataColumn columnTrailerNumber;
             
-            private global::System.Data.DataColumn columnRegistrationNumber;
+            private global::System.Data.DataColumn columnPlannedDate;
             
-            private global::System.Data.DataColumn columnMOTDate;
+            private global::System.Data.DataColumn columnPlannedTime;
             
-            private global::System.Data.DataColumn columnNextMOTDate;
+            private global::System.Data.DataColumn columnTypeRejection;
             
-            private global::System.Data.DataColumn columnNextMOTAppointmentDate;
-            
-            private global::System.Data.DataColumn columnPreviousMOTDate;
-            
-            private global::System.Data.DataColumn columnComment;
-            
-            private global::System.Data.DataColumn columnMOTPlace;
-            
-            private global::System.Data.DataColumn columnInsertionDate;
-            
-            private global::System.Data.DataColumn columnActive;
-            
-            private global::System.Data.DataColumn columnGPS;
-            
-            private global::System.Data.DataColumn columnPaddock;
+            private global::System.Data.DataColumn columnProblemOfVehicle;
             
             private global::System.Data.DataColumn columnSSMA_TimeStamp;
             
+            private global::System.Data.DataColumn columnTBLID;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public EfretTrailerDataTable() {
-                this.TableName = "EfretTrailer";
+            public ParamTrailerNumberBlacklistDataTable() {
+                this.TableName = "ParamTrailerNumberBlacklist";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -318,7 +310,7 @@ namespace EFRET_TMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal EfretTrailerDataTable(global::System.Data.DataTable table) {
+            internal ParamTrailerNumberBlacklistDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -335,16 +327,32 @@ namespace EFRET_TMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected EfretTrailerDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected ParamTrailerNumberBlacklistDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn IdEfretTrailerColumn {
+            public global::System.Data.DataColumn UTNumberColumn {
                 get {
-                    return this.columnIdEfretTrailer;
+                    return this.columnUTNumber;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn CarrierColumn {
+                get {
+                    return this.columnCarrier;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn TraileHeightColumn {
+                get {
+                    return this.columnTraileHeight;
                 }
             }
             
@@ -358,89 +366,33 @@ namespace EFRET_TMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn RegistrationNumberColumn {
+            public global::System.Data.DataColumn PlannedDateColumn {
                 get {
-                    return this.columnRegistrationNumber;
+                    return this.columnPlannedDate;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn MOTDateColumn {
+            public global::System.Data.DataColumn PlannedTimeColumn {
                 get {
-                    return this.columnMOTDate;
+                    return this.columnPlannedTime;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn NextMOTDateColumn {
+            public global::System.Data.DataColumn TypeRejectionColumn {
                 get {
-                    return this.columnNextMOTDate;
+                    return this.columnTypeRejection;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn NextMOTAppointmentDateColumn {
+            public global::System.Data.DataColumn ProblemOfVehicleColumn {
                 get {
-                    return this.columnNextMOTAppointmentDate;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn PreviousMOTDateColumn {
-                get {
-                    return this.columnPreviousMOTDate;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn CommentColumn {
-                get {
-                    return this.columnComment;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn MOTPlaceColumn {
-                get {
-                    return this.columnMOTPlace;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn InsertionDateColumn {
-                get {
-                    return this.columnInsertionDate;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn ActiveColumn {
-                get {
-                    return this.columnActive;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn GPSColumn {
-                get {
-                    return this.columnGPS;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn PaddockColumn {
-                get {
-                    return this.columnPaddock;
+                    return this.columnProblemOfVehicle;
                 }
             }
             
@@ -449,6 +401,14 @@ namespace EFRET_TMS {
             public global::System.Data.DataColumn SSMA_TimeStampColumn {
                 get {
                     return this.columnSSMA_TimeStamp;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn TBLIDColumn {
+                get {
+                    return this.columnTBLID;
                 }
             }
             
@@ -463,65 +423,61 @@ namespace EFRET_TMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public EfretTrailerRow this[int index] {
+            public ParamTrailerNumberBlacklistRow this[int index] {
                 get {
-                    return ((EfretTrailerRow)(this.Rows[index]));
+                    return ((ParamTrailerNumberBlacklistRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event EfretTrailerRowChangeEventHandler EfretTrailerRowChanging;
+            public event ParamTrailerNumberBlacklistRowChangeEventHandler ParamTrailerNumberBlacklistRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event EfretTrailerRowChangeEventHandler EfretTrailerRowChanged;
+            public event ParamTrailerNumberBlacklistRowChangeEventHandler ParamTrailerNumberBlacklistRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event EfretTrailerRowChangeEventHandler EfretTrailerRowDeleting;
+            public event ParamTrailerNumberBlacklistRowChangeEventHandler ParamTrailerNumberBlacklistRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event EfretTrailerRowChangeEventHandler EfretTrailerRowDeleted;
+            public event ParamTrailerNumberBlacklistRowChangeEventHandler ParamTrailerNumberBlacklistRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddEfretTrailerRow(EfretTrailerRow row) {
+            public void AddParamTrailerNumberBlacklistRow(ParamTrailerNumberBlacklistRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public EfretTrailerRow AddEfretTrailerRow(string TrailerNumber, string RegistrationNumber, System.DateTime MOTDate, System.DateTime NextMOTDate, System.DateTime NextMOTAppointmentDate, System.DateTime PreviousMOTDate, string Comment, string MOTPlace, System.DateTime InsertionDate, bool Active, bool GPS, bool Paddock, byte[] SSMA_TimeStamp) {
-                EfretTrailerRow rowEfretTrailerRow = ((EfretTrailerRow)(this.NewRow()));
+            public ParamTrailerNumberBlacklistRow AddParamTrailerNumberBlacklistRow(string UTNumber, string Carrier, double TraileHeight, string TrailerNumber, System.DateTime PlannedDate, System.DateTime PlannedTime, string TypeRejection, string ProblemOfVehicle, byte[] SSMA_TimeStamp) {
+                ParamTrailerNumberBlacklistRow rowParamTrailerNumberBlacklistRow = ((ParamTrailerNumberBlacklistRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        null,
+                        UTNumber,
+                        Carrier,
+                        TraileHeight,
                         TrailerNumber,
-                        RegistrationNumber,
-                        MOTDate,
-                        NextMOTDate,
-                        NextMOTAppointmentDate,
-                        PreviousMOTDate,
-                        Comment,
-                        MOTPlace,
-                        InsertionDate,
-                        Active,
-                        GPS,
-                        Paddock,
-                        SSMA_TimeStamp};
-                rowEfretTrailerRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowEfretTrailerRow);
-                return rowEfretTrailerRow;
+                        PlannedDate,
+                        PlannedTime,
+                        TypeRejection,
+                        ProblemOfVehicle,
+                        SSMA_TimeStamp,
+                        null};
+                rowParamTrailerNumberBlacklistRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowParamTrailerNumberBlacklistRow);
+                return rowParamTrailerNumberBlacklistRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public EfretTrailerRow FindByIdEfretTrailer(int IdEfretTrailer) {
-                return ((EfretTrailerRow)(this.Rows.Find(new object[] {
-                            IdEfretTrailer})));
+            public ParamTrailerNumberBlacklistRow FindByTBLID(int TBLID) {
+                return ((ParamTrailerNumberBlacklistRow)(this.Rows.Find(new object[] {
+                            TBLID})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                EfretTrailerDataTable cln = ((EfretTrailerDataTable)(base.Clone()));
+                ParamTrailerNumberBlacklistDataTable cln = ((ParamTrailerNumberBlacklistDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -529,100 +485,87 @@ namespace EFRET_TMS {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new EfretTrailerDataTable();
+                return new ParamTrailerNumberBlacklistDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
-                this.columnIdEfretTrailer = base.Columns["IdEfretTrailer"];
+                this.columnUTNumber = base.Columns["UTNumber"];
+                this.columnCarrier = base.Columns["Carrier"];
+                this.columnTraileHeight = base.Columns["TraileHeight"];
                 this.columnTrailerNumber = base.Columns["TrailerNumber"];
-                this.columnRegistrationNumber = base.Columns["RegistrationNumber"];
-                this.columnMOTDate = base.Columns["MOTDate"];
-                this.columnNextMOTDate = base.Columns["NextMOTDate"];
-                this.columnNextMOTAppointmentDate = base.Columns["NextMOTAppointmentDate"];
-                this.columnPreviousMOTDate = base.Columns["PreviousMOTDate"];
-                this.columnComment = base.Columns["Comment"];
-                this.columnMOTPlace = base.Columns["MOTPlace"];
-                this.columnInsertionDate = base.Columns["InsertionDate"];
-                this.columnActive = base.Columns["Active"];
-                this.columnGPS = base.Columns["GPS"];
-                this.columnPaddock = base.Columns["Paddock"];
+                this.columnPlannedDate = base.Columns["PlannedDate"];
+                this.columnPlannedTime = base.Columns["PlannedTime"];
+                this.columnTypeRejection = base.Columns["TypeRejection"];
+                this.columnProblemOfVehicle = base.Columns["ProblemOfVehicle"];
                 this.columnSSMA_TimeStamp = base.Columns["SSMA_TimeStamp"];
+                this.columnTBLID = base.Columns["TBLID"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnIdEfretTrailer = new global::System.Data.DataColumn("IdEfretTrailer", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnIdEfretTrailer);
+                this.columnUTNumber = new global::System.Data.DataColumn("UTNumber", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUTNumber);
+                this.columnCarrier = new global::System.Data.DataColumn("Carrier", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCarrier);
+                this.columnTraileHeight = new global::System.Data.DataColumn("TraileHeight", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTraileHeight);
                 this.columnTrailerNumber = new global::System.Data.DataColumn("TrailerNumber", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTrailerNumber);
-                this.columnRegistrationNumber = new global::System.Data.DataColumn("RegistrationNumber", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnRegistrationNumber);
-                this.columnMOTDate = new global::System.Data.DataColumn("MOTDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnMOTDate);
-                this.columnNextMOTDate = new global::System.Data.DataColumn("NextMOTDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNextMOTDate);
-                this.columnNextMOTAppointmentDate = new global::System.Data.DataColumn("NextMOTAppointmentDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNextMOTAppointmentDate);
-                this.columnPreviousMOTDate = new global::System.Data.DataColumn("PreviousMOTDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPreviousMOTDate);
-                this.columnComment = new global::System.Data.DataColumn("Comment", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnComment);
-                this.columnMOTPlace = new global::System.Data.DataColumn("MOTPlace", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnMOTPlace);
-                this.columnInsertionDate = new global::System.Data.DataColumn("InsertionDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnInsertionDate);
-                this.columnActive = new global::System.Data.DataColumn("Active", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnActive);
-                this.columnGPS = new global::System.Data.DataColumn("GPS", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnGPS);
-                this.columnPaddock = new global::System.Data.DataColumn("Paddock", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPaddock);
+                this.columnPlannedDate = new global::System.Data.DataColumn("PlannedDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPlannedDate);
+                this.columnPlannedTime = new global::System.Data.DataColumn("PlannedTime", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPlannedTime);
+                this.columnTypeRejection = new global::System.Data.DataColumn("TypeRejection", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTypeRejection);
+                this.columnProblemOfVehicle = new global::System.Data.DataColumn("ProblemOfVehicle", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnProblemOfVehicle);
                 this.columnSSMA_TimeStamp = new global::System.Data.DataColumn("SSMA_TimeStamp", typeof(byte[]), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSSMA_TimeStamp);
+                this.columnTBLID = new global::System.Data.DataColumn("TBLID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTBLID);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnIdEfretTrailer}, true));
-                this.columnIdEfretTrailer.AutoIncrement = true;
-                this.columnIdEfretTrailer.AutoIncrementSeed = -1;
-                this.columnIdEfretTrailer.AutoIncrementStep = -1;
-                this.columnIdEfretTrailer.AllowDBNull = false;
-                this.columnIdEfretTrailer.ReadOnly = true;
-                this.columnIdEfretTrailer.Unique = true;
-                this.columnTrailerNumber.AllowDBNull = false;
-                this.columnTrailerNumber.MaxLength = 10;
-                this.columnRegistrationNumber.AllowDBNull = false;
-                this.columnRegistrationNumber.MaxLength = 10;
-                this.columnComment.MaxLength = 50;
-                this.columnMOTPlace.MaxLength = 50;
+                                this.columnTBLID}, true));
+                this.columnUTNumber.MaxLength = 10;
+                this.columnCarrier.MaxLength = 10;
+                this.columnTrailerNumber.MaxLength = 20;
+                this.columnTypeRejection.MaxLength = 20;
+                this.columnProblemOfVehicle.MaxLength = 255;
                 this.columnSSMA_TimeStamp.ReadOnly = true;
+                this.columnTBLID.AutoIncrement = true;
+                this.columnTBLID.AutoIncrementSeed = -1;
+                this.columnTBLID.AutoIncrementStep = -1;
+                this.columnTBLID.AllowDBNull = false;
+                this.columnTBLID.ReadOnly = true;
+                this.columnTBLID.Unique = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public EfretTrailerRow NewEfretTrailerRow() {
-                return ((EfretTrailerRow)(this.NewRow()));
+            public ParamTrailerNumberBlacklistRow NewParamTrailerNumberBlacklistRow() {
+                return ((ParamTrailerNumberBlacklistRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new EfretTrailerRow(builder);
+                return new ParamTrailerNumberBlacklistRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(EfretTrailerRow);
+                return typeof(ParamTrailerNumberBlacklistRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.EfretTrailerRowChanged != null)) {
-                    this.EfretTrailerRowChanged(this, new EfretTrailerRowChangeEvent(((EfretTrailerRow)(e.Row)), e.Action));
+                if ((this.ParamTrailerNumberBlacklistRowChanged != null)) {
+                    this.ParamTrailerNumberBlacklistRowChanged(this, new ParamTrailerNumberBlacklistRowChangeEvent(((ParamTrailerNumberBlacklistRow)(e.Row)), e.Action));
                 }
             }
             
@@ -630,8 +573,8 @@ namespace EFRET_TMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.EfretTrailerRowChanging != null)) {
-                    this.EfretTrailerRowChanging(this, new EfretTrailerRowChangeEvent(((EfretTrailerRow)(e.Row)), e.Action));
+                if ((this.ParamTrailerNumberBlacklistRowChanging != null)) {
+                    this.ParamTrailerNumberBlacklistRowChanging(this, new ParamTrailerNumberBlacklistRowChangeEvent(((ParamTrailerNumberBlacklistRow)(e.Row)), e.Action));
                 }
             }
             
@@ -639,8 +582,8 @@ namespace EFRET_TMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.EfretTrailerRowDeleted != null)) {
-                    this.EfretTrailerRowDeleted(this, new EfretTrailerRowChangeEvent(((EfretTrailerRow)(e.Row)), e.Action));
+                if ((this.ParamTrailerNumberBlacklistRowDeleted != null)) {
+                    this.ParamTrailerNumberBlacklistRowDeleted(this, new ParamTrailerNumberBlacklistRowChangeEvent(((ParamTrailerNumberBlacklistRow)(e.Row)), e.Action));
                 }
             }
             
@@ -648,14 +591,14 @@ namespace EFRET_TMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.EfretTrailerRowDeleting != null)) {
-                    this.EfretTrailerRowDeleting(this, new EfretTrailerRowChangeEvent(((EfretTrailerRow)(e.Row)), e.Action));
+                if ((this.ParamTrailerNumberBlacklistRowDeleting != null)) {
+                    this.ParamTrailerNumberBlacklistRowDeleting(this, new ParamTrailerNumberBlacklistRowChangeEvent(((ParamTrailerNumberBlacklistRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemoveEfretTrailerRow(EfretTrailerRow row) {
+            public void RemoveParamTrailerNumberBlacklistRow(ParamTrailerNumberBlacklistRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -664,7 +607,7 @@ namespace EFRET_TMS {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                Trailers ds = new Trailers();
+                axsTrailerBlacklist ds = new axsTrailerBlacklist();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -682,7 +625,7 @@ namespace EFRET_TMS {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "EfretTrailerDataTable";
+                attribute2.FixedValue = "ParamTrailerNumberBlacklistDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -726,25 +669,64 @@ namespace EFRET_TMS {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class EfretTrailerRow : global::System.Data.DataRow {
+        public partial class ParamTrailerNumberBlacklistRow : global::System.Data.DataRow {
             
-            private EfretTrailerDataTable tableEfretTrailer;
+            private ParamTrailerNumberBlacklistDataTable tableParamTrailerNumberBlacklist;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal EfretTrailerRow(global::System.Data.DataRowBuilder rb) : 
+            internal ParamTrailerNumberBlacklistRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableEfretTrailer = ((EfretTrailerDataTable)(this.Table));
+                this.tableParamTrailerNumberBlacklist = ((ParamTrailerNumberBlacklistDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int IdEfretTrailer {
+            public string UTNumber {
                 get {
-                    return ((int)(this[this.tableEfretTrailer.IdEfretTrailerColumn]));
+                    try {
+                        return ((string)(this[this.tableParamTrailerNumberBlacklist.UTNumberColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'UTNumber\' in table \'ParamTrailerNumberBlacklist\' is DBNull." +
+                                "", e);
+                    }
                 }
                 set {
-                    this[this.tableEfretTrailer.IdEfretTrailerColumn] = value;
+                    this[this.tableParamTrailerNumberBlacklist.UTNumberColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Carrier {
+                get {
+                    try {
+                        return ((string)(this[this.tableParamTrailerNumberBlacklist.CarrierColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Carrier\' in table \'ParamTrailerNumberBlacklist\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableParamTrailerNumberBlacklist.CarrierColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public double TraileHeight {
+                get {
+                    try {
+                        return ((double)(this[this.tableParamTrailerNumberBlacklist.TraileHeightColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TraileHeight\' in table \'ParamTrailerNumberBlacklist\' is DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tableParamTrailerNumberBlacklist.TraileHeightColumn] = value;
                 }
             }
             
@@ -752,181 +734,84 @@ namespace EFRET_TMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string TrailerNumber {
                 get {
-                    return ((string)(this[this.tableEfretTrailer.TrailerNumberColumn]));
-                }
-                set {
-                    this[this.tableEfretTrailer.TrailerNumberColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string RegistrationNumber {
-                get {
-                    return ((string)(this[this.tableEfretTrailer.RegistrationNumberColumn]));
-                }
-                set {
-                    this[this.tableEfretTrailer.RegistrationNumberColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime MOTDate {
-                get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableEfretTrailer.MOTDateColumn]));
+                        return ((string)(this[this.tableParamTrailerNumberBlacklist.TrailerNumberColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'MOTDate\' in table \'EfretTrailer\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'TrailerNumber\' in table \'ParamTrailerNumberBlacklist\' is DB" +
+                                "Null.", e);
                     }
                 }
                 set {
-                    this[this.tableEfretTrailer.MOTDateColumn] = value;
+                    this[this.tableParamTrailerNumberBlacklist.TrailerNumberColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime NextMOTDate {
+            public System.DateTime PlannedDate {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableEfretTrailer.NextMOTDateColumn]));
+                        return ((global::System.DateTime)(this[this.tableParamTrailerNumberBlacklist.PlannedDateColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'NextMOTDate\' in table \'EfretTrailer\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'PlannedDate\' in table \'ParamTrailerNumberBlacklist\' is DBNu" +
+                                "ll.", e);
                     }
                 }
                 set {
-                    this[this.tableEfretTrailer.NextMOTDateColumn] = value;
+                    this[this.tableParamTrailerNumberBlacklist.PlannedDateColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime NextMOTAppointmentDate {
+            public System.DateTime PlannedTime {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableEfretTrailer.NextMOTAppointmentDateColumn]));
+                        return ((global::System.DateTime)(this[this.tableParamTrailerNumberBlacklist.PlannedTimeColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'NextMOTAppointmentDate\' in table \'EfretTrailer\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'PlannedTime\' in table \'ParamTrailerNumberBlacklist\' is DBNu" +
+                                "ll.", e);
                     }
                 }
                 set {
-                    this[this.tableEfretTrailer.NextMOTAppointmentDateColumn] = value;
+                    this[this.tableParamTrailerNumberBlacklist.PlannedTimeColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime PreviousMOTDate {
+            public string TypeRejection {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableEfretTrailer.PreviousMOTDateColumn]));
+                        return ((string)(this[this.tableParamTrailerNumberBlacklist.TypeRejectionColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PreviousMOTDate\' in table \'EfretTrailer\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'TypeRejection\' in table \'ParamTrailerNumberBlacklist\' is DB" +
+                                "Null.", e);
                     }
                 }
                 set {
-                    this[this.tableEfretTrailer.PreviousMOTDateColumn] = value;
+                    this[this.tableParamTrailerNumberBlacklist.TypeRejectionColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Comment {
+            public string ProblemOfVehicle {
                 get {
                     try {
-                        return ((string)(this[this.tableEfretTrailer.CommentColumn]));
+                        return ((string)(this[this.tableParamTrailerNumberBlacklist.ProblemOfVehicleColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Comment\' in table \'EfretTrailer\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ProblemOfVehicle\' in table \'ParamTrailerNumberBlacklist\' is" +
+                                " DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableEfretTrailer.CommentColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string MOTPlace {
-                get {
-                    try {
-                        return ((string)(this[this.tableEfretTrailer.MOTPlaceColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'MOTPlace\' in table \'EfretTrailer\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableEfretTrailer.MOTPlaceColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime InsertionDate {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableEfretTrailer.InsertionDateColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'InsertionDate\' in table \'EfretTrailer\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableEfretTrailer.InsertionDateColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Active {
-                get {
-                    try {
-                        return ((bool)(this[this.tableEfretTrailer.ActiveColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Active\' in table \'EfretTrailer\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableEfretTrailer.ActiveColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool GPS {
-                get {
-                    try {
-                        return ((bool)(this[this.tableEfretTrailer.GPSColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'GPS\' in table \'EfretTrailer\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableEfretTrailer.GPSColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Paddock {
-                get {
-                    try {
-                        return ((bool)(this[this.tableEfretTrailer.PaddockColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Paddock\' in table \'EfretTrailer\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableEfretTrailer.PaddockColumn] = value;
+                    this[this.tableParamTrailerNumberBlacklist.ProblemOfVehicleColumn] = value;
                 }
             }
             
@@ -935,147 +820,135 @@ namespace EFRET_TMS {
             public byte[] SSMA_TimeStamp {
                 get {
                     try {
-                        return ((byte[])(this[this.tableEfretTrailer.SSMA_TimeStampColumn]));
+                        return ((byte[])(this[this.tableParamTrailerNumberBlacklist.SSMA_TimeStampColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'SSMA_TimeStamp\' in table \'EfretTrailer\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'SSMA_TimeStamp\' in table \'ParamTrailerNumberBlacklist\' is D" +
+                                "BNull.", e);
                     }
                 }
                 set {
-                    this[this.tableEfretTrailer.SSMA_TimeStampColumn] = value;
+                    this[this.tableParamTrailerNumberBlacklist.SSMA_TimeStampColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsMOTDateNull() {
-                return this.IsNull(this.tableEfretTrailer.MOTDateColumn);
+            public int TBLID {
+                get {
+                    return ((int)(this[this.tableParamTrailerNumberBlacklist.TBLIDColumn]));
+                }
+                set {
+                    this[this.tableParamTrailerNumberBlacklist.TBLIDColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetMOTDateNull() {
-                this[this.tableEfretTrailer.MOTDateColumn] = global::System.Convert.DBNull;
+            public bool IsUTNumberNull() {
+                return this.IsNull(this.tableParamTrailerNumberBlacklist.UTNumberColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsNextMOTDateNull() {
-                return this.IsNull(this.tableEfretTrailer.NextMOTDateColumn);
+            public void SetUTNumberNull() {
+                this[this.tableParamTrailerNumberBlacklist.UTNumberColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetNextMOTDateNull() {
-                this[this.tableEfretTrailer.NextMOTDateColumn] = global::System.Convert.DBNull;
+            public bool IsCarrierNull() {
+                return this.IsNull(this.tableParamTrailerNumberBlacklist.CarrierColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsNextMOTAppointmentDateNull() {
-                return this.IsNull(this.tableEfretTrailer.NextMOTAppointmentDateColumn);
+            public void SetCarrierNull() {
+                this[this.tableParamTrailerNumberBlacklist.CarrierColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetNextMOTAppointmentDateNull() {
-                this[this.tableEfretTrailer.NextMOTAppointmentDateColumn] = global::System.Convert.DBNull;
+            public bool IsTraileHeightNull() {
+                return this.IsNull(this.tableParamTrailerNumberBlacklist.TraileHeightColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsPreviousMOTDateNull() {
-                return this.IsNull(this.tableEfretTrailer.PreviousMOTDateColumn);
+            public void SetTraileHeightNull() {
+                this[this.tableParamTrailerNumberBlacklist.TraileHeightColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetPreviousMOTDateNull() {
-                this[this.tableEfretTrailer.PreviousMOTDateColumn] = global::System.Convert.DBNull;
+            public bool IsTrailerNumberNull() {
+                return this.IsNull(this.tableParamTrailerNumberBlacklist.TrailerNumberColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsCommentNull() {
-                return this.IsNull(this.tableEfretTrailer.CommentColumn);
+            public void SetTrailerNumberNull() {
+                this[this.tableParamTrailerNumberBlacklist.TrailerNumberColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetCommentNull() {
-                this[this.tableEfretTrailer.CommentColumn] = global::System.Convert.DBNull;
+            public bool IsPlannedDateNull() {
+                return this.IsNull(this.tableParamTrailerNumberBlacklist.PlannedDateColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsMOTPlaceNull() {
-                return this.IsNull(this.tableEfretTrailer.MOTPlaceColumn);
+            public void SetPlannedDateNull() {
+                this[this.tableParamTrailerNumberBlacklist.PlannedDateColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetMOTPlaceNull() {
-                this[this.tableEfretTrailer.MOTPlaceColumn] = global::System.Convert.DBNull;
+            public bool IsPlannedTimeNull() {
+                return this.IsNull(this.tableParamTrailerNumberBlacklist.PlannedTimeColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsInsertionDateNull() {
-                return this.IsNull(this.tableEfretTrailer.InsertionDateColumn);
+            public void SetPlannedTimeNull() {
+                this[this.tableParamTrailerNumberBlacklist.PlannedTimeColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetInsertionDateNull() {
-                this[this.tableEfretTrailer.InsertionDateColumn] = global::System.Convert.DBNull;
+            public bool IsTypeRejectionNull() {
+                return this.IsNull(this.tableParamTrailerNumberBlacklist.TypeRejectionColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsActiveNull() {
-                return this.IsNull(this.tableEfretTrailer.ActiveColumn);
+            public void SetTypeRejectionNull() {
+                this[this.tableParamTrailerNumberBlacklist.TypeRejectionColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetActiveNull() {
-                this[this.tableEfretTrailer.ActiveColumn] = global::System.Convert.DBNull;
+            public bool IsProblemOfVehicleNull() {
+                return this.IsNull(this.tableParamTrailerNumberBlacklist.ProblemOfVehicleColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsGPSNull() {
-                return this.IsNull(this.tableEfretTrailer.GPSColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetGPSNull() {
-                this[this.tableEfretTrailer.GPSColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsPaddockNull() {
-                return this.IsNull(this.tableEfretTrailer.PaddockColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetPaddockNull() {
-                this[this.tableEfretTrailer.PaddockColumn] = global::System.Convert.DBNull;
+            public void SetProblemOfVehicleNull() {
+                this[this.tableParamTrailerNumberBlacklist.ProblemOfVehicleColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsSSMA_TimeStampNull() {
-                return this.IsNull(this.tableEfretTrailer.SSMA_TimeStampColumn);
+                return this.IsNull(this.tableParamTrailerNumberBlacklist.SSMA_TimeStampColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetSSMA_TimeStampNull() {
-                this[this.tableEfretTrailer.SSMA_TimeStampColumn] = global::System.Convert.DBNull;
+                this[this.tableParamTrailerNumberBlacklist.SSMA_TimeStampColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1083,22 +956,22 @@ namespace EFRET_TMS {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class EfretTrailerRowChangeEvent : global::System.EventArgs {
+        public class ParamTrailerNumberBlacklistRowChangeEvent : global::System.EventArgs {
             
-            private EfretTrailerRow eventRow;
+            private ParamTrailerNumberBlacklistRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public EfretTrailerRowChangeEvent(EfretTrailerRow row, global::System.Data.DataRowAction action) {
+            public ParamTrailerNumberBlacklistRowChangeEvent(ParamTrailerNumberBlacklistRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public EfretTrailerRow Row {
+            public ParamTrailerNumberBlacklistRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -1114,7 +987,7 @@ namespace EFRET_TMS {
         }
     }
 }
-namespace EFRET_TMS.TrailersTableAdapters {
+namespace EFRET_TMS.axsTrailerBlacklistTableAdapters {
     
     
     /// <summary>
@@ -1126,7 +999,7 @@ namespace EFRET_TMS.TrailersTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class EfretTrailerTableAdapter : global::System.ComponentModel.Component {
+    public partial class ParamTrailerNumberBlacklistTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -1140,7 +1013,7 @@ namespace EFRET_TMS.TrailersTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public EfretTrailerTableAdapter() {
+        public ParamTrailerNumberBlacklistTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -1237,66 +1110,54 @@ namespace EFRET_TMS.TrailersTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "EfretTrailer";
-            tableMapping.ColumnMappings.Add("IdEfretTrailer", "IdEfretTrailer");
+            tableMapping.DataSetTable = "ParamTrailerNumberBlacklist";
+            tableMapping.ColumnMappings.Add("UTNumber", "UTNumber");
+            tableMapping.ColumnMappings.Add("Carrier", "Carrier");
+            tableMapping.ColumnMappings.Add("TraileHeight", "TraileHeight");
             tableMapping.ColumnMappings.Add("TrailerNumber", "TrailerNumber");
-            tableMapping.ColumnMappings.Add("RegistrationNumber", "RegistrationNumber");
-            tableMapping.ColumnMappings.Add("MOTDate", "MOTDate");
-            tableMapping.ColumnMappings.Add("NextMOTDate", "NextMOTDate");
-            tableMapping.ColumnMappings.Add("NextMOTAppointmentDate", "NextMOTAppointmentDate");
-            tableMapping.ColumnMappings.Add("PreviousMOTDate", "PreviousMOTDate");
-            tableMapping.ColumnMappings.Add("Comment", "Comment");
-            tableMapping.ColumnMappings.Add("MOTPlace", "MOTPlace");
-            tableMapping.ColumnMappings.Add("InsertionDate", "InsertionDate");
-            tableMapping.ColumnMappings.Add("Active", "Active");
-            tableMapping.ColumnMappings.Add("GPS", "GPS");
-            tableMapping.ColumnMappings.Add("Paddock", "Paddock");
+            tableMapping.ColumnMappings.Add("PlannedDate", "PlannedDate");
+            tableMapping.ColumnMappings.Add("PlannedTime", "PlannedTime");
+            tableMapping.ColumnMappings.Add("TypeRejection", "TypeRejection");
+            tableMapping.ColumnMappings.Add("ProblemOfVehicle", "ProblemOfVehicle");
             tableMapping.ColumnMappings.Add("SSMA_TimeStamp", "SSMA_TimeStamp");
+            tableMapping.ColumnMappings.Add("TBLID", "TBLID");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[EfretTrailer] WHERE (([IdEfretTrailer] = @Original_IdEfretTrai" +
-                "ler) AND ([SSMA_TimeStamp] = @Original_SSMA_TimeStamp))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[ParamTrailerNumberBlacklist] WHERE (([SSMA_TimeStamp] = @Origi" +
+                "nal_SSMA_TimeStamp) AND ([TBLID] = @Original_TBLID))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IdEfretTrailer", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdEfretTrailer", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SSMA_TimeStamp", global::System.Data.SqlDbType.Timestamp, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SSMA_TimeStamp", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TBLID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TBLID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[EfretTrailer] ([TrailerNumber], [RegistrationNumber], [MOTDate], [NextMOTDate], [NextMOTAppointmentDate], [PreviousMOTDate], [Comment], [MOTPlace], [InsertionDate], [Active], [GPS], [Paddock]) VALUES (@TrailerNumber, @RegistrationNumber, @MOTDate, @NextMOTDate, @NextMOTAppointmentDate, @PreviousMOTDate, @Comment, @MOTPlace, @InsertionDate, @Active, @GPS, @Paddock);
-SELECT IdEfretTrailer, TrailerNumber, RegistrationNumber, MOTDate, NextMOTDate, NextMOTAppointmentDate, PreviousMOTDate, Comment, MOTPlace, InsertionDate, Active, GPS, Paddock, SSMA_TimeStamp FROM EfretTrailer WHERE (IdEfretTrailer = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[ParamTrailerNumberBlacklist] ([UTNumber], [Carrier], [TraileHeight], [TrailerNumber], [PlannedDate], [PlannedTime], [TypeRejection], [ProblemOfVehicle]) VALUES (@UTNumber, @Carrier, @TraileHeight, @TrailerNumber, @PlannedDate, @PlannedTime, @TypeRejection, @ProblemOfVehicle);
+SELECT UTNumber, Carrier, TraileHeight, TrailerNumber, PlannedDate, PlannedTime, TypeRejection, ProblemOfVehicle, SSMA_TimeStamp, TBLID FROM ParamTrailerNumberBlacklist WHERE (TBLID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UTNumber", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UTNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Carrier", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Carrier", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TraileHeight", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TraileHeight", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TrailerNumber", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TrailerNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RegistrationNumber", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RegistrationNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MOTDate", global::System.Data.SqlDbType.DateTime2, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MOTDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NextMOTDate", global::System.Data.SqlDbType.DateTime2, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NextMOTDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NextMOTAppointmentDate", global::System.Data.SqlDbType.DateTime2, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NextMOTAppointmentDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PreviousMOTDate", global::System.Data.SqlDbType.DateTime2, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PreviousMOTDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Comment", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Comment", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MOTPlace", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MOTPlace", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@InsertionDate", global::System.Data.SqlDbType.DateTime2, 0, global::System.Data.ParameterDirection.Input, 0, 0, "InsertionDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Active", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Active", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@GPS", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GPS", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Paddock", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Paddock", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PlannedDate", global::System.Data.SqlDbType.DateTime2, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PlannedDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PlannedTime", global::System.Data.SqlDbType.DateTime2, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PlannedTime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TypeRejection", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TypeRejection", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ProblemOfVehicle", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ProblemOfVehicle", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[EfretTrailer] SET [TrailerNumber] = @TrailerNumber, [RegistrationNumber] = @RegistrationNumber, [MOTDate] = @MOTDate, [NextMOTDate] = @NextMOTDate, [NextMOTAppointmentDate] = @NextMOTAppointmentDate, [PreviousMOTDate] = @PreviousMOTDate, [Comment] = @Comment, [MOTPlace] = @MOTPlace, [InsertionDate] = @InsertionDate, [Active] = @Active, [GPS] = @GPS, [Paddock] = @Paddock WHERE (([IdEfretTrailer] = @Original_IdEfretTrailer) AND ([SSMA_TimeStamp] = @Original_SSMA_TimeStamp));
-SELECT IdEfretTrailer, TrailerNumber, RegistrationNumber, MOTDate, NextMOTDate, NextMOTAppointmentDate, PreviousMOTDate, Comment, MOTPlace, InsertionDate, Active, GPS, Paddock, SSMA_TimeStamp FROM EfretTrailer WHERE (IdEfretTrailer = @IdEfretTrailer)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[ParamTrailerNumberBlacklist] SET [UTNumber] = @UTNumber, [Carrier] = @Carrier, [TraileHeight] = @TraileHeight, [TrailerNumber] = @TrailerNumber, [PlannedDate] = @PlannedDate, [PlannedTime] = @PlannedTime, [TypeRejection] = @TypeRejection, [ProblemOfVehicle] = @ProblemOfVehicle WHERE (([SSMA_TimeStamp] = @Original_SSMA_TimeStamp) AND ([TBLID] = @Original_TBLID));
+SELECT UTNumber, Carrier, TraileHeight, TrailerNumber, PlannedDate, PlannedTime, TypeRejection, ProblemOfVehicle, SSMA_TimeStamp, TBLID FROM ParamTrailerNumberBlacklist WHERE (TBLID = @TBLID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UTNumber", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UTNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Carrier", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Carrier", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TraileHeight", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TraileHeight", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TrailerNumber", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TrailerNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RegistrationNumber", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RegistrationNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MOTDate", global::System.Data.SqlDbType.DateTime2, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MOTDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NextMOTDate", global::System.Data.SqlDbType.DateTime2, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NextMOTDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NextMOTAppointmentDate", global::System.Data.SqlDbType.DateTime2, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NextMOTAppointmentDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PreviousMOTDate", global::System.Data.SqlDbType.DateTime2, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PreviousMOTDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Comment", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Comment", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MOTPlace", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MOTPlace", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@InsertionDate", global::System.Data.SqlDbType.DateTime2, 0, global::System.Data.ParameterDirection.Input, 0, 0, "InsertionDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Active", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Active", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@GPS", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GPS", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Paddock", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Paddock", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IdEfretTrailer", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdEfretTrailer", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PlannedDate", global::System.Data.SqlDbType.DateTime2, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PlannedDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PlannedTime", global::System.Data.SqlDbType.DateTime2, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PlannedTime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TypeRejection", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TypeRejection", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ProblemOfVehicle", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ProblemOfVehicle", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SSMA_TimeStamp", global::System.Data.SqlDbType.Timestamp, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SSMA_TimeStamp", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdEfretTrailer", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IdEfretTrailer", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TBLID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TBLID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TBLID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "TBLID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1312,9 +1173,9 @@ SELECT IdEfretTrailer, TrailerNumber, RegistrationNumber, MOTDate, NextMOTDate, 
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT IdEfretTrailer, TrailerNumber, RegistrationNumber, MOTDate, NextMOTDate, N" +
-                "extMOTAppointmentDate, PreviousMOTDate, Comment, MOTPlace, InsertionDate, Active" +
-                ", GPS, Paddock, SSMA_TimeStamp FROM dbo.EfretTrailer";
+            this._commandCollection[0].CommandText = "SELECT UTNumber, Carrier, TraileHeight, TrailerNumber, PlannedDate, PlannedTime, " +
+                "TypeRejection, ProblemOfVehicle, SSMA_TimeStamp, TBLID FROM dbo.ParamTrailerNumb" +
+                "erBlacklist";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1322,7 +1183,7 @@ SELECT IdEfretTrailer, TrailerNumber, RegistrationNumber, MOTDate, NextMOTDate, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(Trailers.EfretTrailerDataTable dataTable) {
+        public virtual int Fill(axsTrailerBlacklist.ParamTrailerNumberBlacklistDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1335,9 +1196,9 @@ SELECT IdEfretTrailer, TrailerNumber, RegistrationNumber, MOTDate, NextMOTDate, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual Trailers.EfretTrailerDataTable GetData() {
+        public virtual axsTrailerBlacklist.ParamTrailerNumberBlacklistDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            Trailers.EfretTrailerDataTable dataTable = new Trailers.EfretTrailerDataTable();
+            axsTrailerBlacklist.ParamTrailerNumberBlacklistDataTable dataTable = new axsTrailerBlacklist.ParamTrailerNumberBlacklistDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1345,15 +1206,15 @@ SELECT IdEfretTrailer, TrailerNumber, RegistrationNumber, MOTDate, NextMOTDate, 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Trailers.EfretTrailerDataTable dataTable) {
+        public virtual int Update(axsTrailerBlacklist.ParamTrailerNumberBlacklistDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Trailers dataSet) {
-            return this.Adapter.Update(dataSet, "EfretTrailer");
+        public virtual int Update(axsTrailerBlacklist dataSet) {
+            return this.Adapter.Update(dataSet, "ParamTrailerNumberBlacklist");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1375,14 +1236,14 @@ SELECT IdEfretTrailer, TrailerNumber, RegistrationNumber, MOTDate, NextMOTDate, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_IdEfretTrailer, byte[] Original_SSMA_TimeStamp) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_IdEfretTrailer));
+        public virtual int Delete(byte[] Original_SSMA_TimeStamp, int Original_TBLID) {
             if ((Original_SSMA_TimeStamp == null)) {
                 throw new global::System.ArgumentNullException("Original_SSMA_TimeStamp");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((byte[])(Original_SSMA_TimeStamp));
+                this.Adapter.DeleteCommand.Parameters[0].Value = ((byte[])(Original_SSMA_TimeStamp));
             }
+            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_TBLID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1403,78 +1264,54 @@ SELECT IdEfretTrailer, TrailerNumber, RegistrationNumber, MOTDate, NextMOTDate, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string TrailerNumber, string RegistrationNumber, global::System.Nullable<global::System.DateTime> MOTDate, global::System.Nullable<global::System.DateTime> NextMOTDate, global::System.Nullable<global::System.DateTime> NextMOTAppointmentDate, global::System.Nullable<global::System.DateTime> PreviousMOTDate, string Comment, string MOTPlace, global::System.Nullable<global::System.DateTime> InsertionDate, global::System.Nullable<bool> Active, global::System.Nullable<bool> GPS, global::System.Nullable<bool> Paddock) {
-            if ((TrailerNumber == null)) {
-                throw new global::System.ArgumentNullException("TrailerNumber");
+        public virtual int Insert(string UTNumber, string Carrier, global::System.Nullable<double> TraileHeight, string TrailerNumber, global::System.Nullable<global::System.DateTime> PlannedDate, global::System.Nullable<global::System.DateTime> PlannedTime, string TypeRejection, string ProblemOfVehicle) {
+            if ((UTNumber == null)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(TrailerNumber));
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(UTNumber));
             }
-            if ((RegistrationNumber == null)) {
-                throw new global::System.ArgumentNullException("RegistrationNumber");
+            if ((Carrier == null)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(RegistrationNumber));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Carrier));
             }
-            if ((MOTDate.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(MOTDate.Value));
+            if ((TraileHeight.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((double)(TraileHeight.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((NextMOTDate.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(NextMOTDate.Value));
-            }
-            else {
+            if ((TrailerNumber == null)) {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((NextMOTAppointmentDate.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(NextMOTAppointmentDate.Value));
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(TrailerNumber));
+            }
+            if ((PlannedDate.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(PlannedDate.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            if ((PreviousMOTDate.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((System.DateTime)(PreviousMOTDate.Value));
+            if ((PlannedTime.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((System.DateTime)(PlannedTime.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
-            if ((Comment == null)) {
+            if ((TypeRejection == null)) {
                 this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(Comment));
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(TypeRejection));
             }
-            if ((MOTPlace == null)) {
+            if ((ProblemOfVehicle == null)) {
                 this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(MOTPlace));
-            }
-            if ((InsertionDate.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[8].Value = ((System.DateTime)(InsertionDate.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            if ((Active.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[9].Value = ((bool)(Active.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            if ((GPS.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[10].Value = ((bool)(GPS.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            if ((Paddock.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[11].Value = ((bool)(Paddock.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(ProblemOfVehicle));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1496,87 +1333,63 @@ SELECT IdEfretTrailer, TrailerNumber, RegistrationNumber, MOTDate, NextMOTDate, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string TrailerNumber, string RegistrationNumber, global::System.Nullable<global::System.DateTime> MOTDate, global::System.Nullable<global::System.DateTime> NextMOTDate, global::System.Nullable<global::System.DateTime> NextMOTAppointmentDate, global::System.Nullable<global::System.DateTime> PreviousMOTDate, string Comment, string MOTPlace, global::System.Nullable<global::System.DateTime> InsertionDate, global::System.Nullable<bool> Active, global::System.Nullable<bool> GPS, global::System.Nullable<bool> Paddock, int Original_IdEfretTrailer, byte[] Original_SSMA_TimeStamp, int IdEfretTrailer) {
-            if ((TrailerNumber == null)) {
-                throw new global::System.ArgumentNullException("TrailerNumber");
+        public virtual int Update(string UTNumber, string Carrier, global::System.Nullable<double> TraileHeight, string TrailerNumber, global::System.Nullable<global::System.DateTime> PlannedDate, global::System.Nullable<global::System.DateTime> PlannedTime, string TypeRejection, string ProblemOfVehicle, byte[] Original_SSMA_TimeStamp, int Original_TBLID, int TBLID) {
+            if ((UTNumber == null)) {
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(TrailerNumber));
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(UTNumber));
             }
-            if ((RegistrationNumber == null)) {
-                throw new global::System.ArgumentNullException("RegistrationNumber");
+            if ((Carrier == null)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(RegistrationNumber));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Carrier));
             }
-            if ((MOTDate.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(MOTDate.Value));
+            if ((TraileHeight.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((double)(TraileHeight.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((NextMOTDate.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(NextMOTDate.Value));
-            }
-            else {
+            if ((TrailerNumber == null)) {
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((NextMOTAppointmentDate.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(NextMOTAppointmentDate.Value));
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(TrailerNumber));
+            }
+            if ((PlannedDate.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(PlannedDate.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            if ((PreviousMOTDate.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((System.DateTime)(PreviousMOTDate.Value));
+            if ((PlannedTime.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((System.DateTime)(PlannedTime.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
-            if ((Comment == null)) {
+            if ((TypeRejection == null)) {
                 this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Comment));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(TypeRejection));
             }
-            if ((MOTPlace == null)) {
+            if ((ProblemOfVehicle == null)) {
                 this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(MOTPlace));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(ProblemOfVehicle));
             }
-            if ((InsertionDate.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((System.DateTime)(InsertionDate.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            if ((Active.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((bool)(Active.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            if ((GPS.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((bool)(GPS.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            if ((Paddock.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((bool)(Paddock.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_IdEfretTrailer));
             if ((Original_SSMA_TimeStamp == null)) {
                 throw new global::System.ArgumentNullException("Original_SSMA_TimeStamp");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((byte[])(Original_SSMA_TimeStamp));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((byte[])(Original_SSMA_TimeStamp));
             }
-            this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(IdEfretTrailer));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_TBLID));
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(TBLID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1597,8 +1410,8 @@ SELECT IdEfretTrailer, TrailerNumber, RegistrationNumber, MOTDate, NextMOTDate, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string TrailerNumber, string RegistrationNumber, global::System.Nullable<global::System.DateTime> MOTDate, global::System.Nullable<global::System.DateTime> NextMOTDate, global::System.Nullable<global::System.DateTime> NextMOTAppointmentDate, global::System.Nullable<global::System.DateTime> PreviousMOTDate, string Comment, string MOTPlace, global::System.Nullable<global::System.DateTime> InsertionDate, global::System.Nullable<bool> Active, global::System.Nullable<bool> GPS, global::System.Nullable<bool> Paddock, int Original_IdEfretTrailer, byte[] Original_SSMA_TimeStamp) {
-            return this.Update(TrailerNumber, RegistrationNumber, MOTDate, NextMOTDate, NextMOTAppointmentDate, PreviousMOTDate, Comment, MOTPlace, InsertionDate, Active, GPS, Paddock, Original_IdEfretTrailer, Original_SSMA_TimeStamp, Original_IdEfretTrailer);
+        public virtual int Update(string UTNumber, string Carrier, global::System.Nullable<double> TraileHeight, string TrailerNumber, global::System.Nullable<global::System.DateTime> PlannedDate, global::System.Nullable<global::System.DateTime> PlannedTime, string TypeRejection, string ProblemOfVehicle, byte[] Original_SSMA_TimeStamp, int Original_TBLID) {
+            return this.Update(UTNumber, Carrier, TraileHeight, TrailerNumber, PlannedDate, PlannedTime, TypeRejection, ProblemOfVehicle, Original_SSMA_TimeStamp, Original_TBLID, Original_TBLID);
         }
     }
     
@@ -1614,7 +1427,7 @@ SELECT IdEfretTrailer, TrailerNumber, RegistrationNumber, MOTDate, NextMOTDate, 
         
         private UpdateOrderOption _updateOrder;
         
-        private EfretTrailerTableAdapter _efretTrailerTableAdapter;
+        private ParamTrailerNumberBlacklistTableAdapter _paramTrailerNumberBlacklistTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -1636,12 +1449,12 @@ SELECT IdEfretTrailer, TrailerNumber, RegistrationNumber, MOTDate, NextMOTDate, 
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public EfretTrailerTableAdapter EfretTrailerTableAdapter {
+        public ParamTrailerNumberBlacklistTableAdapter ParamTrailerNumberBlacklistTableAdapter {
             get {
-                return this._efretTrailerTableAdapter;
+                return this._paramTrailerNumberBlacklistTableAdapter;
             }
             set {
-                this._efretTrailerTableAdapter = value;
+                this._paramTrailerNumberBlacklistTableAdapter = value;
             }
         }
         
@@ -1664,9 +1477,9 @@ SELECT IdEfretTrailer, TrailerNumber, RegistrationNumber, MOTDate, NextMOTDate, 
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._efretTrailerTableAdapter != null) 
-                            && (this._efretTrailerTableAdapter.Connection != null))) {
-                    return this._efretTrailerTableAdapter.Connection;
+                if (((this._paramTrailerNumberBlacklistTableAdapter != null) 
+                            && (this._paramTrailerNumberBlacklistTableAdapter.Connection != null))) {
+                    return this._paramTrailerNumberBlacklistTableAdapter.Connection;
                 }
                 return null;
             }
@@ -1681,7 +1494,7 @@ SELECT IdEfretTrailer, TrailerNumber, RegistrationNumber, MOTDate, NextMOTDate, 
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._efretTrailerTableAdapter != null)) {
+                if ((this._paramTrailerNumberBlacklistTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -1693,14 +1506,14 @@ SELECT IdEfretTrailer, TrailerNumber, RegistrationNumber, MOTDate, NextMOTDate, 
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateUpdatedRows(Trailers dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(axsTrailerBlacklist dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._efretTrailerTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.EfretTrailer.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._paramTrailerNumberBlacklistTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.ParamTrailerNumberBlacklist.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._efretTrailerTableAdapter.Update(updatedRows));
+                    result = (result + this._paramTrailerNumberBlacklistTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -1712,13 +1525,13 @@ SELECT IdEfretTrailer, TrailerNumber, RegistrationNumber, MOTDate, NextMOTDate, 
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateInsertedRows(Trailers dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(axsTrailerBlacklist dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._efretTrailerTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.EfretTrailer.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._paramTrailerNumberBlacklistTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.ParamTrailerNumberBlacklist.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._efretTrailerTableAdapter.Update(addedRows));
+                    result = (result + this._paramTrailerNumberBlacklistTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -1730,13 +1543,13 @@ SELECT IdEfretTrailer, TrailerNumber, RegistrationNumber, MOTDate, NextMOTDate, 
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateDeletedRows(Trailers dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(axsTrailerBlacklist dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._efretTrailerTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.EfretTrailer.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._paramTrailerNumberBlacklistTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.ParamTrailerNumberBlacklist.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._efretTrailerTableAdapter.Update(deletedRows));
+                    result = (result + this._paramTrailerNumberBlacklistTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -1772,15 +1585,15 @@ SELECT IdEfretTrailer, TrailerNumber, RegistrationNumber, MOTDate, NextMOTDate, 
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public virtual int UpdateAll(Trailers dataSet) {
+        public virtual int UpdateAll(axsTrailerBlacklist dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._efretTrailerTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._efretTrailerTableAdapter.Connection) == false))) {
+            if (((this._paramTrailerNumberBlacklistTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._paramTrailerNumberBlacklistTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -1816,13 +1629,13 @@ SELECT IdEfretTrailer, TrailerNumber, RegistrationNumber, MOTDate, NextMOTDate, 
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._efretTrailerTableAdapter != null)) {
-                    revertConnections.Add(this._efretTrailerTableAdapter, this._efretTrailerTableAdapter.Connection);
-                    this._efretTrailerTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._efretTrailerTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._efretTrailerTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._efretTrailerTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._efretTrailerTableAdapter.Adapter);
+                if ((this._paramTrailerNumberBlacklistTableAdapter != null)) {
+                    revertConnections.Add(this._paramTrailerNumberBlacklistTableAdapter, this._paramTrailerNumberBlacklistTableAdapter.Connection);
+                    this._paramTrailerNumberBlacklistTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._paramTrailerNumberBlacklistTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._paramTrailerNumberBlacklistTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._paramTrailerNumberBlacklistTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._paramTrailerNumberBlacklistTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -1883,9 +1696,9 @@ SELECT IdEfretTrailer, TrailerNumber, RegistrationNumber, MOTDate, NextMOTDate, 
                 if (workConnOpened) {
                     workConnection.Close();
                 }
-                if ((this._efretTrailerTableAdapter != null)) {
-                    this._efretTrailerTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._efretTrailerTableAdapter]));
-                    this._efretTrailerTableAdapter.Transaction = null;
+                if ((this._paramTrailerNumberBlacklistTableAdapter != null)) {
+                    this._paramTrailerNumberBlacklistTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._paramTrailerNumberBlacklistTableAdapter]));
+                    this._paramTrailerNumberBlacklistTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

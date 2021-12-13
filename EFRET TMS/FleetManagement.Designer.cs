@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FleetManagement));
             this.efretTrailerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.trailers = new EFRET_TMS.Trailers();
             this.applicationMenu1 = new DevExpress.XtraBars.Ribbon.ApplicationMenu(this.components);
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
@@ -42,7 +41,6 @@
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.efretTrailerTableAdapter = new EFRET_TMS.TrailersTableAdapters.EfretTrailerTableAdapter();
             this.treeList1 = new DevExpress.XtraTreeList.TreeList();
             this.colIdEfretTrailer = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.colTrailerNumber = new DevExpress.XtraTreeList.Columns.TreeListColumn();
@@ -59,23 +57,12 @@
             this.colPaddock = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.efretTrailerBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trailers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.treeList1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
-            // 
-            // efretTrailerBindingSource
-            // 
-            this.efretTrailerBindingSource.DataMember = "EfretTrailer";
-            this.efretTrailerBindingSource.DataSource = this.trailers;
-            // 
-            // trailers
-            // 
-            this.trailers.DataSetName = "Trailers";
-            this.trailers.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // applicationMenu1
             // 
@@ -164,10 +151,6 @@
             this.barDockControlRight.Location = new System.Drawing.Point(981, 23);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 342);
-            // 
-            // efretTrailerTableAdapter
-            // 
-            this.efretTrailerTableAdapter.ClearBeforeFill = true;
             // 
             // treeList1
             // 
@@ -318,7 +301,6 @@
             this.Text = "FleetManagement";
             this.Load += new System.EventHandler(this.FleetManagement_Load);
             ((System.ComponentModel.ISupportInitialize)(this.efretTrailerBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trailers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.treeList1)).EndInit();
@@ -341,9 +323,9 @@
         private DevExpress.XtraBars.Bar bar2;
         private DevExpress.XtraBars.Bar bar4;
         private DevExpress.XtraBars.BarSubItem barSubItem1;
-        private Trailers trailers;
+ 
         private System.Windows.Forms.BindingSource efretTrailerBindingSource;
-        private TrailersTableAdapters.EfretTrailerTableAdapter efretTrailerTableAdapter;
+      
         private DevExpress.XtraTreeList.TreeList treeList1;
         private DevExpress.Utils.Behaviors.BehaviorManager behaviorManager1;
         private DevExpress.XtraTreeList.Columns.TreeListColumn colIdEfretTrailer;

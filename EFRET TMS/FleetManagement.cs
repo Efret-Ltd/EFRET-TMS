@@ -12,7 +12,7 @@ namespace EFRET_TMS
         private void FleetManagement_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'trailers.EfretTrailer' table. You can move, or remove it, as needed.
-            efretTrailerTableAdapter.Fill(trailers.EfretTrailer);
+   
 
         }
     }

@@ -30,6 +30,16 @@ namespace EFRET_TMS
 
         private void sfButton2_Click(object sender, EventArgs e)
         {
+            UploadtoP44 uploadtoP44 = new UploadtoP44();
+            Form window = new Form
+            {
+                Text = "Reset CO for Upload",
+                TopLevel = true,
+                FormBorderStyle = FormBorderStyle.Fixed3D, //Disables user resizing
+                MaximizeBox = false,
+                MinimizeBox = false,
+                ClientSize = uploadtoP44.Size //size the form to fit the content
+            };
             if (Environment.UserName != "alain.jestin")
             {
                 RadMessageBox.Show("You do not have permission to use this.");
@@ -118,5 +128,26 @@ namespace EFRET_TMS
 
         }
 
+        private void sfButton7_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            TrailerBlacklist TB = new TrailerBlacklist();
+            Form window = new Form
+            {
+                Text = "Trailer Blacklist",
+                TopLevel = true,
+                FormBorderStyle = FormBorderStyle.Fixed3D, //Disables user resizing
+                MaximizeBox = false,
+                MinimizeBox = false,
+                ClientSize = TB.Size //size the form to fit the content
+            };
+
+            window.Controls.Add(TB);
+            TB.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            window.ShowDialog();
+        }
     }
 }

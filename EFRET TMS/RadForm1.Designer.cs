@@ -47,6 +47,7 @@ namespace EFRET_TMS
             this.accordionControlElement11 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement12 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement13 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement16 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement8 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement9 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlSeparator1 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
@@ -127,7 +128,8 @@ namespace EFRET_TMS
             this.accordionControlElement5,
             this.accordionControlElement6,
             this.accordionControlElement12,
-            this.accordionControlElement13});
+            this.accordionControlElement13,
+            this.accordionControlElement16});
             this.accordionControlElement7.Expanded = true;
             this.accordionControlElement7.Name = "accordionControlElement7";
             this.accordionControlElement7.Text = "Dashboard";
@@ -173,6 +175,14 @@ namespace EFRET_TMS
             this.accordionControlElement13.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElement13.Text = "Mail Merge";
             this.accordionControlElement13.Click += new System.EventHandler(this.accordionControlElement13_Click);
+            // 
+            // accordionControlElement16
+            // 
+            this.accordionControlElement16.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElement16.ImageOptions.SvgImage")));
+            this.accordionControlElement16.Name = "accordionControlElement16";
+            this.accordionControlElement16.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement16.Text = "Trailer Damage";
+            this.accordionControlElement16.Click += new System.EventHandler(this.accordionControlElement16_Click);
             // 
             // accordionControlElement8
             // 
@@ -313,5 +323,6 @@ namespace EFRET_TMS
         private System.Windows.Forms.HelpProvider helpProvider1;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement14;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement15;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement16;
     }
 }

@@ -2,6 +2,7 @@
 using System.Data.SqlClient;
 using System.Net.Mail;
 using Sentry;
+using Syncfusion.Windows.Forms.Tools;
 using Telerik.WinControls;
 
 namespace EFRET_TMS
@@ -66,10 +67,12 @@ namespace EFRET_TMS
                 string subject = "[" + CompanyCode + "] Project44 Track and Trace Invitation";
                 string welcome = "Good afternoon, " + _CompanyContact;
                 MailAddress copy = new MailAddress("charles.duval@efret.net");
+                MailAddress CCIntergrationsP44 = new MailAddress("integration.europe@project44.com");
                 string to = _CompanyEmail;//company email
                 string from = _sender;
                 MailMessage message = new MailMessage(from, to);
                 message.CC.Add(copy);
+                message.CC.Add(CCIntergrationsP44);
                 message.Subject = subject;
                 message.IsBodyHtml = true;
 
@@ -90,7 +93,8 @@ Email: itsupport@efret.net <br>
 Phone number: +44(0)1202-132-760 <br>
  <br>
 
-We would greatly appreciate it if you could log in and add your trackable assets as soon as humanly possible.<br> <strong> Failure to do so will result in late payments </strong>
+We would greatly appreciate it if you could log in and add your trackable assets as soon as humanly possible.<br> <strong> Failure to do so will result in late payments </strong><br>
+Note: This is a automatic email from a unmonitored mailbox. Do NOT reply to this address. Thank you.
  <br>
 Kind Regards, ";
 
@@ -115,7 +119,9 @@ Kind Regards, ";
                 {
                     SentrySdk.CaptureException(ex);
                 }
-                RadMessageBox.Show(_CompanyEmail + " has been invited.");
+
+                AutoLabel auto = new AutoLabel();
+                auto.Text = _CompanyEmail + " has been invited.";
             }
             else
             {

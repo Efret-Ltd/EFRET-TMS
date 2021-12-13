@@ -53,6 +53,7 @@
             this.taskbarAssistant1 = new DevExpress.Utils.Taskbar.TaskbarAssistant();
             this.navigationBarItem1 = new DevExpress.XtraBars.Navigation.NavigationBarItem();
             this.navigationBarItem2 = new DevExpress.XtraBars.Navigation.NavigationBarItem();
+            this.radRibbonBar1 = new Telerik.WinControls.UI.RadRibbonBar();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
             this.panel1.SuspendLayout();
             this.sidePanel1.SuspendLayout();
@@ -62,6 +63,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radRibbonBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -85,9 +87,9 @@
             // 
             this.panel1.Controls.Add(this.sidePanel1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Location = new System.Drawing.Point(0, 146);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(824, 528);
+            this.panel1.Size = new System.Drawing.Size(824, 385);
             this.panel1.TabIndex = 2;
             // 
             // sidePanel1
@@ -98,7 +100,7 @@
             this.sidePanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.sidePanel1.Location = new System.Drawing.Point(0, 0);
             this.sidePanel1.Name = "sidePanel1";
-            this.sidePanel1.Size = new System.Drawing.Size(824, 528);
+            this.sidePanel1.Size = new System.Drawing.Size(824, 385);
             this.sidePanel1.TabIndex = 2;
             this.sidePanel1.Text = "sidePanel1";
             // 
@@ -120,7 +122,7 @@
             this.tablePanel1.Controls.Add(this.simpleButton2);
             this.tablePanel1.Controls.Add(this.simpleButton1);
             this.tablePanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tablePanel1.Location = new System.Drawing.Point(0, 487);
+            this.tablePanel1.Location = new System.Drawing.Point(0, 344);
             this.tablePanel1.Name = "tablePanel1";
             this.tablePanel1.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 39F)});
@@ -162,7 +164,7 @@
             this.radPictureBox1.ImageLayout = Telerik.WinControls.UI.RadImageLayout.Stretch;
             this.radPictureBox1.Location = new System.Drawing.Point(0, 0);
             this.radPictureBox1.Name = "radPictureBox1";
-            this.radPictureBox1.Size = new System.Drawing.Size(824, 528);
+            this.radPictureBox1.Size = new System.Drawing.Size(824, 385);
             this.radPictureBox1.TabIndex = 0;
             this.radPictureBox1.ThemeName = "Office2019Gray";
             // 
@@ -219,9 +221,9 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 528);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 531);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(824, 24);
+            this.barDockControlBottom.Size = new System.Drawing.Size(824, 21);
             // 
             // barDockControlLeft
             // 
@@ -229,7 +231,7 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 528);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 531);
             // 
             // barDockControlRight
             // 
@@ -237,7 +239,7 @@
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(824, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 528);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 531);
             // 
             // barButtonItem1
             // 
@@ -261,12 +263,21 @@
             this.navigationBarItem2.Name = "navigationBarItem2";
             this.navigationBarItem2.Text = "";
             // 
+            // radRibbonBar1
+            // 
+            this.radRibbonBar1.Location = new System.Drawing.Point(0, 0);
+            this.radRibbonBar1.Name = "radRibbonBar1";
+            this.radRibbonBar1.Size = new System.Drawing.Size(824, 146);
+            this.radRibbonBar1.TabIndex = 7;
+            this.radRibbonBar1.Text = "ShipmentMap";
+            // 
             // ShipmentMap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(824, 552);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.radRibbonBar1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
@@ -287,6 +298,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radPictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radRibbonBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -317,5 +329,6 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private Telerik.WinControls.UI.RadTitleBar radTitleBar1;
+        private Telerik.WinControls.UI.RadRibbonBar radRibbonBar1;
     }
 }

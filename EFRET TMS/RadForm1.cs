@@ -224,5 +224,15 @@ namespace EFRET_TMS
             ABRouting ABRouting = new ABRouting();
                 ABRouting.Show();
         }
+
+        // Trailer Damage
+        private void accordionControlElement16_Click(object sender, EventArgs e)
+        {
+            TrailerHistory TH = new TrailerHistory();
+                TH.Show();
+
+                var eventMessage = Environment.UserName + " Opened Trailer History Panel";
+                LogMessage(eventMessage);
+        }
     }
 }

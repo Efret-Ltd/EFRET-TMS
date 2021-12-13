@@ -285,6 +285,7 @@
     <Reference Include="Infragistics4.Win.DataVisualization.UltraDataChart.v21.1, Version=21.1.20211.24, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
     <Reference Include="Infragistics4.Win.Misc.v21.1, Version=21.1.20211.24, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
     <Reference Include="Infragistics4.Win.Portable.Core.v21.1, Version=21.1.20211.24, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Infragistics4.Win.UltraWinDataSource.v21.1, Version=21.1.20211.24, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
     <Reference Include="Infragistics4.Win.UltraWinGrid.v21.1, Version=21.1.20211.24, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
     <Reference Include="Infragistics4.Win.UltraWinStatusBar.v21.1, Version=21.1.20211.24, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
     <Reference Include="Infragistics4.Win.UltraWinTabControl.v21.1, Version=21.1.20211.24, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
@@ -588,6 +589,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>axsDevDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="axsTrailerBlacklist.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>axsTrailerBlacklist.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="axsTrailerHistory.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>axsTrailerHistory.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Check_VAT.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -728,10 +739,23 @@
     <Compile Include="TP.Designer.cs">
       <DependentUpon>TP.cs</DependentUpon>
     </Compile>
-    <Compile Include="Trailers.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Trailers.xsd</DependentUpon>
+    <Compile Include="TrailerBlacklist.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TrailerBlacklist.Designer.cs">
+      <DependentUpon>TrailerBlacklist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TrailerHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TrailerHistory.Designer.cs">
+      <DependentUpon>TrailerHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UploadtoP44.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UploadtoP44.Designer.cs">
+      <DependentUpon>UploadtoP44.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewCO.cs">
       <SubType>Form</SubType>
@@ -835,6 +859,15 @@
     <EmbeddedResource Include="TP.resx">
       <DependentUpon>TP.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TrailerBlacklist.resx">
+      <DependentUpon>TrailerBlacklist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TrailerHistory.resx">
+      <DependentUpon>TrailerHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UploadtoP44.resx">
+      <DependentUpon>UploadtoP44.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ViewCO.resx">
       <DependentUpon>ViewCO.cs</DependentUpon>
     </EmbeddedResource>
@@ -863,6 +896,28 @@
     </None>
     <None Include="axsDevDataSet.xss">
       <DependentUpon>axsDevDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="axsTrailerBlacklist.xsc">
+      <DependentUpon>axsTrailerBlacklist.xsd</DependentUpon>
+    </None>
+    <None Include="axsTrailerBlacklist.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>axsTrailerBlacklist.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="axsTrailerBlacklist.xss">
+      <DependentUpon>axsTrailerBlacklist.xsd</DependentUpon>
+    </None>
+    <None Include="axsTrailerHistory.xsc">
+      <DependentUpon>axsTrailerHistory.xsd</DependentUpon>
+    </None>
+    <None Include="axsTrailerHistory.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>axsTrailerHistory.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="axsTrailerHistory.xss">
+      <DependentUpon>axsTrailerHistory.xsd</DependentUpon>
     </None>
     <None Include="ChargingOrder.xpo" />
     <None Include="ChargingOrder.xpo.diagram">
@@ -912,17 +967,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Trailers.xsc">
-      <DependentUpon>Trailers.xsd</DependentUpon>
-    </None>
-    <None Include="Trailers.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Trailers.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Trailers.xss">
-      <DependentUpon>Trailers.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
