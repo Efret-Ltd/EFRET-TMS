@@ -163,10 +163,14 @@ Kind Regards, ";
 
         private void ultraButton1_Click(object sender, EventArgs e)
         {
+            //We set the _sent to zero so each attempt will throw its own code.
             _sent = 0;
             _CompanyCode = radButtonTextBox1.Text;
+            // We attempt to get the company contact information.
             getCompanyInfo(_CompanyCode);
+            // We use the contact information from the company code to send the invite.
             sendInvite(_CompanyCode);
+            //Did it send?
             sent();
         }
 
