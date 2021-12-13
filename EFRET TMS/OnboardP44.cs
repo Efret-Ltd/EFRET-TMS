@@ -2,7 +2,6 @@
 using System.Data.SqlClient;
 using System.Net.Mail;
 using Sentry;
-using Syncfusion.Windows.Forms.Tools;
 using Telerik.WinControls;
 
 namespace EFRET_TMS
@@ -13,19 +12,23 @@ namespace EFRET_TMS
         private static string _CompanyEmail;
         private static string _CompanyName;
         private static string _CompanyContact;
-
+        private static int _sent;
         public OnboardP44()
         {
             InitializeComponent();
         }
 
 
+        //This function grabs the contact information for a given company code.
         public static void getCompanyInfo(string CompanyCode)
         {
+            // Define the connection and query string.
             string queryString = "SELECT * FROM [axs].[dbo].[Company] WHERE CompanyCode='" + CompanyCode + "'";
             string connectionString = @"Server=EFRET-APP-01\EFRET;Database=axs;Trusted_Connection=True;";
+
             try
             {
+                //Use the connection to execute a SQL command.
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     SqlCommand command = new SqlCommand(queryString, connection);
@@ -33,6 +36,7 @@ namespace EFRET_TMS
                     SqlDataReader reader = command.ExecuteReader();
                     try
                     {
+                        //Grab the following fields into the instance.
                         while (reader.Read())
                         {
                             _CompanyEmail = reader["CompanyEmail"].ToString();
@@ -50,7 +54,7 @@ namespace EFRET_TMS
             }
             catch (Exception ex)
             {
-
+                // Check Sentry for the error.
                 SentrySdk.CaptureException(ex);
             }
         }
@@ -62,20 +66,29 @@ namespace EFRET_TMS
                 //We should probs do something about storing credentials like this.
                 string _sender = "P44@efret.net";
                 string _password = "Tom66409";
+
+                //Email structure
                 string p44ref =
                     "<a href=' https://eu12.voc.project44.com/portal/v2/public/connect/8b601a7d-7ff2-4a55-85e1-ddaa2cddee86'>Invite Link</a>";
                 string subject = "[" + CompanyCode + "] Project44 Track and Trace Invitation";
                 string welcome = "Good afternoon, " + _CompanyContact;
-                MailAddress copy = new MailAddress("charles.duval@efret.net");
-                MailAddress CCIntergrationsP44 = new MailAddress("integration.europe@project44.com");
                 string to = _CompanyEmail;//company email
                 string from = _sender;
+
+                //Emails to contact
+                MailAddress copy = new MailAddress("charles.duval@efret.net");
+                MailAddress CCIntergrationsP44 = new MailAddress("integration.europe@project44.com");
+
+                //Email construction with given parameters.
                 MailMessage message = new MailMessage(from, to);
+
                 message.CC.Add(copy);
                 message.CC.Add(CCIntergrationsP44);
+                
+                
                 message.Subject = subject;
                 message.IsBodyHtml = true;
-
+                //Define the body of the email.
                 message.Body = welcome + @" <br>Automation is the only way forward, Project44 is part of this. <br>
 
 This is paid by Efret Ltd.  <br>
@@ -98,11 +111,13 @@ Note: This is a automatic email from a unmonitored mailbox. Do NOT reply to this
  <br>
 Kind Regards, ";
 
+                //Define the SMTP protocol, using O365.
 
                 SmtpClient client = new SmtpClient("smtp-mail.outlook.com");
                 client.Port = 587;
                 client.DeliveryMethod = SmtpDeliveryMethod.Network;
                 client.EnableSsl = true;
+
                 // Credentials are necessary if the server requires the client
                 // to authenticate before it will send email on the client's behalf.
                 client.UseDefaultCredentials = false;
@@ -113,29 +128,56 @@ Kind Regards, ";
                 try
                 {
                     client.Send(message);
-
+                    _sent = 1;
                 }
                 catch (Exception ex)
                 {
+                    _sent = -1;
+
                     SentrySdk.CaptureException(ex);
                 }
-
-                AutoLabel auto = new AutoLabel();
-                auto.Text = _CompanyEmail + " has been invited.";
+                
             }
             else
             {
                 RadMessageBox.Show("No Email For " + _CompanyName);
             }
+           
+        }
 
-            ;
+        private void sent()
+        {
+            if (_sent == 1)
+            { 
+                labelControl1.Text = _CompanyEmail + " has been invited.";
+
+            }
+
+            if (_sent == -1)
+            {
+                labelControl1.Text = "Failed to invite the company to P44.";
+
+            }
+            
         }
 
         private void ultraButton1_Click(object sender, EventArgs e)
         {
+            _sent = 0;
             _CompanyCode = radButtonTextBox1.Text;
             getCompanyInfo(_CompanyCode);
             sendInvite(_CompanyCode);
+            sent();
+        }
+
+        private void OnboardP44_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelControl1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

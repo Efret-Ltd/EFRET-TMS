@@ -30,7 +30,7 @@
         {
             this.ultraButton1 = new Infragistics.Win.Misc.UltraButton();
             this.radButtonTextBox1 = new Telerik.WinControls.UI.RadButtonTextBox();
-            this.autoLabel1 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.radButtonTextBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
@@ -52,24 +52,21 @@
             this.radButtonTextBox1.TabIndex = 1;
             this.radButtonTextBox1.Text = "Company Code";
             // 
-            // autoLabel1
+            // labelControl1
             // 
-            this.autoLabel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.autoLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.autoLabel1.Location = new System.Drawing.Point(12, 48);
-            this.autoLabel1.Name = "autoLabel1";
-            this.autoLabel1.Size = new System.Drawing.Size(11, 17);
-            this.autoLabel1.Style = Syncfusion.Windows.Forms.Tools.AutoLabelStyle.Office2016Colorful;
-            this.autoLabel1.TabIndex = 2;
-            this.autoLabel1.Text = ".";
-            this.autoLabel1.ThemeName = "Office2016Colorful";
+            this.labelControl1.Location = new System.Drawing.Point(12, 49);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(55, 13);
+            this.labelControl1.TabIndex = 2;
+            this.labelControl1.Text = "Not Invited.";
+            this.labelControl1.Click += new System.EventHandler(this.labelControl1_Click);
             // 
             // OnboardP44
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(292, 74);
-            this.Controls.Add(this.autoLabel1);
+            this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.radButtonTextBox1);
             this.Controls.Add(this.ultraButton1);
             this.Name = "OnboardP44";
@@ -78,6 +75,7 @@
             // 
             this.RootElement.ApplyShapeToControl = true;
             this.Text = "OnboardP44";
+            this.Load += new System.EventHandler(this.OnboardP44_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radButtonTextBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
@@ -89,6 +87,6 @@
 
         private Infragistics.Win.Misc.UltraButton ultraButton1;
         private Telerik.WinControls.UI.RadButtonTextBox radButtonTextBox1;
-        private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel1;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
     }
 }
