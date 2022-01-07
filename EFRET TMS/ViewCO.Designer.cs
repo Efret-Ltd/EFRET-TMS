@@ -64,11 +64,28 @@ namespace EFRET_TMS
             this.barStaticItem2 = new DevExpress.XtraBars.BarStaticItem();
             this.barEditItem2 = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemTextEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
+            this.barEditItem4 = new DevExpress.XtraBars.BarEditItem();
+            this.repositoryItemTextEdit4 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
+            this.barToggleSwitchItem1 = new DevExpress.XtraBars.BarToggleSwitchItem();
+            this.barButtonGroup3 = new DevExpress.XtraBars.BarButtonGroup();
+            this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
+            this.barButtonItem15 = new DevExpress.XtraBars.BarButtonItem();
+            this.barSubItem2 = new DevExpress.XtraBars.BarSubItem();
+            this.barButtonItem16 = new DevExpress.XtraBars.BarButtonItem();
+            this.barSubItem3 = new DevExpress.XtraBars.BarSubItem();
+            this.barButtonItem18 = new DevExpress.XtraBars.BarButtonItem();
+            this.barStaticItem3 = new DevExpress.XtraBars.BarStaticItem();
+            this.barStaticItem4 = new DevExpress.XtraBars.BarStaticItem();
+            this.barButtonItem17 = new DevExpress.XtraBars.BarButtonItem();
+            this.barStaticItem5 = new DevExpress.XtraBars.BarStaticItem();
+            this.barEditItem5 = new DevExpress.XtraBars.BarEditItem();
+            this.repositoryItemComboBox1 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -150,26 +167,11 @@ namespace EFRET_TMS
             this.xtraOpenFileDialog1 = new DevExpress.XtraEditors.XtraOpenFileDialog(this.components);
             this.movementTableAdapter = new EFRET_TMS.MovementCOTableAdapters.MovementTableAdapter();
             this.barEditItem3 = new DevExpress.XtraBars.BarEditItem();
-            this.barEditItem4 = new DevExpress.XtraBars.BarEditItem();
-            this.repositoryItemTextEdit4 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
-            this.barToggleSwitchItem1 = new DevExpress.XtraBars.BarToggleSwitchItem();
-            this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.barButtonGroup3 = new DevExpress.XtraBars.BarButtonGroup();
-            this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
-            this.barSubItem2 = new DevExpress.XtraBars.BarSubItem();
-            this.barButtonItem15 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem16 = new DevExpress.XtraBars.BarButtonItem();
-            this.barSubItem3 = new DevExpress.XtraBars.BarSubItem();
-            this.barStaticItem3 = new DevExpress.XtraBars.BarStaticItem();
-            this.barStaticItem4 = new DevExpress.XtraBars.BarStaticItem();
-            this.barButtonItem17 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem18 = new DevExpress.XtraBars.BarButtonItem();
-            this.barStaticItem5 = new DevExpress.XtraBars.BarStaticItem();
-            this.barEditItem5 = new DevExpress.XtraBars.BarEditItem();
-            this.repositoryItemComboBox1 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSearchControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -181,8 +183,6 @@ namespace EFRET_TMS
             ((System.ComponentModel.ISupportInitialize)(this.axsDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.movementBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.goodsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbon
@@ -366,6 +366,7 @@ namespace EFRET_TMS
             // 
             this.barCheckItem1.Caption = "Trailer Number Assigned";
             this.barCheckItem1.CheckBoxVisibility = DevExpress.XtraBars.CheckBoxVisibility.BeforeText;
+            this.barCheckItem1.DataBindings.Add(new System.Windows.Forms.Binding("BindableChecked", this.cOInstance, "NewCO.TrailerNumber", true));
             this.barCheckItem1.Enabled = false;
             this.barCheckItem1.Id = 18;
             this.barCheckItem1.Name = "barCheckItem1";
@@ -497,6 +498,114 @@ namespace EFRET_TMS
             this.repositoryItemTextEdit3.AutoHeight = false;
             this.repositoryItemTextEdit3.Name = "repositoryItemTextEdit3";
             // 
+            // barEditItem4
+            // 
+            this.barEditItem4.Caption = "Rate € to £";
+            this.barEditItem4.Edit = this.repositoryItemTextEdit4;
+            this.barEditItem4.Id = 35;
+            this.barEditItem4.Name = "barEditItem4";
+            // 
+            // repositoryItemTextEdit4
+            // 
+            this.repositoryItemTextEdit4.AutoHeight = false;
+            this.repositoryItemTextEdit4.Name = "repositoryItemTextEdit4";
+            // 
+            // barToggleSwitchItem1
+            // 
+            this.barToggleSwitchItem1.Caption = "EFRET Trailer";
+            this.barToggleSwitchItem1.Id = 37;
+            this.barToggleSwitchItem1.Name = "barToggleSwitchItem1";
+            // 
+            // barButtonGroup3
+            // 
+            this.barButtonGroup3.Caption = "barButtonGroup3";
+            this.barButtonGroup3.Id = 38;
+            this.barButtonGroup3.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonGroup3.ImageOptions.SvgImage")));
+            this.barButtonGroup3.Name = "barButtonGroup3";
+            // 
+            // barSubItem1
+            // 
+            this.barSubItem1.Caption = "VAT";
+            this.barSubItem1.Id = 39;
+            this.barSubItem1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem15)});
+            this.barSubItem1.Name = "barSubItem1";
+            // 
+            // barButtonItem15
+            // 
+            this.barButtonItem15.Caption = "View/Update";
+            this.barButtonItem15.Id = 42;
+            this.barButtonItem15.Name = "barButtonItem15";
+            // 
+            // barSubItem2
+            // 
+            this.barSubItem2.Caption = "Sales";
+            this.barSubItem2.Id = 40;
+            this.barSubItem2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem16)});
+            this.barSubItem2.Name = "barSubItem2";
+            // 
+            // barButtonItem16
+            // 
+            this.barButtonItem16.Caption = "View/Change";
+            this.barButtonItem16.Id = 43;
+            this.barButtonItem16.Name = "barButtonItem16";
+            // 
+            // barSubItem3
+            // 
+            this.barSubItem3.Caption = "Contract Holder";
+            this.barSubItem3.Id = 44;
+            this.barSubItem3.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem18)});
+            this.barSubItem3.Name = "barSubItem3";
+            // 
+            // barButtonItem18
+            // 
+            this.barButtonItem18.Caption = "View/Change";
+            this.barButtonItem18.Id = 48;
+            this.barButtonItem18.Name = "barButtonItem18";
+            // 
+            // barStaticItem3
+            // 
+            this.barStaticItem3.Caption = "Created By";
+            this.barStaticItem3.Id = 45;
+            this.barStaticItem3.Name = "barStaticItem3";
+            // 
+            // barStaticItem4
+            // 
+            this.barStaticItem4.Caption = "Last Updated By";
+            this.barStaticItem4.Id = 46;
+            this.barStaticItem4.Name = "barStaticItem4";
+            // 
+            // barButtonItem17
+            // 
+            this.barButtonItem17.Caption = "View/Update Comment";
+            this.barButtonItem17.Id = 47;
+            this.barButtonItem17.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem17.ImageOptions.SvgImage")));
+            this.barButtonItem17.Name = "barButtonItem17";
+            this.barButtonItem17.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem17_ItemClick);
+            // 
+            // barStaticItem5
+            // 
+            this.barStaticItem5.Caption = "Traffic Manager";
+            this.barStaticItem5.Id = 49;
+            this.barStaticItem5.Name = "barStaticItem5";
+            // 
+            // barEditItem5
+            // 
+            this.barEditItem5.Caption = "Type Authorized";
+            this.barEditItem5.Edit = this.repositoryItemComboBox1;
+            this.barEditItem5.EditValue = "None Selected";
+            this.barEditItem5.Id = 50;
+            this.barEditItem5.Name = "barEditItem5";
+            // 
+            // repositoryItemComboBox1
+            // 
+            this.repositoryItemComboBox1.AutoHeight = false;
+            this.repositoryItemComboBox1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemComboBox1.Name = "repositoryItemComboBox1";
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -553,6 +662,15 @@ namespace EFRET_TMS
             this.ribbonPageGroup8.ItemLinks.Add(this.barButtonItem17);
             this.ribbonPageGroup8.Name = "ribbonPageGroup8";
             this.ribbonPageGroup8.Text = "CO Details";
+            // 
+            // ribbonPageGroup9
+            // 
+            this.ribbonPageGroup9.ItemLinks.Add(this.barButtonGroup3);
+            this.ribbonPageGroup9.ItemLinks.Add(this.barStaticItem3);
+            this.ribbonPageGroup9.ItemLinks.Add(this.barStaticItem4);
+            this.ribbonPageGroup9.ItemLinks.Add(this.barStaticItem5);
+            this.ribbonPageGroup9.Name = "ribbonPageGroup9";
+            this.ribbonPageGroup9.Text = "Extra Information";
             // 
             // ribbonPage2
             // 
@@ -1070,123 +1188,6 @@ namespace EFRET_TMS
             this.barEditItem3.Id = 32;
             this.barEditItem3.Name = "barEditItem3";
             // 
-            // barEditItem4
-            // 
-            this.barEditItem4.Caption = "Rate € to £";
-            this.barEditItem4.Edit = this.repositoryItemTextEdit4;
-            this.barEditItem4.Id = 35;
-            this.barEditItem4.Name = "barEditItem4";
-            // 
-            // repositoryItemTextEdit4
-            // 
-            this.repositoryItemTextEdit4.AutoHeight = false;
-            this.repositoryItemTextEdit4.Name = "repositoryItemTextEdit4";
-            // 
-            // barToggleSwitchItem1
-            // 
-            this.barToggleSwitchItem1.Caption = "EFRET Trailer";
-            this.barToggleSwitchItem1.Id = 37;
-            this.barToggleSwitchItem1.Name = "barToggleSwitchItem1";
-            // 
-            // ribbonPageGroup9
-            // 
-            this.ribbonPageGroup9.ItemLinks.Add(this.barButtonGroup3);
-            this.ribbonPageGroup9.ItemLinks.Add(this.barStaticItem3);
-            this.ribbonPageGroup9.ItemLinks.Add(this.barStaticItem4);
-            this.ribbonPageGroup9.ItemLinks.Add(this.barStaticItem5);
-            this.ribbonPageGroup9.Name = "ribbonPageGroup9";
-            this.ribbonPageGroup9.Text = "Extra Information";
-            // 
-            // barButtonGroup3
-            // 
-            this.barButtonGroup3.Caption = "barButtonGroup3";
-            this.barButtonGroup3.Id = 38;
-            this.barButtonGroup3.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonGroup3.ImageOptions.SvgImage")));
-            this.barButtonGroup3.Name = "barButtonGroup3";
-            // 
-            // barSubItem1
-            // 
-            this.barSubItem1.Caption = "VAT";
-            this.barSubItem1.Id = 39;
-            this.barSubItem1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem15)});
-            this.barSubItem1.Name = "barSubItem1";
-            // 
-            // barSubItem2
-            // 
-            this.barSubItem2.Caption = "Sales";
-            this.barSubItem2.Id = 40;
-            this.barSubItem2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem16)});
-            this.barSubItem2.Name = "barSubItem2";
-            // 
-            // barButtonItem15
-            // 
-            this.barButtonItem15.Caption = "View/Update";
-            this.barButtonItem15.Id = 42;
-            this.barButtonItem15.Name = "barButtonItem15";
-            // 
-            // barButtonItem16
-            // 
-            this.barButtonItem16.Caption = "View/Change";
-            this.barButtonItem16.Id = 43;
-            this.barButtonItem16.Name = "barButtonItem16";
-            // 
-            // barSubItem3
-            // 
-            this.barSubItem3.Caption = "Contract Holder";
-            this.barSubItem3.Id = 44;
-            this.barSubItem3.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem18)});
-            this.barSubItem3.Name = "barSubItem3";
-            // 
-            // barStaticItem3
-            // 
-            this.barStaticItem3.Caption = "Created By";
-            this.barStaticItem3.Id = 45;
-            this.barStaticItem3.Name = "barStaticItem3";
-            // 
-            // barStaticItem4
-            // 
-            this.barStaticItem4.Caption = "Last Updated By";
-            this.barStaticItem4.Id = 46;
-            this.barStaticItem4.Name = "barStaticItem4";
-            // 
-            // barButtonItem17
-            // 
-            this.barButtonItem17.Caption = "View/Update Comment";
-            this.barButtonItem17.Id = 47;
-            this.barButtonItem17.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem17.ImageOptions.SvgImage")));
-            this.barButtonItem17.Name = "barButtonItem17";
-            this.barButtonItem17.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem17_ItemClick);
-            // 
-            // barButtonItem18
-            // 
-            this.barButtonItem18.Caption = "View/Change";
-            this.barButtonItem18.Id = 48;
-            this.barButtonItem18.Name = "barButtonItem18";
-            // 
-            // barStaticItem5
-            // 
-            this.barStaticItem5.Caption = "Traffic Manager";
-            this.barStaticItem5.Id = 49;
-            this.barStaticItem5.Name = "barStaticItem5";
-            // 
-            // barEditItem5
-            // 
-            this.barEditItem5.Caption = "Type Authorized";
-            this.barEditItem5.Edit = this.repositoryItemComboBox1;
-            this.barEditItem5.EditValue = "None Selected";
-            this.barEditItem5.Id = 50;
-            this.barEditItem5.Name = "barEditItem5";
-            // 
-            // repositoryItemComboBox1
-            // 
-            this.repositoryItemComboBox1.AutoHeight = false;
-            this.repositoryItemComboBox1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemComboBox1.Name = "repositoryItemComboBox1";
-            // 
             // ViewCo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1204,6 +1205,8 @@ namespace EFRET_TMS
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSearchControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
@@ -1215,8 +1218,6 @@ namespace EFRET_TMS
             ((System.ComponentModel.ISupportInitialize)(this.axsDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.movementBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.goodsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

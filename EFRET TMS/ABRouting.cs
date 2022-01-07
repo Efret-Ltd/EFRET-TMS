@@ -14,9 +14,13 @@ namespace EFRET_TMS
         {
             InitializeComponent();
         }
-
+        /* The below code is a work in progress and will be rewritten.
+         *
+         *
+         */
         private void ABRouting_Load(object sender, EventArgs e)
         {
+            // We call for a GMap instance and throw that on the form.
 
             GMapProvider.WebProxy = WebRequest.GetSystemWebProxy();
             GMapProvider.WebProxy.Credentials = CredentialCache.DefaultNetworkCredentials;
@@ -25,11 +29,12 @@ namespace EFRET_TMS
             GMapOverlay markersOverlay = new GMapOverlay("markers");
 
 
+            //This marker represents the start of the route. Should be done by location of loading.
             GMarkerGoogle marker = new GMarkerGoogle(new PointLatLng(50.784764, -1.8565017), GMarkerGoogleType.green);
 
             marker.ToolTipText = "Start of AB Routing";
             marker.ToolTipMode = MarkerTooltipMode.OnMouseOver;
-
+            // We add the markers to the overlay.
             markersOverlay.Markers.Add(marker);
             gMapControl1.Overlays.Add(markersOverlay);
 
@@ -37,7 +42,7 @@ namespace EFRET_TMS
         }
 
 
-
+        // Here we place a marker where the user clicks on the map. The coords are parsed and calculated between legs.
         void AddMarker(string uid, double lat, double lng)
         {
      
@@ -123,6 +128,7 @@ namespace EFRET_TMS
 
         private void resetMap()
         {
+            //We want to purge all the changes and markers made by the user, including all KM calculations.
             GMapOverlay markers = new GMapOverlay("markers");
             gMapControl1.Overlays.Remove(markers);
             gMapControl1.Refresh();

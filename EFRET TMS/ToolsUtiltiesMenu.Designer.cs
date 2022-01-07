@@ -34,6 +34,7 @@
             this.roundRectShapeForm = new Telerik.WinControls.RoundRectShape(this.components);
             this.vatCheckButton = new Syncfusion.WinForms.Controls.SfButton();
             this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.sfButton7 = new Syncfusion.WinForms.Controls.SfButton();
             this.radButton1 = new Telerik.WinControls.UI.RadButton();
             this.sfButton6 = new Syncfusion.WinForms.Controls.SfButton();
@@ -44,7 +45,6 @@
             this.sfButton2 = new Syncfusion.WinForms.Controls.SfButton();
             this.sfButton1 = new Syncfusion.WinForms.Controls.SfButton();
             this.uDesktopAlert1 = new Infragistics.Win.Misc.UltraDesktopAlert(this.components);
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.radTitleBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
             this.tablePanel1.SuspendLayout();
@@ -116,6 +116,17 @@
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F)});
             this.tablePanel1.Size = new System.Drawing.Size(400, 349);
             this.tablePanel1.TabIndex = 3;
+            // 
+            // simpleButton1
+            // 
+            this.tablePanel1.SetColumn(this.simpleButton1, 0);
+            this.simpleButton1.Location = new System.Drawing.Point(3, 133);
+            this.simpleButton1.Name = "simpleButton1";
+            this.tablePanel1.SetRow(this.simpleButton1, 5);
+            this.simpleButton1.Size = new System.Drawing.Size(188, 20);
+            this.simpleButton1.TabIndex = 12;
+            this.simpleButton1.Text = "Trailer Blacklist";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // sfButton7
             // 
@@ -240,17 +251,6 @@
             // 
             this.uDesktopAlert1.AnimationSpeed = Infragistics.Win.Misc.AnimationSpeed.Medium;
             this.uDesktopAlert1.AnimationStyleAutoClose = Infragistics.Win.Misc.AnimationStyle.Fade;
-            // 
-            // simpleButton1
-            // 
-            this.tablePanel1.SetColumn(this.simpleButton1, 0);
-            this.simpleButton1.Location = new System.Drawing.Point(3, 133);
-            this.simpleButton1.Name = "simpleButton1";
-            this.tablePanel1.SetRow(this.simpleButton1, 5);
-            this.simpleButton1.Size = new System.Drawing.Size(188, 20);
-            this.simpleButton1.TabIndex = 12;
-            this.simpleButton1.Text = "Trailer Blacklist";
-            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // ToolsUtiltiesMenu
             // 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.IO;
 using System.Net;
 using System.Net.Http;
@@ -21,6 +22,7 @@ namespace EFRET_TMS
             Text = @"Welcome to EFRET " + Environment.UserName;
             GetRate();
             PostTeamsLogin();
+            
         }
 
         public async void PostTeamsLogin()
@@ -143,7 +145,7 @@ namespace EFRET_TMS
         //Invoicing
         private void accordionControlElement11_Click(object sender, EventArgs e)
         {
-            radDesktopAlert1.CaptionText = "<html><strong>This module is locked while in use.";
+            radDesktopAlert1.CaptionText = "<html><strong>This module is locked while in use.</html>";
             radDesktopAlert1.Show();
             Invoicing invoicing = new Invoicing();
             invoicing.Show();
@@ -172,6 +174,7 @@ namespace EFRET_TMS
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
             request.Method = "GET";
             String result = String.Empty;
+            
             using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
             {
                 Stream dataStream = response.GetResponseStream();
@@ -194,7 +197,7 @@ namespace EFRET_TMS
             RadMessageBox.Show(data.result.ToString(), caption, MessageBoxButtons.OK, details);
 
         }
-
+        //Tools and Utilities Menu.
         private void accordionControlElement12_Click(object sender, EventArgs e)
         {
             ToolsUtiltiesMenu tuMenu = new ToolsUtiltiesMenu();
@@ -221,18 +224,31 @@ namespace EFRET_TMS
 
         private void accordionControlElement14_Click(object sender, EventArgs e)
         {
-            ABRouting ABRouting = new ABRouting();
-                ABRouting.Show();
+            ABRouting abRouting = new ABRouting();
+            Debug.Assert(abRouting != null, nameof(abRouting) + " != null");
+            using (abRouting)
+            {
+                abRouting.Show();
+            }
         }
 
         // Trailer Damage
         private void accordionControlElement16_Click(object sender, EventArgs e)
         {
-            TrailerHistory TH = new TrailerHistory();
-                TH.Show();
-
+            TrailerHistory th = new TrailerHistory();
+                th.Show();
                 var eventMessage = Environment.UserName + " Opened Trailer History Panel";
                 LogMessage(eventMessage);
+        }
+
+        private void accordionControlElement17_Click(object sender, EventArgs e)
+        {
+            TasksBoard TB = new TasksBoard();
+          TB.Show();
+            
+
+            var eventMessage = Environment.UserName + " Opened Tasks Board Panel";
+            LogMessage(eventMessage);
         }
     }
 }
