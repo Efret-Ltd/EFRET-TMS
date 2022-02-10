@@ -1,6 +1,4 @@
 ﻿using System;
-using ComponentPro.Excel;
-using ComponentPro.Net;
 using Telerik.WinControls;
 namespace EFRET_TMS
 {
@@ -17,11 +15,7 @@ namespace EFRET_TMS
         } 
         private  void QueryByDomain(string domain)
     {
-            // Create a WhoisLookup instance
-            // Output the response
-            WhoIsClient whois = new WhoIsClient();
-            whois.Lookup(domain);
-            whois.InvokeFromCurrentThreads = true;
+
     }
   }
    

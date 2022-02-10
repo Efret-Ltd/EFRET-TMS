@@ -100,7 +100,6 @@ namespace EFRET_TMS
         {
             double lat = 0.0;
             double lng = 0.0;
-            int markerCount = 0;
             if (e.Button == MouseButtons.Left)
             {
                 lat = gMapControl1.FromLocalToLatLng(e.X, e.Y).Lat;

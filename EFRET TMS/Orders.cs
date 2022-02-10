@@ -9,7 +9,7 @@ using Telerik.WinControls;
 
 namespace EFRET_TMS
 {
-    public partial class Orders : DevExpress.XtraBars.ToolbarForm.ToolbarForm
+    public partial class Orders : DevExpress.XtraEditors.XtraForm
     {
         public Orders()
         {

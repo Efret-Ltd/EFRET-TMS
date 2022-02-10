@@ -126,11 +126,23 @@ namespace EFRET_TMS
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.OrderslayoutControl1ConvertedLayout = new DevExpress.XtraLayout.LayoutControl();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.fluentDesignFormContainer1item = new DevExpress.XtraLayout.LayoutControlItem();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.tabbedControlGroup1 = new DevExpress.XtraLayout.TabbedControlGroup();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlGroup4 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.toolbarFormManager2 = new DevExpress.XtraBars.ToolbarForm.ToolbarFormManager(this.components);
+            this.barDockControl1 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl2 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl3 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl4 = new DevExpress.XtraBars.BarDockControl();
             this.fluentDesignFormContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.newCOBindingSource)).BeginInit();
@@ -143,8 +155,14 @@ namespace EFRET_TMS
             this.OrderslayoutControl1ConvertedLayout.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormContainer1item)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabbedControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toolbarFormManager2)).BeginInit();
             this.SuspendLayout();
             // 
             // fluentDesignFormContainer1
@@ -152,7 +170,7 @@ namespace EFRET_TMS
             this.fluentDesignFormContainer1.Controls.Add(this.gridControl1);
             this.fluentDesignFormContainer1.Location = new System.Drawing.Point(12, 12);
             this.fluentDesignFormContainer1.Name = "fluentDesignFormContainer1";
-            this.fluentDesignFormContainer1.Size = new System.Drawing.Size(1083, 507);
+            this.fluentDesignFormContainer1.Size = new System.Drawing.Size(1083, 455);
             this.fluentDesignFormContainer1.TabIndex = 0;
             // 
             // gridControl1
@@ -166,7 +184,7 @@ namespace EFRET_TMS
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.MenuManager = this.fluentFormDefaultManager1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1083, 507);
+            this.gridControl1.Size = new System.Drawing.Size(1083, 455);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -834,15 +852,15 @@ namespace EFRET_TMS
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.toolbarFormManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(0, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(1107, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 602);
             this.barDockControlBottom.Manager = this.toolbarFormManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(0, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1107, 0);
             // 
             // barDockControlLeft
             // 
@@ -850,20 +868,22 @@ namespace EFRET_TMS
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.toolbarFormManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 0);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 602);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(1107, 0);
             this.barDockControlRight.Manager = this.toolbarFormManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 0);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 602);
             // 
             // OrderslayoutControl1ConvertedLayout
             // 
             this.OrderslayoutControl1ConvertedLayout.Controls.Add(this.fluentDesignFormContainer1);
             this.OrderslayoutControl1ConvertedLayout.Controls.Add(this.simpleButton1);
+            this.OrderslayoutControl1ConvertedLayout.Controls.Add(this.simpleButton2);
+            this.OrderslayoutControl1ConvertedLayout.Controls.Add(this.simpleButton3);
             this.OrderslayoutControl1ConvertedLayout.Dock = System.Windows.Forms.DockStyle.Fill;
             this.OrderslayoutControl1ConvertedLayout.Location = new System.Drawing.Point(0, 0);
             this.OrderslayoutControl1ConvertedLayout.Name = "OrderslayoutControl1ConvertedLayout";
@@ -871,13 +891,40 @@ namespace EFRET_TMS
             this.OrderslayoutControl1ConvertedLayout.Size = new System.Drawing.Size(1107, 602);
             this.OrderslayoutControl1ConvertedLayout.TabIndex = 3;
             // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Location = new System.Drawing.Point(24, 504);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(1059, 22);
+            this.simpleButton1.StyleController = this.OrderslayoutControl1ConvertedLayout;
+            this.simpleButton1.TabIndex = 4;
+            this.simpleButton1.Text = "Create a new Charging Order";
+            // 
+            // simpleButton2
+            // 
+            this.simpleButton2.Location = new System.Drawing.Point(24, 530);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(1059, 22);
+            this.simpleButton2.StyleController = this.OrderslayoutControl1ConvertedLayout;
+            this.simpleButton2.TabIndex = 5;
+            this.simpleButton2.Text = "Duplicate Existing CO";
+            // 
+            // simpleButton3
+            // 
+            this.simpleButton3.Location = new System.Drawing.Point(24, 556);
+            this.simpleButton3.Name = "simpleButton3";
+            this.simpleButton3.Size = new System.Drawing.Size(1059, 22);
+            this.simpleButton3.StyleController = this.OrderslayoutControl1ConvertedLayout;
+            this.simpleButton3.TabIndex = 6;
+            this.simpleButton3.Text = "Deactivate/Reactivate CO";
+            // 
             // layoutControlGroup1
             // 
             this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
             this.layoutControlGroup1.GroupBordersVisible = false;
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.fluentDesignFormContainer1item,
-            this.layoutControlGroup2});
+            this.tabbedControlGroup1});
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Size = new System.Drawing.Size(1107, 602);
             this.layoutControlGroup1.TextVisible = false;
@@ -887,18 +934,31 @@ namespace EFRET_TMS
             this.fluentDesignFormContainer1item.Control = this.fluentDesignFormContainer1;
             this.fluentDesignFormContainer1item.Location = new System.Drawing.Point(0, 0);
             this.fluentDesignFormContainer1item.Name = "fluentDesignFormContainer1item";
-            this.fluentDesignFormContainer1item.Size = new System.Drawing.Size(1087, 511);
+            this.fluentDesignFormContainer1item.Size = new System.Drawing.Size(1087, 459);
             this.fluentDesignFormContainer1item.TextSize = new System.Drawing.Size(0, 0);
             this.fluentDesignFormContainer1item.TextVisible = false;
             // 
-            // simpleButton1
+            // tabbedControlGroup1
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(24, 556);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(1059, 22);
-            this.simpleButton1.StyleController = this.OrderslayoutControl1ConvertedLayout;
-            this.simpleButton1.TabIndex = 4;
-            this.simpleButton1.Text = "Create a new Charging Order";
+            this.tabbedControlGroup1.Location = new System.Drawing.Point(0, 459);
+            this.tabbedControlGroup1.Name = "tabbedControlGroup1";
+            this.tabbedControlGroup1.SelectedTabPage = this.layoutControlGroup2;
+            this.tabbedControlGroup1.Size = new System.Drawing.Size(1087, 123);
+            this.tabbedControlGroup1.TabPages.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlGroup2,
+            this.layoutControlGroup3,
+            this.layoutControlGroup4});
+            // 
+            // layoutControlGroup2
+            // 
+            this.layoutControlGroup2.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem1,
+            this.layoutControlItem2,
+            this.layoutControlItem3});
+            this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlGroup2.Name = "layoutControlGroup2";
+            this.layoutControlGroup2.Size = new System.Drawing.Size(1063, 78);
+            this.layoutControlGroup2.Text = "Charging Orders";
             // 
             // layoutControlItem1
             // 
@@ -909,13 +969,77 @@ namespace EFRET_TMS
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
-            // layoutControlGroup2
+            // layoutControlItem2
             // 
-            this.layoutControlGroup2.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem1});
-            this.layoutControlGroup2.Location = new System.Drawing.Point(0, 511);
-            this.layoutControlGroup2.Name = "layoutControlGroup2";
-            this.layoutControlGroup2.Size = new System.Drawing.Size(1087, 71);
+            this.layoutControlItem2.Control = this.simpleButton2;
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 26);
+            this.layoutControlItem2.Name = "layoutControlItem2";
+            this.layoutControlItem2.Size = new System.Drawing.Size(1063, 26);
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem2.TextVisible = false;
+            // 
+            // layoutControlItem3
+            // 
+            this.layoutControlItem3.Control = this.simpleButton3;
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 52);
+            this.layoutControlItem3.Name = "layoutControlItem3";
+            this.layoutControlItem3.Size = new System.Drawing.Size(1063, 26);
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem3.TextVisible = false;
+            // 
+            // layoutControlGroup3
+            // 
+            this.layoutControlGroup3.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlGroup3.Name = "layoutControlGroup3";
+            this.layoutControlGroup3.Size = new System.Drawing.Size(1063, 78);
+            this.layoutControlGroup3.Text = "Project44";
+            // 
+            // layoutControlGroup4
+            // 
+            this.layoutControlGroup4.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlGroup4.Name = "layoutControlGroup4";
+            this.layoutControlGroup4.Size = new System.Drawing.Size(1063, 78);
+            this.layoutControlGroup4.Text = "Company";
+            // 
+            // toolbarFormManager2
+            // 
+            this.toolbarFormManager2.DockControls.Add(this.barDockControl1);
+            this.toolbarFormManager2.DockControls.Add(this.barDockControl2);
+            this.toolbarFormManager2.DockControls.Add(this.barDockControl3);
+            this.toolbarFormManager2.DockControls.Add(this.barDockControl4);
+            this.toolbarFormManager2.Form = this;
+            // 
+            // barDockControl1
+            // 
+            this.barDockControl1.CausesValidation = false;
+            this.barDockControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControl1.Location = new System.Drawing.Point(0, 0);
+            this.barDockControl1.Manager = this.toolbarFormManager2;
+            this.barDockControl1.Size = new System.Drawing.Size(1107, 0);
+            // 
+            // barDockControl2
+            // 
+            this.barDockControl2.CausesValidation = false;
+            this.barDockControl2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControl2.Location = new System.Drawing.Point(0, 602);
+            this.barDockControl2.Manager = this.toolbarFormManager2;
+            this.barDockControl2.Size = new System.Drawing.Size(1107, 0);
+            // 
+            // barDockControl3
+            // 
+            this.barDockControl3.CausesValidation = false;
+            this.barDockControl3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControl3.Location = new System.Drawing.Point(0, 0);
+            this.barDockControl3.Manager = this.toolbarFormManager2;
+            this.barDockControl3.Size = new System.Drawing.Size(0, 602);
+            // 
+            // barDockControl4
+            // 
+            this.barDockControl4.CausesValidation = false;
+            this.barDockControl4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControl4.Location = new System.Drawing.Point(1107, 0);
+            this.barDockControl4.Manager = this.toolbarFormManager2;
+            this.barDockControl4.Size = new System.Drawing.Size(0, 602);
             // 
             // Orders
             // 
@@ -923,6 +1047,14 @@ namespace EFRET_TMS
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1107, 602);
             this.Controls.Add(this.OrderslayoutControl1ConvertedLayout);
+            this.Controls.Add(this.barDockControlLeft);
+            this.Controls.Add(this.barDockControlRight);
+            this.Controls.Add(this.barDockControlBottom);
+            this.Controls.Add(this.barDockControlTop);
+            this.Controls.Add(this.barDockControl3);
+            this.Controls.Add(this.barDockControl4);
+            this.Controls.Add(this.barDockControl2);
+            this.Controls.Add(this.barDockControl1);
             this.IconOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("Orders.IconOptions.SvgImage")));
             this.Name = "Orders";
             this.Text = "Orders";
@@ -939,9 +1071,16 @@ namespace EFRET_TMS
             this.OrderslayoutControl1ConvertedLayout.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormContainer1item)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabbedControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toolbarFormManager2)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -1038,12 +1177,24 @@ namespace EFRET_TMS
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
         private DevExpress.XtraLayout.LayoutControlItem fluentDesignFormContainer1item;
-        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup2;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraBars.ToolbarForm.ToolbarFormManager toolbarFormManager1;
         private DevExpress.XtraBars.BarDockControl barDockControlTop;
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
+        private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraEditors.SimpleButton simpleButton3;
+        private DevExpress.XtraLayout.TabbedControlGroup tabbedControlGroup1;
+        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup3;
+        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup2;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
+        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup4;
+        private DevExpress.XtraBars.ToolbarForm.ToolbarFormManager toolbarFormManager2;
+        private DevExpress.XtraBars.BarDockControl barDockControl1;
+        private DevExpress.XtraBars.BarDockControl barDockControl2;
+        private DevExpress.XtraBars.BarDockControl barDockControl3;
+        private DevExpress.XtraBars.BarDockControl barDockControl4;
     }
 }

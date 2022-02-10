@@ -14,7 +14,7 @@ namespace EFRET_TMS
         private readonly BindingSource bindingSource1 = new BindingSource();
         private DateTime dateFrom;
         private DateTime dateTo;
-        private readonly string rate;
+        private string rate;
         public FixRateOfExchange()
         {
             InitializeComponent();

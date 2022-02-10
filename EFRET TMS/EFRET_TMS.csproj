@@ -80,147 +80,6 @@
     <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
       <HintPath>..\packages\Portable.BouncyCastle.1.8.9\lib\net40\BouncyCastle.Crypto.dll</HintPath>
     </Reference>
-    <Reference Include="C1.C1Excel.4, Version=4.0.20193.393, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL" />
-    <Reference Include="C1.C1Zip.4, Version=4.0.20193.393, Culture=neutral, PublicKeyToken=79882d576c6336da" />
-    <Reference Include="C1.Win.2, Version=2.0.20193.393, Culture=neutral, PublicKeyToken=944ae1ea0e47ca04" />
-    <Reference Include="C1.Win.4, Version=4.0.20193.393, Culture=neutral, PublicKeyToken=944ae1ea0e47ca04" />
-    <Reference Include="C1.Win.4.5.2, Version=4.5.20193.393, Culture=neutral, PublicKeyToken=944ae1ea0e47ca04, processorArchitecture=MSIL" />
-    <Reference Include="C1.Win.Bitmap.4, Version=4.0.20193.393, Culture=neutral, PublicKeyToken=944ae1ea0e47ca04" />
-    <Reference Include="C1.Win.C1Command.2, Version=2.0.20193.393, Culture=neutral, PublicKeyToken=e808566f358766d8" />
-    <Reference Include="C1.Win.C1Command.4, Version=4.0.20193.393, Culture=neutral, PublicKeyToken=e808566f358766d8" />
-    <Reference Include="C1.Win.C1Command.4.5.2, Version=4.5.20193.393, Culture=neutral, PublicKeyToken=e808566f358766d8" />
-    <Reference Include="C1.Win.C1Input.2, Version=2.0.20193.393, Culture=neutral, PublicKeyToken=7e7ff60f0c214f9a, processorArchitecture=MSIL" />
-    <Reference Include="C1.Win.C1Input.4, Version=4.0.20193.393, Culture=neutral, PublicKeyToken=7e7ff60f0c214f9a, processorArchitecture=MSIL" />
-    <Reference Include="C1.Win.C1Input.4.5.2, Version=4.5.20193.393, Culture=neutral, PublicKeyToken=7e7ff60f0c214f9a, processorArchitecture=MSIL" />
-    <Reference Include="C1.Win.Ribbon.4.5.2, Version=4.5.20193.393, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL" />
-    <Reference Include="ComponentPro.BounceInspector, Version=7.2.40.234, Culture=neutral, PublicKeyToken=0efede2d78b28dff, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\ComponentPro\UltimateStudio-Pro v7.2.234.54\Bin\Net\ComponentPro.BounceInspector.dll</HintPath>
-    </Reference>
-    <Reference Include="ComponentPro.Common, Version=7.2.40.234, Culture=neutral, PublicKeyToken=0efede2d78b28dff, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\ComponentPro\UltimateStudio-Pro v7.2.234.54\Bin\Net\ComponentPro.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="ComponentPro.Dns, Version=7.2.40.234, Culture=neutral, PublicKeyToken=0efede2d78b28dff, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\ComponentPro\UltimateStudio-Pro v7.2.234.54\Bin\Net\ComponentPro.Dns.dll</HintPath>
-    </Reference>
-    <Reference Include="ComponentPro.DocCommon, Version=7.2.40.234, Culture=neutral, PublicKeyToken=0efede2d78b28dff, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\ComponentPro\UltimateStudio-Pro v7.2.234.54\Bin\Net\ComponentPro.DocCommon.dll</HintPath>
-    </Reference>
-    <Reference Include="ComponentPro.EasySaml, Version=7.2.40.234, Culture=neutral, PublicKeyToken=0efede2d78b28dff, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\ComponentPro\UltimateStudio-Pro v7.2.234.54\Bin\Net\ComponentPro.EasySaml.dll</HintPath>
-    </Reference>
-    <Reference Include="ComponentPro.EmailValidator, Version=7.2.40.234, Culture=neutral, PublicKeyToken=0efede2d78b28dff, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\ComponentPro\UltimateStudio-Pro v7.2.234.54\Bin\Net\ComponentPro.EmailValidator.dll</HintPath>
-    </Reference>
-    <Reference Include="ComponentPro.Encryptor, Version=7.2.40.234, Culture=neutral, PublicKeyToken=0efede2d78b28dff, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\ComponentPro\UltimateStudio-Pro v7.2.234.54\Bin\Net\ComponentPro.Encryptor.dll</HintPath>
-    </Reference>
-    <Reference Include="ComponentPro.Excel, Version=7.2.40.234, Culture=neutral, PublicKeyToken=0efede2d78b28dff, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\ComponentPro\UltimateStudio-Pro v7.2.234.54\Bin\Net\ComponentPro.Excel.dll</HintPath>
-    </Reference>
-    <Reference Include="ComponentPro.ExcelToPdf, Version=7.2.40.234, Culture=neutral, PublicKeyToken=0efede2d78b28dff, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\ComponentPro\UltimateStudio-Pro v7.2.234.54\Bin\Net\ComponentPro.ExcelToPdf.dll</HintPath>
-    </Reference>
-    <Reference Include="ComponentPro.FileSync, Version=7.2.40.234, Culture=neutral, PublicKeyToken=0efede2d78b28dff, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\ComponentPro\UltimateStudio-Pro v7.2.234.54\Bin\Net\ComponentPro.FileSync.dll</HintPath>
-    </Reference>
-    <Reference Include="ComponentPro.FileSystem, Version=7.2.40.234, Culture=neutral, PublicKeyToken=0efede2d78b28dff, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\ComponentPro\UltimateStudio-Pro v7.2.234.54\Bin\Net\ComponentPro.FileSystem.dll</HintPath>
-    </Reference>
-    <Reference Include="ComponentPro.Ftp, Version=7.2.40.234, Culture=neutral, PublicKeyToken=0efede2d78b28dff, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\ComponentPro\UltimateStudio-Pro v7.2.234.54\Bin\Net\ComponentPro.Ftp.dll</HintPath>
-    </Reference>
-    <Reference Include="ComponentPro.HtmlToPdf, Version=7.2.40.234, Culture=neutral, PublicKeyToken=0efede2d78b28dff, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\ComponentPro\UltimateStudio-Pro v7.2.234.54\Bin\Net\ComponentPro.HtmlToPdf.dll</HintPath>
-    </Reference>
-    <Reference Include="ComponentPro.HtmlToPdf.x64, Version=7.2.40.234, Culture=neutral, PublicKeyToken=0efede2d78b28dff, processorArchitecture=AMD64">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\ComponentPro\UltimateStudio-Pro v7.2.234.54\Bin\Net\ComponentPro.HtmlToPdf.x64.dll</HintPath>
-    </Reference>
-    <Reference Include="ComponentPro.IPLookup, Version=7.2.40.234, Culture=neutral, PublicKeyToken=0efede2d78b28dff, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\ComponentPro\UltimateStudio-Pro v7.2.234.54\Bin\Net\ComponentPro.IPLookup.dll</HintPath>
-    </Reference>
-    <Reference Include="ComponentPro.Mail, Version=7.2.40.234, Culture=neutral, PublicKeyToken=0efede2d78b28dff, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\ComponentPro\UltimateStudio-Pro v7.2.234.54\Bin\Net\ComponentPro.Mail.dll</HintPath>
-    </Reference>
-    <Reference Include="ComponentPro.Network, Version=7.2.40.234, Culture=neutral, PublicKeyToken=0efede2d78b28dff, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\ComponentPro\UltimateStudio-Pro v7.2.234.54\Bin\Net\ComponentPro.Network.dll</HintPath>
-    </Reference>
-    <Reference Include="ComponentPro.Pdf, Version=7.2.40.234, Culture=neutral, PublicKeyToken=0efede2d78b28dff, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\ComponentPro\UltimateStudio-Pro v7.2.234.54\Bin\Net\ComponentPro.Pdf.dll</HintPath>
-    </Reference>
-    <Reference Include="ComponentPro.PdfInspector, Version=7.2.40.234, Culture=neutral, PublicKeyToken=0efede2d78b28dff, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\ComponentPro\UltimateStudio-Pro v7.2.234.54\Bin\Net\ComponentPro.PdfInspector.dll</HintPath>
-    </Reference>
-    <Reference Include="ComponentPro.PdfViewer, Version=7.2.40.234, Culture=neutral, PublicKeyToken=0efede2d78b28dff, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\ComponentPro\UltimateStudio-Pro v7.2.234.54\Bin\Net\ComponentPro.PdfViewer.dll</HintPath>
-    </Reference>
-    <Reference Include="ComponentPro.Saml, Version=7.2.40.234, Culture=neutral, PublicKeyToken=0efede2d78b28dff, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\ComponentPro\UltimateStudio-Pro v7.2.234.54\Bin\Net\ComponentPro.Saml.dll</HintPath>
-    </Reference>
-    <Reference Include="ComponentPro.Sftp, Version=7.2.40.234, Culture=neutral, PublicKeyToken=0efede2d78b28dff, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\ComponentPro\UltimateStudio-Pro v7.2.234.54\Bin\Net\ComponentPro.Sftp.dll</HintPath>
-    </Reference>
-    <Reference Include="ComponentPro.SftpServer, Version=7.2.40.234, Culture=neutral, PublicKeyToken=0efede2d78b28dff, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\ComponentPro\UltimateStudio-Pro v7.2.234.54\Bin\Net\ComponentPro.SftpServer.dll</HintPath>
-    </Reference>
-    <Reference Include="ComponentPro.TemplateEngine, Version=7.2.40.234, Culture=neutral, PublicKeyToken=0efede2d78b28dff, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\ComponentPro\UltimateStudio-Pro v7.2.234.54\Bin\Net\ComponentPro.TemplateEngine.dll</HintPath>
-    </Reference>
-    <Reference Include="ComponentPro.Terminal, Version=7.2.40.234, Culture=neutral, PublicKeyToken=0efede2d78b28dff, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\ComponentPro\UltimateStudio-Pro v7.2.234.54\Bin\Net\ComponentPro.Terminal.dll</HintPath>
-    </Reference>
-    <Reference Include="ComponentPro.Time, Version=7.2.40.234, Culture=neutral, PublicKeyToken=0efede2d78b28dff, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\ComponentPro\UltimateStudio-Pro v7.2.234.54\Bin\Net\ComponentPro.Time.dll</HintPath>
-    </Reference>
-    <Reference Include="ComponentPro.TraceRoute, Version=7.2.40.234, Culture=neutral, PublicKeyToken=0efede2d78b28dff, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\ComponentPro\UltimateStudio-Pro v7.2.234.54\Bin\Net\ComponentPro.TraceRoute.dll</HintPath>
-    </Reference>
-    <Reference Include="ComponentPro.WhoIs, Version=7.2.40.234, Culture=neutral, PublicKeyToken=0efede2d78b28dff, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\ComponentPro\UltimateStudio-Pro v7.2.234.54\Bin\Net\ComponentPro.WhoIs.dll</HintPath>
-    </Reference>
-    <Reference Include="ComponentPro.Windows.Common, Version=7.2.40.234, Culture=neutral, PublicKeyToken=0efede2d78b28dff, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\ComponentPro\UltimateStudio-Pro v7.2.234.54\Bin\Net\ComponentPro.Windows.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="ComponentPro.Word, Version=7.2.40.234, Culture=neutral, PublicKeyToken=0efede2d78b28dff, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\ComponentPro\UltimateStudio-Pro v7.2.234.54\Bin\Net\ComponentPro.Word.dll</HintPath>
-    </Reference>
-    <Reference Include="ComponentPro.WordToPdf, Version=7.2.40.234, Culture=neutral, PublicKeyToken=0efede2d78b28dff, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\ComponentPro\UltimateStudio-Pro v7.2.234.54\Bin\Net\ComponentPro.WordToPdf.dll</HintPath>
-    </Reference>
-    <Reference Include="ComponentPro.Zip, Version=7.2.40.234, Culture=neutral, PublicKeyToken=0efede2d78b28dff, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\ComponentPro\UltimateStudio-Pro v7.2.234.54\Bin\Net\ComponentPro.Zip.dll</HintPath>
-    </Reference>
     <Reference Include="Devart.Data, Version=5.0.2458.0, Culture=neutral, PublicKeyToken=09af7300eec23701" />
     <Reference Include="Devart.Data.Universal, Version=3.80.2163.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Charts.v21.2.Core, Version=21.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -618,6 +477,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>axsTrailerHistory.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Charging Order Report.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Check_VAT.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -808,6 +670,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdminControlPanel.resx">
       <DependentUpon>AdminControlPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Charging Order Report.resx">
+      <DependentUpon>Charging Order Report.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Check_VAT.resx">
       <DependentUpon>Check_VAT.cs</DependentUpon>
