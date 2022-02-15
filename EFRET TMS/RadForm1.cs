@@ -5,6 +5,8 @@ using System.IO;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Net.Sockets;
+using System.Threading;
 using System.Windows.Forms;
 using DevExpress.XtraSplashScreen;
 using Newtonsoft.Json.Linq;
@@ -22,10 +24,50 @@ namespace EFRET_TMS
             Text = @"Welcome to EFRET " + Environment.UserName;
             GetRate();
             PostTeamsLogin();
-            
+            Connect("192.168.10.78", Environment.MachineName);
+
         }
 
-        public async void PostTeamsLogin()
+        static void Connect(String server, String message)
+        {
+            try
+            {
+                Int32 port = 13000;
+                TcpClient client = new TcpClient(server, port);
+
+                NetworkStream stream = client.GetStream();
+
+                int count = 0;
+                while (count++ < 1)
+                {
+                    // Translate the Message into ASCII.
+                    Byte[] data = System.Text.Encoding.ASCII.GetBytes(message);
+
+                    // Send the message to the connected TcpServer. 
+                    stream.Write(data, 0, data.Length);
+                    RadMessageBox.Show("Connecting", message);
+
+                    // Bytes Array to receive Server Response.
+                    data = new Byte[256];
+                    String response = String.Empty;
+
+                    // Read the Tcp Server Response Bytes.
+                    Int32 bytes = stream.Read(data, 0, data.Length);
+                    response = System.Text.Encoding.ASCII.GetString(data, 0, bytes);
+                    RadMessageBox.Show("Recieved", response);
+
+                    Thread.Sleep(2000);
+                }
+
+                stream.Close();
+                client.Close();
+            }
+            catch (Exception e)
+            {
+                RadMessageBox.Show("Exception: {0}", e.Message);
+            }
+        }
+            public async void PostTeamsLogin()
         {
             using (var httpClient = new HttpClient())
             {
@@ -130,8 +172,9 @@ namespace EFRET_TMS
         //Orders
         private void accordionControlElement1_Click(object sender, EventArgs e)
         {
-            Orders order = new Orders();
-            order.Show();
+         
+            Movements Movement = new Movements();
+            Movement.Show();
             var eventMessage = Environment.UserName + " Opened Orders Panel";
             LogMessage(eventMessage);
         }

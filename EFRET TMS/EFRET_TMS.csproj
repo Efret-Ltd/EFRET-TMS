@@ -200,6 +200,7 @@
     <Reference Include="Microsoft.Extensions.Primitives, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Extensions.Primitives.6.0.0\lib\net461\Microsoft.Extensions.Primitives.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Toolkit.Uwp.Notifications, Version=7.0.0.0, Culture=neutral, PublicKeyToken=4aff67a105548ee2" />
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -404,6 +405,7 @@
       <HintPath>..\lib\RCWF\2022.1.118.40\Telerik.WinControls.RadDiagram.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Telerik.WinControls.RadToastNotification, Version=2022.1.118.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
     <Reference Include="Telerik.WinControls.RichTextEditor, Version=2022.1.118.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
       <HintPath>..\lib\RCWF\2022.1.118.40\Telerik.WinControls.RichTextEditor.dll</HintPath>
       <Private>True</Private>
@@ -453,6 +455,11 @@
     </Compile>
     <Compile Include="AdminControlPanel.Designer.cs">
       <DependentUpon>AdminControlPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="axsCO.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>axsCO.xsd</DependentUpon>
     </Compile>
     <Compile Include="axsDataSet.cs">
       <DependentUpon>axsDataSet.xsd</DependentUpon>
@@ -523,6 +530,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Company.xsd</DependentUpon>
     </Compile>
+    <Compile Include="CompanyLookup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CompanyLookup.Designer.cs">
+      <DependentUpon>CompanyLookup.cs</DependentUpon>
+    </Compile>
     <Compile Include="DateRange.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -559,17 +572,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MovementCO.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Movements.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movements.Designer.cs">
+      <DependentUpon>Movements.cs</DependentUpon>
+    </Compile>
     <Compile Include="OnboardP44.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="OnboardP44.Designer.cs">
       <DependentUpon>OnboardP44.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Orders.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Orders.Designer.cs">
-      <DependentUpon>Orders.cs</DependentUpon>
     </Compile>
     <Compile Include="PostTeams.cs" />
     <Compile Include="TasksBoard.cs">
@@ -689,6 +702,9 @@
     <EmbeddedResource Include="COCreation.resx">
       <DependentUpon>COCreation.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CompanyLookup.resx">
+      <DependentUpon>CompanyLookup.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DateRange.resx">
       <DependentUpon>DateRange.cs</DependentUpon>
     </EmbeddedResource>
@@ -707,11 +723,11 @@
     <EmbeddedResource Include="MailMerge.resx">
       <DependentUpon>MailMerge.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Movements.resx">
+      <DependentUpon>Movements.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="OnboardP44.resx">
       <DependentUpon>OnboardP44.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Orders.resx">
-      <DependentUpon>Orders.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="TasksBoard.resx">
@@ -768,6 +784,17 @@
       <DependentUpon>Whois.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.manifest" />
+    <None Include="axsCO.xsc">
+      <DependentUpon>axsCO.xsd</DependentUpon>
+    </None>
+    <None Include="axsCO.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>axsCO.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="axsCO.xss">
+      <DependentUpon>axsCO.xsd</DependentUpon>
+    </None>
     <None Include="axsDataSet.xsc">
       <DependentUpon>axsDataSet.xsd</DependentUpon>
     </None>
