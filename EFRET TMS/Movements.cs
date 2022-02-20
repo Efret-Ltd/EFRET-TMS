@@ -36,8 +36,18 @@ namespace EFRET_TMS
         {
             var test = gridView1.GetDataRow(gridView1.FocusedRowHandle).ToString();
             RadMessageBox.Show(test);
-           // ViewCo VCO = new ViewCo();
-           // VCO.Show();
+
+        }
+
+        private void gridControl1_Click(object sender, EventArgs e)
+        {
+            foreach (int i in gridView1.GetSelectedRows())
+            {
+                DataRow row = gridView1.GetDataRow(i);
+                int COID = int.Parse(row[1].ToString());
+                ViewCo VCO = new ViewCo(COID);
+                VCO.Show();
+            }
         }
     }
 }

@@ -120,7 +120,7 @@ namespace EFRET_TMS
             this.accordionControlElement6.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElement6.ImageOptions.SvgImage")));
             this.accordionControlElement6.Name = "accordionControlElement6";
             this.accordionControlElement6.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement6.Text = "Fleet";
+            this.accordionControlElement6.Text = "Fleet Map";
             this.accordionControlElement6.Click += new System.EventHandler(this.accordionControlElement6_Click);
             // 
             // accordionControlElement7

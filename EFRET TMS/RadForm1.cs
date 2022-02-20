@@ -251,8 +251,10 @@ namespace EFRET_TMS
         //Fleet Management
         private void accordionControlElement6_Click(object sender, EventArgs e)
         {
-            FleetManagement fMngt = new FleetManagement();
-            fMngt.Show();
+            Process LiveMap = new Process();
+            LiveMap.StartInfo.FileName = "P44OverviewMap.exe";
+            LiveMap.StartInfo.WorkingDirectory = @"\\efret-dev-01\Users\sysadmin\Source\Repos\P44OverviewMap\P44OverviewMap\bin\DebugVersion";
+            LiveMap.Start();
             var eventMessage = Environment.UserName + " Opened Fleet Management Panel";
             LogMessage(eventMessage);
         }

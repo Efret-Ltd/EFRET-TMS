@@ -15,37 +15,86 @@ namespace EFRET_TMS
     public partial class ViewCo : DevExpress.XtraBars.Ribbon.RibbonForm
     {
         private readonly int _chargingOrderId;
-        private readonly string _path;
-        private readonly object _newChargingOrder;
+        private  string _path;
+        private  object _newChargingOrder;
         private  string _shipmentId;
         private int _contractualdateSet;
         private int _tractorNumber;
         private int _costProvider;
         private int _trailerNumber;
+        private double conversionRate;
+        private Boolean invoiced;
+        private Boolean trackingStarted;
         private int _isTrailerTypeAutorised;
         private object _coComment;
         private string _cmrPath;
+        private string contractId;
         private string _p44long;
         private string _p44lat;
-        public ViewCo(int coid, object newCo, object contractId, object comment)
+        public ViewCo(int coid)
         {
+            /* -We need to grab all the key fields from the CO
+             *  We then show UI components based if the field has data.
+             *  Do not need more than a single query to populate local fields. Except for CMR using a different DB
+             */
             InitializeComponent();
-            object cid = contractId + @"\";
             _chargingOrderId = coid;
-            _newChargingOrder = newCo;
-            _coComment = comment;
-            _path = @"\\efret-app-01\Database\efret\2021\CustomerCO\" + cid + _newChargingOrder;
-            _cmrPath = @"https://cmr.efret.net/retrieve/cmr/" + contractId + "-" + newCo + "-CMR.pdf";
-            GetCoDetails(_newChargingOrder.ToString());
+            GetNewCO(_chargingOrderId);
+            GetCoDetails(_chargingOrderId);
             GetCoMovements(_newChargingOrder.ToString());
             GetCocmr(_chargingOrderId);
             GetCOTally();
         }
-        /*
-         * We select the record from CMR database then do comparisons on the status of the CMR.
-         * IF the CMR is accepted we provide a button and a link to the PDF.
-         *
-         */
+        public void GetNewCO(int coid) {
+            string queryString = "Select NewCO,Comment,IdContractHolder,DateCreation FROM NewCO WHERE IdCO ='" + coid + "'";
+            string connectionString = @"Server=EFRET-APP-01\EFRET;Database=axs;Trusted_Connection=True;";
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    SqlCommand command = new SqlCommand(queryString, connection);
+                    connection.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+                    try
+                    {
+                        while (reader.Read())
+                        {
+                            //TODO: ServiceStack DTO make a charging Order and initalize instance.
+                            _newChargingOrder = reader["NewCO"];
+                            DateTime COCreationDate = DateTime.Parse(reader["DateCreation"].ToString());
+                            _coComment = reader["Comment"].ToString();
+                            contractId = reader["IdContractHolder"].ToString();
+                            _cmrPath = @"https://cmr.efret.net/retrieve/cmr/" + contractId + "-" + _newChargingOrder + "-CMR.pdf";
+                            _path = @"\\efret-app-01\Database\efret\"+COCreationDate.ToString("yyyy")+@"\CustomerCO\" + contractId +@"\"+ _newChargingOrder;
+                            //TODO: ServiceStack DTO make a charging Order and initalize instance.
+                            barEditItem1.EditValue = _newChargingOrder;
+                            barStaticItem2.Caption = reader["IdCO"].ToString();
+                            barEditItem2.EditValue = reader["Line"];
+                            barEditItem4.EditValue = reader["ConversionRate"];
+                            barStaticItem3.Caption = @"Created By: " + reader["UserCreation"];
+                            barStaticItem4.Caption = @"Last Change By: " + reader["UserUpdate"];
+                            barStaticItem5.Caption = @"Manager: " + reader["UserOwner"];
+                            _p44lat = reader["P44Latitude"].ToString();
+                            _p44long = reader["P44Longitude"].ToString();
+                            barEditItem5.EditValue = reader["TrailerTypeAutorised"];
+                            _shipmentId = reader["P44ShipmentID"].ToString();
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        SentrySdk.CaptureException(ex);
+
+                    }
+                    RadMessageBox.Show(_path);
+                }
+            }catch (Exception ex)
+            {
+                SentrySdk.CaptureException(ex);
+
+            }
+            
+        }
         private void GetCOTally()
         {
 
@@ -120,9 +169,9 @@ namespace EFRET_TMS
         }
 
 
-        private void GetCoDetails(string newCo)
+        private void GetCoDetails(int idCO)
         {
-            string queryString = "Select * FROM NewCO INNER JOIN Movement ON NewCO.IdCo = Movement.IdCO INNER JOIN Goods ON NewCO.IdCo = Goods.IDco WHERE NewCO ='"+ newCo+"'";
+            string queryString = "Select * FROM NewCO INNER JOIN Movement ON NewCO.IdCo = Movement.IdCO INNER JOIN Goods ON NewCO.IdCo = Goods.IDco WHERE IdCO ='" + idCO+ "'";
             string connectionString = @"Server=EFRET-APP-01\EFRET;Database=axs;Trusted_Connection=True;";
             try
             {
@@ -135,23 +184,6 @@ namespace EFRET_TMS
                     {
                         while (reader.Read())
                         {
-
-                            //TODO: ServiceStack DTO make a charging Order and initalize instance.
-                            barEditItem1.EditValue = reader["NewCO"];
-                            barStaticItem2.Caption = reader["IdCO"].ToString();
-                            barEditItem2.EditValue = reader["Line"];
-                            barEditItem4.EditValue = reader["ConversionRate"];
-                            barStaticItem3.Caption = @"Created By: " + reader["UserCreation"];
-                            barStaticItem4.Caption = @"Last Change By: "+ reader["UserUpdate"];
-                            barStaticItem5.Caption = @"Manager: " + reader["UserOwner"];
-                            _p44lat = reader["P44Latitude"].ToString();
-                            _p44long = reader["P44Longitude"].ToString();
-                            barEditItem5.EditValue = reader["TrailerTypeAutorised"];
-
-                            if (reader["P44ShipmentID"].ToString() != "")
-                            {
-                                _shipmentId = reader["P44ShipmentID"].ToString();
-                            }
 
                             if (reader["TrailerNumber"] != null)
                             {
@@ -192,12 +224,6 @@ namespace EFRET_TMS
             }
         }
 
-        private void ViewCO_Load(object sender, EventArgs e)
-        {
-            
-
-        }
-
         private void GetCoMovements(string newCo)
         {
 
@@ -212,12 +238,8 @@ namespace EFRET_TMS
                 {
                     using (var da = new SqlDataAdapter(queryStringAllMovements, connectionString))
                     {
-                        da.Fill(sourceDataSet);
-                    }
-
-                    SqlDataReader reader = command.ExecuteReader();
-                    try
-                    {
+                        da.Fill(sourceDataSet); 
+                        SqlDataReader reader = command.ExecuteReader();
                         while (reader.Read())
                         {
                             if (reader["Contractualdate"] != null)
@@ -237,13 +259,6 @@ namespace EFRET_TMS
                             }
                         }
                     }
-                    catch (Exception ex)
-                    {
-                        SentrySdk.CaptureException(ex);
-
-                    }
-                
-
                     gridControl1.DataSource = sourceDataSet.Tables[0]; 
                     connection.Close();
                 }
@@ -260,7 +275,7 @@ namespace EFRET_TMS
         {
             //TODO: We may want to use devexpress PDF utilities on selection.
             xtraOpenFileDialog1.InitialDirectory = _path;
-            xtraOpenFileDialog1.Title = @"View Charging Order Browser";
+            xtraOpenFileDialog1.Title = @"Charging Order Browser";
             xtraOpenFileDialog1.FileName = "";
             xtraOpenFileDialog1.ShowDialog();
         }
@@ -303,68 +318,7 @@ namespace EFRET_TMS
         private async void barButtonItem13_ItemClick(object sender, ItemClickEventArgs e)
         {
             RadForm1.LogMessage(Environment.UserName + " has attempted to upload CO: " + _chargingOrderId+" to Project44");
-            var username = "integrationuser@efret.net";
-            var password = "project442019!";
-
-
-            // do not upload CO's that have an idContractHolder of 'EFRCHR' or 'EF1CHR' - These are internal shipments that dont need to be tracked
-            // remove CO's that have any movement with a CostProvider of '4SALE2' or 'EFRCHR' or 'EF1CHR'
-            var messageP44 = "";
-
-            //While the button isn't shown until all fields are properly filled. We do a final check to ensure the data we post is valid.
-
-            // remove CO's with no trailer number
-
-            // remove CO's with invalid Efret trailer number EFRU
-
-            // Remove CO's with trailerType not currently compatiable with Project 44
-            /*
-             * case 'B737CARGO AIRCRAFT 23 T':
-                            console.log('IdCO:', confirmationOrders[loop].idCo, 'Confirmation Order:', confirmationOrders[loop].confirmationOrder, 'Contract:', confirmationOrders[loop].idContractHolder, 'Trailer Number:', confirmationOrders[loop].trailerNumber, 'Trailer Type:', confirmationOrders[loop].trailerType);    
-                            console.log(' - CO has a Project 44 unsupported trailer type of B737Cargo Aircraft 23 t. Unflagged this CO for upload to Project 44');
-                            updateDatabaseRecord('UPDATE NewCO SET P44ToUpload=0, P44ReasonCode=\'NO_NEED_TO_UPLOAD\', P44ReasonDescription=\'CO has a Project 44 unsupported trailer type of 737Cargo Aircraft 23 t. Unflagged this CO for upload to Project 44\', P44UploadError=-1, P44LastUpdate='+getDateTimeAccess()+' WHERE IdCO='+confirmationOrdersToUpload[loop].idCo, 'CO', confirmationOrdersToUpload[loop].idCo);
-                            confirmationOrdersToUpload.splice(loop, 1);
-                            break;
-             */
-            try
-            {
-                using (var httpClient = new HttpClient())
-                {
-                    using (var request = new HttpRequestMessage(new HttpMethod("POST"),
-                        "http://cloud-v2.p-44.com/api/v4/tl/shipments"))
-                    {
-                        request.Headers.Authorization =
-                            new AuthenticationHeaderValue(
-                                "Basic", Convert.ToBase64String(
-                                    System.Text.Encoding.ASCII.GetBytes(
-                                        $"{username}:{password}")));
-
-
-                        string postContent = "{'text':'" + messageP44 + "'}";
-                        request.Content = new StringContent(postContent);
-
-
-                        request.Content.Headers.ContentType = MediaTypeHeaderValue.Parse("application/json");
-
-
-                        if (request.Content.Headers.Allow.Contains(""))
-                        {
-
-                            //once the request is recived with a 200 response we then run the utilities and parse the resulting data.
-
-
-                         
-                        }
-                        var response = await httpClient.SendAsync(request);
-                        RadMessageBox.Show(response.ToString());
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                SentrySdk.CaptureException(ex);
-            }
-            //Now we do a bunch of checks before posting to P44.
+            //Run program with Charging order in argument
         }
 
 

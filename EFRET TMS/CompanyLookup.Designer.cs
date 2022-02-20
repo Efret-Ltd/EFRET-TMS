@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CompanyLookup));
+            Telerik.WinControls.UI.RadValidationRule radValidationRule1 = new Telerik.WinControls.UI.RadValidationRule();
+            this.radTextBox16 = new Telerik.WinControls.UI.RadTextBox();
             this.companyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.company = new EFRET_TMS.Company();
             this.companyTableAdapter = new EFRET_TMS.CompanyTableAdapters.CompanyTableAdapter();
@@ -46,6 +49,8 @@
             this.radCheckBox8 = new Telerik.WinControls.UI.RadCheckBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.radDataEntry1 = new Telerik.WinControls.UI.RadDataEntry();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.radButton1 = new Telerik.WinControls.UI.RadButton();
             this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
             this.radTextBox2 = new Telerik.WinControls.UI.RadTextBox();
@@ -104,7 +109,6 @@
             this.radLabel29 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel30 = new Telerik.WinControls.UI.RadLabel();
             this.radPanel16 = new Telerik.WinControls.UI.RadPanel();
-            this.radTextBox16 = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel31 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel32 = new Telerik.WinControls.UI.RadLabel();
             this.radPanel17 = new Telerik.WinControls.UI.RadPanel();
@@ -158,6 +162,8 @@
             this.CompanyLookuplayoutControl1ConvertedLayout = new DevExpress.XtraLayout.LayoutControl();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.panel1item = new DevExpress.XtraLayout.LayoutControlItem();
+            this.radValidationProvider1 = new Telerik.WinControls.UI.RadValidationProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.radTextBox16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.company)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radCheckBox1)).BeginInit();
@@ -249,7 +255,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel30)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel16)).BeginInit();
             this.radPanel16.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radTextBox16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel31)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel32)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel17)).BeginInit();
@@ -316,7 +321,20 @@
             this.CompanyLookuplayoutControl1ConvertedLayout.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panel1item)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radValidationProvider1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // radTextBox16
+            // 
+            this.radTextBox16.AutoSize = false;
+            this.radTextBox16.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.companyBindingSource, "CompanyEmail", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.radTextBox16.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.radTextBox16.Location = new System.Drawing.Point(156, 0);
+            this.radTextBox16.Name = "radTextBox16";
+            this.radTextBox16.Size = new System.Drawing.Size(242, 22);
+            this.radTextBox16.TabIndex = 15;
+            this.radValidationProvider1.SetValidationRule(this.radTextBox16, radValidationRule1);
+            this.radTextBox16.TextChanged += new System.EventHandler(this.radTextBox16_TextChanged);
             // 
             // companyBindingSource
             // 
@@ -403,6 +421,7 @@
             this.radTextBox1.PasswordChar = '*';
             this.radTextBox1.Size = new System.Drawing.Size(435, 310);
             this.radTextBox1.TabIndex = 4;
+            this.radValidationProvider1.SetValidationRule(this.radTextBox1, null);
             this.radTextBox1.WordWrap = false;
             // 
             // radCheckBox5
@@ -454,6 +473,8 @@
             // 
             // radDataEntry1.PanelContainer
             // 
+            this.radDataEntry1.PanelContainer.Controls.Add(this.simpleButton2);
+            this.radDataEntry1.PanelContainer.Controls.Add(this.simpleButton1);
             this.radDataEntry1.PanelContainer.Controls.Add(this.radButton1);
             this.radDataEntry1.PanelContainer.Controls.Add(this.radPanel1);
             this.radDataEntry1.PanelContainer.Controls.Add(this.radPanel3);
@@ -483,9 +504,33 @@
             this.radDataEntry1.PanelContainer.Controls.Add(this.radPanel27);
             this.radDataEntry1.PanelContainer.Controls.Add(this.radPanel28);
             this.radDataEntry1.PanelContainer.Size = new System.Drawing.Size(622, 749);
+            // 
+            // 
+            // 
+            this.radDataEntry1.RootElement.EnableFocusBorder = true;
+            this.radDataEntry1.RootElement.EnableHighlight = true;
+            this.radDataEntry1.RootElement.EnableRippleAnimation = true;
             this.radDataEntry1.Size = new System.Drawing.Size(624, 751);
             this.radDataEntry1.TabIndex = 0;
             this.radDataEntry1.ThemeName = "ControlDefault";
+            // 
+            // simpleButton2
+            // 
+            this.simpleButton2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton2.ImageOptions.SvgImage")));
+            this.simpleButton2.Location = new System.Drawing.Point(481, 49);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(139, 41);
+            this.simpleButton2.TabIndex = 29;
+            this.simpleButton2.Text = "Update Record";
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
+            this.simpleButton1.Location = new System.Drawing.Point(480, 5);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(139, 38);
+            this.simpleButton1.TabIndex = 28;
+            this.simpleButton1.Text = "Delete Company";
             // 
             // radButton1
             // 
@@ -517,6 +562,7 @@
             this.radTextBox2.Name = "radTextBox2";
             this.radTextBox2.Size = new System.Drawing.Size(42, 22);
             this.radTextBox2.TabIndex = 1;
+            this.radValidationProvider1.SetValidationRule(this.radTextBox2, null);
             // 
             // radLabel3
             // 
@@ -534,7 +580,7 @@
             this.radLabel4.Dock = System.Windows.Forms.DockStyle.Right;
             this.radLabel4.Location = new System.Drawing.Point(198, 0);
             this.radLabel4.Name = "radLabel4";
-            this.radLabel4.Size = new System.Drawing.Size(2, 2);
+            this.radLabel4.Size = new System.Drawing.Size(2, 22);
             this.radLabel4.TabIndex = 3;
             this.radLabel4.TextWrap = false;
             // 
@@ -557,6 +603,7 @@
             this.radTextBox3.Name = "radTextBox3";
             this.radTextBox3.Size = new System.Drawing.Size(92, 22);
             this.radTextBox3.TabIndex = 2;
+            this.radValidationProvider1.SetValidationRule(this.radTextBox3, null);
             // 
             // radLabel5
             // 
@@ -574,7 +621,7 @@
             this.radLabel6.Dock = System.Windows.Forms.DockStyle.Right;
             this.radLabel6.Location = new System.Drawing.Point(248, 0);
             this.radLabel6.Name = "radLabel6";
-            this.radLabel6.Size = new System.Drawing.Size(2, 2);
+            this.radLabel6.Size = new System.Drawing.Size(2, 22);
             this.radLabel6.TabIndex = 4;
             this.radLabel6.TextWrap = false;
             // 
@@ -597,6 +644,7 @@
             this.radTextBox4.Name = "radTextBox4";
             this.radTextBox4.Size = new System.Drawing.Size(92, 22);
             this.radTextBox4.TabIndex = 3;
+            this.radValidationProvider1.SetValidationRule(this.radTextBox4, null);
             // 
             // radLabel7
             // 
@@ -614,7 +662,7 @@
             this.radLabel8.Dock = System.Windows.Forms.DockStyle.Right;
             this.radLabel8.Location = new System.Drawing.Point(248, 0);
             this.radLabel8.Name = "radLabel8";
-            this.radLabel8.Size = new System.Drawing.Size(2, 2);
+            this.radLabel8.Size = new System.Drawing.Size(2, 22);
             this.radLabel8.TabIndex = 5;
             this.radLabel8.TextWrap = false;
             // 
@@ -637,6 +685,7 @@
             this.radTextBox5.Name = "radTextBox5";
             this.radTextBox5.Size = new System.Drawing.Size(242, 22);
             this.radTextBox5.TabIndex = 4;
+            this.radValidationProvider1.SetValidationRule(this.radTextBox5, null);
             // 
             // radLabel9
             // 
@@ -654,7 +703,7 @@
             this.radLabel10.Dock = System.Windows.Forms.DockStyle.Right;
             this.radLabel10.Location = new System.Drawing.Point(398, 0);
             this.radLabel10.Name = "radLabel10";
-            this.radLabel10.Size = new System.Drawing.Size(2, 2);
+            this.radLabel10.Size = new System.Drawing.Size(2, 22);
             this.radLabel10.TabIndex = 6;
             this.radLabel10.TextWrap = false;
             // 
@@ -677,6 +726,7 @@
             this.radTextBox6.Name = "radTextBox6";
             this.radTextBox6.Size = new System.Drawing.Size(242, 22);
             this.radTextBox6.TabIndex = 5;
+            this.radValidationProvider1.SetValidationRule(this.radTextBox6, null);
             // 
             // radLabel11
             // 
@@ -694,7 +744,7 @@
             this.radLabel12.Dock = System.Windows.Forms.DockStyle.Right;
             this.radLabel12.Location = new System.Drawing.Point(398, 0);
             this.radLabel12.Name = "radLabel12";
-            this.radLabel12.Size = new System.Drawing.Size(2, 2);
+            this.radLabel12.Size = new System.Drawing.Size(2, 22);
             this.radLabel12.TabIndex = 7;
             this.radLabel12.TextWrap = false;
             // 
@@ -717,6 +767,7 @@
             this.radTextBox7.Name = "radTextBox7";
             this.radTextBox7.Size = new System.Drawing.Size(92, 22);
             this.radTextBox7.TabIndex = 6;
+            this.radValidationProvider1.SetValidationRule(this.radTextBox7, null);
             // 
             // radLabel13
             // 
@@ -734,7 +785,7 @@
             this.radLabel14.Dock = System.Windows.Forms.DockStyle.Right;
             this.radLabel14.Location = new System.Drawing.Point(248, 0);
             this.radLabel14.Name = "radLabel14";
-            this.radLabel14.Size = new System.Drawing.Size(2, 2);
+            this.radLabel14.Size = new System.Drawing.Size(2, 22);
             this.radLabel14.TabIndex = 8;
             this.radLabel14.TextWrap = false;
             // 
@@ -757,6 +808,7 @@
             this.radTextBox8.Name = "radTextBox8";
             this.radTextBox8.Size = new System.Drawing.Size(92, 22);
             this.radTextBox8.TabIndex = 7;
+            this.radValidationProvider1.SetValidationRule(this.radTextBox8, null);
             // 
             // radLabel15
             // 
@@ -774,7 +826,7 @@
             this.radLabel16.Dock = System.Windows.Forms.DockStyle.Right;
             this.radLabel16.Location = new System.Drawing.Point(248, 0);
             this.radLabel16.Name = "radLabel16";
-            this.radLabel16.Size = new System.Drawing.Size(2, 2);
+            this.radLabel16.Size = new System.Drawing.Size(2, 22);
             this.radLabel16.TabIndex = 9;
             this.radLabel16.TextWrap = false;
             // 
@@ -797,6 +849,7 @@
             this.radTextBox9.Name = "radTextBox9";
             this.radTextBox9.Size = new System.Drawing.Size(92, 22);
             this.radTextBox9.TabIndex = 8;
+            this.radValidationProvider1.SetValidationRule(this.radTextBox9, null);
             // 
             // radLabel17
             // 
@@ -814,7 +867,7 @@
             this.radLabel18.Dock = System.Windows.Forms.DockStyle.Right;
             this.radLabel18.Location = new System.Drawing.Point(248, 0);
             this.radLabel18.Name = "radLabel18";
-            this.radLabel18.Size = new System.Drawing.Size(2, 2);
+            this.radLabel18.Size = new System.Drawing.Size(2, 22);
             this.radLabel18.TabIndex = 10;
             this.radLabel18.TextWrap = false;
             // 
@@ -837,6 +890,7 @@
             this.radTextBox10.Name = "radTextBox10";
             this.radTextBox10.Size = new System.Drawing.Size(92, 22);
             this.radTextBox10.TabIndex = 9;
+            this.radValidationProvider1.SetValidationRule(this.radTextBox10, null);
             // 
             // radLabel19
             // 
@@ -854,7 +908,7 @@
             this.radLabel20.Dock = System.Windows.Forms.DockStyle.Right;
             this.radLabel20.Location = new System.Drawing.Point(248, 0);
             this.radLabel20.Name = "radLabel20";
-            this.radLabel20.Size = new System.Drawing.Size(2, 2);
+            this.radLabel20.Size = new System.Drawing.Size(2, 22);
             this.radLabel20.TabIndex = 11;
             this.radLabel20.TextWrap = false;
             // 
@@ -877,6 +931,7 @@
             this.radTextBox11.Name = "radTextBox11";
             this.radTextBox11.Size = new System.Drawing.Size(92, 22);
             this.radTextBox11.TabIndex = 10;
+            this.radValidationProvider1.SetValidationRule(this.radTextBox11, null);
             // 
             // radLabel21
             // 
@@ -894,7 +949,7 @@
             this.radLabel22.Dock = System.Windows.Forms.DockStyle.Right;
             this.radLabel22.Location = new System.Drawing.Point(248, 0);
             this.radLabel22.Name = "radLabel22";
-            this.radLabel22.Size = new System.Drawing.Size(2, 2);
+            this.radLabel22.Size = new System.Drawing.Size(2, 22);
             this.radLabel22.TabIndex = 12;
             this.radLabel22.TextWrap = false;
             // 
@@ -917,6 +972,7 @@
             this.radTextBox12.Name = "radTextBox12";
             this.radTextBox12.Size = new System.Drawing.Size(92, 22);
             this.radTextBox12.TabIndex = 11;
+            this.radValidationProvider1.SetValidationRule(this.radTextBox12, null);
             // 
             // radLabel23
             // 
@@ -934,7 +990,7 @@
             this.radLabel24.Dock = System.Windows.Forms.DockStyle.Right;
             this.radLabel24.Location = new System.Drawing.Point(248, 0);
             this.radLabel24.Name = "radLabel24";
-            this.radLabel24.Size = new System.Drawing.Size(2, 2);
+            this.radLabel24.Size = new System.Drawing.Size(2, 22);
             this.radLabel24.TabIndex = 13;
             this.radLabel24.TextWrap = false;
             // 
@@ -957,6 +1013,7 @@
             this.radTextBox13.Name = "radTextBox13";
             this.radTextBox13.Size = new System.Drawing.Size(92, 22);
             this.radTextBox13.TabIndex = 12;
+            this.radValidationProvider1.SetValidationRule(this.radTextBox13, null);
             // 
             // radLabel25
             // 
@@ -974,7 +1031,7 @@
             this.radLabel26.Dock = System.Windows.Forms.DockStyle.Right;
             this.radLabel26.Location = new System.Drawing.Point(248, 0);
             this.radLabel26.Name = "radLabel26";
-            this.radLabel26.Size = new System.Drawing.Size(2, 2);
+            this.radLabel26.Size = new System.Drawing.Size(2, 22);
             this.radLabel26.TabIndex = 14;
             this.radLabel26.TextWrap = false;
             // 
@@ -997,6 +1054,7 @@
             this.radTextBox14.Name = "radTextBox14";
             this.radTextBox14.Size = new System.Drawing.Size(92, 22);
             this.radTextBox14.TabIndex = 13;
+            this.radValidationProvider1.SetValidationRule(this.radTextBox14, null);
             // 
             // radLabel27
             // 
@@ -1014,7 +1072,7 @@
             this.radLabel28.Dock = System.Windows.Forms.DockStyle.Right;
             this.radLabel28.Location = new System.Drawing.Point(248, 0);
             this.radLabel28.Name = "radLabel28";
-            this.radLabel28.Size = new System.Drawing.Size(2, 2);
+            this.radLabel28.Size = new System.Drawing.Size(2, 22);
             this.radLabel28.TabIndex = 15;
             this.radLabel28.TextWrap = false;
             // 
@@ -1037,6 +1095,7 @@
             this.radTextBox15.Name = "radTextBox15";
             this.radTextBox15.Size = new System.Drawing.Size(92, 22);
             this.radTextBox15.TabIndex = 14;
+            this.radValidationProvider1.SetValidationRule(this.radTextBox15, null);
             // 
             // radLabel29
             // 
@@ -1054,7 +1113,7 @@
             this.radLabel30.Dock = System.Windows.Forms.DockStyle.Right;
             this.radLabel30.Location = new System.Drawing.Point(248, 0);
             this.radLabel30.Name = "radLabel30";
-            this.radLabel30.Size = new System.Drawing.Size(2, 2);
+            this.radLabel30.Size = new System.Drawing.Size(2, 22);
             this.radLabel30.TabIndex = 16;
             this.radLabel30.TextWrap = false;
             // 
@@ -1065,18 +1124,8 @@
             this.radPanel16.Controls.Add(this.radLabel32);
             this.radPanel16.Location = new System.Drawing.Point(5, 383);
             this.radPanel16.Name = "radPanel16";
-            this.radPanel16.Size = new System.Drawing.Size(250, 22);
+            this.radPanel16.Size = new System.Drawing.Size(400, 22);
             this.radPanel16.TabIndex = 14;
-            // 
-            // radTextBox16
-            // 
-            this.radTextBox16.AutoSize = false;
-            this.radTextBox16.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.companyBindingSource, "CompanyEmail", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.radTextBox16.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radTextBox16.Location = new System.Drawing.Point(156, 0);
-            this.radTextBox16.Name = "radTextBox16";
-            this.radTextBox16.Size = new System.Drawing.Size(92, 22);
-            this.radTextBox16.TabIndex = 15;
             // 
             // radLabel31
             // 
@@ -1092,9 +1141,9 @@
             // radLabel32
             // 
             this.radLabel32.Dock = System.Windows.Forms.DockStyle.Right;
-            this.radLabel32.Location = new System.Drawing.Point(248, 0);
+            this.radLabel32.Location = new System.Drawing.Point(398, 0);
             this.radLabel32.Name = "radLabel32";
-            this.radLabel32.Size = new System.Drawing.Size(2, 2);
+            this.radLabel32.Size = new System.Drawing.Size(2, 22);
             this.radLabel32.TabIndex = 17;
             this.radLabel32.TextWrap = false;
             // 
@@ -1117,6 +1166,7 @@
             this.radTextBox17.Name = "radTextBox17";
             this.radTextBox17.Size = new System.Drawing.Size(92, 22);
             this.radTextBox17.TabIndex = 16;
+            this.radValidationProvider1.SetValidationRule(this.radTextBox17, null);
             // 
             // radLabel33
             // 
@@ -1134,7 +1184,7 @@
             this.radLabel34.Dock = System.Windows.Forms.DockStyle.Right;
             this.radLabel34.Location = new System.Drawing.Point(248, 0);
             this.radLabel34.Name = "radLabel34";
-            this.radLabel34.Size = new System.Drawing.Size(2, 2);
+            this.radLabel34.Size = new System.Drawing.Size(2, 22);
             this.radLabel34.TabIndex = 18;
             this.radLabel34.TextWrap = false;
             // 
@@ -1157,6 +1207,7 @@
             this.radTextBox18.Name = "radTextBox18";
             this.radTextBox18.Size = new System.Drawing.Size(92, 22);
             this.radTextBox18.TabIndex = 17;
+            this.radValidationProvider1.SetValidationRule(this.radTextBox18, null);
             // 
             // radLabel35
             // 
@@ -1174,7 +1225,7 @@
             this.radLabel36.Dock = System.Windows.Forms.DockStyle.Right;
             this.radLabel36.Location = new System.Drawing.Point(248, 0);
             this.radLabel36.Name = "radLabel36";
-            this.radLabel36.Size = new System.Drawing.Size(2, 2);
+            this.radLabel36.Size = new System.Drawing.Size(2, 22);
             this.radLabel36.TabIndex = 19;
             this.radLabel36.TextWrap = false;
             // 
@@ -1214,7 +1265,7 @@
             this.radLabel38.Dock = System.Windows.Forms.DockStyle.Right;
             this.radLabel38.Location = new System.Drawing.Point(198, 0);
             this.radLabel38.Name = "radLabel38";
-            this.radLabel38.Size = new System.Drawing.Size(2, 2);
+            this.radLabel38.Size = new System.Drawing.Size(2, 22);
             this.radLabel38.TabIndex = 2;
             this.radLabel38.TextWrap = false;
             // 
@@ -1237,6 +1288,7 @@
             this.radTextBox19.Name = "radTextBox19";
             this.radTextBox19.Size = new System.Drawing.Size(42, 22);
             this.radTextBox19.TabIndex = 18;
+            this.radValidationProvider1.SetValidationRule(this.radTextBox19, null);
             // 
             // radLabel39
             // 
@@ -1254,7 +1306,7 @@
             this.radLabel40.Dock = System.Windows.Forms.DockStyle.Right;
             this.radLabel40.Location = new System.Drawing.Point(198, 0);
             this.radLabel40.Name = "radLabel40";
-            this.radLabel40.Size = new System.Drawing.Size(2, 2);
+            this.radLabel40.Size = new System.Drawing.Size(2, 22);
             this.radLabel40.TabIndex = 20;
             this.radLabel40.TextWrap = false;
             // 
@@ -1265,7 +1317,7 @@
             this.radPanel21.Controls.Add(this.radLabel42);
             this.radPanel21.Location = new System.Drawing.Point(5, 518);
             this.radPanel21.Name = "radPanel21";
-            this.radPanel21.Size = new System.Drawing.Size(200, 22);
+            this.radPanel21.Size = new System.Drawing.Size(250, 22);
             this.radPanel21.TabIndex = 19;
             // 
             // radTextBox20
@@ -1275,8 +1327,9 @@
             this.radTextBox20.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radTextBox20.Location = new System.Drawing.Point(156, 0);
             this.radTextBox20.Name = "radTextBox20";
-            this.radTextBox20.Size = new System.Drawing.Size(42, 22);
+            this.radTextBox20.Size = new System.Drawing.Size(92, 22);
             this.radTextBox20.TabIndex = 19;
+            this.radValidationProvider1.SetValidationRule(this.radTextBox20, null);
             // 
             // radLabel41
             // 
@@ -1292,9 +1345,9 @@
             // radLabel42
             // 
             this.radLabel42.Dock = System.Windows.Forms.DockStyle.Right;
-            this.radLabel42.Location = new System.Drawing.Point(198, 0);
+            this.radLabel42.Location = new System.Drawing.Point(248, 0);
             this.radLabel42.Name = "radLabel42";
-            this.radLabel42.Size = new System.Drawing.Size(2, 2);
+            this.radLabel42.Size = new System.Drawing.Size(2, 22);
             this.radLabel42.TabIndex = 21;
             this.radLabel42.TextWrap = false;
             // 
@@ -1317,6 +1370,7 @@
             this.radTextBox21.Name = "radTextBox21";
             this.radTextBox21.Size = new System.Drawing.Size(92, 22);
             this.radTextBox21.TabIndex = 20;
+            this.radValidationProvider1.SetValidationRule(this.radTextBox21, null);
             // 
             // radLabel43
             // 
@@ -1334,7 +1388,7 @@
             this.radLabel44.Dock = System.Windows.Forms.DockStyle.Right;
             this.radLabel44.Location = new System.Drawing.Point(248, 0);
             this.radLabel44.Name = "radLabel44";
-            this.radLabel44.Size = new System.Drawing.Size(2, 2);
+            this.radLabel44.Size = new System.Drawing.Size(2, 22);
             this.radLabel44.TabIndex = 22;
             this.radLabel44.TextWrap = false;
             // 
@@ -1357,6 +1411,7 @@
             this.radTextBox22.Name = "radTextBox22";
             this.radTextBox22.Size = new System.Drawing.Size(92, 22);
             this.radTextBox22.TabIndex = 21;
+            this.radValidationProvider1.SetValidationRule(this.radTextBox22, null);
             // 
             // radLabel45
             // 
@@ -1374,7 +1429,7 @@
             this.radLabel46.Dock = System.Windows.Forms.DockStyle.Right;
             this.radLabel46.Location = new System.Drawing.Point(248, 0);
             this.radLabel46.Name = "radLabel46";
-            this.radLabel46.Size = new System.Drawing.Size(2, 2);
+            this.radLabel46.Size = new System.Drawing.Size(2, 22);
             this.radLabel46.TabIndex = 23;
             this.radLabel46.TextWrap = false;
             // 
@@ -1397,6 +1452,7 @@
             this.radTextBox23.Name = "radTextBox23";
             this.radTextBox23.Size = new System.Drawing.Size(42, 22);
             this.radTextBox23.TabIndex = 22;
+            this.radValidationProvider1.SetValidationRule(this.radTextBox23, null);
             // 
             // radLabel47
             // 
@@ -1414,7 +1470,7 @@
             this.radLabel48.Dock = System.Windows.Forms.DockStyle.Right;
             this.radLabel48.Location = new System.Drawing.Point(198, 0);
             this.radLabel48.Name = "radLabel48";
-            this.radLabel48.Size = new System.Drawing.Size(2, 2);
+            this.radLabel48.Size = new System.Drawing.Size(2, 22);
             this.radLabel48.TabIndex = 24;
             this.radLabel48.TextWrap = false;
             // 
@@ -1437,6 +1493,7 @@
             this.radTextBox24.Name = "radTextBox24";
             this.radTextBox24.Size = new System.Drawing.Size(42, 22);
             this.radTextBox24.TabIndex = 23;
+            this.radValidationProvider1.SetValidationRule(this.radTextBox24, null);
             // 
             // radLabel49
             // 
@@ -1454,7 +1511,7 @@
             this.radLabel50.Dock = System.Windows.Forms.DockStyle.Right;
             this.radLabel50.Location = new System.Drawing.Point(198, 0);
             this.radLabel50.Name = "radLabel50";
-            this.radLabel50.Size = new System.Drawing.Size(2, 2);
+            this.radLabel50.Size = new System.Drawing.Size(2, 22);
             this.radLabel50.TabIndex = 25;
             this.radLabel50.TextWrap = false;
             // 
@@ -1477,6 +1534,7 @@
             this.radTextBox25.Name = "radTextBox25";
             this.radTextBox25.Size = new System.Drawing.Size(92, 22);
             this.radTextBox25.TabIndex = 24;
+            this.radValidationProvider1.SetValidationRule(this.radTextBox25, null);
             // 
             // radLabel51
             // 
@@ -1494,7 +1552,7 @@
             this.radLabel52.Dock = System.Windows.Forms.DockStyle.Right;
             this.radLabel52.Location = new System.Drawing.Point(248, 0);
             this.radLabel52.Name = "radLabel52";
-            this.radLabel52.Size = new System.Drawing.Size(2, 2);
+            this.radLabel52.Size = new System.Drawing.Size(2, 22);
             this.radLabel52.TabIndex = 26;
             this.radLabel52.TextWrap = false;
             // 
@@ -1517,6 +1575,7 @@
             this.radTextBox26.Name = "radTextBox26";
             this.radTextBox26.Size = new System.Drawing.Size(92, 22);
             this.radTextBox26.TabIndex = 25;
+            this.radValidationProvider1.SetValidationRule(this.radTextBox26, null);
             // 
             // radLabel53
             // 
@@ -1534,7 +1593,7 @@
             this.radLabel54.Dock = System.Windows.Forms.DockStyle.Right;
             this.radLabel54.Location = new System.Drawing.Point(248, 0);
             this.radLabel54.Name = "radLabel54";
-            this.radLabel54.Size = new System.Drawing.Size(2, 2);
+            this.radLabel54.Size = new System.Drawing.Size(2, 22);
             this.radLabel54.TabIndex = 27;
             this.radLabel54.TextWrap = false;
             // 
@@ -1557,6 +1616,7 @@
             this.radTextBox27.Name = "radTextBox27";
             this.radTextBox27.Size = new System.Drawing.Size(42, 22);
             this.radTextBox27.TabIndex = 26;
+            this.radValidationProvider1.SetValidationRule(this.radTextBox27, null);
             // 
             // radLabel55
             // 
@@ -1574,7 +1634,7 @@
             this.radLabel56.Dock = System.Windows.Forms.DockStyle.Right;
             this.radLabel56.Location = new System.Drawing.Point(198, 0);
             this.radLabel56.Name = "radLabel56";
-            this.radLabel56.Size = new System.Drawing.Size(2, 2);
+            this.radLabel56.Size = new System.Drawing.Size(2, 22);
             this.radLabel56.TabIndex = 28;
             this.radLabel56.TextWrap = false;
             // 
@@ -1607,6 +1667,15 @@
             this.panel1item.TextSize = new System.Drawing.Size(0, 0);
             this.panel1item.TextVisible = false;
             // 
+            // radValidationProvider1
+            // 
+            radValidationRule1.Controls.Add(this.radTextBox16);
+            radValidationRule1.Operator = Telerik.WinControls.Data.FilterOperator.IsNull;
+            radValidationRule1.ToolTipText = "No Email has been entered";
+            radValidationRule1.ToolTipTitle = "No Email Supplied!";
+            this.radValidationProvider1.ValidationRules.AddRange(new Telerik.WinControls.Data.FilterDescriptor[] {
+            radValidationRule1});
+            // 
             // CompanyLookup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1616,6 +1685,7 @@
             this.Name = "CompanyLookup";
             this.Text = "CompanyLookup";
             this.Load += new System.EventHandler(this.CompanyLookup_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.radTextBox16)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.company)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radCheckBox1)).EndInit();
@@ -1722,7 +1792,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.radPanel16)).EndInit();
             this.radPanel16.ResumeLayout(false);
             this.radPanel16.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radTextBox16)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel31)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel32)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel17)).EndInit();
@@ -1801,6 +1870,7 @@
             this.CompanyLookuplayoutControl1ConvertedLayout.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panel1item)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radValidationProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1935,5 +2005,8 @@
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
         private DevExpress.XtraLayout.LayoutControlItem panel1item;
         private Telerik.WinControls.UI.RadButton radButton1;
+        private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private Telerik.WinControls.UI.RadValidationProvider radValidationProvider1;
     }
 }
